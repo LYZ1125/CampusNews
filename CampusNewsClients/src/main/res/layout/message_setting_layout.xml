@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/choise_direction_all_layout"
+        android:background="@color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height">
+        <Button
+            android:id="@+id/choise_direction_back"
+            android:layout_width="44dp"
+            android:layout_height="fill_parent"
+            android:background="@mipmap/gray_back_mipmap"/>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_marginTop="10dp"
+                style="@style/bb_information_image_bottom"/>
+            <RelativeLayout
+                android:paddingTop="10dp"
+                android:paddingLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="43dp">
+
+                <TextView
+                    style="@style/bb_information_text"
+                    android:text="有人给我发了私信"/>
+
+
+                <com.baibian.view.SwitchButton
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentRight="true"
+                    style="@style/Switch"
+                    android:scrollbarStyle="insideInset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true" />
+            </RelativeLayout>
+            <ImageView style="@style/bb_information_image_bottom"/>
+            <ImageView
+                android:layout_marginTop="10dp"
+                style="@style/bb_information_image_bottom"/>
+            <RelativeLayout
+                android:paddingTop="10dp"
+                android:paddingLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="43dp">
+
+                <TextView
+                    style="@style/bb_information_text"
+                    android:text="有人关注了我"/>
+
+
+                <com.baibian.view.SwitchButton
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentRight="true"
+                    style="@style/Switch"
+                    android:scrollbarStyle="insideInset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true" />
+            </RelativeLayout>
+            <ImageView style="@style/bb_information_image_bottom"/>
+            <RelativeLayout
+                android:paddingTop="10dp"
+                android:paddingLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="43dp">
+
+                <TextView
+                    style="@style/bb_information_text"
+                    android:text="有人赞了我的回复"/>
+
+
+                <com.baibian.view.SwitchButton
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentRight="true"
+                    style="@style/Switch"
+                    android:scrollbarStyle="insideInset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true" />
+            </RelativeLayout>
+            <ImageView style="@style/bb_information_image_bottom"/>
+            <RelativeLayout
+                android:paddingTop="10dp"
+                android:paddingLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="43dp">
+
+                <TextView
+                    style="@style/bb_information_text"
+                    android:text="有人回复了我"/>
+
+
+                <com.baibian.view.SwitchButton
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentRight="true"
+                    style="@style/Switch"
+                    android:scrollbarStyle="insideInset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true" />
+            </RelativeLayout>
+            <ImageView style="@style/bb_information_image_bottom"/>
+            <RelativeLayout
+                android:paddingTop="10dp"
+                android:paddingLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="43dp">
+
+                <TextView
+                    style="@style/bb_information_text"
+                    android:text="有人邀请我回答"/>
+
+
+                <com.baibian.view.SwitchButton
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentRight="true"
+                    style="@style/Switch"
+                    android:scrollbarStyle="insideInset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true" />
+            </RelativeLayout>
+            <ImageView style="@style/bb_information_image_bottom"/>
+            <ImageView
+                android:layout_marginTop="10dp"
+                style="@style/bb_information_image_bottom"/>
+            <RelativeLayout
+                android:paddingTop="10dp"
+                android:paddingLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="43dp">
+
+                <TextView
+                    style="@style/bb_information_text"
+                    android:text="有人邀请我参加活动"/>
+
+
+                <com.baibian.view.SwitchButton
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentRight="true"
+                    style="@style/Switch"
+                    android:scrollbarStyle="insideInset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:paddingTop="10dp"
+                android:paddingLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="43dp">
+
+                <TextView
+                    style="@style/bb_information_text"
+                    android:text="有人邀请我组队"/>
+
+
+                <com.baibian.view.SwitchButton
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentRight="true"
+                    style="@style/Switch"
+                    android:scrollbarStyle="insideInset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true" />
+            </RelativeLayout>
+            <ImageView
+                android:layout_marginTop="10dp"
+                style="@style/bb_information_image_bottom"/>
+            <RelativeLayout
+                android:paddingTop="10dp"
+                android:paddingLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="43dp">
+
+                <TextView
+                    style="@style/bb_information_text"
+                    android:text="有人赞了我的文章"/>
+
+
+                <com.baibian.view.SwitchButton
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentRight="true"
+                    style="@style/Switch"
+                    android:scrollbarStyle="insideInset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:paddingTop="10dp"
+                android:paddingLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="43dp">
+
+                <TextView
+                    style="@style/bb_information_text"
+                    android:text="有人赞了我分享的资料"/>
+
+
+                <com.baibian.view.SwitchButton
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentRight="true"
+                    style="@style/Switch"
+                    android:scrollbarStyle="insideInset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true" />
+            </RelativeLayout>
+            <ImageView
+                android:layout_marginTop="10dp"
+                style="@style/bb_information_image_bottom"/>
+            <RelativeLayout
+                android:paddingTop="10dp"
+                android:paddingLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="43dp">
+
+                <TextView
+                    style="@style/bb_information_text"
+                    android:text="关注的额话题有了新回复"/>
+
+
+                <com.baibian.view.SwitchButton
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentRight="true"
+                    style="@style/Switch"
+                    android:scrollbarStyle="insideInset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:paddingTop="10dp"
+                android:paddingLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="43dp">
+
+                <TextView
+                    style="@style/bb_information_text"
+                    android:text="关注的用户发表新文章"/>
+
+
+                <com.baibian.view.SwitchButton
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentRight="true"
+                    style="@style/Switch"
+                    android:scrollbarStyle="insideInset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

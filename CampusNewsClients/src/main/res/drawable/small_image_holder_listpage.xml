@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/csdn" android:maxLevel="0" />
+    <item android:drawable="@drawable/csdn" android:maxLevel="1" />
+    <!--原本是一下代码，实现上面有字下面有图，先改为单独的一张图-->
+    <!--<item android:drawable="@drawable/small_image_holder_listpage_loading" android:maxLevel="0" />-->
+    <!--<item android:drawable="@drawable/small_image_holder_listpage_failed" android:maxLevel="1" />-->
+    <item android:drawable="@color/image_loading_bg" android:maxLevel="2" />
+</level-list>

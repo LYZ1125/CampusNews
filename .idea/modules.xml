@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CampusNewsClients.iml" filepath="$PROJECT_DIR$/CampusNewsClients.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CampusNewsClients/CampusNewsClients-CampusNewsClients.iml" filepath="$PROJECT_DIR$/CampusNewsClients/CampusNewsClients-CampusNewsClients.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library_SlidingMenu/library_SlidingMenu.iml" filepath="$PROJECT_DIR$/library_SlidingMenu/library_SlidingMenu.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--获得焦点时时的背景图片-->
+    <item android:state_focused="true" android:drawable="@drawable/yellow_frame"/>
+    <!--未被选中时的背景图片-->
+    <item android:state_focused="false" android:drawable="@color/white"/>
+    <item android:state_selected="true" android:drawable="@drawable/yellow_frame"/>
+</selector>

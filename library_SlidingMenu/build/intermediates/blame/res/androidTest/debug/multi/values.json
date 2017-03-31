@@ -1,0 +1,50 @@
+[
+    {
+        "outputFile": "C:\\Users\\lenovo\\Documents\\GitHub\\CampusNewsClients\\library_SlidingMenu\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1008,
+                    "endColumn": 42,
+                    "endOffset": 1046
+                },
+                "from": {
+                    "file": "C:\\Users\\lenovo\\Documents\\GitHub\\CampusNewsClients\\library_SlidingMenu\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1008,
+                        "endColumn": 42,
+                        "endOffset": 1046
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\library_SlidingMenu\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1008,
+                    "endColumn": 42,
+                    "endOffset": 1046
+                },
+                "from": {
+                    "file": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\library_SlidingMenu\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1008,
+                        "endColumn": 42,
+                        "endOffset": 1046
+                    }
+                }
+            }
+        ]
+    }
+]

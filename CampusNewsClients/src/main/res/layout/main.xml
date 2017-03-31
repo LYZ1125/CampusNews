@@ -1,0 +1,109 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activity_bg_color"
+    android:orientation="vertical" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/main_head" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <FrameLayout
+                    android:layout_marginBottom="60dp"
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </FrameLayout>
+
+
+                <!--底部布局部分-->
+                <LinearLayout
+                    android:layout_alignParentBottom="true"
+                    android:background="#2180dc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp">
+                        <!--第一个碎片按钮部分-->
+                        <RelativeLayout
+                            android:id="@+id/fragment1_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" >
+                            <ImageView
+                                android:id="@+id/fragment1_img"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/homefragment"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp" />
+                        </RelativeLayout>
+                        <!--第二个碎片按钮部分-->
+                        <RelativeLayout
+                            android:id="@+id/fragment2_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" >
+                            <ImageView
+                                android:id="@+id/fragment2_img"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/forumsfragment"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp" />
+                        </RelativeLayout>
+                        <!--中间部分-->
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                        </LinearLayout>
+                        <!--第三个碎片按钮部分-->
+
+                        <RelativeLayout
+                            android:id="@+id/fragment3_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" >
+                            <ImageView
+                                android:id="@+id/fragment3_img"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/findfragment"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp" />
+                        </RelativeLayout>
+
+                        <!--第四个碎片按钮部分-->
+
+                        <RelativeLayout
+                            android:id="@+id/fragment4_layout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1" >
+                            <ImageView
+                                android:id="@+id/fragment4_img"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/periodicalsfragment"
+                                android:layout_width="60dp"
+                                android:layout_height="60dp" />
+                        </RelativeLayout>
+
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+</LinearLayout>

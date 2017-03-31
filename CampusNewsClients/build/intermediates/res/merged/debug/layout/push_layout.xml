@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/choise_direction_all_layout"
+        android:background="@color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height">
+        <Button
+            android:id="@+id/choise_direction_back"
+            android:layout_width="44dp"
+            android:layout_height="fill_parent"
+            android:background="@mipmap/gray_back_mipmap"/>
+    </RelativeLayout>
+    <TextView
+        android:paddingLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:text="打开后将推送相应信息"
+        android:textColor="#878787"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ImageView style="@style/bb_information_image_bottom"/>
+    <RelativeLayout
+        android:paddingTop="10dp"
+        android:paddingLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+
+        <TextView
+            style="@style/bb_information_text"
+            android:text="BB期刊推荐"/>
+        <com.baibian.view.SwitchButton
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+            style="@style/Switch"
+            android:scrollbarStyle="insideInset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true" />
+    </RelativeLayout>
+    <ImageView style="@style/bb_information_image_bottom"/>
+    <RelativeLayout
+        android:paddingTop="10dp"
+        android:paddingLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+
+        <TextView
+            style="@style/bb_information_text"
+            android:text="BB话题推荐"/>
+        <com.baibian.view.SwitchButton
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+            style="@style/Switch"
+            android:scrollbarStyle="insideInset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true" />
+    </RelativeLayout>
+    <ImageView style="@style/bb_information_image_bottom"/>
+    <RelativeLayout
+        android:paddingTop="10dp"
+        android:paddingLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+
+        <TextView
+            style="@style/bb_information_text"
+            android:text="BB用户推荐"/>
+        <com.baibian.view.SwitchButton
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+            style="@style/Switch"
+            android:scrollbarStyle="insideInset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true" />
+    </RelativeLayout>
+    <ImageView style="@style/bb_information_image_bottom"/>
+    <RelativeLayout
+        android:paddingTop="10dp"
+        android:paddingLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+
+        <TextView
+            style="@style/bb_information_text"
+            android:text="BB活动推荐"/>
+        <com.baibian.view.SwitchButton
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+            style="@style/Switch"
+            android:scrollbarStyle="insideInset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true" />
+    </RelativeLayout>
+    <ImageView style="@style/bb_information_image_bottom"/>
+    <RelativeLayout
+        android:paddingTop="10dp"
+        android:paddingLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+
+        <TextView
+            style="@style/bb_information_text"
+            android:text="BB新功能推荐"/>
+        <com.baibian.view.SwitchButton
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+            style="@style/Switch"
+            android:scrollbarStyle="insideInset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true" />
+    </RelativeLayout>
+    <ImageView style="@style/bb_information_image_bottom"/>
+    <RelativeLayout
+        android:paddingTop="10dp"
+        android:paddingLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+
+        <TextView
+            style="@style/bb_information_text"
+            android:text="BB资讯推送"/>
+        <com.baibian.view.SwitchButton
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+            style="@style/Switch"
+            android:scrollbarStyle="insideInset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true" />
+    </RelativeLayout>
+    <ImageView style="@style/bb_information_image_bottom"/>
+    <TextView
+        android:paddingLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:text="打开后23:00-9.00不会受到推送消息"
+        android:textColor="#878787"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ImageView style="@style/bb_information_image_bottom"/>
+    <RelativeLayout
+        android:paddingTop="10dp"
+        android:paddingLeft="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="43dp">
+
+        <TextView
+            style="@style/bb_information_text"
+            android:text="勿扰模式"/>
+        <com.baibian.view.SwitchButton
+            android:layout_marginTop="5dp"
+            android:layout_alignParentRight="true"
+            style="@style/Switch"
+            android:scrollbarStyle="insideInset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true" />
+    </RelativeLayout>
+    <ImageView style="@style/bb_information_image_bottom"/>
+
+
+</LinearLayout>

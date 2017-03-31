@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login4layout2back">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/register_imageView"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/login4headback"
+            android:layout_width="150dp"
+            android:layout_height="150dp" />
+        <!--账号控件部分-->
+        <EditText
+            android:id="@+id/register_AccountEdit"
+            android:layout_marginTop="33dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/accountbackgroundchange"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:hint="    用户名/手机号/邮箱"
+            android:textColorHint="#F0F8FF"
+            android:textColor="#F0F8FF"
+            android:singleLine="true"
+            android:focusable="true"
+            android:textSize="25sp"
+            android:digits="@string/register_name_digits"
+            android:layout_width="300dp"
+            android:layout_height="43dp" />
+        <!--第一次输入密码控件部分-->
+        <EditText
+            android:layout_marginTop="33dp"
+            android:id="@+id/register_first_passwords"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/accountbackgroundchange"
+            android:paddingRight="15dp"
+            android:paddingLeft="15dp"
+            android:password="true"
+            android:hint="    输入密码"
+            android:textColorHint="#F0F8FF"
+            android:textColor="#F0F8FF"
+            android:singleLine="true"
+            android:focusable="true"
+            android:textSize="25sp"
+            android:digits="@string/register_name_digits"
+            android:layout_width="300dp"
+            android:layout_height="43dp" />
+        <RelativeLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="33dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <!--确认密码控件部分-->
+            <EditText
+                android:id="@+id/register_confirm_editText"
+                android:textColor="#F0F8FF"
+                android:textColorHint="#F0F8FF"
+                android:hint="     确认密码 "
+                android:paddingStart="15dp"
+                android:focusable="true"
+                android:password="true"
+                android:singleLine="true"
+                android:textSize="25sp"
+                android:background="@drawable/passwordbackchange"
+                android:layout_width="220dp"
+                android:layout_height="43dp" />
+            <!--注册按钮部分-->
+            <Button
+                android:id="@+id/regiter_loginButton"
+                android:text="注册"
+                android:textColor="#00a0e9"
+                android:textSize="23sp"
+                android:layout_toRightOf="@id/register_confirm_editText"
+                android:background="@drawable/login_btn_back"
+                android:layout_width="80dp"
+                android:layout_height="43dp" />
+        </RelativeLayout>
+        <!--切换登录控件部分-->
+        <Button
+            android:id="@+id/register_or_login_button"
+            android:textSize="20sp"
+            android:text="注册/登录"
+            android:textColor="#F0F8FF"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</LinearLayout>

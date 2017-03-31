@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/loadingpage2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:id="@+id/choise_direction_all_layout"
+        android:background="@color/baibian_back_color"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height">
+        <Button
+            android:id="@+id/choise_direction_back"
+            android:layout_width="44dp"
+            android:layout_height="fill_parent"
+            android:background="@mipmap/back_direction"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--第1行-->
+        <LinearLayout
+            android:visibility="invisible"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <FrameLayout
+                android:background="#3ee3a004"
+                android:layout_width="180dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:padding="30dp"
+                    android:textSize="20sp"
+                    android:text="军事"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <LinearLayout
+                android:layout_width="20dp"
+                android:layout_height="match_parent"/>
+            <FrameLayout
+                android:background="#48eb0d"
+                android:layout_marginRight="30dp"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                >
+               <TextView
+                   android:padding="30dp"
+                   android:textSize="20sp"
+                   android:text="军事"
+                   android:textColor="#FFFFFF"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+            </FrameLayout>
+
+
+
+        </LinearLayout>
+        <!--第2行-->
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <FrameLayout
+                android:id="@+id/framelayoute21"
+                android:background="#9940de5a"
+                android:layout_marginLeft="30dp"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:layout_height="match_parent">
+                <TextView
+                    android:padding="40dp"
+                    android:textSize="30sp"
+                    android:text="军事"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <LinearLayout
+                android:layout_width="10dp"
+                android:layout_height="match_parent"/>
+            <FrameLayout
+                android:id="@+id/framelayoute22"
+
+                android:background="#99ffd71b"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="match_parent">
+                <TextView
+                    android:padding="40dp"
+                    android:textSize="30sp"
+                    android:text="经济"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+
+
+        </LinearLayout>
+        <!--第3行-->
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <FrameLayout
+                android:id="@+id/framelayoute31"
+
+                android:background="#9acc99cc"
+
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="match_parent">
+                <TextView
+                    android:padding="40dp"
+                    android:textSize="30sp"
+                    android:text="文化"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="10dp"
+                android:layout_height="match_parent"/>
+            <FrameLayout
+                android:id="@+id/framelayoute32"
+
+                android:background="#984e6cef"
+                android:layout_marginRight="30dp"
+
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:layout_height="match_parent">
+                <TextView
+                    android:padding="40dp"
+                    android:textSize="30sp"
+                    android:text="政治"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+
+
+        </LinearLayout>
+        <!--第4行-->
+        <LinearLayout
+            android:visibility="invisible"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <FrameLayout
+                android:background="#48eb0d"
+                android:layout_marginLeft="30dp"
+                android:layout_width="140dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:padding="40dp"
+                    android:textSize="30sp"
+                    android:text="军事"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <LinearLayout
+                android:layout_width="20dp"
+                android:layout_height="match_parent"/>
+            <FrameLayout
+                android:background="#e3a004"
+                android:layout_width="180dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:padding="30dp"
+                    android:textSize="20sp"
+                    android:text="军事"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

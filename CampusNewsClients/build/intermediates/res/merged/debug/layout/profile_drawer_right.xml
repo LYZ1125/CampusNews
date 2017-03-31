@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+    <TextView
+        android:background="@color/baibian_back_color"
+        android:text="更多应用"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+            <TableRow>
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <com.baibian.tool.RoundImageView
+                        android:src="@drawable/homepage_img"
+                        android:layout_width="55dip"
+                        android:layout_gravity="center"
+                        android:layout_height="55dip" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#491c96"
+                        android:text="主页"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                <com.baibian.tool.RoundImageView
+                    android:src="@drawable/competition_img"
+                    android:layout_width="55dip"
+                    android:layout_gravity="center"
+                    android:layout_height="55dip" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="#491c96"
+                    android:text="比赛"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <com.baibian.tool.RoundImageView
+                        android:src="@drawable/data_img"
+                        android:layout_width="55dip"
+                        android:layout_gravity="center"
+                        android:layout_height="55dip" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#491c96"
+                        android:text="资料"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <com.baibian.tool.RoundImageView
+                        android:src="@drawable/imformation_img"
+                        android:layout_width="55dip"
+                        android:layout_gravity="center"
+                        android:layout_height="55dip" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#491c96"
+                        android:text="资讯"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <com.baibian.tool.RoundImageView
+                        android:src="@drawable/video_img"
+                        android:layout_width="55dip"
+                        android:layout_gravity="center"
+                        android:layout_height="55dip" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#491c96"
+                        android:text="视频"/>
+                </LinearLayout>
+            </TableRow>
+
+        </TableLayout>
+
+
+        <!--第二层-->
+        <TableLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+            <TableRow>
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <com.baibian.tool.RoundImageView
+                        android:src="@drawable/data_img"
+                        android:layout_width="70dip"
+                        android:layout_gravity="center"
+                        android:layout_height="70dip" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#491c96"
+                        android:text="资料"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <com.baibian.tool.RoundImageView
+                        android:src="@drawable/competition_img"
+                        android:layout_width="70dip"
+                        android:layout_gravity="center"
+                        android:layout_height="70dip" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#491c96"
+                        android:text="比赛"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <com.baibian.tool.RoundImageView
+                        android:src="@drawable/video_img"
+                        android:layout_width="70dip"
+                        android:layout_gravity="center"
+                        android:layout_height="70dip" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#491c96"
+                        android:text="视频"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <com.baibian.tool.RoundImageView
+                        android:layout_width="70dip"
+                        android:layout_gravity="center"
+                        android:layout_height="70dip" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="#491c96"/>
+                </LinearLayout>
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

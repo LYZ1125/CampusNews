@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fffff0"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/choise_direction_all_layout"
+        android:background="@color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height">
+        <Button
+            android:id="@+id/choise_direction_back"
+            android:layout_width="44dp"
+            android:layout_height="fill_parent"
+            android:background="@mipmap/back_mipmap_yellow"/>
+        <Button
+            android:textColor="#ffd71b"
+            android:background="@color/transparent"
+            android:textSize="32sp"
+            android:layout_alignParentEnd="true"
+            android:text="···"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+    <!--顶部的个人资料部分-->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <com.baibian.tool.RoundImageView
+                android:src="@drawable/default_round_head"
+                android:layout_width="60dip"
+                android:layout_height="60dip" />
+
+        </LinearLayout>
+        <TextView
+            android:layout_gravity="center_horizontal"
+             android:textSize="32dp"
+             android:text="name"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:textSize="18dp"
+                android:text="最佳辩手"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="10dp"
+                android:textSize="18dp"
+                android:text="粉丝："
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_gravity="center_horizontal"
+                android:textSize="18dp"
+                android:text="666"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:textSize="18dp"
+            android:text="编辑心情"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <ImageView style="@style/left_drawer_item_line" />
+    <LinearLayout
+        android:paddingTop="5dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:background="@color/transparent"
+        android:layout_height="45dp">
+        <!--这里采用一次嵌套的方法来解决背景正方形铺屏的问题，如果以后有优化的方法请解决-->
+        <Button
+            android:id="@+id/BB_state_btn"
+            android:text="BB发言"
+            android:background="#FFFFFF"
+            android:layout_marginRight="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"/>
+        <Button
+            android:id="@+id/BB_imformation_btn"
+            android:text="BB资料"
+            android:background="#FFFFFF"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"/>
+    </LinearLayout>
+    <ImageView style="@style/left_drawer_item_line" />
+
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/users_imformation_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/E:/github/SpringIndicator/lib/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="si_default_indicator_bg">#ee9999</color>
+    <color name="si_default_text_color">#FF0000</color>
+    <color name="si_default_text_color_selected">#FF00FF</color>
+    <declare-styleable name="SpringIndicator"><attr format="reference" name="siTextColor"/><attr format="reference" name="siSelectedTextColor"/><attr format="reference" name="siTextBg"/><attr format="dimension" name="siTextSize"/><attr format="reference" name="siIndicatorColor"/><attr format="reference" name="siIndicatorColors"/><attr format="dimension" name="siRadiusMax"/><attr format="dimension" name="siRadiusMin"/></declare-styleable>
+    <!-- From: file:/E:/github/SpringIndicator/lib/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="si_default_radius_max">24dp</dimen>
+    <dimen name="si_default_radius_min">8dp</dimen>
+    <dimen name="si_default_text_size">18sp</dimen>
+</resources>

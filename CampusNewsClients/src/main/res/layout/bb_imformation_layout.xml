@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/transparent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <!--1我的文章-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="38dp">
+                <ImageView
+                    style="@style/bb_information_image_left"
+                    android:src="@mipmap/setting_mipmap"/>
+                <RelativeLayout
+                    android:paddingLeft="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent">
+                    <RelativeLayout
+                        android:paddingTop="8dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent">
+                        <TextView
+                            style="@style/bb_information_text"
+                            android:text="我的文章"/>
+                        <ImageView
+                            android:src="@mipmap/gray_direction_right"
+                            style="@style/bb_information_image_right"/>
+                    </RelativeLayout>
+                    <ImageView style="@style/bb_information_image_bottom"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+            <!--2我的关注-->
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="38dp">
+                <ImageView
+                    style="@style/bb_information_image_left"
+                    android:src="@mipmap/setting_mipmap"/>
+                <RelativeLayout
+                    android:paddingLeft="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent">
+                    <RelativeLayout
+                        android:paddingTop="8dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent">
+                        <TextView
+                            style="@style/bb_information_text"
+                            android:text="我的关注"/>
+                        <ImageView
+                            android:src="@mipmap/gray_direction_right"
+                            style="@style/bb_information_image_right"/>
+                    </RelativeLayout>
+                    <ImageView style="@style/bb_information_image_bottom"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+            <!--3我的收藏-->
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="38dp">
+                <ImageView
+                    style="@style/bb_information_image_left"
+                    android:src="@mipmap/setting_mipmap"/>
+                <RelativeLayout
+                    android:paddingLeft="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent">
+                    <RelativeLayout
+                        android:paddingTop="8dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent">
+                        <TextView
+                            style="@style/bb_information_text"
+                            android:text="我的收藏"/>
+                        <ImageView
+                            android:src="@mipmap/gray_direction_right"
+                            style="@style/bb_information_image_right"/>
+                    </RelativeLayout>
+                    <ImageView style="@style/bb_information_image_bottom"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+            <!--4我的草稿-->
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="38dp">
+                <ImageView
+                    android:src="@mipmap/setting_mipmap"
+                    style="@style/bb_information_image_left"
+                    />
+                <RelativeLayout
+                    android:paddingLeft="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent">
+                    <RelativeLayout
+                        android:paddingTop="8dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent">
+                        <TextView
+                            style="@style/bb_information_text"
+                            android:text="我的草稿"/>
+                        <ImageView
+                            style="@style/bb_information_image_right"
+                            android:src="@mipmap/gray_direction_right"
+                     />
+                    </RelativeLayout>
+                    <ImageView style="@style/bb_information_image_bottom"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+            <!--5最近浏览-->
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="38dp">
+                <ImageView
+                    style="@style/bb_information_image_left"
+                    android:src="@mipmap/setting_mipmap"/>
+                <RelativeLayout
+                    android:paddingLeft="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent">
+                    <RelativeLayout
+                        android:paddingTop="8dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent">
+                        <TextView
+                            style="@style/bb_information_text"
+                            android:text="最近浏览"/>
+                        <ImageView
+                            style="@style/bb_information_image_right"
+                            android:src="@mipmap/gray_direction_right"/>
+                    </RelativeLayout>
+                    <ImageView style="@style/bb_information_image_bottom"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+            <!--6我的分享-->
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="38dp">
+                <ImageView
+                    style="@style/bb_information_image_left"
+                    android:src="@mipmap/setting_mipmap"/>
+                <RelativeLayout
+                    android:paddingLeft="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent">
+                    <RelativeLayout
+                        android:paddingTop="8dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent">
+                        <TextView
+                            style="@style/bb_information_text"
+                            android:text="我的分享"/>
+                        <ImageView
+                            android:src="@mipmap/gray_direction_right"
+                            style="@style/bb_information_image_right"/>
+                    </RelativeLayout>
+                    <ImageView style="@style/bb_information_image_bottom"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+            <!--我的比赛-->
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="38dp">
+                <ImageView
+                    style="@style/bb_information_image_left"
+                    android:src="@mipmap/setting_mipmap"/>
+                <RelativeLayout
+                    android:paddingLeft="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent">
+                    <RelativeLayout
+                        android:paddingTop="8dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent">
+                        <TextView
+                            style="@style/bb_information_text"
+                            android:text="我的比赛"/>
+                        <ImageView
+                            android:src="@mipmap/gray_direction_right"
+                            style="@style/bb_information_image_right"/>
+                    </RelativeLayout>
+                    <ImageView style="@style/bb_information_image_bottom"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+            <!--8我的活动-->
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="38dp">
+                <ImageView
+                    style="@style/bb_information_image_left"
+                    android:src="@mipmap/setting_mipmap"/>
+                <RelativeLayout
+                    android:paddingLeft="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent">
+                    <RelativeLayout
+                        android:paddingTop="8dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent">
+                        <TextView
+                            style="@style/bb_information_text"
+                            android:text="我的活动"/>
+                        <ImageView
+                            android:src="@mipmap/gray_direction_right"
+                            style="@style/bb_information_image_right"/>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+            </LinearLayout>
+            <ImageView
+                android:layout_alignParentBottom="true"
+                android:background="@color/left_drawer_item_line"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"/>
+            <!--9反馈-->
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="38dp">
+                <ImageView
+                    style="@style/bb_information_image_left"
+                    android:src="@mipmap/setting_mipmap"/>
+                <RelativeLayout
+                    android:paddingLeft="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent">
+                    <RelativeLayout
+                        android:paddingTop="8dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent">
+                        <TextView
+                            style="@style/bb_information_text"
+                            android:text="反馈帮助"/>
+                        <ImageView
+                            android:src="@mipmap/gray_direction_right"
+                            style="@style/bb_information_image_right"/>
+                    </RelativeLayout>
+                    <ImageView style="@style/bb_information_image_bottom"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+            <!--10夜间模式-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="38dp">
+                <ImageView
+                    style="@style/bb_information_image_left"
+                    android:src="@mipmap/setting_mipmap"/>
+                <RelativeLayout
+                    android:paddingLeft="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent">
+                    <RelativeLayout
+                        android:paddingTop="8dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent">
+                        <TextView
+                            style="@style/bb_information_text"
+                            android:text="夜间模式"/>
+
+                        <com.baibian.view.SwitchButton
+                     android:layout_alignParentRight="true"
+                            style="@style/Switch"
+                            android:scrollbarStyle="insideInset"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true" />
+
+                    </RelativeLayout>
+                    <ImageView style="@style/bb_information_image_bottom"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+            <!--11设置-->
+            <LinearLayout
+                android:id="@+id/settting_layout"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="38dp">
+                <ImageView
+                    style="@style/bb_information_image_left"
+                    android:src="@mipmap/setting_mipmap"/>
+                <RelativeLayout
+                    android:paddingLeft="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent">
+                    <RelativeLayout
+                        android:paddingTop="8dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent">
+                        <TextView
+                            style="@style/bb_information_text"
+                            android:text="设置"/>
+                        <ImageView
+                            android:src="@mipmap/gray_direction_right"
+                            style="@style/bb_information_image_right"/>
+                    </RelativeLayout>
+                    <ImageView style="@style/bb_information_image_bottom"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

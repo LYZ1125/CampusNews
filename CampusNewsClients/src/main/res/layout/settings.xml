@@ -1,0 +1,237 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/transparent" >
+
+      <RelativeLayout
+            android:id="@+id/choise_direction_all_layout"
+            android:background="@color/transparent"
+            android:layout_width="match_parent"
+              android:layout_height="@dimen/title_bar_height">
+            <Button
+              android:id="@+id/choise_direction_back"
+              android:layout_width="44dp"
+              android:layout_height="fill_parent"
+              android:background="@mipmap/gray_back_mipmap"/>
+        </RelativeLayout>
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/title_bar" >
+
+            <LinearLayout
+                android:paddingTop="10dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical" >
+                <ImageView style="@style/bb_information_image_bottom"/>
+
+                <!--修改资料-->
+                <RelativeLayout
+                    android:paddingTop="8dp"
+                    android:paddingLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp">
+                    <TextView
+                        style="@style/bb_information_text"
+                        android:text="修改资料"/>
+                    <ImageView
+                        android:src="@mipmap/gray_direction_right"
+                        style="@style/bb_information_image_right"/>
+                </RelativeLayout>
+                <ImageView style="@style/bb_information_image_bottom"/>
+
+                <!--修改资料-->
+                <ImageView
+                    android:layout_marginTop="20dp"
+                    style="@style/bb_information_image_bottom"/>
+
+                <RelativeLayout
+
+                    android:paddingLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <TextView
+                            style="@style/bb_information_text"
+                            android:text="应用音效"/>
+                        <TextView
+                            android:textColor="#878787"
+                            android:text="比赛模式音效、按钮音效等"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <com.baibian.view.SwitchButton
+                        android:layout_marginTop="5dp"
+                        android:layout_alignParentRight="true"
+                        style="@style/Switch"
+                        android:scrollbarStyle="insideInset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true" />
+                </RelativeLayout>
+                <ImageView style="@style/bb_information_image_bottom"/>
+                <RelativeLayout
+
+                    android:paddingLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <TextView
+                            style="@style/bb_information_text"
+                            android:text="显示图片"/>
+                        <TextView
+                            android:textColor="#878787"
+                            android:text="文章论坛图片显示"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <com.baibian.view.SwitchButton
+                        android:layout_marginTop="5dp"
+                        android:layout_alignParentRight="true"
+                        style="@style/Switch"
+                        android:scrollbarStyle="insideInset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true" />
+                </RelativeLayout>
+                <ImageView style="@style/bb_information_image_bottom"/>
+                <RelativeLayout
+
+                    android:paddingLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="43dp">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <TextView
+                            style="@style/bb_information_text"
+                            android:text="字体大小"/>
+                        <TextView
+                            android:textColor="#878787"
+                            android:text="字体大小、字体设置"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <com.baibian.view.SwitchButton
+                        android:layout_marginTop="5dp"
+                        android:layout_alignParentRight="true"
+                        style="@style/Switch"
+                        android:scrollbarStyle="insideInset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true" />
+                </RelativeLayout>
+                <ImageView style="@style/bb_information_image_bottom"/>
+                <ImageView
+                    android:layout_marginTop="20dp"
+                    style="@style/bb_information_image_bottom"/>
+                <RelativeLayout
+                    android:id="@+id/push_layout"
+                    android:paddingTop="8dp"
+                    android:paddingLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp">
+                    <TextView
+                        style="@style/bb_information_text"
+                        android:text="推送设置"/>
+                    <ImageView
+                        android:src="@mipmap/gray_direction_right"
+                        style="@style/bb_information_image_right"/>
+                </RelativeLayout>
+                <ImageView style="@style/bb_information_image_bottom"/>
+                <RelativeLayout
+                    android:id="@+id/message_setting"
+                    android:paddingTop="8dp"
+                    android:paddingLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp">
+                    <TextView
+                        style="@style/bb_information_text"
+                        android:text="消息设置"/>
+                    <ImageView
+                        android:src="@mipmap/gray_direction_right"
+                        style="@style/bb_information_image_right"/>
+                </RelativeLayout>
+                <ImageView style="@style/bb_information_image_bottom"/>
+                <ImageView
+                    android:layout_marginTop="10dp"
+                    style="@style/bb_information_image_bottom"/>
+                <RelativeLayout
+                    android:paddingTop="8dp"
+                    android:paddingLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp">
+                    <TextView
+                        style="@style/bb_information_text"
+                        android:text="手机与邮件绑定"/>
+                    <ImageView
+                        android:src="@mipmap/gray_direction_right"
+                        style="@style/bb_information_image_right"/>
+                </RelativeLayout>
+                <ImageView style="@style/bb_information_image_bottom"/>
+                <RelativeLayout
+                    android:paddingTop="8dp"
+                    android:paddingLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp">
+                    <TextView
+                        style="@style/bb_information_text"
+                        android:text="账号与安全"/>
+                    <ImageView
+                        android:src="@mipmap/gray_direction_right"
+                        style="@style/bb_information_image_right"/>
+                </RelativeLayout>
+                <ImageView style="@style/bb_information_image_bottom"/>
+                <RelativeLayout
+                    android:paddingTop="8dp"
+                    android:paddingLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp">
+                    <TextView
+                        style="@style/bb_information_text"
+                        android:text="黑名单"/>
+                    <ImageView
+                        android:src="@mipmap/gray_direction_right"
+                        style="@style/bb_information_image_right"/>
+                </RelativeLayout>
+                <ImageView style="@style/bb_information_image_bottom"/>
+                <ImageView
+                    android:layout_marginTop="20dp"
+                    style="@style/bb_information_image_bottom"/>
+                <RelativeLayout
+                    android:paddingTop="8dp"
+                    android:paddingLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp">
+                    <TextView
+                        style="@style/bb_information_text"
+                        android:text="清除缓存"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textColor="#454545"
+                        android:textSize="18sp"
+                        android:layout_alignParentRight="true"
+                        android:text="0.2222MB"/>
+                </RelativeLayout>
+                <ImageView style="@style/bb_information_image_bottom"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+
+</LinearLayout>
