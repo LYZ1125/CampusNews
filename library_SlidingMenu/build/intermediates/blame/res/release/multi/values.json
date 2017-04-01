@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\lenovo\\Documents\\GitHub\\CampusNewsClients\\library_SlidingMenu\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
+        "outputFile": "C:\\Users\\XZY\\Documents\\CampusNews\\library_SlidingMenu\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 1046
                 },
                 "from": {
-                    "file": "C:\\Users\\lenovo\\Documents\\GitHub\\CampusNewsClients\\library_SlidingMenu\\src\\main\\res\\values\\ids.xml",
+                    "file": "C:\\Users\\XZY\\Documents\\CampusNews\\library_SlidingMenu\\src\\main\\res\\values\\ids.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

@@ -20,7 +20,7 @@ android {
 }
 repositories{
     flatDir{
-        dirs'C:\\Users\\lenovo\\Documents\\GitHub\\CampusNewsClients\\CampusNewsClients\\libs'
+        dirs'..\\CampusNewsClients\\libs'
     }
 }
 dependencies {
