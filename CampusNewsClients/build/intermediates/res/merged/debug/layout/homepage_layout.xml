@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    tools:context=".activity.MainActivity" >
     <Button
         android:id="@+id/homepage_search_button"
         android:background="@drawable/top_search_img"

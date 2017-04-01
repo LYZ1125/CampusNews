@@ -12,7 +12,6 @@
         android:bottomRightRadius="20dip" />
 
     <padding
-        android:top="@dimen/tab_padding_top"
         android:bottom="@dimen/tab_padding_bottom"/>
 
 </shape>

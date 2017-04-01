@@ -1,17 +1,11 @@
 package com.baibian.adapter;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
-import com.baibian.Login4Activity;
-import com.baibian.MainActivity;
-import com.baibian.R;
-import com.baibian.registerActivity;
 
 import java.util.List;
 public class Profile_Drawer_Right_ViewPager_Adapter extends PagerAdapter {

@@ -6,7 +6,7 @@ import android.view.animation.RotateAnimation;
 import android.widget.TextView;
 
 import com.baibian.R;
-import com.baibian.fragment.NewsFragment;
+import com.baibian.fragment.main.NewsFragment;
 import com.baibian.view.HeadListView;
 
 /**
@@ -26,7 +26,7 @@ public class refresh{
         HeadListView headListView = fragmentByTag.getmHeadListView();
 //                headListView.mCurrentState = STATE_REFRESHING;
 //        ((TextView) headListView.findViewById(R.id.tv_title)).setText("æ­£åœ¨åˆ·æ–°...");
-        ((TextView) headListView.findViewById(R.id.tv_title)).setText("ÕýÔÚË¢ÐÂ...");
+        ((TextView) headListView.findViewById(R.id.tv_title)).setText("ï¿½ï¿½ï¿½ï¿½Ë¢ï¿½ï¿½...");
         (headListView.findViewById(R.id.iv_arrow)).clearAnimation();
         (headListView.findViewById(R.id.iv_arrow)).setVisibility(View.INVISIBLE);
         headListView.findViewById(R.id.progressBar).setVisibility(View.VISIBLE);

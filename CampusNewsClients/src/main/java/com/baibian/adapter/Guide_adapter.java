@@ -1,21 +1,17 @@
 package com.baibian.adapter;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ListView;
 
-import com.baibian.Login4Activity;
-import com.baibian.MainActivity;
+import com.baibian.activity.login.Login4Activity;
+import com.baibian.activity.MainActivity;
 import com.baibian.R;
-import com.baibian.registerActivity;
+import com.baibian.activity.login.registerActivity;
 
 import java.util.List;
 

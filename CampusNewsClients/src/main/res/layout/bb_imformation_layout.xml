@@ -300,6 +300,7 @@
                             android:text="夜间模式"/>
 
                         <com.baibian.view.SwitchButton
+                            android:id="@+id/night_mode_btn"
                      android:layout_alignParentRight="true"
                             style="@style/Switch"
                             android:scrollbarStyle="insideInset"

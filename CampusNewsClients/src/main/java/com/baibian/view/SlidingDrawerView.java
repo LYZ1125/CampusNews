@@ -21,9 +21,8 @@ import com.flyco.dialog.listener.OnOperItemClickL;
 import com.flyco.dialog.widget.ActionSheetDialog;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.OnClosedListener;
-import com.baibian.Login4Activity;
+import com.baibian.activity.login.Login4Activity;
 import com.baibian.R;
-import com.baibian.SettingsActivity;
 
 import java.util.List;
 

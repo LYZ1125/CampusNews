@@ -34,7 +34,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.baibian.Welcome"
+            android:name="com.baibian.activity.login.Welcome"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,31 +42,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.baibian.MainActivity" >
+        <activity android:name="com.baibian.activity.MainActivity" >
         </activity>
-        <activity android:name="com.baibian.ChannelActivity" >
+        <activity android:name="com.baibian.activity.ChannelActivity" >
         </activity>
-        <activity android:name="com.baibian.DetailsActivity" >
+        <activity android:name="com.baibian.activity.DetailsActivity" >
         </activity>
-        <activity android:name="com.baibian.CityListActivity" >
+        <activity android:name="com.baibian.activity.CityListActivity" >
         </activity>
-        <activity android:name="com.baibian.SettingsActivity" >
+        <activity android:name="com.baibian.activity.setting.SettingsActivity" >
         </activity>
-        <activity android:name="com.baibian.ImageShowActivity" >
+        <activity android:name="com.baibian.activity.ImageShowActivity" >
         </activity>
-        <activity android:name="com.baibian.Login4Activity" >
+        <activity android:name="com.baibian.activity.login.Login4Activity" >
         </activity>
-        <activity android:name="com.baibian.registerActivity" >
+        <activity android:name="com.baibian.activity.login.registerActivity" >
         </activity>
-        <activity android:name="com.baibian.GuideActivity" >
+        <activity android:name="com.baibian.activity.login.GuideActivity" >
         </activity>
-        <activity android:name="com.baibian.ChoiceDirectionActivity" >
+        <activity android:name="com.baibian.activity.ChoiceDirectionActivity" >
         </activity>
-        <activity android:name="com.baibian.UsersImformationActivity" >
+        <activity android:name="com.baibian.activity.UsersImformationActivity" >
         </activity>
-        <activity android:name="com.baibian.MessageSettingAcitivity" >
+        <activity android:name="com.baibian.activity.setting.MessageSettingAcitivity" >
         </activity>
-        <activity android:name="com.baibian.PushSetting" >
+        <activity android:name="com.baibian.activity.setting.PushSetting" >
+        </activity>
+        <activity android:name="com.baibian.activity.Edit_Information_Activity" >
         </activity>
         <activity
             android:name="com.mob.tools.MobUIShell"

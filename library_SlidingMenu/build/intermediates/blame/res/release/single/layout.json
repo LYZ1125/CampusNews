@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\library_SlidingMenu\\build\\intermediates\\res\\merged\\release\\layout\\slidingmenumain.xml",
+        "source": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\library_SlidingMenu\\src\\main\\res\\layout\\slidingmenumain.xml"
+    },
+    {
         "merged": "C:\\Users\\lenovo\\Documents\\GitHub\\CampusNewsClients\\library_SlidingMenu\\build\\intermediates\\res\\merged\\release\\layout\\slidingmenumain.xml",
         "source": "C:\\Users\\lenovo\\Documents\\GitHub\\CampusNewsClients\\library_SlidingMenu\\src\\main\\res\\layout\\slidingmenumain.xml"
     }

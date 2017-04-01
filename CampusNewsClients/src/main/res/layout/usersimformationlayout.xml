@@ -17,6 +17,7 @@
             android:layout_height="fill_parent"
             android:background="@mipmap/back_mipmap_yellow"/>
         <Button
+            android:id="@+id/users_information_more"
             android:textColor="#ffd71b"
             android:background="@color/transparent"
             android:textSize="32sp"
@@ -24,6 +25,15 @@
             android:text="···"
             android:layout_width="55dp"
             android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/user_information_edit"
+            android:padding="5dp"
+            android:background="@color/transparent"
+            android:src="@mipmap/yellow_pan"
+            android:layout_toLeftOf="@id/users_information_more"
+            android:layout_width="40dp"
+            android:layout_height="55dp"/>
+
 
     </RelativeLayout>
     <!--顶部的个人资料部分-->
