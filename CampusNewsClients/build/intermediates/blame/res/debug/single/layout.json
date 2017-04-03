@@ -144,6 +144,10 @@
         "source": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\notification_template_part_time.xml"
     },
     {
+        "merged": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\edit_information_listitem.xml",
+        "source": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\src\\main\\res\\layout\\edit_information_listitem.xml"
+    },
+    {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\forums_layout.xml",
         "source": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\src\\main\\res\\layout\\forums_layout.xml"
     },
@@ -190,6 +194,10 @@
     {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
         "source": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\edit_information_listitem_bottom.xml",
+        "source": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\src\\main\\res\\layout\\edit_information_listitem_bottom.xml"
     },
     {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\periodicals_layout.xml",
@@ -328,12 +336,12 @@
         "source": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\src\\main\\res\\layout\\popup_toast.xml"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\usersimformationlayout.xml",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\src\\main\\res\\layout\\usersimformationlayout.xml"
-    },
-    {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\city_category_list_tip.xml",
         "source": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\src\\main\\res\\layout\\city_category_list_tip.xml"
+    },
+    {
+        "merged": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\usersimformationlayout.xml",
+        "source": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\src\\main\\res\\layout\\usersimformationlayout.xml"
     },
     {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\edit_informationlayout.xml",

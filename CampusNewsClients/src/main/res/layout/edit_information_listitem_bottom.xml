@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="20dp"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_gravity="center_vertical"
+        android:src="@mipmap/blue_add"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+    <TextView
+        android:padding="3dp"
+        android:textColor="@color/baibian_back_color"
+        android:textSize="15sp"
+        android:text="添加居住地"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

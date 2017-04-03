@@ -8,7 +8,6 @@
 
 
         <LinearLayout
-
             android:id="@+id/login_layout"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -156,7 +155,6 @@
 
         <LinearLayout
             android:id="@+id/left_drawer_ScrollView"
-
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
@@ -409,35 +407,6 @@
         android:layout_weight="0.0"
         android:gravity="center_vertical"
         android:orientation="horizontal" >
-
-        <com.baibian.view.SwitchButton
-            android:id="@+id/night_mode_btn"
-            style="@style/Switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true" />
-
-        <!-- myapp:thumb="@drawable/wiper_switch_slipper_btn" -->
-        <!-- myapp:track="@drawable/wiper_switch_btn" -->
-
-        <TextView
-            android:id="@+id/night_mode_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15.0dip"
-            android:textColor="@color/left_drawer_night_mode_text"
-            android:textSize="15.0sp" />
-        <Button
-            android:id="@+id/exit_btn"
-            android:background="@drawable/shape_corner"
-            android:text="注销/退出"
-            android:layout_width="88dip"
-            android:layout_height="40dip"
-            android:layout_marginLeft="80dip"
-            android:textColor="@color/left_drawer_night_mode_text"
-            android:textSize="15.0sp"/>
-
-
     </LinearLayout>
 
 </LinearLayout>

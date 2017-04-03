@@ -73,4 +73,6 @@ public class AppApplication extends Application {
 		// Initialize ImageLoader with configuration.
 		ImageLoader.getInstance().init(config);//全局初始化此配置
 	}
+
+
 }

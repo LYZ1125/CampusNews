@@ -365,8 +365,6 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
         baibian_btn=(ImageView) side_drawer.findViewById(R.id.baibian_btn);//百辩登录按钮
         logout_layout_not_login=(LinearLayout) side_drawer.findViewById(R.id.logout_layout_not_login);//未登录布局
 
-
-
         baibian_btn.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {

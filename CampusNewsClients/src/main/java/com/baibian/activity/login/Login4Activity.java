@@ -9,10 +9,12 @@ import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baibian.R;
+import com.baibian.tool.UI_Tools;
 
 /**
  * 登录界面的活动
@@ -32,6 +34,7 @@ public class Login4Activity extends Activity {
     protected Button login4ForgetButton;
     protected String account;
     protected String password;
+    private LinearLayout login4_all_layout;
 
     private final int LOGIN4_REQUEST=11;
     @Override
@@ -39,19 +42,10 @@ public class Login4Activity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.login4_layout);
-        imageView11=(TextView) findViewById(R.id.login4img11);
-        imageView12=(ImageView) findViewById(R.id.login4img12);
-        imageView13=(ImageView) findViewById(R.id.login4img13);
-        imageView21=(ImageView) findViewById(R.id.login4img21);
-        imageView22=(ImageView) findViewById(R.id.login4img22);
-        imageView31=(ImageView) findViewById(R.id.login4img31);
-        imageView32=(ImageView) findViewById(R.id.login4img32);
-        login4loginbutton=(Button) findViewById(R.id.login4loginButton);
-        login4RegisterButton=(Button) findViewById(R.id.login4registerbutton);
-        login4ForgetButton=(Button) findViewById(R.id.login4forgetbutton);
-        login4AccountEdit=(EditText) findViewById(R.id.login4AccountEdit);
-        login4passwordEdit=(EditText) findViewById(R.id.login4passwordEdit);
+        initview();
         ImageViewAnimation(); //这个方法负责初始化时，7张图片的动画效果
+        UI_Tools ui_tools=new UI_Tools();
+        ui_tools.CancelFocusOne(this,login4_all_layout,login4AccountEdit);
         //登录Button响应事件
 
         login4loginbutton.setOnClickListener(new View.OnClickListener() {
@@ -94,6 +88,21 @@ public class Login4Activity extends Activity {
             }
         });
 
+    }
+    private void initview(){
+        imageView11=(TextView) findViewById(R.id.login4img11);
+        imageView12=(ImageView) findViewById(R.id.login4img12);
+        imageView13=(ImageView) findViewById(R.id.login4img13);
+        imageView21=(ImageView) findViewById(R.id.login4img21);
+        imageView22=(ImageView) findViewById(R.id.login4img22);
+        imageView31=(ImageView) findViewById(R.id.login4img31);
+        imageView32=(ImageView) findViewById(R.id.login4img32);
+        login4loginbutton=(Button) findViewById(R.id.login4loginButton);
+        login4RegisterButton=(Button) findViewById(R.id.login4registerbutton);
+        login4ForgetButton=(Button) findViewById(R.id.login4forgetbutton);
+        login4AccountEdit=(EditText) findViewById(R.id.login4AccountEdit);
+        login4passwordEdit=(EditText) findViewById(R.id.login4passwordEdit);
+        login4_all_layout=(LinearLayout) findViewById(R.id.login4_all_layout);
     }
     //这个方法负责初始化时，7张图片的动画效果
     protected void  ImageViewAnimation(){

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:clickable="true"
+        android:id="@+id/remove_btn"
+        android:layout_gravity="center_vertical"
+        android:src="@mipmap/red_minus"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+    <EditText
+        android:maxLength="15"
+        android:paddingTop="3dp"
+        android:background="@null"
+        android:textSize="15sp"
+        android:hint="请添加居住地"
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+</LinearLayout>

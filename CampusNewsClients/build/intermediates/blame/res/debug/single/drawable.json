@@ -32,12 +32,12 @@
         "source": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\src\\main\\res\\drawable\\ic_action_share.xml"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_drawer_pgc.xml",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\src\\main\\res\\drawable\\ic_drawer_pgc.xml"
-    },
-    {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
         "source": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_drawer_pgc.xml",
+        "source": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\src\\main\\res\\drawable\\ic_drawer_pgc.xml"
     },
     {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable\\menu_back_sliding.xml",
@@ -412,12 +412,12 @@
         "source": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\src\\main\\res\\drawable\\ic_drawer_search.xml"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable\\login_back_focus.xml",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\src\\main\\res\\drawable\\login_back_focus.xml"
-    },
-    {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable\\login4layout2back.png",
         "source": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\src\\main\\res\\drawable\\login4layout2back.png"
+    },
+    {
+        "merged": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable\\login_back_focus.xml",
+        "source": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\src\\main\\res\\drawable\\login_back_focus.xml"
     },
     {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_notify.xml",

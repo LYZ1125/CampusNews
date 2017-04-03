@@ -7,9 +7,11 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.baibian.R;
+import com.baibian.tool.UI_Tools;
 
 import java.util.HashMap;
 import cn.smssdk.EventHandler;
@@ -30,12 +32,15 @@ public class registerActivity extends Activity  implements View.OnClickListener 
     protected String password1;//第一次输入的密码
     protected String password2;//再次输入的密码
     private String phone;//电话号码
+    private LinearLayout register_all_layout;//注册界面的全布局
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.register_layout);
         initview();
+        UI_Tools ui_tools=new UI_Tools();
+        ui_tools.CancelFocusOne(this,register_all_layout,register_confirm_editText);
         /**
          * SMS SDK调用。。。
          */
@@ -68,6 +73,7 @@ public class registerActivity extends Activity  implements View.OnClickListener 
         register_confirm_editText = (EditText) findViewById(R.id.register_confirm_editText);
         regiter_loginButton = (Button) findViewById(R.id.regiter_loginButton);
         register_or_login_button = (Button) findViewById(R.id.register_or_login_button);
+        register_all_layout=(LinearLayout) findViewById(R.id.register_all_layout);
         regiter_loginButton.setOnClickListener(this);
         register_or_login_button.setOnClickListener(this);
     }
