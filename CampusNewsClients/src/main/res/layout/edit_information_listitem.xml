@@ -12,11 +12,13 @@
         android:layout_width="20dp"
         android:layout_height="20dp" />
     <EditText
+        android:singleLine="true"
+        android:id="@+id/edit_text"
         android:maxLength="15"
         android:paddingTop="3dp"
         android:background="@null"
         android:textSize="15sp"
         android:hint="请添加居住地"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="30dp" />
 </LinearLayout>

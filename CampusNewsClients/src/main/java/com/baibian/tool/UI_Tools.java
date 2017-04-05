@@ -42,10 +42,8 @@ public class UI_Tools {
                     .requestFocus();
             listViewGroup.get(i)
                     .setOnTouchListener(new View.OnTouchListener() {
-
                         public boolean onTouch(View v, MotionEvent event) {
                             // TODO Auto-generated method stub
-
                             InputMethodManager imm = (InputMethodManager) activity.getSystemService(activity.INPUT_METHOD_SERVICE);
                             //  imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);//这行代码可以弹出软键盘，但是在这个地方没有屁用
                             imm.hideSoftInputFromWindow(edittext.getWindowToken(), 0);//这行代码隐藏软键盘

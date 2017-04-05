@@ -20,7 +20,6 @@ public class EditImformation_ListView_Adapter extends BaseAdapter {
     public List<String> mList;
 
     public EditImformation_ListView_Adapter(Context context, List<String> list) {
-
         this.mContext = context;
         this.mInflater = LayoutInflater.from(mContext);
         this.mList = list;
@@ -67,7 +66,6 @@ public class EditImformation_ListView_Adapter extends BaseAdapter {
                 @Override
                 public void onClick(View view) {
                     mList.remove(i);
-
                 }
             });
         }

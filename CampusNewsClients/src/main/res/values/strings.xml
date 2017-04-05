@@ -86,5 +86,7 @@
     <string name="loading_more">正在加载更多数据...</string>
     <string name="BBstate">BB发言</string>
     <string name="BBimformation">BB资料</string>
+    <string name="maxadd">最多添加</string>
+    <string name="maxadd2">个~</string>
 
 </resources>
