@@ -1,28 +1,19 @@
 package com.baibian;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.widget.*;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.content.Context;
-import com.baibian.adapter.Tablayout_Adapter_Right;
+
 import com.baibian.adapter.Users_Viwepager_Adapter;
-import com.baibian.fragment.BaiBianImformationFragment;
-import com.baibian.fragment.BaiBianStatementFragment;
-import com.baibian.fragment.ClassificationFragment;
-import com.baibian.fragment.FocusFragment;
-import com.baibian.fragment.HotFragment;
-import com.baibian.fragment.IntegrationFragment;
-import com.baibian.fragment.RealTimeFragment;
+import com.baibian.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsersImformationActivity extends Activity {
+public class UsersImformationActivity extends BaseActivity {
 
     private Button BB_state_btn;
     private Button BB_imformation_btn;

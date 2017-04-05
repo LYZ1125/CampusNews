@@ -17,13 +17,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baibian.Login4Activity;
+import com.baibian.R;
 import com.flyco.dialog.listener.OnOperItemClickL;
 import com.flyco.dialog.widget.ActionSheetDialog;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu.OnClosedListener;
-import com.baibian.Login4Activity;
-import com.baibian.R;
-import com.baibian.SettingsActivity;
 
 import java.util.List;
 
@@ -89,7 +88,7 @@ public class SlidingDrawerView implements OnClickListener{
 		localSlidingMenu.setBehindOffsetRes(R.dimen.slidingmenu_offset);//SlidingMenu划出时主页面显示的剩余宽度
 		localSlidingMenu.setFadeDegree(0.35F);//SlidingMenu滑动时渐变程度
 		localSlidingMenu.attachToActivity(activity, SlidingMenu.RIGHT);//使SlidingMenu附加在Activity右边
-//		localSlidingMenu.setBehindWidthRes(R.dimen.left_drawer_avatar_size);//设置SlidingMenu菜单的宽度
+//		localSlidingMenu.setBehindWidthRes(R.dimen.left_drawer_avatar_size);//设置Sliding`1Menu菜单的宽度
 //		1
 		localSlidingMenu.setMenu(R.layout.left_drawer_fragment);//设置menu布局文件
 //		localSlidingMenu.toggle();//动态判断自动关闭或开启SlidingMenu

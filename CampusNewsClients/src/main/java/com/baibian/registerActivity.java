@@ -2,13 +2,21 @@ package com.baibian;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.baibian.crawler.HttpTool;
+import com.baibian.tool.ToastTools;
+import com.squareup.okhttp.Response;
+
 import java.util.HashMap;
+
 import cn.smssdk.EventHandler;
 import cn.smssdk.SMSSDK;
 import cn.smssdk.gui.RegisterPage;
@@ -27,6 +35,9 @@ public class registerActivity extends Activity  implements View.OnClickListener 
     protected String password1;//第一次输入的密码
     protected String password2;//再次输入的密码
     private String phone;//电话号码
+    private Response signInResponse;
+    private Handler handler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,10 +97,32 @@ public class registerActivity extends Activity  implements View.OnClickListener 
                 } else if (!password1.equals(password2)) {
                     Toast.makeText(registerActivity.this, R.string.different_password, Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(registerActivity.this, "R.string.login_succeed", Toast.LENGTH_SHORT).show();
-                    Intent intent1 = new Intent(registerActivity.this, Login4Activity.class);
-                    startActivity(intent1);
-                    finish();
+                    //用于接受登录、注册子线程的返回数据
+                    handler = new Handler() {
+                        @Override
+                        public void handleMessage(Message msg) {
+                            super.handleMessage(msg);
+                            signInResponse = (Response) msg.obj;
+                            if (signInResponse.code() == 200) {
+                                System.out.println("返回值为200");
+                                ToastTools.ToastShow(getString(R.string.signIn_OK));
+                                //开启新线程，并将response传过去。
+                                Intent intent1 = new Intent(registerActivity.this, MainActivity.class);
+                                intent1.putExtra("response", String.valueOf(signInResponse));
+                                startActivity(intent1);
+                                finish();
+                            }
+                            //帐号已存在
+                            /*else if (signInResponse.code() == 401) {
+                                System.out.println("返回值为401");
+                                login4passwordEdit.setText("");
+                                ToastTools.ToastShow(getString(R.string.account_or_password_error));
+                            }*/else{
+                                ToastTools.ToastShow(getString(R.string.timeout));
+                            }
+                        }
+                    };
+                    signUp(account, password1);
                 }
                 break;
             case R.id.register_or_login_button:
@@ -99,5 +132,28 @@ public class registerActivity extends Activity  implements View.OnClickListener 
                 finish();
                 break;
         }
+    }
+
+    /*
+* 注册方法
+* */
+    private Response signUp(String account, String password) {
+        String user = HttpTool.getSignUpJson(account, password);
+        Response response = sign("/api/signup", user);
+        return response;
+    }
+
+    public Response sign(final String path, final String user){
+        final Response[] post = new Response[1];
+        new Thread() {
+            public void run() {
+                System.out.println("123" + user);
+                post[0] = HttpTool.post(user, path);
+                Message message = Message.obtain();
+                message.obj = post[0];
+                handler.sendMessage(message);
+            }
+        }.start();
+        return post[0];
     }
 }

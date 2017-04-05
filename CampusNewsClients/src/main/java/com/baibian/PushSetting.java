@@ -1,11 +1,12 @@
 package com.baibian;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class PushSetting extends Activity {
+import com.baibian.base.BaseActivity;
+
+public class PushSetting extends BaseActivity {
     private Button choise_direction_back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

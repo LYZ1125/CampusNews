@@ -5,22 +5,18 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.LinearLayoutCompat;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.ProgressBar;
-import android.widget.Toast;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import com.baibian.MainActivity;
+import android.widget.TextView;
+
 import com.baibian.R;
-import android.util.DisplayMetrics;
-import android.view.WindowManager;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -37,7 +33,7 @@ public class Forums_Integration_Refresh_FootAdapter extends RecyclerView.Adapter
 
     private MyItemClickListener mItemClickListener;
     /**
-     *progresstext正方中立，反方的数量的定义,,这里暂时使用初始数值作为测试
+     *progresstext正方中立，反方的数量的定义,,这里暂时   使用初始数值作为测试
      */
     private float positiveNumber=560;//正方数量
     private float neutralNumber=234;//中立数量
