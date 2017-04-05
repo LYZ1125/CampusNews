@@ -1,14 +1,15 @@
 package com.baibian;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.FrameLayout;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
-import android.view.animation.*;
+import android.widget.FrameLayout;
 
-public class ChoiceDirectionActivity extends Activity {
+import com.baibian.base.BaseActivity;
+
+public class ChoiceDirectionActivity extends BaseActivity {
     private Button choise_direction_back;
     private FrameLayout frameLayout21;
     private FrameLayout frameLayout22;

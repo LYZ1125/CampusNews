@@ -143,7 +143,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 
         initSlidingMenu();
 
-        init_guide();//引导界面的初始化
+//        init_guide();//引导界面的初始化
 
         initViews();
         fragmentManager = getFragmentManager();

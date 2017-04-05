@@ -1,12 +1,11 @@
 package com.baibian;
 
-import android.app.Activity;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.baibian.adapter.Guide_adapter;
+import com.baibian.base.BaseActivity;
 import com.baibian.tool.springindicator.SpringIndicator;
 
 import java.util.ArrayList;
@@ -16,7 +15,7 @@ import java.util.List;
  * 引导界面的活动
  */
 
-public class GuideActivity extends Activity{
+public class GuideActivity extends BaseActivity{
     private List<View> viewList;
     private Guide_adapter myPagerAdapter;
     public ViewPager pager;

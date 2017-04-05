@@ -24,12 +24,12 @@
         "source": "C:\\Users\\XZY\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_alert_dialog_material.xml"
     },
     {
-        "merged": "C:\\Users\\XZY\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
-        "source": "C:\\Users\\XZY\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_dialog_title_material.xml"
-    },
-    {
         "merged": "C:\\Users\\XZY\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\forums_recycler_item_layout.xml",
         "source": "C:\\Users\\XZY\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\layout\\forums_recycler_item_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\XZY\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "C:\\Users\\XZY\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
         "merged": "C:\\Users\\XZY\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\slidingmenumain.xml",
@@ -100,12 +100,12 @@
         "source": "C:\\Users\\XZY\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\layout\\settings.xml"
     },
     {
-        "merged": "C:\\Users\\XZY\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\bb_imformation_layout.xml",
-        "source": "C:\\Users\\XZY\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\layout\\bb_imformation_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\XZY\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\register_layout.xml",
         "source": "C:\\Users\\XZY\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\layout\\register_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\XZY\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\bb_imformation_layout.xml",
+        "source": "C:\\Users\\XZY\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\layout\\bb_imformation_layout.xml"
     },
     {
         "merged": "C:\\Users\\XZY\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\city_category_list_tip.xml",

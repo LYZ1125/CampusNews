@@ -20,7 +20,6 @@ import android.widget.Toast;
 
 import com.baibian.CityListActivity;
 import com.baibian.DetailsActivity;
-import com.baibian.MainActivity;
 import com.baibian.R;
 import com.baibian.adapter.NewsAdapter;
 import com.baibian.bean.NewsEntity;
@@ -30,7 +29,10 @@ import com.baibian.view.HeadListView;
 
 import java.util.ArrayList;
 
-
+/**
+ * Created by XZY on 2016/11/8.
+ *
+ */
 public class NewsFragment extends Fragment {
     private final static String TAG = "NewsFragment";
     Activity activity;

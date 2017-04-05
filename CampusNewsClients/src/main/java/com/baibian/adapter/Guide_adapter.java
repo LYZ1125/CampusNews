@@ -1,21 +1,19 @@
 package com.baibian.adapter;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.ListView;
 
 import com.baibian.Login4Activity;
 import com.baibian.MainActivity;
 import com.baibian.R;
+import com.baibian.app.AppApplication;
 import com.baibian.registerActivity;
+import com.baibian.tool.PrefTools;
 
 import java.util.List;
 
@@ -65,6 +63,10 @@ public class Guide_adapter extends PagerAdapter  {
     @Override
     public Object instantiateItem(View arg0,int arg1){
         ((ViewPager) arg0).addView(Viewlist.get(arg1), 0);
+        //更新sp, 已经不是第一次进入了
+        //AppApplication.getContext():通用的取context的方法
+        PrefTools.setBoolean(AppApplication.getContext(), "is_first_enter", false);
+
         /**
          * 当进入最后一个界面时，实例化三个按钮，
          */
