@@ -1,5 +1,4 @@
 package com.baibian.app;
-
 import android.app.Application;
 import android.content.Context;
 import android.util.Log;
@@ -16,28 +15,41 @@ import java.io.File;
 
 public class AppApplication extends Application {
 	private static AppApplication mAppApplication;
+	private static Context mContext;
 	private SQLHelper sqlHelper;
-	
+
 	@Override
 	public void onCreate() {
 		// TODO Auto-generated method stub
 		super.onCreate();
+		mContext = getApplicationContext();
 		initImageLoader(getApplicationContext());
 		mAppApplication = this;
 	}
-	
-	/** 获取Application */
+
+	/**
+	 * 获取Application
+	 */
 	public static AppApplication getApp() {
 		return mAppApplication;
 	}
-	
-	/** 获取数据库Helper */
+
+	/**
+	 * 获取context
+	 */
+	public static Context getContext() {
+		return mContext;
+	}
+
+	/**
+	 * 获取数据库Helper
+	 */
 	public SQLHelper getSQLHelper() {
 		if (sqlHelper == null)
 			sqlHelper = new SQLHelper(mAppApplication);
 		return sqlHelper;
 	}
-	
+
 	@Override
 	public void onTerminate() {
 		// TODO Auto-generated method stub
@@ -46,7 +58,10 @@ public class AppApplication extends Application {
 		super.onTerminate();
 		//整体摧毁的时候调用这个方法
 	}
-	/** 初始化ImageLoader */
+
+	/**
+	 * 初始化ImageLoader
+	 */
 	public static void initImageLoader(Context context) {
 		File cacheDir = StorageUtils.getOwnCacheDirectory(context, "baibian/Cache");//获取到缓存的目录地址
 		Log.d("cacheDir", cacheDir.getPath());
@@ -59,8 +74,8 @@ public class AppApplication extends Application {
 				.threadPriority(Thread.NORM_PRIORITY - 2)
 				.denyCacheImageMultipleSizesInMemory()
 				//.memoryCache(new UsingFreqLimitedMemoryCache(2 * 1024 * 1024)) // You can pass your own memory cache implementation你可以通过自己的内存缓存实现
-				//.memoryCacheSize(2 * 1024 * 1024)  
-				///.discCacheSize(50 * 1024 * 1024)  
+				//.memoryCacheSize(2 * 1024 * 1024)
+				///.discCacheSize(50 * 1024 * 1024)
 				.discCacheFileNameGenerator(new Md5FileNameGenerator())//将保存的时候URI名称用MD5加密
 				//.discCacheFileNameGenerator(new HashCodeFileNameGenerator())//将保存的时候的URI名称用HASHCODE加密
 				.tasksProcessingOrder(QueueProcessingType.LIFO)
@@ -73,6 +88,4 @@ public class AppApplication extends Application {
 		// Initialize ImageLoader with configuration.
 		ImageLoader.getInstance().init(config);//全局初始化此配置
 	}
-
-
 }

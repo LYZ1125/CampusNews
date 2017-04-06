@@ -146,7 +146,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 
         initSlidingMenu();
 
-        init_guide();//引导界面的初始化
+//        init_guide();//引导界面的初始化
 
         initViews();
         fragmentManager = getFragmentManager();
@@ -329,24 +329,24 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
             transaction.hide(periodicalsFragment);
         }
     }
-
-
-
-    /**
-     * 引导界面初始化部分
-     */
-    private void init_guide(){
-        preferences = getSharedPreferences("phone", Context.MODE_PRIVATE);
-        if (preferences.getBoolean("firststart", true)) {
-            editor = preferences.edit();
-            //将登录标志位设置为false，下次登录时不在显示首次登录界面
-            editor.putBoolean("firststart", false);
-            editor.commit();
-            Intent intent = new Intent(MainActivity.this, GuideActivity.class);
-            startActivity(intent);
-            finish();
-        }
-    }
+//
+//
+//
+//    /**
+//     * 引导界面初始化部分
+//     */
+//    private void init_guide(){
+//        preferences = getSharedPreferences("phone", Context.MODE_PRIVATE);
+//        if (preferences.getBoolean("firststart", true)) {
+//            editor = preferences.edit();
+//            //将登录标志位设置为false，下次登录时不在显示首次登录界面
+//            editor.putBoolean("firststart", false);
+//            editor.commit();
+//            Intent intent = new Intent(MainActivity.this, GuideActivity.class);
+//            startActivity(intent);
+//            finish();
+//        }
+//    }
 
 
     @Override

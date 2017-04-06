@@ -3,33 +3,6 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="f22b30e27630db722a569c0451feda2153806252">
-        <dex dex="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_5a2c3609d647b12af4098c04d3173bb7eaa33b15\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\com.android.support\design\22.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
-        <dex dex="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-22.2.0_ea912963f11152ed20a9986d9215782b350b9b83\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\libs\universal-image-loader-1.9.2-SNAPSHOT-with-sources.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="e33324b770223932d467e4ec39639b0c15f3b94e">
-        <dex dex="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\2\universal-image-loader-1.9.2-SNAPSHOT-with-sources_ade72aef77bb43bc0f1005ce5288689523d0f83c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\libs\MobCommons-2016.1201.1839.jar"
         jumboMode="true"
         optimize="true"
@@ -39,21 +12,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\libs\MobTools-2016.1201.1839.jar"
+        jar="C:\Users\lenovo\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.4.0\5b72bf48563ea8410e650de14aa33ff69a3e8c35\okio-1.4.0.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="28b130b739199908b8b9f82d6cc77043b5040d25">
-        <dex dex="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\2\MobTools-2016.1201.1839_1a5414a988f2652ee8794167e2b5c018d13d326f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\SMSSDK-2.1.3\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fc6d206c94c04bb831ae00c9f6a2833e6aab8a73">
-        <dex dex="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\intermediates-exploded-aar-SMSSDK-2.1.3_8b3d83daf49afff231df980fe8a8f9344c10e9b0\classes.dex" />
+        sha1="5b72bf48563ea8410e650de14aa33ff69a3e8c35">
+        <dex dex="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.4.0_cff2aef4b8e098cfe471d20d2c0bc8343343f945\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -63,15 +27,6 @@
         revision="24.0.2"
         sha1="df48f74b021b90bfdd5b5ca21935cf9453c282f0">
         <dex dex="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\com.flyco.dialog-FlycoDialog_Lib-1.3.2_128c27a5c7f6f9cdb5dc38c5c56a492303a143f9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\com.android.support\design\22.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
-        <dex dex="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-22.2.0_9732461eb162807fcb704c29d6811b7e8af15f21\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -120,24 +75,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-22.2.0_367ea135ba771d86263acd4cebcff263195f3880\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-22.2.0_fb55947ec00588f548e04b20fbce3c65c1dc0fb2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\22.0.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -174,15 +111,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\SMSSDKGUI-2.1.3\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="117dde8406e2a9aed9d525a23ea465952d601072">
-        <dex dex="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\intermediates-exploded-aar-SMSSDKGUI-2.1.3_c9dc272d78491008a9ede7012c5919880605e2d4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\libs\jsoup-1.7.2.jar"
         jumboMode="true"
         optimize="true"
@@ -192,30 +120,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\com.flyco.dialog\FlycoDialog_Lib\1.3.2\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="df48f74b021b90bfdd5b5ca21935cf9453c282f0">
-        <dex dex="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\com.flyco.dialog-FlycoDialog_Lib-1.3.2_c76f7a2f18f6ce5f64825a39b6819120d5ce3f01\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\libs\MobTools-2016.1201.1839.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="28b130b739199908b8b9f82d6cc77043b5040d25">
         <dex dex="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\2\MobTools-2016.1201.1839_a3d7d27ad25a91a3e8bc42069d6fef94c1ccd337\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-22.2.0_a76117413e4b3fcffb2a029ac425703600e17495\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -250,8 +160,125 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="9bd7a1f94a6d4eeab229fe12f5438b6ca60b2c9c">
+        sha1="4419ba11230e40852c646c1621513c64ec845d50">
         <dex dex="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_89ae5ef37b9e11fad20ca296a1b5d443797df0aa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\com.github.chenupt.android\springindicator\1.0.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b7c43c8ddfc4ae2091a33f2882927bb4e3e2fee2">
+        <dex dex="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\com.github.chenupt.android-springindicator-1.0.2_dcad6f3607d17bc1cf5f118391a1c41f5cdfce69\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="558471f4122637d0cdf3ca93c2ad91088a6062da">
+        <dex dex="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_5a2c3609d647b12af4098c04d3173bb7eaa33b15\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\com.android.support\design\22.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-22.2.0_ea912963f11152ed20a9986d9215782b350b9b83\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\libs\universal-image-loader-1.9.2-SNAPSHOT-with-sources.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e33324b770223932d467e4ec39639b0c15f3b94e">
+        <dex dex="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\2\universal-image-loader-1.9.2-SNAPSHOT-with-sources_ade72aef77bb43bc0f1005ce5288689523d0f83c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\libs\MobTools-2016.1201.1839.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="28b130b739199908b8b9f82d6cc77043b5040d25">
+        <dex dex="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\2\MobTools-2016.1201.1839_1a5414a988f2652ee8794167e2b5c018d13d326f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\SMSSDK-2.1.3\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fc6d206c94c04bb831ae00c9f6a2833e6aab8a73">
+        <dex dex="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\intermediates-exploded-aar-SMSSDK-2.1.3_8b3d83daf49afff231df980fe8a8f9344c10e9b0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lenovo\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp\okhttp\2.4.0\40340c0748190fe897baf7bffbc1b282734294e5\okhttp-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
+        <dex dex="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-2.4.0_2662dfb728553f2828cdd4ef67d5bf9b3f2cd9a3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\com.android.support\design\22.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-22.2.0_9732461eb162807fcb704c29d6811b7e8af15f21\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-22.2.0_367ea135ba771d86263acd4cebcff263195f3880\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-22.2.0_fb55947ec00588f548e04b20fbce3c65c1dc0fb2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\SMSSDKGUI-2.1.3\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="117dde8406e2a9aed9d525a23ea465952d601072">
+        <dex dex="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\intermediates-exploded-aar-SMSSDKGUI-2.1.3_c9dc272d78491008a9ede7012c5919880605e2d4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\com.flyco.dialog\FlycoDialog_Lib\1.3.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="df48f74b021b90bfdd5b5ca21935cf9453c282f0">
+        <dex dex="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\com.flyco.dialog-FlycoDialog_Lib-1.3.2_c76f7a2f18f6ce5f64825a39b6819120d5ce3f01\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-22.2.0_a76117413e4b3fcffb2a029ac425703600e17495\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -270,15 +297,6 @@
         revision="24.0.2"
         sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
         <dex dex="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-22.2.0_8b11ddcb157ee90d41dc7d1af7b11544459c6de2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\exploded-aar\com.github.chenupt.android\springindicator\1.0.2\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="b7c43c8ddfc4ae2091a33f2882927bb4e3e2fee2">
-        <dex dex="C:\Users\lenovo\Documents\GitHub\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\com.github.chenupt.android-springindicator-1.0.2_dcad6f3607d17bc1cf5f118391a1c41f5cdfce69\classes.dex" />
     </item>
 
 </items>

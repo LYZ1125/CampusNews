@@ -1,4 +1,4 @@
-#Thu Apr 06 09:27:41 CST 2017
+#Thu Apr 06 23:31:16 CST 2017
 base.0=C\:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_89ae5ef37b9e11fad20ca296a1b5d443797df0aa
 renamed.1=classes.dex
 renamed.0=classes2.dex
