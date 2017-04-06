@@ -7,7 +7,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="44051b8bd9051cb96a1bffee4413fe18a3732211">
+        sha1="f22b30e27630db722a569c0451feda2153806252">
         <dex dex="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_5a2c3609d647b12af4098c04d3173bb7eaa33b15\classes.dex" />
     </item>
     <item
@@ -250,7 +250,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="46764d50b050de36526e842b9dc89b2ee03fbcca">
+        sha1="9bd7a1f94a6d4eeab229fe12f5438b6ca60b2c9c">
         <dex dex="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_89ae5ef37b9e11fad20ca296a1b5d443797df0aa\classes.dex" />
     </item>
     <item

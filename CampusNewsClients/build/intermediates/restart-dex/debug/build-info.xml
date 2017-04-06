@@ -5,46 +5,32 @@
     density="420dpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="957603526490666"
+    timestamp="1076419213287111"
     token="-2421912111732470165"
     verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="555" />
+        duration="1929" />
     <task
         name="instant-run-dex"
-        duration="359" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="45" />
+        duration="54" />
     <task
         name="verifier"
-        duration="8" />
-
-    <artifact
-        location="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-        type="RESOURCES" />
-    <artifact
-        location="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\reload-dex\debug\classes.dex"
-        type="RELOAD_DEX" />
+        duration="43" />
 
     <build
-        timestamp="957365400032888"
+        timestamp="1076232539569333"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\outputs\apk\CampusNewsClients-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="957603526490666"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
-            type="RESOURCES" />
-        <artifact
-            location="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\reload-dex\debug\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
+        timestamp="1076419213287111"
+        verifier="COMPATIBLE" />
 
 </instant-run>
