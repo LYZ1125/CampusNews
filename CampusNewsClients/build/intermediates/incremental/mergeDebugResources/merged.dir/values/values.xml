@@ -1272,6 +1272,7 @@
     <string name="focus">关注</string>
     <string name="forget_password">忘记密码</string>
     <string name="frindly_reminder">友情提示</string>
+    <string name="haved_account">该账号已存在</string>
     <string name="hello_world">Hello world!</string>
     <string name="hot">热门</string>
     <string name="integration">综合</string>
@@ -1318,6 +1319,7 @@
     <string name="setting_use_help">使用帮助</string>
     <string name="setting_use_swipe">左右翻页</string>
     <string name="signIn_OK">登录成功</string>
+    <string name="signUp_OK">注册成功</string>
     <string name="smssdk_add_contact">添加</string>
     <string name="smssdk_back">返回 </string>
     <string name="smssdk_cancel">取消</string>

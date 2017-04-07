@@ -3,6 +3,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -12,11 +13,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.widget.LinearLayout;
 import com.baibian.R;
 import com.baibian.base.BaseActivity;
 import com.baibian.tool.HttpTool;
+import com.baibian.tool.LinearLayout_Inflaterable;
 import com.baibian.tool.ToastTools;
+import com.baibian.tool.UI_Tools;
 import com.squareup.okhttp.Response;
 
 /**
@@ -37,7 +40,7 @@ public class Login4Activity extends BaseActivity {
     protected Button login4ForgetButton;
     protected String account;
     protected String password;
-
+    private LinearLayout login4_all_layout;
     private final int LOGIN4_REQUEST = 11;
     private Response signInResponse;
     private Handler handler;
@@ -60,6 +63,9 @@ public class Login4Activity extends BaseActivity {
         login4ForgetButton = (Button) findViewById(R.id.login4forgetbutton);
         login4AccountEdit = (EditText) findViewById(R.id.login4AccountEdit);
         login4passwordEdit = (EditText) findViewById(R.id.login4passwordEdit);
+        login4_all_layout=(LinearLayout) findViewById(R.id.login4_all_layout);
+        UI_Tools ui_tools = new UI_Tools();
+        ui_tools.CancelFocusOne(this, login4_all_layout, login4AccountEdit);
         ImageViewAnimation(); //这个方法负责初始化时，7张图片的动画效果
         //登录Button响应事件
 

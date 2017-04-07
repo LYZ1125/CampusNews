@@ -5,37 +5,37 @@
     density="420dpi"
     format="8"
     plugin-version="2.2.3"
-    timestamp="1127055578579555"
+    timestamp="1210677042723555"
     token="-2421912111732470165"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FIELD_ADDED" >
 
     <task
         name="javac"
-        duration="191" />
+        duration="785" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="19" />
+        duration="54" />
     <task
         name="verifier"
-        duration="3" />
+        duration="18" />
 
     <artifact
         location="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
         type="DEX" />
 
     <build
-        timestamp="1126861367314222"
+        timestamp="1210305479076444"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\outputs\apk\CampusNewsClients-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="1127055578579555"
-        verifier="COLD_SWAP_REQUESTED" >
+        timestamp="1210677042723555"
+        verifier="FIELD_ADDED" >
         <artifact
             location="C:\Users\lenovo\Documents\CampusNewsClients\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
             type="DEX" />
