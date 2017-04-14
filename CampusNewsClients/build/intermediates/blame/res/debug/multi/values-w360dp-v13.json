@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w360dp-v13\\values-w360dp-v13.xml",
+        "outputFile": "C:\\Users\\XZY\\Documents\\GitHub\\CampusNews\\CampusNewsClients\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w360dp-v13\\values-w360dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 105
                 },
                 "from": {
-                    "file": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\values-w360dp\\values-w360dp.xml",
+                    "file": "C:\\Users\\XZY\\.android\\build-cache\\a6ce41feca7f74d1e4c10cc9322c676314a68288\\output\\res\\values-w360dp\\values-w360dp.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

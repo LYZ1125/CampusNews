@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xlarge-land-v4\\values-xlarge-land-v4.xml",
+        "outputFile": "C:\\Users\\XZY\\Documents\\GitHub\\CampusNews\\CampusNewsClients\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-xlarge-land-v4\\values-xlarge-land-v4.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 114
                 },
                 "from": {
-                    "file": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\values-xlarge-land\\values-xlarge-land.xml",
+                    "file": "C:\\Users\\XZY\\.android\\build-cache\\a6ce41feca7f74d1e4c10cc9322c676314a68288\\output\\res\\values-xlarge-land\\values-xlarge-land.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

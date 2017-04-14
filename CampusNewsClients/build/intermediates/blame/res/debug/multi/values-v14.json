@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
+        "outputFile": "C:\\Users\\XZY\\Documents\\GitHub\\CampusNews\\CampusNewsClients\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 201
                 },
                 "from": {
-                    "file": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\src\\main\\res\\values-v14\\styles.xml",
+                    "file": "C:\\Users\\XZY\\Documents\\GitHub\\CampusNews\\CampusNewsClients\\src\\main\\res\\values-v14\\styles.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -33,14 +33,14 @@
                     "endOffset": 477
                 },
                 "from": {
-                    "file": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\XZY\\.android\\build-cache\\622cd7b110d0b9dcca83eb3747cd00303dca1fa6\\output\\res\\values-v14\\values-v14.xml",
                     "position": {
-                        "startLine": 4,
+                        "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 301,
-                        "endLine": 8,
+                        "startOffset": 55,
+                        "endLine": 6,
                         "endColumn": 12,
-                        "endOffset": 572
+                        "endOffset": 326
                     }
                 }
             },
@@ -53,13 +53,13 @@
                     "endOffset": 548
                 },
                 "from": {
-                    "file": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\XZY\\.android\\build-cache\\622cd7b110d0b9dcca83eb3747cd00303dca1fa6\\output\\res\\values-v14\\values-v14.xml",
                     "position": {
-                        "startLine": 11,
+                        "startLine": 7,
                         "startColumn": 4,
-                        "startOffset": 818,
+                        "startOffset": 331,
                         "endColumn": 70,
-                        "endOffset": 884
+                        "endOffset": 397
                     }
                 }
             },
@@ -72,13 +72,13 @@
                     "endOffset": 631
                 },
                 "from": {
-                    "file": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\XZY\\.android\\build-cache\\622cd7b110d0b9dcca83eb3747cd00303dca1fa6\\output\\res\\values-v14\\values-v14.xml",
                     "position": {
-                        "startLine": 12,
+                        "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 889,
+                        "startOffset": 402,
                         "endColumn": 82,
-                        "endOffset": 967
+                        "endOffset": 480
                     }
                 }
             },
@@ -92,14 +92,14 @@
                     "endOffset": 1041
                 },
                 "from": {
-                    "file": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\XZY\\.android\\build-cache\\622cd7b110d0b9dcca83eb3747cd00303dca1fa6\\output\\res\\values-v14\\values-v14.xml",
                     "position": {
-                        "startLine": 13,
+                        "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 972,
-                        "endLine": 18,
+                        "startOffset": 485,
+                        "endLine": 14,
                         "endColumn": 12,
-                        "endOffset": 1377
+                        "endOffset": 890
                     }
                 }
             },
@@ -113,14 +113,14 @@
                     "endOffset": 1463
                 },
                 "from": {
-                    "file": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\XZY\\.android\\build-cache\\622cd7b110d0b9dcca83eb3747cd00303dca1fa6\\output\\res\\values-v14\\values-v14.xml",
                     "position": {
-                        "startLine": 19,
+                        "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 1382,
-                        "endLine": 24,
+                        "startOffset": 895,
+                        "endLine": 20,
                         "endColumn": 12,
-                        "endOffset": 1799
+                        "endOffset": 1312
                     }
                 }
             },
@@ -133,13 +133,13 @@
                     "endOffset": 1583
                 },
                 "from": {
-                    "file": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\XZY\\.android\\build-cache\\622cd7b110d0b9dcca83eb3747cd00303dca1fa6\\output\\res\\values-v14\\values-v14.xml",
                     "position": {
-                        "startLine": 27,
+                        "startLine": 21,
                         "startColumn": 4,
-                        "startOffset": 2040,
+                        "startOffset": 1317,
                         "endColumn": 119,
-                        "endOffset": 2155
+                        "endOffset": 1432
                     }
                 }
             },
@@ -148,17 +148,17 @@
                     "startLine": 25,
                     "startColumn": 4,
                     "startOffset": 1588,
-                    "endColumn": 62,
-                    "endOffset": 1646
+                    "endColumn": 131,
+                    "endOffset": 1715
                 },
                 "from": {
-                    "file": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\XZY\\.android\\build-cache\\622cd7b110d0b9dcca83eb3747cd00303dca1fa6\\output\\res\\values-v14\\values-v14.xml",
                     "position": {
-                        "startLine": 28,
+                        "startLine": 22,
                         "startColumn": 4,
-                        "startOffset": 2160,
-                        "endColumn": 62,
-                        "endOffset": 2218
+                        "startOffset": 1437,
+                        "endColumn": 131,
+                        "endOffset": 1564
                     }
                 }
             },
@@ -166,58 +166,96 @@
                 "to": {
                     "startLine": 26,
                     "startColumn": 4,
-                    "startOffset": 1651,
-                    "endLine": 28,
-                    "endColumn": 12,
-                    "endOffset": 1800
+                    "startOffset": 1720,
+                    "endColumn": 119,
+                    "endOffset": 1835
                 },
                 "from": {
-                    "file": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\values-v14\\values-v14.xml",
+                    "file": "C:\\Users\\XZY\\.android\\build-cache\\622cd7b110d0b9dcca83eb3747cd00303dca1fa6\\output\\res\\values-v14\\values-v14.xml",
+                    "position": {
+                        "startLine": 23,
+                        "startColumn": 4,
+                        "startOffset": 1569,
+                        "endColumn": 119,
+                        "endOffset": 1684
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 27,
+                    "startColumn": 4,
+                    "startOffset": 1840,
+                    "endColumn": 62,
+                    "endOffset": 1898
+                },
+                "from": {
+                    "file": "C:\\Users\\XZY\\.android\\build-cache\\622cd7b110d0b9dcca83eb3747cd00303dca1fa6\\output\\res\\values-v14\\values-v14.xml",
+                    "position": {
+                        "startLine": 24,
+                        "startColumn": 4,
+                        "startOffset": 1689,
+                        "endColumn": 62,
+                        "endOffset": 1747
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 28,
+                    "startColumn": 4,
+                    "startOffset": 1903,
+                    "endLine": 30,
+                    "endColumn": 12,
+                    "endOffset": 2052
+                },
+                "from": {
+                    "file": "C:\\Users\\XZY\\.android\\build-cache\\622cd7b110d0b9dcca83eb3747cd00303dca1fa6\\output\\res\\values-v14\\values-v14.xml",
+                    "position": {
+                        "startLine": 25,
+                        "startColumn": 4,
+                        "startOffset": 1752,
+                        "endLine": 27,
+                        "endColumn": 12,
+                        "endOffset": 1901
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 31,
+                    "startColumn": 4,
+                    "startOffset": 2057,
+                    "endColumn": 62,
+                    "endOffset": 2115
+                },
+                "from": {
+                    "file": "C:\\Users\\XZY\\.android\\build-cache\\622cd7b110d0b9dcca83eb3747cd00303dca1fa6\\output\\res\\values-v14\\values-v14.xml",
+                    "position": {
+                        "startLine": 28,
+                        "startColumn": 4,
+                        "startOffset": 1906,
+                        "endColumn": 62,
+                        "endOffset": 1964
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 32,
+                    "startColumn": 4,
+                    "startOffset": 2120,
+                    "endColumn": 131,
+                    "endOffset": 2247
+                },
+                "from": {
+                    "file": "C:\\Users\\XZY\\.android\\build-cache\\622cd7b110d0b9dcca83eb3747cd00303dca1fa6\\output\\res\\values-v14\\values-v14.xml",
                     "position": {
                         "startLine": 29,
                         "startColumn": 4,
-                        "startOffset": 2223,
-                        "endLine": 31,
-                        "endColumn": 12,
-                        "endOffset": 2372
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 29,
-                    "startColumn": 4,
-                    "startOffset": 1805,
-                    "endColumn": 62,
-                    "endOffset": 1863
-                },
-                "from": {
-                    "file": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\values-v14\\values-v14.xml",
-                    "position": {
-                        "startLine": 32,
-                        "startColumn": 4,
-                        "startOffset": 2377,
-                        "endColumn": 62,
-                        "endOffset": 2435
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 30,
-                    "startColumn": 4,
-                    "startOffset": 1868,
-                    "endColumn": 131,
-                    "endOffset": 1995
-                },
-                "from": {
-                    "file": "C:\\Users\\lenovo\\Documents\\CampusNewsClients\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\22.2.0\\res\\values-v14\\values-v14.xml",
-                    "position": {
-                        "startLine": 33,
-                        "startColumn": 4,
-                        "startOffset": 2440,
+                        "startOffset": 1969,
                         "endColumn": 131,
-                        "endOffset": 2567
+                        "endOffset": 2096
                     }
                 }
             }

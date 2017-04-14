@@ -3,7 +3,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -11,13 +10,13 @@ import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.LinearLayout;
+
 import com.baibian.R;
 import com.baibian.base.BaseActivity;
 import com.baibian.tool.HttpTool;
-import com.baibian.tool.LinearLayout_Inflaterable;
 import com.baibian.tool.ToastTools;
 import com.baibian.tool.UI_Tools;
 import com.squareup.okhttp.Response;
@@ -77,7 +76,7 @@ public class Login4Activity extends BaseActivity {
                 if (account.length() != 11) {
                     Toast.makeText(Login4Activity.this, R.string.please_account, Toast.LENGTH_SHORT).show();
                 } else if (password.length() > 16 || password.length() < 6) {
-                    Toast.makeText(Login4Activity.this, R.string.please7to16, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login4Activity.this, R.string.please6to16, Toast.LENGTH_SHORT).show();
                 } else {
                     //用于接受登录、注册子线程的返回数据
                     handler = new Handler() {

@@ -19,7 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baibian.activity.CityListActivity;
-import com.baibian.activity.DetailsActivity;
+import com.baibian.activity.newsDetailsActivity;
 import com.baibian.R;
 import com.baibian.adapter.NewsAdapter;
 import com.baibian.bean.NewsEntity;
@@ -247,7 +247,7 @@ public class NewsFragment extends Fragment {
                                 activity.getSharedPreferences("publishTime", Context.MODE_PRIVATE).edit().putBoolean(String.valueOf(mAdapter.getItem(currentPosition).getId()), true).commit();
 //                                item_title.setTextColor(Color.GRAY);
                                 mAdapter.notifyDataSetChanged();
-                                Intent intent = new Intent(activity, DetailsActivity.class);
+                                Intent intent = new Intent(activity, newsDetailsActivity.class);
                                 if (channel_id == Constants.CHANNEL_CITY) {
                                     if (currentPosition != 0) {
                                         intent.putExtra("itemId", mAdapter.getItem(currentPosition - 1).getId());

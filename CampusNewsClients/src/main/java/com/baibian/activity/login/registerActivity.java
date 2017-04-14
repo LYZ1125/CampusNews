@@ -106,9 +106,9 @@ public class registerActivity extends Activity implements View.OnClickListener {
                 if (account.length() != 11) {
                     ToastTools.ToastShow(getString(R.string.please_account));
                 } else if (password1.length() > 16 || password1.length() < 6) {
-                    Toast.makeText(registerActivity.this, R.string.please7to16, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(registerActivity.this, R.string.please6to16, Toast.LENGTH_SHORT).show();
                 } else if (password2.length() > 16 || password2.length() < 6) {
-                    Toast.makeText(registerActivity.this, R.string.please7to16, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(registerActivity.this, R.string.please6to16, Toast.LENGTH_SHORT).show();
                 } else if (!password1.equals(password2)) {
                     Toast.makeText(registerActivity.this, R.string.different_password, Toast.LENGTH_SHORT).show();
                 } else {
@@ -133,9 +133,9 @@ public class registerActivity extends Activity implements View.OnClickListener {
                             isSignUpOK = responseBody.startsWith("{\"user\"");
                             isAccountHava = responseBody.startsWith("{\"error\"");
                             //response监测点
-                            System.out.println("body"+responseBody);
+/*                            System.out.println("body"+responseBody);
                             System.out.println("1"+isSignUpOK);
-                            System.out.println("2"+isAccountHava);
+                            System.out.println("2"+isAccountHava);*/
 
                             if (isSignUpOK) {
                                 System.out.println(isSignUpOK);
@@ -148,7 +148,6 @@ public class registerActivity extends Activity implements View.OnClickListener {
                             }
                             //帐号已存在
                             else if (isAccountHava) {
-                                System.out.println(isAccountHava);
                                 ToastTools.ToastShow(getString(R.string.haved_account));
 //                                register_password1.setText("");
 //                                register_password2.setText("");

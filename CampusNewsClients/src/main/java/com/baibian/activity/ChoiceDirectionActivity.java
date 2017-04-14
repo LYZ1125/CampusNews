@@ -1,6 +1,7 @@
 package com.baibian.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -21,7 +22,7 @@ public class ChoiceDirectionActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.choise_direction_layout);
-        initview();
+        initView();
         ImageViewAnimation();
         choise_direction_back.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -29,9 +30,26 @@ public class ChoiceDirectionActivity extends Activity {
                 finish();
             }
         });
+        frameLayout21.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChoiceDirectionActivity.this, DetailsActivity.class);
 
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
+        frameLayout22.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ChoiceDirectionActivity.this, tempActivity.class);
+
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
     }
-    private void initview(){
+    private void initView(){
         choise_direction_back=(Button) findViewById(R.id.choise_direction_back);
         frameLayout21=(FrameLayout) findViewById(R.id.framelayoute21);
         frameLayout22=(FrameLayout) findViewById(R.id.framelayoute22);
@@ -40,19 +58,19 @@ public class ChoiceDirectionActivity extends Activity {
     }
     protected void  ImageViewAnimation(){
         /**
-         * ����߽����
+         * ?????????
          */
         TranslateAnimation translateAnimationleft=new TranslateAnimation(-400,0,0,0);
         translateAnimationleft.setDuration(1000);
-        frameLayout21.startAnimation(translateAnimationleft);//��ʼ����
-        frameLayout31.startAnimation(translateAnimationleft);//��ʼ����
+        frameLayout21.startAnimation(translateAnimationleft);//???????
+        frameLayout31.startAnimation(translateAnimationleft);//???????
 
         /**
-         * ���ұ߽����
+         * ?????????
          */
         TranslateAnimation translateAnimationright=new TranslateAnimation(400,0,0,0);
         translateAnimationright.setDuration(1000);
-        frameLayout22.startAnimation(translateAnimationright);//��ʼ����
-        frameLayout32.startAnimation(translateAnimationright);//��ʼ����
+        frameLayout22.startAnimation(translateAnimationright);//???????
+        frameLayout32.startAnimation(translateAnimationright);//???????
     }
 }
