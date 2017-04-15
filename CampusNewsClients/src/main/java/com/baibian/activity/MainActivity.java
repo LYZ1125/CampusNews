@@ -176,7 +176,6 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
         fragmentLayout4.setOnClickListener(this);
 
 
-
         top_head = (ImageView) findViewById(R.id.top_head);
         top_more = (ImageView) findViewById(R.id.top_more);
         top_refresh = (ImageView) findViewById(R.id.top_refresh);

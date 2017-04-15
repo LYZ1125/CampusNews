@@ -9,7 +9,9 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <include layout="@layout/main_head" />
+            <include
+                android:id="@+id/main_head"
+                layout="@layout/main_head" />
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -24,6 +26,7 @@
 
                 <!--底部布局部分-->
                 <LinearLayout
+                    android:id="@+id/main_bottom"
                     android:layout_alignParentBottom="true"
                     android:background="#2180dc"
                     android:layout_width="match_parent"

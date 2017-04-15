@@ -186,6 +186,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/advantage_LinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </LinearLayout>
+            <include
+                android:id="@+id/add_advantage_layout"
+                layout="@layout/edit_information_listitem_bottom"/>
 
 
         </LinearLayout>

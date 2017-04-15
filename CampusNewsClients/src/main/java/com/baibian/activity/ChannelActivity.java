@@ -48,7 +48,7 @@ public class ChannelActivity extends BaseActivity implements OnItemClickListener
 	ArrayList<ChannelItem> otherChannelList = new ArrayList<ChannelItem>();
 	/** 用户栏目列表 */
 	ArrayList<ChannelItem> userChannelList = new ArrayList<ChannelItem>();
-	/** 是否在移动，由于这边是动画结束后才进行的数据更替，设置这个限制为了避免操作太频繁造成的数据错乱。 */
+	/** 是否在移动，由于这边是动画结 束后才进行的数据更替，设置这个限制为了避免操作太频繁造成的数据错乱。 */
 	boolean isMove = false;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

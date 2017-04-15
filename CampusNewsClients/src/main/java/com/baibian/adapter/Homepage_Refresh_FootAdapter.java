@@ -58,7 +58,7 @@ public class Homepage_Refresh_FootAdapter extends RecyclerView.Adapter<RecyclerV
         this.mContext = context;
         this.mInflater = LayoutInflater.from(context);
         this.mTitles = new ArrayList<String>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 2; i++) {
             int index = i + 1;
             mTitles.add("item" + index);
         }
