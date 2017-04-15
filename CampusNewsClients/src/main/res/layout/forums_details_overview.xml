@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    >
+
+
+    <TextView
+        android:text="请选择具体角度："
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="28sp"
+        android:textColor="#00a0e9"
+        android:id="@+id/background"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:hint="最多四个角度"
+        android:textSize="20dp"
+        android:gravity="center"
+
+        android:textAlignment="center"
+        android:id="@+id/tag_edit" />
+
+    <ImageButton
+        android:src="@mipmap/blue_add_mipmap"
+        android:id="@+id/imageButton"
+        android:layout_marginLeft="15dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/accountbackgroundchange" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <Button
+        android:text="天指先天"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/button4"
+        android:layout_marginLeft="30dp"
+        android:textSize="15dp"
+        android:layout_marginRight="50dp"
+
+        android:background="@drawable/switch_btn_on"
+        />
+
+        <Button
+            android:text="天指自然"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:background="@drawable/switch_btn_on"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:layout_marginRight="30dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:layout_weight="1.7" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:text="人指人性"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/button5"
+            android:layout_marginLeft="30dp"
+            android:textSize="15dp"
+            android:layout_marginRight="20dp"
+
+            android:background="@drawable/switch_btn_on"
+         />
+
+
+        <Button
+            android:text="人指人类社会"
+            android:layout_weight="1.6"
+            android:layout_width="0dp"
+            android:background="@drawable/switch_btn_on"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:layout_marginRight="25dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button6" />
+        <Button
+            android:text="人指个人"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:background="@drawable/switch_btn_on"
+            android:gravity="center"
+            android:textSize="15dp"
+            android:layout_marginRight="30dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button7" />
+
+    </LinearLayout>
+    <!--<co.lujun.androidtagview.TagContainerLayout-->
+        <!--android:id="@+id/tagcontainerLayout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="0dp"-->
+        <!--android:padding="10dp"-->
+        <!--app:container_enable_drag="false"-->
+        <!--app:horizontal_interval="10dp"-->
+        <!--app:vertical_interval="10dp"-->
+        <!--app:tag_clickable="true"-->
+        <!--app:tag_theme="pure_teal" />-->
+
+
+</LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loadingpage2"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/choise_direction_all_layout"
+        android:background="@color/baibian_back_color"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height">
+        <Button
+            android:id="@+id/forums_details_back"
+            android:layout_width="44dp"
+            android:layout_height="fill_parent"
+            android:background="@mipmap/back_direction"/>
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <android.support.v4.view.PagerTabStrip
+            android:layout_width="wrap_content"
+            android:layout_height="50dip"
+            android:id="@+id/tab_strip"
+            android:gravity="center"
+            >
+
+
+        </android.support.v4.view.PagerTabStrip>
+    </android.support.v4.view.ViewPager>
+</LinearLayout>

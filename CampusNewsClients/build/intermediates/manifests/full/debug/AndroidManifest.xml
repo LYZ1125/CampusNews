@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="17"
-        android:targetSdkVersion="22" />
+        android:targetSdkVersion="25" />
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -27,6 +27,10 @@
     <!-- 震动权限 -->
     <uses-permission android:name="android.permission.VIBRATE" />
 
+    <meta-data
+        android:name="android.support.VERSION"
+        android:value="25.3.1" />
+
     <application
         android:name="com.baibian.app.AppApplication"
         android:allowBackup="true"
@@ -42,42 +46,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.baibian.activity.MainActivity" >
-        </activity>
-        <activity android:name="com.baibian.activity.ChannelActivity" >
-        </activity>
-        <activity android:name="com.baibian.activity.DetailsActivity" >
-        </activity>
-        <activity android:name="com.baibian.activity.CityListActivity" >
-        </activity>
-        <activity android:name="com.baibian.activity.setting.SettingsActivity" >
-        </activity>
-        <activity android:name="com.baibian.activity.ImageShowActivity" >
-        </activity>
-        <activity android:name="com.baibian.activity.login.Login4Activity" >
-        </activity>
-        <activity android:name="com.baibian.activity.login.registerActivity" >
-        </activity>
-        <activity android:name="com.baibian.activity.login.GuideActivity" >
-        </activity>
-        <activity android:name="com.baibian.activity.ChoiceDirectionActivity" >
-        </activity>
-        <activity android:name="com.baibian.activity.UsersImformationActivity" >
-        </activity>
-        <activity android:name="com.baibian.activity.setting.MessageSettingAcitivity" >
-        </activity>
-        <activity android:name="com.baibian.activity.setting.PushSetting" >
-        </activity>
-        <activity android:name="com.baibian.activity.Edit_Information_Activity" >
-        </activity>
+        <activity android:name="com.baibian.activity.MainActivity" />
+        <activity android:name="com.baibian.activity.ChannelActivity" />
+        <activity android:name="com.baibian.activity.newsDetailsActivity" />
+        <activity android:name="com.baibian.activity.CityListActivity" />
+        <activity android:name="com.baibian.activity.setting.SettingsActivity" />
+        <activity android:name="com.baibian.activity.ImageShowActivity" />
+        <activity android:name="com.baibian.activity.login.Login4Activity" />
+        <activity android:name="com.baibian.activity.login.registerActivity" />
+        <activity android:name="com.baibian.activity.login.GuideActivity" />
+        <activity android:name="com.baibian.activity.ChoiceDirectionActivity" />
+        <activity android:name="com.baibian.activity.UsersImformationActivity" />
+        <activity android:name="com.baibian.activity.setting.MessageSettingAcitivity" />
+        <activity android:name="com.baibian.activity.setting.PushSetting" />
+        <activity android:name="com.baibian.activity.Edit_Information_Activity" />
+        <activity android:name="com.baibian.activity.DetailsActivity" />
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity
-            android:name="android.support.v7.widget.TestActivity"
-            android:label="RecyclerViewTestActivity" />
     </application>
 
 </manifest>

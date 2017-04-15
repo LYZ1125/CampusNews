@@ -60,7 +60,7 @@
     <string name="city_category_list_notify_no_city">请先选择您关注的城市</string>
     <string name="retry_large_image"><u>加载失败，点击重试</u></string>
     <string name="register_name_digits">._0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLIMNOPQRSTUVWXYZ@</string>
-    <string name="please7to16">请输入7~16位密码</string>
+    <string name="please6to16">请输入6~16位密码</string>
     <string name="please_account">请输入正确账号</string>
     <string name="login_succeed">登录成功</string>
     <string name="REGISTER">注册</string>

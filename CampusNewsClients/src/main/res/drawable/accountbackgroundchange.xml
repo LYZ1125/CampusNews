@@ -2,7 +2,7 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
 <!--获得焦点时时的背景图片-->
-<item android:state_focused="true" android:drawable="@drawable/login_back_focus"/>
-<!--未被选中时的背景图片-->
-<item android:state_focused="false" android:drawable="@drawable/login_back_nofocus"/>
+    <!--未被选中时的背景图片-->
+    <item android:state_focused="true" android:drawable="@drawable/login_back_focus" />
+    <item android:state_focused="false" android:drawable="@drawable/login_back_nofocus" />
 </selector>
