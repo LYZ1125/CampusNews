@@ -17,6 +17,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+    allprojects {
+        repositories {
+
+            maven { url "https://jitpack.io" }
+        }
+    }
 }
 repositories{
     flatDir{
@@ -37,4 +43,5 @@ dependencies {
     compile files('libs/MobTools-2016.1201.1839.jar')
     compile files('libs/MobCommons-2016.1201.1839.jar')
     compile 'co.lujun:androidtagview:1.1.0'
+    compile 'com.github.jd-alexander:LikeButton:0.2.0'
 }

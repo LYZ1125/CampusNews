@@ -1,4 +1,7 @@
-#Sat Apr 15 01:10:28 CST 2017
-base.0=C\:\\Users\\XZY\\Documents\\GitHub\\CampusNews\\CampusNewsClients\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+#Tue May 09 01:22:40 CST 2017
+base.0=C\:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_01ae41df29d9ea08191328e94deb2d2afed6ead6
+renamed.1=classes2.dex
 renamed.0=classes.dex
-file.0=C\:\\Users\\XZY\\Documents\\GitHub\\CampusNews\\CampusNewsClients\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+file.1=C\:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_a2330606c2b72b3a29ccf9fce08a698fe2eb3324\\classes.dex
+base.1=C\:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_a2330606c2b72b3a29ccf9fce08a698fe2eb3324
+file.0=C\:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_01ae41df29d9ea08191328e94deb2d2afed6ead6\\classes.dex

@@ -36,7 +36,7 @@ public class CityListActivity extends BaseActivity {
 	}
 	
 	private void initData() {
-		title.setText("��ǰ����-����");
+		title.setText("???????-????");
 		cityList = Constants.getCityList();
 		mAdapter = new CityAdapter(this, cityList);
 		mListView.setAdapter(mAdapter);

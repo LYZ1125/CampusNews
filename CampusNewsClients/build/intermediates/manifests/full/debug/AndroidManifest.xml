@@ -36,6 +36,7 @@
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
+        android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.baibian.activity.login.Welcome"
@@ -61,6 +62,7 @@
         <activity android:name="com.baibian.activity.setting.PushSetting" />
         <activity android:name="com.baibian.activity.Edit_Information_Activity" />
         <activity android:name="com.baibian.activity.DetailsActivity" />
+        <activity android:name="com.baibian.activity.DiscussionActivity" />
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"

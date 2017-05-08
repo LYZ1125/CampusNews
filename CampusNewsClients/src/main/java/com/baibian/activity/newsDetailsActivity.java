@@ -56,13 +56,13 @@ public class newsDetailsActivity extends BaseActivity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.details);
-        setNeedBackGesture(true);//������Ҫ���Ƽ���
+        setNeedBackGesture(true);//??????????????
         getData();
         initView();
         initWebView();
     }
 
-    /* 获取传递过来的数据 */
+    /* ��ȡ���ݹ��������� */
     private void getData() {
         news = (NewsEntity) getIntent().getSerializableExtra("news");
 //        collectStatus = getIntent().getBooleanExtra("collectStatus", false);
@@ -78,15 +78,15 @@ public class newsDetailsActivity extends BaseActivity {
         LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         if (!TextUtils.isEmpty(news_url)) {
             WebSettings settings = webView.getSettings();
-            settings.setJavaScriptEnabled(true);//设置可以运行JS脚本
+            settings.setJavaScriptEnabled(true);//���ÿ�������JS�ű�
 //			settings.setTextZoom(120);//Sets the text zoom of the page in percent. The default is 100.
             settings.setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN);
-//			settings.setUseWideViewPort(true); //打开页面时， 自适应屏幕
-//			settings.setLoadWithOverviewMode(true);//打开页面时， 自适应屏幕
-            settings.setSupportZoom(false);// 用于设置webview放大
+//			settings.setUseWideViewPort(true); //��ҳ��ʱ�� ����Ӧ��Ļ
+//			settings.setLoadWithOverviewMode(true);//��ҳ��ʱ�� ����Ӧ��Ļ
+            settings.setSupportZoom(false);// ��������webview�Ŵ�
             settings.setBuiltInZoomControls(false);
             webView.setBackgroundResource(R.color.transparent);
-            //添加js交互接口类，并起别名 imagelistner
+            //����js�����ӿ��࣬������� imagelistner
             webView.addJavascriptInterface(new JavascriptInterface(getApplicationContext()), "imagelistner");
             webView.setWebChromeClient(new MyWebChromeClient());
             webView.setWebViewClient(new MyWebViewClient());
@@ -99,7 +99,7 @@ public class newsDetailsActivity extends BaseActivity {
         title = (TextView) findViewById(R.id.title);
         progressBar = (ProgressBar) findViewById(R.id.ss_htmlprogessbar);
         customview_layout = (FrameLayout) findViewById(R.id.customview_layout);
-        //底部栏目
+        //�ײ���Ŀ
         action_comment_count = (TextView) findViewById(R.id.action_comment_count);
 
         toolFavor = (ImageButton) findViewById(R.id.action_favor);
@@ -115,7 +115,7 @@ public class newsDetailsActivity extends BaseActivity {
         }else{
             toolFavor.setImageResource(R.drawable.ic_action_favor_pressed);
         }
-//收藏功能还没有关联起来！！！
+//�ղع��ܻ�û�й�������������
         toolFavor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -192,9 +192,9 @@ public class newsDetailsActivity extends BaseActivity {
         }
     }
 
-    //注入js函数监听
+    //ע��js��������
     private void addImageClickListener() {
-        // 这段js函数的功能就是，遍历所有的img几点，并添加onclick函数，在还是执行的时候调用本地接口传递url过去
+        // ���js�����Ĺ��ܾ��ǣ��������е�img���㣬������onclick�������ڻ���ִ�е�ʱ����ñ��ؽӿڴ���url��ȥ
         webView.loadUrl("javascript:(function(){"
                 + "var objs = document.getElementsByTagName(\"img\");"
                 + "var imgurl=''; " + "for(var i=0;i<objs.length;i++)  " + "{"
@@ -204,7 +204,7 @@ public class newsDetailsActivity extends BaseActivity {
                 + "    }  " + "}" + "})()");
     }
 
-    // js通信接口
+    // jsͨ�Žӿ�
     public class JavascriptInterface {
 
         private Context context;
@@ -220,7 +220,7 @@ public class newsDetailsActivity extends BaseActivity {
             ArrayList<String> imgsUrl = new ArrayList<String>();
             for (String s : imgs) {
                 imgsUrl.add(s);
-                Log.i("图片的URL>>>>>>>>", s);
+                Log.i("ͼƬ��URL>>>>>>>>", s);
             }
             Intent intent = new Intent();
             intent.putStringArrayListExtra("infos", imgsUrl);
@@ -230,7 +230,7 @@ public class newsDetailsActivity extends BaseActivity {
         }
     }
 
-    // ����
+    // ????
     private class MyWebViewClient extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -241,7 +241,7 @@ public class newsDetailsActivity extends BaseActivity {
         public void onPageFinished(WebView view, String url) {
             view.getSettings().setJavaScriptEnabled(true);
             super.onPageFinished(view, url);
-            // html�������֮����Ӽ���ͼƬ�ĵ��js����
+            // html??????????????????????js????
             addImageClickListener();
             progressBar.setVisibility(View.GONE);
             webView.setVisibility(View.VISIBLE);

@@ -1,4 +1,4 @@
-package com.baibian.fragment;
+package com.baibian.fragment.main;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

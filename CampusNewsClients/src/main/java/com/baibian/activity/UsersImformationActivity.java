@@ -3,17 +3,17 @@ package com.baibian.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.baibian.R;
 import com.baibian.adapter.Users_Viwepager_Adapter;
-import com.baibian.view.SwitchButton;
+import com.baibian.tool.UI_Tools;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,15 +24,17 @@ public class UsersImformationActivity extends Activity implements View.OnClickLi
     private Button BB_imformation_btn;
     private Button choise_direction_back;
     private ViewPager users_imformation_pager;
-    private Users_Viwepager_Adapter fAdapter;                               //å®šä¹‰adapter
+    private Users_Viwepager_Adapter fAdapter;                               //¶¨Òåadapter
     private List<View> viewList;
+    private LinearLayout user_information_all;
+    private EditText personalized_signature_edit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.usersimformationlayout);
         initview();
-        init_viewpager();//åº•éƒ¨viewpagerçš„åˆå§‹åŒ–
+        init_viewpager();//µ×²¿viewpagerµÄ³õÊ¼»¯
     }
 
     private void initview() {
@@ -41,22 +43,26 @@ public class UsersImformationActivity extends Activity implements View.OnClickLi
         user_information_edit=(ImageView) findViewById(R.id.user_information_edit);
          BB_state_btn=(Button) findViewById(R.id.BB_state_btn);
         BB_imformation_btn=(Button) findViewById(R.id.BB_imformation_btn);
+        user_information_all=(LinearLayout)findViewById(R.id.user_information_all);
+        personalized_signature_edit=(EditText) findViewById(R.id.personalized_signature_edit);
         choise_direction_back.setOnClickListener(this);
         user_information_edit.setOnClickListener(this);
+        UI_Tools ui_tools=new UI_Tools();
+        ui_tools.CancelFocusOne(this,user_information_all,personalized_signature_edit);
     }
 
     @Override
     public void onClick(View view) {
 
         switch (view.getId()) {
-            case R.id.choise_direction_back://ç‚¹å‡»äº†è¿”å›é”®
+            case R.id.choise_direction_back://µã»÷ÁË·µ»Ø¼ü
                 finish();
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 break;
-            case R.id.user_information_edit://æ‰“å¼€ä¸ªäººèµ„æ–™ç¼–è¾‘æ´»åŠ¨
+            case R.id.user_information_edit://´ò¿ª¸öÈË×ÊÁÏ±à¼­»î¶¯
                 Intent intent=new Intent(UsersImformationActivity.this,Edit_Information_Activity.class);
                 startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             default:
                 break;
@@ -72,30 +78,30 @@ public class UsersImformationActivity extends Activity implements View.OnClickLi
     private void init_viewpager() {
         viewList=new ArrayList<View>();
         /**
-         * 2ä¸ªViewåˆ†åˆ«å¯¹åº”ä¸‰ä¸ªç•Œé¢
+         * 2¸öView·Ö±ğ¶ÔÓ¦Èı¸ö½çÃæ
          */
-        View view1=View.inflate(this,R.layout.bb_statement_layout,null);
-        View view2=View.inflate(this,R.layout.bb_imformation_layout,null);
+        View view1=View.inflate(this, R.layout.bb_statement_layout,null);
+        View view2=View.inflate(this, R.layout.bb_imformation_layout,null);
         viewList.add(view1);
         viewList.add(view2);
         fAdapter=new Users_Viwepager_Adapter(viewList,UsersImformationActivity.this);
-        //viewpageråŠ è½½adapter
+        //viewpager¼ÓÔØadapter
         users_imformation_pager.setAdapter(fAdapter);
         users_imformation_pager.setOffscreenPageLimit(0);
 
         /**
-         * è¿™ç§å†™æ³•åªæœ‰åŠæ³•æ”¯æŒä¿©ä¸ªButtonå¦‚æœè¿›å…¥äº†ä¸‰ä¸ªbuttonçš„æ—¶å€™ï¼Œè¯·æ¢ä¸€ç§ä½¿ç”¨æ–¹æ³•
+         * ÕâÖÖĞ´·¨Ö»ÓĞ°ì·¨Ö§³ÖÁ©¸öButtonÈç¹û½øÈëÁËÈı¸öbuttonµÄÊ±ºò£¬Çë»»Ò»ÖÖÊ¹ÓÃ·½·¨
          */
         BB_state_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                users_imformation_pager.arrowScroll(1);//å‘å‰ç¿»é¡µ
+                users_imformation_pager.arrowScroll(1);//ÏòÇ°·­Ò³
             }
         });
         BB_imformation_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                users_imformation_pager.arrowScroll(2);//å‘åç¿»é¡µ
+                users_imformation_pager.arrowScroll(2);//Ïòºó·­Ò³
             }
         });
         users_imformation_pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {

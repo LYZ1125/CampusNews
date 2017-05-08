@@ -10,16 +10,17 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.FailReason;
-import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.baibian.R;
 import com.baibian.tool.Options;
 import com.baibian.view.imageshow.ImageShowViewPager;
 import com.baibian.view.imageshow.TouchImageView;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.FailReason;
+import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
 import java.util.ArrayList;
+
 /**
  * Í¼Æ¬ä¯ÀÀµÄPagerAdapter
  */
@@ -116,6 +117,6 @@ public class ImagePagerAdapter extends PagerAdapter {
 
 	@Override
 	public void destroyItem(ViewGroup container, int position, Object object) {
-			((ViewPager) container).removeView((View) object);  
+			((ViewPager) container).removeView((View) object);
 	}
 }

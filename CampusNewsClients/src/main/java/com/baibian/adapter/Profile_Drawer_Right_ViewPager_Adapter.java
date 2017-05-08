@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import java.util.List;
+
 public class Profile_Drawer_Right_ViewPager_Adapter extends PagerAdapter {
         public List<View > Viewlist;
     public Activity activity;

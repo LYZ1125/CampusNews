@@ -93,6 +93,9 @@
     <string name="timeout">网络错误，请检查网络</string>
     <string name="signUp_OK">注册成功</string>
     <string name="haved_account">该账号已存在</string>
+    <string name="detaildivide">角度细分</string>
+    <string name="debatetopic">辩题概述</string>
+    <string name="text_topic">人权天赋还是取决自己</string>
 
 
 </resources>

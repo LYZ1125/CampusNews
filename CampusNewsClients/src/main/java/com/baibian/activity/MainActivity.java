@@ -1,18 +1,18 @@
 package com.baibian.activity;
 
 import android.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -20,33 +20,33 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.baibian.R;
-import com.baibian.activity.login.GuideActivity;
 import com.baibian.activity.login.Login4Activity;
+import com.baibian.adapter.NewsFragmentPagerAdapter;
+import com.baibian.bean.ChannelItem;
 import com.baibian.fragment.main.FindFragment;
 import com.baibian.fragment.main.ForumsFragment;
 import com.baibian.fragment.main.HomepageFragment;
-import com.baibian.fragment.PeriodicalsFragment;
-import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
-import com.baibian.adapter.NewsFragmentPagerAdapter;
-import com.baibian.bean.ChannelItem;
+import com.baibian.fragment.main.PeriodicalsFragment;
 import com.baibian.tool.BaseTools;
 import com.baibian.view.ColumnHorizontalScrollView;
 import com.baibian.view.SlidingDrawerView;
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+
 import java.util.ArrayList;
 
 /**
- *  æ¨¡æ‹Ÿè¿˜åŸä»Šæ—¥å¤´æ¡ --æ–°é—»é˜…è¯»å™¨
+ *  Ä£Äâ»¹Ô­½ñÈÕÍ·Ìõ --ĞÂÎÅÔÄ¶ÁÆ÷
  * author:XZY && RA
  */
 public class MainActivity extends FragmentActivity implements OnClickListener{
 
     /**
-     * å››ä¸ªç¢ç‰‡å¸ƒå±€å£°æ˜çš„å˜é‡
+     * ËÄ¸öËéÆ¬²¼¾ÖÉùÃ÷µÄ±äÁ¿
      */
-    private HomepageFragment homepageFragment;//ç¬¬ä¸€ä¸ªç¢ç‰‡
-    private ForumsFragment forumsFragment;//ç¬¬äºŒä¸ªç¢ç‰‡
-    private FindFragment findFragment;//ç¬¬ä¸‰ä¸ªç¢ç‰‡
-    private PeriodicalsFragment periodicalsFragment;//ç¬¬å››ä¸ªç¢ç‰‡
+    private HomepageFragment homepageFragment;//µÚÒ»¸öËéÆ¬
+    private ForumsFragment forumsFragment;//µÚ¶ş¸öËéÆ¬
+    private FindFragment findFragment;//µÚÈı¸öËéÆ¬
+    private PeriodicalsFragment periodicalsFragment;//µÚËÄ¸öËéÆ¬
     private View fragmentLayout1;
     private View fragmentLayout2;
     private View fragmentLayout3;
@@ -57,7 +57,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
     private ImageView fragmentImage4;
     private FragmentManager fragmentManager;
     /**
-     * è‡ªå®šä¹‰HorizontalScrollView
+     * ×Ô¶¨ÒåHorizontalScrollView
      */
     private ColumnHorizontalScrollView mColumnHorizontalScrollView;
     LinearLayout mRadioGroup_content;
@@ -66,53 +66,53 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
     private ViewPager mViewPager;
     private ImageView button_more_columns;
     /**
-     * ç”¨æˆ·é€‰æ‹©çš„æ–°é—»åˆ†ç±»åˆ—è¡¨
+     * ÓÃ»§Ñ¡ÔñµÄĞÂÎÅ·ÖÀàÁĞ±í
      */
     private ArrayList<ChannelItem> userChannelList = new ArrayList<ChannelItem>();
     /**
-     * å½“å‰é€‰ä¸­çš„æ ç›®
+     * µ±Ç°Ñ¡ÖĞµÄÀ¸Ä¿
      */
     private int columnSelectIndex = 0;
     /**
-     * å·¦é˜´å½±éƒ¨åˆ†
+     * ×óÒõÓ°²¿·Ö
      */
     public ImageView shade_left;
     /**
-     * å³é˜´å½±éƒ¨åˆ†
+     * ÓÒÒõÓ°²¿·Ö
      */
     public ImageView shade_right;
     /**
-     * å±å¹•å®½åº¦
+     * ÆÁÄ»¿í¶È
      */
     private int mScreenWidth = 0;
     /**
-     * Itemå®½åº¦
+     * Item¿í¶È
      */
     private int mItemWidth = 0;
     private ArrayList<Fragment> fragments = new ArrayList<Fragment>();
     public SlidingMenu side_drawer;
     /**
-     * head å¤´éƒ¨ çš„ä¸­é—´çš„loading
+     * head Í·²¿ µÄÖĞ¼äµÄloading
      */
     private ProgressBar top_progress;
     /**
-     * head å¤´éƒ¨ ä¸­é—´çš„åˆ·æ–°æŒ‰é’®
+     * head Í·²¿ ÖĞ¼äµÄË¢ĞÂ°´Å¥
      */
     private ImageView top_refresh;
     /**
-     * head å¤´éƒ¨ çš„å·¦ä¾§èœå• æŒ‰é’®
+     * head Í·²¿ µÄ×ó²à²Ëµ¥ °´Å¥
      */
     private ImageView top_head;
     /**
-     * head å¤´éƒ¨ çš„å³ä¾§èœå• æŒ‰é’®
+     * head Í·²¿ µÄÓÒ²à²Ëµ¥ °´Å¥
      */
     private ImageView top_more;
     /**
-     * è¯·æ±‚CODE
+     * ÇëÇóCODE
      */
     public final static int CHANNELREQUEST = 1;
     /**
-     * è°ƒæ•´è¿”å›çš„RESULTCODE
+     * µ÷Õû·µ»ØµÄRESULTCODE
      */
     public final static int CHANNELRESULT = 10;
 //    private static final int STATE_REFRESHING = 3;
@@ -121,18 +121,18 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
     private int position1 = 0;
 
     /**
-     * å®ç°ç™»é™†åæ›´æ”¹UIä¸ºåœ†å½¢å¤´åƒ
+     * ÊµÏÖµÇÂ½ºó¸ü¸ÄUIÎªÔ²ĞÎÍ·Ïñ
      */
-    private ImageView baibian_btn;//é€šè¿‡ç™¾è¾©è´¦å·ç™»å½•
-    private final int LOGIN4_REQUEST=11;//è¿›å…¥login4activityçš„è¯·æ±‚ç 
-    private LinearLayout logout_layout_not_login;//æœªç™»å½•å¸ƒå±€
-    private LinearLayout login_layout;//å¸¦æœ‰åœ†å½¢å¤´åƒçš„å¸ƒå±€ï¼Œç”¨æ¥æ›´æ¢åŸæ¥çš„å¸ƒå±€
+    private ImageView baibian_btn;//Í¨¹ı°Ù±çÕËºÅµÇÂ¼
+    private final int LOGIN4_REQUEST=11;//½øÈëlogin4activityµÄÇëÇóÂë
+    private LinearLayout logout_layout_not_login;//Î´µÇÂ¼²¼¾Ö
+    private LinearLayout login_layout;//´øÓĞÔ²ĞÎÍ·ÏñµÄ²¼¾Ö£¬ÓÃÀ´¸ü»»Ô­À´µÄ²¼¾Ö
 
     /**
-     * å¼•å¯¼ç•Œé¢æ·»åŠ å†…å®¹
+     * Òıµ¼½çÃæÌí¼ÓÄÚÈİ
      */
     private SharedPreferences preferences;
-    private SharedPreferences.Editor editor;//åˆ¤æ–­æ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡ç™»é™†ä½¿ç”¨
+    private SharedPreferences.Editor editor;//ÅĞ¶ÏÊÇ·ñÊÇµÚÒ»´ÎµÇÂ½Ê¹ÓÃ
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,20 +146,20 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 
         initSlidingMenu();
 
-//        init_guide();//å¼•å¯¼ç•Œé¢çš„åˆå§‹åŒ–
+//        init_guide();//Òıµ¼½çÃæµÄ³õÊ¼»¯
 
         initViews();
         fragmentManager = getFragmentManager();
-        // ç¬¬ä¸€æ¬¡å¯åŠ¨æ—¶é€‰ä¸­ç¬¬0ä¸ªtab
+        // µÚÒ»´ÎÆô¶¯Ê±Ñ¡ÖĞµÚ0¸ötab
         setTabSelection(0);
 
 
-        
+
 
     }
 
     /**
-     * åœ¨è¿™é‡Œè·å–åˆ°æ¯ä¸ªéœ€è¦ç”¨åˆ°çš„æ§ä»¶çš„å®ä¾‹ï¼Œå¹¶ç»™å®ƒä»¬è®¾ç½®å¥½å¿…è¦çš„ç‚¹å‡»äº‹ä»¶ã€‚
+     * ÔÚÕâÀï»ñÈ¡µ½Ã¿¸öĞèÒªÓÃµ½µÄ¿Ø¼şµÄÊµÀı£¬²¢¸øËüÃÇÉèÖÃºÃ±ØÒªµÄµã»÷ÊÂ¼ş¡£
      */
     private void initViews() {
         fragmentLayout1 = findViewById(R.id.fragment1_layout);
@@ -176,12 +176,11 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
         fragmentLayout4.setOnClickListener(this);
 
 
-
         top_head = (ImageView) findViewById(R.id.top_head);
         top_more = (ImageView) findViewById(R.id.top_more);
         top_refresh = (ImageView) findViewById(R.id.top_refresh);
        top_progress = (ProgressBar) findViewById(R.id.top_progress);
-        top_head.setOnClickListener(new View.OnClickListener() {
+        top_head.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -193,7 +192,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
                 }
             }
         });
-        top_more.setOnClickListener(new View.OnClickListener() {
+        top_more.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -212,19 +211,27 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fragment1_layout:
-                // å½“ç‚¹å‡»äº†æ¶ˆæ¯tabæ—¶ï¼Œé€‰ä¸­ç¬¬1ä¸ªtab
+                // µ±µã»÷ÁËÏûÏ¢tabÊ±£¬Ñ¡ÖĞµÚ1¸ötab
+                InputMethodManager imm = (InputMethodManager) this.getSystemService(this.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(fragmentLayout1.getWindowToken(), 0);//ÕâĞĞ´úÂëÒş²ØÈí¼üÅÌ
                 setTabSelection(0);
                 break;
             case R.id.fragment2_layout:
-                // å½“ç‚¹å‡»äº†è”ç³»äººtabæ—¶ï¼Œé€‰ä¸­ç¬¬2ä¸ªtab
+                // µ±µã»÷ÁËÁªÏµÈËtabÊ±£¬Ñ¡ÖĞµÚ2¸ötab
+                InputMethodManager imm2 = (InputMethodManager) this.getSystemService(this.INPUT_METHOD_SERVICE);
+                imm2.hideSoftInputFromWindow(fragmentLayout1.getWindowToken(), 0);//ÕâĞĞ´úÂëÒş²ØÈí¼üÅÌ
                 setTabSelection(1);
                 break;
             case R.id.fragment3_layout:
-                // å½“ç‚¹å‡»äº†åŠ¨æ€tabæ—¶ï¼Œé€‰ä¸­ç¬¬3ä¸ªtab
+                // µ±µã»÷ÁË¶¯Ì¬tabÊ±£¬Ñ¡ÖĞµÚ3¸ötab
+                InputMethodManager imm3 = (InputMethodManager) this.getSystemService(this.INPUT_METHOD_SERVICE);
+                imm3.hideSoftInputFromWindow(fragmentLayout1.getWindowToken(), 0);//ÕâĞĞ´úÂëÒş²ØÈí¼üÅÌ
                 setTabSelection(2);
                 break;
             case R.id.fragment4_layout:
-                // å½“ç‚¹å‡»äº†åŠ¨æ€tabæ—¶ï¼Œé€‰ä¸­ç¬¬3ä¸ªtab
+                // µ±µã»÷ÁË¶¯Ì¬tabÊ±£¬Ñ¡ÖĞµÚ3¸ötab
+                InputMethodManager imm4 = (InputMethodManager) this.getSystemService(this.INPUT_METHOD_SERVICE);
+                imm4.hideSoftInputFromWindow(fragmentLayout1.getWindowToken(), 0);//ÕâĞĞ´úÂëÒş²ØÈí¼üÅÌ
                 setTabSelection(3);
                 break;
             default:
@@ -233,15 +240,15 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
     }
 
     /**
-     * æ ¹æ®ä¼ å…¥çš„indexå‚æ•°æ¥è®¾ç½®é€‰ä¸­çš„tabé¡µã€‚
+     * ¸ù¾İ´«ÈëµÄindex²ÎÊıÀ´ÉèÖÃÑ¡ÖĞµÄtabÒ³¡£
      *
      */
     private void setTabSelection(int index) {
-        // æ¯æ¬¡é€‰ä¸­ä¹‹å‰å…ˆæ¸…æ¥šæ‰ä¸Šæ¬¡çš„é€‰ä¸­çŠ¶æ€
+        // Ã¿´ÎÑ¡ÖĞÖ®Ç°ÏÈÇå³şµôÉÏ´ÎµÄÑ¡ÖĞ×´Ì¬
         clearSelection();
-        // å¼€å¯ä¸€ä¸ªFragmentäº‹åŠ¡
+        // ¿ªÆôÒ»¸öFragmentÊÂÎñ
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        // å…ˆéšè—æ‰æ‰€æœ‰çš„Fragmentï¼Œä»¥é˜²æ­¢æœ‰å¤šä¸ªFragmentæ˜¾ç¤ºåœ¨ç•Œé¢ä¸Šçš„æƒ…å†µ
+        // ÏÈÒş²ØµôËùÓĞµÄFragment£¬ÒÔ·ÀÖ¹ÓĞ¶à¸öFragmentÏÔÊ¾ÔÚ½çÃæÉÏµÄÇé¿ö
         hideFragments(transaction);
         switch (index) {
             case 0:
@@ -279,11 +286,11 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
                 fragmentImage4.setImageResource(R.drawable.periodicalsfragment_selected);
                 fragmentLayout4.setBackgroundColor(getResources().getColor(R.color.main_layout_selected));
                 if (periodicalsFragment == null) {
-                    // å¦‚æœNewsFragmentä¸ºç©ºï¼Œåˆ™åˆ›å»ºä¸€ä¸ªå¹¶æ·»åŠ åˆ°ç•Œé¢ä¸Š
+                    // Èç¹ûNewsFragmentÎª¿Õ£¬Ôò´´½¨Ò»¸ö²¢Ìí¼Óµ½½çÃæÉÏ
                     periodicalsFragment = new PeriodicalsFragment();
                     transaction.add(R.id.content, periodicalsFragment);
                 } else {
-                    // å¦‚æœNewsFragmentä¸ä¸ºç©ºï¼Œåˆ™ç›´æ¥å°†å®ƒæ˜¾ç¤ºå‡ºæ¥
+                    // Èç¹ûNewsFragment²»Îª¿Õ£¬ÔòÖ±½Ó½«ËüÏÔÊ¾³öÀ´
                     transaction.show(periodicalsFragment);
                 }
                 break;
@@ -294,7 +301,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
     }
 
     /**
-     * æ¸…é™¤æ‰æ‰€æœ‰çš„é€‰ä¸­çŠ¶æ€ã€‚
+     * Çå³ıµôËùÓĞµÄÑ¡ÖĞ×´Ì¬¡£
      */
     private void clearSelection() {
         fragmentImage1.setImageResource(R.drawable.homefragment);
@@ -311,9 +318,9 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
     }
 
     /**
-     * å°†æ‰€æœ‰çš„Fragmentéƒ½ç½®ä¸ºéšè—çŠ¶æ€ã€‚
+     * ½«ËùÓĞµÄFragment¶¼ÖÃÎªÒş²Ø×´Ì¬¡£
      *
-     *            ç”¨äºå¯¹Fragmentæ‰§è¡Œæ“ä½œçš„äº‹åŠ¡
+     *            ÓÃÓÚ¶ÔFragmentÖ´ĞĞ²Ù×÷µÄÊÂÎñ
      */
     private void hideFragments(FragmentTransaction transaction) {
         if (homepageFragment != null) {
@@ -333,13 +340,13 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 //
 //
 //    /**
-//     * å¼•å¯¼ç•Œé¢åˆå§‹åŒ–éƒ¨åˆ†
+//     * Òıµ¼½çÃæ³õÊ¼»¯²¿·Ö
 //     */
 //    private void init_guide(){
 //        preferences = getSharedPreferences("phone", Context.MODE_PRIVATE);
 //        if (preferences.getBoolean("firststart", true)) {
 //            editor = preferences.edit();
-//            //å°†ç™»å½•æ ‡å¿—ä½è®¾ç½®ä¸ºfalseï¼Œä¸‹æ¬¡ç™»å½•æ—¶ä¸åœ¨æ˜¾ç¤ºé¦–æ¬¡ç™»å½•ç•Œé¢
+//            //½«µÇÂ¼±êÖ¾Î»ÉèÖÃÎªfalse£¬ÏÂ´ÎµÇÂ¼Ê±²»ÔÚÏÔÊ¾Ê×´ÎµÇÂ¼½çÃæ
 //            editor.putBoolean("firststart", false);
 //            editor.commit();
 //            Intent intent = new Intent(MainActivity.this, GuideActivity.class);
@@ -354,16 +361,16 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-//ä»¥åç§»èµ°
+//ÒÔºóÒÆ×ß
     protected void initSlidingMenu() {
         side_drawer = new SlidingDrawerView(this).initSlidingMenu();
 
         /**
-         * ç™»å½•åˆ‡æ¢é¡¶éƒ¨å¸ƒå±€
+         * µÇÂ¼ÇĞ»»¶¥²¿²¼¾Ö
          */
        login_layout=(LinearLayout) side_drawer.findViewById(R.id.login_layout);
-        baibian_btn=(ImageView) side_drawer.findViewById(R.id.baibian_btn);//ç™¾è¾©ç™»å½•æŒ‰é’®
-        logout_layout_not_login=(LinearLayout) side_drawer.findViewById(R.id.logout_layout_not_login);//æœªç™»å½•å¸ƒå±€
+        baibian_btn=(ImageView) side_drawer.findViewById(R.id.baibian_btn);//°Ù±çµÇÂ¼°´Å¥
+        logout_layout_not_login=(LinearLayout) side_drawer.findViewById(R.id.logout_layout_not_login);//Î´µÇÂ¼²¼¾Ö
 
         baibian_btn.setOnClickListener(new OnClickListener() {
             @Override
@@ -403,7 +410,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
             }
             return true;
         }
-        //æ‹¦æˆªMENUæŒ‰é’®äº‹ä»¶ï¼Œè®©ä»–æ— ä»»ä½•æ“ä½œ
+        //À¹½ØMENU°´Å¥ÊÂ¼ş£¬ÈÃËûÎŞÈÎºÎ²Ù×÷
         if (keyCode == KeyEvent.KEYCODE_MENU) {
             return true;
         }
@@ -417,10 +424,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
             case LOGIN4_REQUEST:
                 if(resultCode==LOGIN4_REQUEST){
                     /**
-                     * ç™»å½•åˆ‡æ¢å¸ƒå±€éƒ¨åˆ†
+                     * µÇÂ¼ÇĞ»»²¼¾Ö²¿·Ö
                      */
-                    logout_layout_not_login.setVisibility(View.GONE);//æ—§å¸ƒå±€æ¶ˆå¤±
-                    login_layout.setVisibility(View.VISIBLE);//æ–°å¸ƒå±€å‡ºç°
+                    logout_layout_not_login.setVisibility(View.GONE);//¾É²¼¾ÖÏûÊ§
+                    login_layout.setVisibility(View.VISIBLE);//ĞÂ²¼¾Ö³öÏÖ
                 }
                 break;
 

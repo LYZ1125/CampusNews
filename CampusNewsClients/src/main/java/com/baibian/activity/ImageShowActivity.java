@@ -13,15 +13,15 @@ import com.baibian.view.imageshow.ImageShowViewPager;
 import java.util.ArrayList;
 
 /*
- * ͼƬչʾ
+ * ????
  */
 public class ImageShowActivity extends BaseActivity {
-	/** ͼƬչʾ */
+	/** ???? */
 	private ImageShowViewPager image_pager;
 	private TextView page_number;
-	/** ͼƬ���ذ�ť */
+	/** ???????? */
 	private ImageView download;
-	/** ͼƬ�б� */
+	/** ???��? */
 	private ArrayList<String> imgsUrl;
 	/** PagerAdapter */
 	private ImagePagerAdapter mAdapter;

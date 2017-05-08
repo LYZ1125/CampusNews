@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 
 
 /**
- * èƒ½å¤Ÿå®ç°ä¸Šå•¦åˆ·æ–°ï¼Œä¸‹æ»‘åŠ è½½æ›´å¤šçš„adapter
+ * ÄÜ¹»ÊµÏÖÉÏÀ²Ë¢ĞÂ£¬ÏÂ»¬¼ÓÔØ¸ü¶àµÄadapter
  */
 public class Homepage_Refresh_FootAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private MyItemClickListener mItemClickListener;
@@ -40,52 +40,52 @@ public class Homepage_Refresh_FootAdapter extends RecyclerView.Adapter<RecyclerV
     private List<View> dots;
     private static int oldPosition;
 
-    //ä¸Šæ‹‰åŠ è½½æ›´å¤š
+    //ÉÏÀ­¼ÓÔØ¸ü¶à
     public static final int PULLUP_LOAD_MORE = 0;
-    //æ­£åœ¨åŠ è½½ä¸­
+    //ÕıÔÚ¼ÓÔØÖĞ
     public static final int LOADING_MORE = 1;
-    //ä¸Šæ‹‰åŠ è½½æ›´å¤šçŠ¶æ€-é»˜è®¤ä¸º0
+    //ÉÏÀ­¼ÓÔØ¸ü¶à×´Ì¬-Ä¬ÈÏÎª0
 
-    public static final int FIRST_ITEM = 2;//ç¬¬ä¸€ä¸ªå­é¡¹æ›´æ”¹çš„è¯·æ±‚
+    public static final int FIRST_ITEM = 2;//µÚÒ»¸ö×ÓÏî¸ü¸ÄµÄÇëÇó
 
     private int load_more_status = 0;
     private LayoutInflater mInflater;
     private List<String> mTitles = null;
-    private static final int TYPE_ITEM = 0;  //æ™®é€šItem View
-    private static final int TYPE_FOOTER = 1;  //é¡¶éƒ¨FootView
+    private static final int TYPE_ITEM = 0;  //ÆÕÍ¨Item View
+    private static final int TYPE_FOOTER = 1;  //¶¥²¿FootView
 
     public Homepage_Refresh_FootAdapter(Context context) {
         this.mContext = context;
         this.mInflater = LayoutInflater.from(context);
         this.mTitles = new ArrayList<String>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 2; i++) {
             int index = i + 1;
-            mTitles.add("item" + index);
+            mTitles.add(context.getString(R.string.text_topic));
         }
 
     }
 
     /**
-     * itemæ˜¾ç¤ºç±»å‹
+     * itemÏÔÊ¾ÀàĞÍ
      *
      */
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        //è¿›è¡Œåˆ¤æ–­æ˜¾ç¤ºç±»å‹ï¼Œæ¥åˆ›å»ºè¿”å›ä¸åŒçš„View
+        //½øĞĞÅĞ¶ÏÏÔÊ¾ÀàĞÍ£¬À´´´½¨·µ»Ø²»Í¬µÄView
         if (viewType == TYPE_ITEM) {
             View view = mInflater.inflate(R.layout.item_recycler_layout, parent, false);
-            //è¿™è¾¹å¯ä»¥åšä¸€äº›å±æ€§è®¾ç½®ï¼Œç”šè‡³äº‹ä»¶ç›‘å¬ç»‘å®š
+            //Õâ±ß¿ÉÒÔ×öÒ»Ğ©ÊôĞÔÉèÖÃ£¬ÉõÖÁÊÂ¼ş¼àÌı°ó¶¨
             //view.setBackgroundColor(Color.RED);
             ItemViewHolder itemViewHolder = new ItemViewHolder(view,mItemClickListener);
             return itemViewHolder;
         } else if (viewType == TYPE_FOOTER) {
             View foot_view = mInflater.inflate(R.layout.recycler_load_more_layout, parent, false);
-            //è¿™è¾¹å¯ä»¥åšä¸€äº›å±æ€§è®¾ç½®ï¼Œç”šè‡³äº‹ä»¶ç›‘å¬ç»‘å®š
+            //Õâ±ß¿ÉÒÔ×öÒ»Ğ©ÊôĞÔÉèÖÃ£¬ÉõÖÁÊÂ¼ş¼àÌı°ó¶¨
             //view.setBackgroundColor(Color.RED);
             FootViewHolder footViewHolder = new FootViewHolder(foot_view);
             return footViewHolder;
         } else if (viewType == FIRST_ITEM) {
-            //ç¬¬ä¸€ä¸ªå­é¡¹æ›´æ”¹æˆä¸ºviewpager
-            View mViewPage = mInflater.inflate(R.layout.homepage_list_item_viewpager, parent, false);//è¿™é‡Œå¿…é¡»è¦æ˜¯falseï¼Œå¦åˆ™åŸæ¥çš„å¸ƒå±€åœ¨ï¼Œä¼šå’Œæ–°åŠ å…¥çš„å¸ƒå±€äº§ç”Ÿå†²çª
+            //µÚÒ»¸ö×ÓÏî¸ü¸Ä³ÉÎªviewpager
+            View mViewPage = mInflater.inflate(R.layout.homepage_list_item_viewpager, parent, false);//ÕâÀï±ØĞëÒªÊÇfalse£¬·ñÔòÔ­À´µÄ²¼¾ÖÔÚ£¬»áºÍĞÂ¼ÓÈëµÄ²¼¾Ö²úÉú³åÍ»
             adsViewPager = (ViewPager) mViewPage.findViewById(R.id.homepage_ViewPager);
             oldPosition = 0;
             initImagesId();
@@ -94,7 +94,7 @@ public class Homepage_Refresh_FootAdapter extends RecyclerView.Adapter<RecyclerV
             initChangePicHandler();
             startScheduledExecutorService();
             adsViewPager.setAdapter(new Homepage_ViewpagerAdapter(imageViews, imageResId));
-            //è¿™è¾¹å¯ä»¥åšä¸€äº›å±æ€§è®¾ç½®ï¼Œç”šè‡³äº‹ä»¶ç›‘å¬ç»‘å®š
+            //Õâ±ß¿ÉÒÔ×öÒ»Ğ©ÊôĞÔÉèÖÃ£¬ÉõÖÁÊÂ¼ş¼àÌı°ó¶¨
             //view.setBackgroundColor(Color.RED);
             FirstViewHolder firstViewHolder = new FirstViewHolder(mViewPage);
             return firstViewHolder;
@@ -103,7 +103,7 @@ public class Homepage_Refresh_FootAdapter extends RecyclerView.Adapter<RecyclerV
     }
 
     /**
-     * æ•°æ®çš„ç»‘å®šæ˜¾ç¤º
+     * Êı¾İµÄ°ó¶¨ÏÔÊ¾
      *
      * @param holder
      * @param position
@@ -126,7 +126,7 @@ public class Homepage_Refresh_FootAdapter extends RecyclerView.Adapter<RecyclerV
     }
 
     /**
-     * è¿›è¡Œåˆ¤æ–­æ˜¯æ™®é€šItemè§†å›¾è¿˜æ˜¯FootViewè§†å›¾
+     * ½øĞĞÅĞ¶ÏÊÇÆÕÍ¨ItemÊÓÍ¼»¹ÊÇFootViewÊÓÍ¼
      *
      * @param position
      * @return
@@ -134,10 +134,10 @@ public class Homepage_Refresh_FootAdapter extends RecyclerView.Adapter<RecyclerV
     @Override
     public int getItemViewType(int position) {
         if (position == 0) {
-            //å½“æ—¶ç¬¬ä¸€ä¸ªå­é¡¹æ—¶ï¼Œè¿”å›ä½¿æ›´æ”¹
+            //µ±Ê±µÚÒ»¸ö×ÓÏîÊ±£¬·µ»ØÊ¹¸ü¸Ä
             return FIRST_ITEM;
         }
-        // æœ€åä¸€ä¸ªitemè®¾ç½®ä¸ºfooterView
+        // ×îºóÒ»¸öitemÉèÖÃÎªfooterView
         else if (position + 1 == getItemCount()) {
             return TYPE_FOOTER;
         } else {
@@ -150,7 +150,7 @@ public class Homepage_Refresh_FootAdapter extends RecyclerView.Adapter<RecyclerV
         return mTitles.size()+1 ;
     }
 
-    //è‡ªå®šä¹‰çš„ViewHolderï¼ŒæŒæœ‰æ¯ä¸ªItemçš„çš„æ‰€æœ‰ç•Œé¢å…ƒç´ 
+    //×Ô¶¨ÒåµÄViewHolder£¬³ÖÓĞÃ¿¸öItemµÄµÄËùÓĞ½çÃæÔªËØ
     public static class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView item_tv;
         private  MyItemClickListener mListener;
@@ -165,7 +165,7 @@ public class Homepage_Refresh_FootAdapter extends RecyclerView.Adapter<RecyclerV
             itemView.setOnClickListener(this);
         }
         /**
-         * å®ç°OnClickListeneræ¥å£é‡å†™çš„æ–¹æ³•
+         * ÊµÏÖOnClickListener½Ó¿ÚÖØĞ´µÄ·½·¨
          * @param v
          */
         @Override
@@ -178,7 +178,7 @@ public class Homepage_Refresh_FootAdapter extends RecyclerView.Adapter<RecyclerV
     }
 
     /**
-     * é¡¶éƒ¨çš„å¸ƒå±€
+     * ¶¥²¿µÄ²¼¾Ö
      */
     public static class FirstViewHolder extends RecyclerView.ViewHolder {
         public TextView item_tv;
@@ -190,7 +190,7 @@ public class Homepage_Refresh_FootAdapter extends RecyclerView.Adapter<RecyclerV
     }
 
     /**
-     * åº•éƒ¨FootViewå¸ƒå±€
+     * µ×²¿FootView²¼¾Ö
      */
     public static class FootViewHolder extends RecyclerView.ViewHolder {
         private TextView foot_view_item_tv;
@@ -201,7 +201,7 @@ public class Homepage_Refresh_FootAdapter extends RecyclerView.Adapter<RecyclerV
         }
     }
 
-    //æ·»åŠ æ•°æ®
+    //Ìí¼ÓÊı¾İ
     public void addItem(List<String> newDatas) {
         //mTitles.add(position, data);
         //notifyItemInserted(position);
@@ -217,11 +217,11 @@ public class Homepage_Refresh_FootAdapter extends RecyclerView.Adapter<RecyclerV
     }
 
     /**
-     * //ä¸Šæ‹‰åŠ è½½æ›´å¤š
+     * //ÉÏÀ­¼ÓÔØ¸ü¶à
      * PULLUP_LOAD_MORE=0;
-     * //æ­£åœ¨åŠ è½½ä¸­
+     * //ÕıÔÚ¼ÓÔØÖĞ
      * LOADING_MORE=1;
-     * //åŠ è½½å®Œæˆå·²ç»æ²¡æœ‰æ›´å¤šæ•°æ®äº†
+     * //¼ÓÔØÍê³ÉÒÑ¾­Ã»ÓĞ¸ü¶àÊı¾İÁË
      * NO_MORE_DATA=2;
      *
      * @param status
@@ -298,13 +298,13 @@ public class Homepage_Refresh_FootAdapter extends RecyclerView.Adapter<RecyclerV
 
         public ViewHolder(View itemView, MyItemClickListener myItemClickListener) {
             super(itemView);
-            //å°†å…¨å±€çš„ç›‘å¬èµ‹å€¼ç»™æ¥å£
+            //½«È«¾ÖµÄ¼àÌı¸³Öµ¸ø½Ó¿Ú
             this.mListener = myItemClickListener;
             itemView.setOnClickListener(this);
         }
 
         /**
-         * å®ç°OnClickListeneræ¥å£é‡å†™çš„æ–¹æ³•
+         * ÊµÏÖOnClickListener½Ó¿ÚÖØĞ´µÄ·½·¨
          * @param v
          */
         @Override
@@ -317,14 +317,14 @@ public class Homepage_Refresh_FootAdapter extends RecyclerView.Adapter<RecyclerV
     }
 
     /**
-     * åˆ›å»ºä¸€ä¸ªå›è°ƒæ¥å£
+     * ´´½¨Ò»¸ö»Øµ÷½Ó¿Ú
      */
     public interface MyItemClickListener {
         void onItemClick(View view, int position);
     }
 
     /**
-     * åœ¨activityé‡Œé¢adapterå°±æ˜¯è°ƒç”¨çš„è¿™ä¸ªæ–¹æ³•,å°†ç‚¹å‡»äº‹ä»¶ç›‘å¬ä¼ é€’è¿‡æ¥,å¹¶èµ‹å€¼ç»™å…¨å±€çš„ç›‘å¬
+     * ÔÚactivityÀïÃæadapter¾ÍÊÇµ÷ÓÃµÄÕâ¸ö·½·¨,½«µã»÷ÊÂ¼ş¼àÌı´«µİ¹ıÀ´,²¢¸³Öµ¸øÈ«¾ÖµÄ¼àÌı
      *
      * @param myItemClickListener
      */

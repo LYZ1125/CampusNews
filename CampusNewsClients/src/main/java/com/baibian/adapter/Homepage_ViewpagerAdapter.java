@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import java.util.List;
 
 /**
- * ä¸»é¡µviewpagerçš„adapter
+ * Ö÷Ò³viewpagerµÄadapter
  */
 
 public class Homepage_ViewpagerAdapter extends PagerAdapter {

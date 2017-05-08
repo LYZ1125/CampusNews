@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import com.baibian.R;
-import com.baibian.activity.Edit_Information_Activity;
 
 import java.util.List;
 
@@ -55,7 +54,7 @@ public class EditImformation_ListView_Adapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         i=position;
-        //�����޸Ķ�Ӧλ�õĲ���
+        //?????????��??????
         if (position ==mList.size()-1) {
             convertView = mInflater.inflate(R.layout.edit_information_listitem_bottom, null);
             return convertView;

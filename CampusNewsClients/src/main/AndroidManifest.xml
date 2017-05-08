@@ -49,6 +49,8 @@
         <activity android:name="com.baibian.activity.setting.PushSetting"></activity>
         <activity android:name="com.baibian.activity.Edit_Information_Activity"></activity>
         <activity android:name="com.baibian.activity.DetailsActivity"></activity>
+        <activity android:name="com.baibian.activity.DiscussionActivity"></activity>
+
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"

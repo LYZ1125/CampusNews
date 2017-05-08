@@ -19,14 +19,14 @@ import android.widget.RelativeLayout;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
 
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.baibian.R;
 import com.baibian.bean.NewsEntity;
 import com.baibian.tool.Constants;
 import com.baibian.tool.DateTools;
 import com.baibian.tool.Options;
 import com.baibian.view.HeadListView.HeaderAdapter;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,7 +39,7 @@ public class NewsAdapter extends BaseAdapter implements SectionIndexer, HeaderAd
     protected ImageLoader imageLoader = ImageLoader.getInstance();
     DisplayImageOptions options;
        /**
-     * å¼¹å‡ºæ›´å¤šé€‰æ‹©æ¡†
+     * µ¯³ö¸ü¶àÑ¡Ôñ¿ò
      */
     private PopupWindow popupWindow;
     private View popDislike;
@@ -60,9 +60,9 @@ public class NewsAdapter extends BaseAdapter implements SectionIndexer, HeaderAd
         initDateHead();
     }
 
-    /* æ˜¯ä¸æ˜¯åŸå¸‚é¢‘é“ï¼Œtrueæ˜¯ï¼Œfalseä¸æ˜¯*/
+    /* ÊÇ²»ÊÇ³ÇÊĞÆµµÀ£¬trueÊÇ£¬false²»ÊÇ*/
     public boolean isCityChannel = false;
-    /* æ˜¯ä¸æ˜¯ç¬¬ä¸€ä¸ªITEMï¼Œtrueï¼šæ˜¯ï¼Œfalse:ä¸æ˜¯*/
+    /* ÊÇ²»ÊÇµÚÒ»¸öITEM£¬true£ºÊÇ£¬false:²»ÊÇ*/
     public boolean isFirst = true;
     private List<Integer> mPositions;
     private List<String> mSections;
@@ -133,7 +133,7 @@ public class NewsAdapter extends BaseAdapter implements SectionIndexer, HeaderAd
             mHolder.popicon = (ImageView) view.findViewById(R.id.popicon);
             mHolder.comment_content = (TextView) view.findViewById(R.id.comment_content);
             mHolder.right_padding_view = (View) view.findViewById(R.id.right_padding_view);
-            //å¤´éƒ¨çš„æ—¥æœŸéƒ¨åˆ†
+            //Í·²¿µÄÈÕÆÚ²¿·Ö
             mHolder.layout_list_section = (LinearLayout) view.findViewById(R.id.layout_list_section);
             mHolder.section_text = (TextView) view.findViewById(R.id.section_text);
             mHolder.section_day = (TextView) view.findViewById(R.id.section_day);
@@ -143,11 +143,11 @@ public class NewsAdapter extends BaseAdapter implements SectionIndexer, HeaderAd
         } else {
             mHolder = (ViewHolder) view.getTag();
         }
-        //è·å–positionå¯¹åº”çš„æ•°æ®
+        //»ñÈ¡position¶ÔÓ¦µÄÊı¾İ
         NewsEntity news = getItem(position);
         mHolder.item_title.setText(news.getTitle());
         mHolder.item_source.setText(news.getSource());
-        mHolder.comment_count.setText("è¯„è®º" + news.getCommentNum());
+        mHolder.comment_count.setText("ÆÀÂÛ" + news.getCommentNum());
 //        String strTime_hm = DateTools.refreshTime(activity.getSharedPreferences("publishTime", Context.MODE_PRIVATE).getLong("lastTime", -1) - news.getPublishTime());
 //        Log.d("time!!!", String.valueOf(news.getPublishTime() - activity.getSharedPreferences("publishTime", Context.MODE_PRIVATE).getLong("lastTime", -1)));
         mHolder.publish_time.setText(news.getPublishTime());
@@ -161,7 +161,7 @@ public class NewsAdapter extends BaseAdapter implements SectionIndexer, HeaderAd
 
             if (imgUrlList.size() == 1) {
 //                mHolder.item_image_layout.setVisibility(View.GONE);
-                //æ˜¯å¦æ˜¯å¤§å›¾
+                //ÊÇ·ñÊÇ´óÍ¼
                 if (news.getIsLarge()) {
                     mHolder.large_image.setVisibility(View.VISIBLE);
                     mHolder.right_image.setVisibility(View.GONE);
@@ -196,21 +196,21 @@ public class NewsAdapter extends BaseAdapter implements SectionIndexer, HeaderAd
         } else {
             mHolder.alt_mark.setVisibility(View.GONE);
         }
-        //åˆ¤æ–­è¯¥æ–°é—»æ¦‚è¿°æ˜¯å¦ä¸ºç©º
+        //ÅĞ¶Ï¸ÃĞÂÎÅ¸ÅÊöÊÇ·ñÎª¿Õ
         if (!TextUtils.isEmpty(news.getNewsAbstract())) {
             mHolder.item_abstract.setVisibility(View.VISIBLE);
             mHolder.item_abstract.setText(news.getNewsAbstract());
         } else {
             mHolder.item_abstract.setVisibility(View.GONE);
         }
-        //åˆ¤æ–­è¯¥æ–°é—»æ—¶å€™æ˜¯ç‰¹æ®Šæ ‡è®°çš„ï¼Œæ¨å¹¿ç­‰ï¼Œä¸ºç©ºå°±æ˜¯æ–°é—»
+        //ÅĞ¶Ï¸ÃĞÂÎÅÊ±ºòÊÇÌØÊâ±ê¼ÇµÄ£¬ÍÆ¹ãµÈ£¬Îª¿Õ¾ÍÊÇĞÂÎÅ
         if (!TextUtils.isEmpty(news.getLocal())) {
             mHolder.list_item_local.setVisibility(View.VISIBLE);
             mHolder.list_item_local.setText(news.getLocal());
         } else {
             mHolder.list_item_local.setVisibility(View.GONE);
         }
-        //åˆ¤æ–­è¯„è®ºå­å¼¹æ˜¯å¦ä¸ºç©ºï¼Œä¸ä¸ºç©ºæ˜¾ç¤ºå¯¹åº”å¸ƒå±€
+        //ÅĞ¶ÏÆÀÂÛ×Óµ¯ÊÇ·ñÎª¿Õ£¬²»Îª¿ÕÏÔÊ¾¶ÔÓ¦²¼¾Ö
         if (!TextUtils.isEmpty(news.getComment())) {
             //news.getLocal() != null &&
             mHolder.comment_layout.setVisibility(View.VISIBLE);
@@ -218,7 +218,7 @@ public class NewsAdapter extends BaseAdapter implements SectionIndexer, HeaderAd
         } else {
             mHolder.comment_layout.setVisibility(View.GONE);
         }
-        //åˆ¤æ–­è¯¥æ–°é—»æ˜¯å¦å·²è¯»
+        //ÅĞ¶Ï¸ÃĞÂÎÅÊÇ·ñÒÑ¶Á
 //        if (!news.getReadStatus()) {
 ////            mHolder.item_layout.setSelected(true);
 //        } else {
@@ -231,16 +231,16 @@ public class NewsAdapter extends BaseAdapter implements SectionIndexer, HeaderAd
         }else{
             mHolder.item_title.setTextColor(Color.GRAY);
         }
-        //è®¾ç½®+æŒ‰é’®ç‚¹å‡»æ•ˆæœ
+        //ÉèÖÃ+°´Å¥µã»÷Ğ§¹û
         mHolder.popicon.setOnClickListener(new popAction(position));
-        //å¤´éƒ¨çš„ç›¸å…³ä¸œè¥¿
+        //Í·²¿µÄÏà¹Ø¶«Î÷
         int section = getSectionForPosition(position);
         if (getPositionForSection(section) == position) {
             mHolder.layout_list_section.setVisibility(View.VISIBLE);
 //			head_title.setText(news.getDate());
             mHolder.section_text.setText(mSections.get(section));
 //            mHolder.section_text.setText("2016.11.12");
-            mHolder.section_day.setText("ä»Šå¤©");
+            mHolder.section_day.setText("½ñÌì");
         } else {
             mHolder.layout_list_section.setVisibility(View.GONE);
         }
@@ -251,43 +251,43 @@ public class NewsAdapter extends BaseAdapter implements SectionIndexer, HeaderAd
         LinearLayout item_layout;
         //title
         TextView item_title;
-        //å›¾ç‰‡æº
+        //Í¼Æ¬Ô´
         TextView item_source;
-        //ç±»ä¼¼æ¨å¹¿ä¹‹ç±»çš„æ ‡ç­¾
+        //ÀàËÆÍÆ¹ãÖ®ÀàµÄ±êÇ©
         TextView list_item_local;
-        //è¯„è®ºæ•°é‡
+        //ÆÀÂÛÊıÁ¿
         TextView comment_count;
-        //å‘å¸ƒæ—¶é—´
+        //·¢²¼Ê±¼ä
         TextView publish_time;
-        //æ–°é—»æ‘˜è¦
+        //ĞÂÎÅÕªÒª
         TextView item_abstract;
-        //å³ä¸Šæ–¹TAGæ ‡è®°å›¾ç‰‡
+        //ÓÒÉÏ·½TAG±ê¼ÇÍ¼Æ¬
         ImageView alt_mark;
-        //å³è¾¹å›¾ç‰‡
+        //ÓÒ±ßÍ¼Æ¬
         ImageView right_image;
-        //3å¼ å›¾ç‰‡å¸ƒå±€
-        LinearLayout item_image_layout; //3å¼ å›¾ç‰‡æ—¶å€™çš„å¸ƒå±€
+        //3ÕÅÍ¼Æ¬²¼¾Ö
+        LinearLayout item_image_layout; //3ÕÅÍ¼Æ¬Ê±ºòµÄ²¼¾Ö
         ImageView item_image_0;
         ImageView item_image_1;
         ImageView item_image_2;
-        //å¤§å›¾çš„å›¾ç‰‡çš„è¯å¸ƒå±€
+        //´óÍ¼µÄÍ¼Æ¬µÄ»°²¼¾Ö
         ImageView large_image;
-        //popæŒ‰é’®
+        //pop°´Å¥
         ImageView popicon;
-        //è¯„è®ºå¸ƒå±€
+        //ÆÀÂÛ²¼¾Ö
         RelativeLayout comment_layout;
         TextView comment_content;
-        //å¤´éƒ¨çš„æ—¥æœŸéƒ¨åˆ†
+        //Í·²¿µÄÈÕÆÚ²¿·Ö
         View right_padding_view;
 
-        //Í·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½
+        //????????????
         LinearLayout layout_list_section;
         TextView section_text;
         TextView section_day;
     }
 
     /**
-     * æ ¹æ®å±æ€§è·å–å¯¹åº”çš„èµ„æºID
+     * ¸ù¾İÊôĞÔ»ñÈ¡¶ÔÓ¦µÄ×ÊÔ´ID
      */
     public int getAltMarkResID(int mark, int position) {
         if (activity.getSharedPreferences("collect", Context.MODE_PRIVATE).getBoolean(String.valueOf(getItem(position).getId()), false)) {
@@ -312,19 +312,19 @@ public class NewsAdapter extends BaseAdapter implements SectionIndexer, HeaderAd
     }
 
     /**
-     * popWindow å…³é—­æŒ‰é’®
+     * popWindow ¹Ø±Õ°´Å¥
      */
     private ImageView btn_pop_close;
 
     /**
-     *åˆå§‹åŒ–å¼¹å‡ºçš„pop
+     *³õÊ¼»¯µ¯³öµÄpop
      * //     * @param position
      */
     private void initPopWindow() {
         View popView = inflater.inflate(R.layout.list_item_pop, null);
         popupWindow = new PopupWindow(popView, AbsListView.LayoutParams.WRAP_CONTENT, AbsListView.LayoutParams.WRAP_CONTENT);
         popupWindow.setBackgroundDrawable(new ColorDrawable(0));
-        //è®¾ç½®popwindowå‡ºç°å’Œæ¶ˆå¤±åŠ¨ç”»
+        //ÉèÖÃpopwindow³öÏÖºÍÏûÊ§¶¯»­
         popupWindow.setAnimationStyle(R.style.PopMenuAnimation);
         btn_pop_close = (ImageView) popView.findViewById(R.id.btn_pop_close);
         popDislike = popView.findViewById(R.id.ll_pop_dislike);
@@ -336,25 +336,25 @@ public class NewsAdapter extends BaseAdapter implements SectionIndexer, HeaderAd
             Drawable drawable = popFavor.getResources().getDrawable(R.drawable.listpage_more_like_seleted_normal);
             drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
             popTextFavor.setCompoundDrawables(drawable, null, null, null);
-            popTextFavor.setText("ï¿½ï¿½ï¿½Õ²ï¿½");
+            popTextFavor.setText("?????");
         }else{
             Drawable drawable = popFavor.getResources().getDrawable(R.drawable.listpage_more_like_normal);
             drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
             popTextFavor.setCompoundDrawables(drawable, null, null, null);
-            popTextFavor.setText("å·²æ”¶è—");
+            popTextFavor.setText("ÒÑÊÕ²Ø");
         }
     }
 
     /**
-     * æ˜¾ç¤ºpopWindow
+     * ÏÔÊ¾popWindow
      */
     public void showPop(View parent, int x, int y, final int currentItem) {
         initPopWindow();
-        //è®¾ç½®popwindowæ˜¾ç¤ºä½ç½®
+        //ÉèÖÃpopwindowÏÔÊ¾Î»ÖÃ
         popupWindow.showAtLocation(parent, 0, x, y);
-        //è·å–popwindowç„¦ç‚¹
+        //»ñÈ¡popwindow½¹µã
         popupWindow.setFocusable(true);
-        //è®¾ç½®popwindowå¦‚æœç‚¹å‡»å¤–é¢åŒºåŸŸï¼Œä¾¿å…³é—­ã€‚
+        //ÉèÖÃpopwindowÈç¹ûµã»÷ÍâÃæÇøÓò£¬±ã¹Ø±Õ¡£
         popupWindow.setOutsideTouchable(true);
         popupWindow.update();
         if (popupWindow.isShowing()) {
@@ -374,21 +374,21 @@ public class NewsAdapter extends BaseAdapter implements SectionIndexer, HeaderAd
 //                isCollect.add(getItem(position).getId());
 //                Log.d("itemId1111", String.valueOf(getItem(currentItem).getId()));
                 if (!activity.getSharedPreferences("collect", Context.MODE_PRIVATE).getBoolean(String.valueOf(getItem(currentItem).getId()), false)) {
-//                    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ş·ï¿½ï¿½ï¿½Ğ§
+//                    ????????????§¹
 //                    getItem(currentItem).setCollectStatus(true);
                     activity.getSharedPreferences("collect", Context.MODE_PRIVATE).edit().putBoolean(String.valueOf(getItem(currentItem).getId()), true).commit();
                     Drawable drawable = popFavor.getResources().getDrawable(R.drawable.listpage_more_like_seleted_normal);
                     drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
                     popTextFavor.setCompoundDrawables(drawable, null, null, null);
-                    popTextFavor.setText("å·²æ”¶è—");
+                    popTextFavor.setText("ÒÑÊÕ²Ø");
                 } else {
-                    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ş·ï¿½ï¿½ï¿½Ğ§
+                    //????????????§¹
 //                    getItem(currentItem).setCollectStatus(false);
                     activity.getSharedPreferences("collect", Context.MODE_PRIVATE).edit().putBoolean(String.valueOf(getItem(currentItem).getId()), false).commit();
                     Drawable drawable = popFavor.getResources().getDrawable(R.drawable.listpage_more_like_normal);
                     drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
                     popTextFavor.setCompoundDrawables(drawable, null, null, null);
-                    popTextFavor.setText("ï¿½Õ²ï¿½");
+                    popTextFavor.setText("???");
 //                    notifyDataSetChanged();
                 }
             }
@@ -408,7 +408,7 @@ public class NewsAdapter extends BaseAdapter implements SectionIndexer, HeaderAd
     }
 
     /**
-     * æ¯ä¸ªITEMä¸­moreæŒ‰é’®å¯¹åº”çš„ç‚¹å‡»åŠ¨ä½œ
+     * Ã¿¸öITEMÖĞmore°´Å¥¶ÔÓ¦µÄµã»÷¶¯×÷
      */
     public class popAction implements View.OnClickListener {
         int position;
@@ -420,7 +420,7 @@ public class NewsAdapter extends BaseAdapter implements SectionIndexer, HeaderAd
         @Override
         public void onClick(View v) {
             int[] arrayOfInt = new int[2];
-            //è·å–ç‚¹å‡»æŒ‰é’®çš„åæ ‡
+            //»ñÈ¡µã»÷°´Å¥µÄ×ø±ê
 
             v.getLocationOnScreen(arrayOfInt);
 //            int indexOf = newsList.indexOf(v.getParent());
@@ -433,7 +433,7 @@ public class NewsAdapter extends BaseAdapter implements SectionIndexer, HeaderAd
     }
 
     /*
-      * è®¾ç½®æ˜¯ä¸æ˜¯ç‰¹æ®Šçš„é¢‘é“ï¼ˆåŸå¸‚é¢‘é“ï¼‰
+      * ÉèÖÃÊÇ²»ÊÇÌØÊâµÄÆµµÀ£¨³ÇÊĞÆµµÀ£©
       */
     public void setCityChannel(boolean iscity) {
         isCityChannel = iscity;
@@ -467,7 +467,7 @@ public class NewsAdapter extends BaseAdapter implements SectionIndexer, HeaderAd
         int section = getSectionForPosition(realPosition);
         String title = (String) getSections()[section];
         ((TextView) header.findViewById(R.id.section_text)).setText(title);
-        ((TextView) header.findViewById(R.id.section_day)).setText("ï¿½ï¿½ï¿½ï¿½");
+        ((TextView) header.findViewById(R.id.section_day)).setText("????");
     }
 
     @Override

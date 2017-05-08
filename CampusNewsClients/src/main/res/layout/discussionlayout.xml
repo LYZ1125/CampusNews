@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/discussion_layout"
+    android:background="#fffff0"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/choise_direction_all_layout"
+        android:background="@color/baibian_back_color"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height">
+        <Button
+            android:id="@+id/choise_direction_back"
+            android:layout_width="44dp"
+            android:layout_height="fill_parent"
+            android:background="@mipmap/back_mipmap_yellow"/>
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="人权天赋还是天赋人权"
+            android:textSize="23sp"
+            android:textColor="#454545"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="49dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/choise_direction_back" />
+
+
+    </RelativeLayout>
+    <!--使用text布局来实现-->
+    <LinearLayout
+        android:layout_marginTop="10dp"
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="15dp">
+        <RelativeLayout
+            android:id="@+id/discussion_progress_relativelayout1"
+
+            android:background="@drawable/left_radius_background"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:textSize="13sp"
+                android:id="@+id/discussion_progress_text1"
+                android:textColor="#101010"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/discussion_progress_relativelayout2"
+            android:background="@color/progressbar_secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <TextView
+                android:textSize="13sp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/discussion_progress_text2"
+                android:textColor="#101010"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/discussion_progress_relativelayout3"
+            android:background="@drawable/right_radius_background"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <TextView
+                android:textSize="13sp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/discussion_progress_text3"
+                android:textColor="#101010"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/integration_swiperefreshlayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            >
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/integration_recycler"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
+
+            </android.support.v7.widget.RecyclerView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+            <EditText
+                android:id="@+id/send_edittext"
+                android:layout_weight="6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+            <Button
+                android:textSize="15sp"
+                android:text="发送"
+                android:background="@drawable/blue_bubble"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

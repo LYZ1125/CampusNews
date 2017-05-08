@@ -1,7 +1,9 @@
 package com.baibian.activity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -21,10 +23,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baibian.R;
 import com.baibian.base.BaseActivity;
+import com.baibian.tool.UI_Tools;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,34 +41,42 @@ import co.lujun.androidtagview.TagView;
 
 /**
  * Created by XZY on 2017/4/13.
- * 辩题名：权利天赋/人赋
- * 概述：权利天赋即自然权利（Natural%20Right），最早的表述或来自古希腊斯多噶学派，强调人类在自然状态下
- * 固有的，神圣不可侵犯和剥夺的权利。因此，人类的权利来自天然，所以一切人为的国家、政权、社会、风尚
- * 、秩序，都必须经过人的权利。%20而另有一些人则认为，在自然状态下，只有弱肉强食、物竞天择、胜者为王
- * ，没有人权，更没有平等。是人，在与自然的抗争中，与人类自身博弈中，从理性
- * 出发，假借更高的名义，将所谓的“权利”赋予给了自己。%20因此，观念中的自然权利究竟该作何论，权
- * 利到底是得授于天，还是来自我们自己？让我们期待这场比赛将带给我们的启发。
+ * ?????????????/???
+ * ?????????????????????Natural%20Right??????????????????????????????????????????????
+ * ???е????????????????????????????????????????????????????????????????????????
+ * ?????????????????????%20???????Щ??????????????????????????????????????????
+ * ?????????????????????????????????????У??????????????У???????
+ * ????????????????壬????ν????????????????????%20?????????е?????????????????????
+ * ????????????????????????????????????????????????????????????????
  */
 
 public class DetailsActivity extends BaseActivity {
+    public View view3 ;//细分视图
+    private Context context;
     ViewPager pager = null;
     PagerTabStrip tabStrip = null;
     ArrayList<View> viewContainter = new ArrayList<View>();
     ArrayList<String> titleContainer = new ArrayList<String>();
     public String TAG = "tag";
     Button backBt = null;
+    private LinearLayout forums_details_all_layout;
     private TagContainerLayout mTagContainerLayout1, mTagContainerLayout2, mTagContainerLayout3, mTagContainerLayout4;
     private Button addTag1;
     private EditText editTag;
     private ViewPager viewPager;
     List<Fragment> viewPagerList;
-
+    private LinearLayout forums_details_itemlayout1;
+    private RelativeLayout forums_details_itemlayout2;
+    private Activity activity;
+    private TextView begin_discussion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.forums_details);
+        context=getApplicationContext();
+        activity=this;
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 //
@@ -69,7 +84,7 @@ public class DetailsActivity extends BaseActivity {
 
         initView();
         initViewPager();
-//        viewpager设置有误
+//        viewpager????????
 //        viewPagerList=new ArrayList<Fragment>();
 //        viewPagerList.add(new overviewFragment());
 //        viewPagerList.add(new subdivideFragment());
@@ -78,7 +93,7 @@ public class DetailsActivity extends BaseActivity {
 //        viewPager.setAdapter(adapter);
 
 
-//      设置按钮点击
+//      ?????????
 //        addTag1.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -89,14 +104,12 @@ public class DetailsActivity extends BaseActivity {
     }
 
     private void initData() {
-
-
         List<String> list1 = new ArrayList<String>();
         list1.add("Java");
         list1.add("C++");
         list1.add("Python");
         list1.add("Swift");
-        list1.add("你好，这是一个TAG。你好，这是一个TAG。你好，这是一个TAG。你好，这是一个TAG。");
+        list1.add("???????????TAG?????????????TAG?????????????TAG?????????????TAG??");
         list1.add("PHP");
         list1.add("JavaScript");
         list1.add("Html");
@@ -117,7 +130,7 @@ public class DetailsActivity extends BaseActivity {
         list2.add("Uruguay");
         list2.add("Brazil");
 
-        String[] list3 = new String[]{"Persian", "波斯语", "?????", "Hello", "你好", "????"};
+        String[] list3 = new String[]{"Persian", "?????", "?????", "Hello", "???", "????"};
         String[] list4 = new String[]{"Adele", "Whitney Houston"};
 
         mTagContainerLayout1 = (TagContainerLayout) findViewById(R.id.tagcontainerLayout1);
@@ -217,26 +230,69 @@ public class DetailsActivity extends BaseActivity {
     private void initViewPager() {
         viewPager.setAdapter(new PagerAdapter() {
 
-            //viewpager中的组件数量
+            //viewpager?е????????
             @Override
             public int getCount() {
                 return viewContainter.size();
             }
 
-            //滑动切换的时候销毁当前的组件
+            //?????л?????????????????
             @Override
             public void destroyItem(ViewGroup container, int position,
                                     Object object) {
                 ((ViewPager) container).removeView(viewContainter.get(position));
             }
 
-            //每次滑动的时候生成的组件
+            //??λ????????????????
             @Override
-            public Object instantiateItem(ViewGroup container, int position) {
+            public Object instantiateItem(final ViewGroup container, final int position) {
                 ((ViewPager) container).addView(viewContainter.get(position));
+                if (position==1){
+
+                      FrameLayout framelayoute21=(FrameLayout) findViewById(R.id.framelayoute21);
+                    framelayoute21.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                           forums_details_itemlayout1=(LinearLayout) findViewById(R.id.forums_details_itemlayout1);
+                            forums_details_itemlayout2=(RelativeLayout)findViewById(R.id.forums_details_itemlayout2);
+                            begin_discussion=(TextView)findViewById(R.id.begin_discussion);
+                            forums_details_itemlayout1.setVisibility(View.GONE);
+                            forums_details_itemlayout2.setVisibility(View.VISIBLE);
+                            begin_discussion.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent intent=new Intent(activity,DiscussionActivity.class);
+                                    startActivity(intent);
+                                }
+                            });
+                            editTag = (EditText) findViewById(R.id.tag_edit);
+                                 UI_Tools ui_tools=new UI_Tools();
+                                  ui_tools.CancelFocusOne(activity,forums_details_all_layout,editTag);
+                            ui_tools.CancelFocusOne(activity,container,editTag);
+                        }
+                    });
+//                    TextView textViewbegin=(TextView) findViewById(R.id.begin_discussion);
+//                    textViewbegin.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            Intent intent=new Intent(DetailsActivity.this,DiscussionActivity.class);
+//                            startActivity(intent);
+//                        }
+//                    });
+                }
                 return viewContainter.get(position);
             }
 
+            /**
+             替换原来的view
+             */
+            private void updateViewPagerItem(ViewGroup container,View view,int index){
+                viewContainter.remove(index);
+                view3 = LayoutInflater.from(viewPager.getContext()).inflate(R.layout.forums_details_overview, null);
+                viewContainter.add(index,view3);
+                viewPager.getAdapter().notifyDataSetChanged();
+                // findViewById(getResources().getIdentifier("sysset_button"+(index+1), "id", "com.jzbyapp.suzhou")).requestFocus();
+            }
             @Override
             public boolean isViewFromObject(View arg0, Object arg1) {
                 return arg0 == arg1;
@@ -251,8 +307,8 @@ public class DetailsActivity extends BaseActivity {
             public CharSequence getPageTitle(int position) {
                 SpannableStringBuilder ssb = new SpannableStringBuilder(" "
                         + titleContainer.get(position)); // space added before text for
-                ForegroundColorSpan fcs = new ForegroundColorSpan(getResources().getColor(R.color.baibian_back_color));//字体颜色设置为绿色
-                ssb.setSpan(fcs, 1, ssb.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);//设置字体颜色
+                ForegroundColorSpan fcs = new ForegroundColorSpan(getResources().getColor(R.color.baibian_back_color));//???????????????
+                ssb.setSpan(fcs, 1, ssb.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);//???????????
                 ssb.setSpan(new RelativeSizeSpan(1.2f), 1, ssb.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 return ssb;
             }
@@ -283,28 +339,33 @@ public class DetailsActivity extends BaseActivity {
         tabStrip = (PagerTabStrip) this.findViewById(R.id.tab_strip);
         backBt = (Button) this.findViewById(R.id.forums_details_back);
         addTag1 = (Button) this.findViewById(R.id.button4);
-        editTag = (EditText) this.findViewById(R.id.tag_edit);
+
+        forums_details_all_layout=(LinearLayout) findViewById(R.id.forums_details_all_layout);
         List<String> tags = new ArrayList<String>();
+
         tags.add("123");
         tags.add("134455");
 //        TagContainerLayout  mTagContainerLayout = (TagContainerLayout) findViewById(R.id.tagcontainerLayout);
 //        mTagContainerLayout.addTag(tags.get(0));
-        //取消tab下面的长横线
+        //???tab??????????
         tabStrip.setDrawFullUnderline(false);
-        //设置tab的背景色
+        //????tab??????
         tabStrip.setBackgroundColor(this.getResources().getColor(R.color.white));
-        //设置当前tab页签的下划线颜色
+        //??????tab????????????
         tabStrip.setTabIndicatorColor(this.getResources().getColor(R.color.baibian_back_color));
         tabStrip.setTextSpacing(200);
 
-        View view1 = LayoutInflater.from(this).inflate(R.layout.forums_details_overview, null);
-        View view2 = LayoutInflater.from(this).inflate(R.layout.forums_details_subdivide, null);
-        //viewpager开始添加view
+        View view1 = LayoutInflater.from(this).inflate(R.layout.forums_details_subdivide, null);
+        View view2 = LayoutInflater.from(this).inflate(R.layout.forums_details_overview, null);//大方向分类
+
+
+        //viewpager??????view
         viewContainter.add(view1);
         viewContainter.add(view2);
-        //页签项
-        titleContainer.add("角度细分");
-        titleContainer.add("辩题概述");
+//        viewContainter.add(view3);
+        //????
+        titleContainer.add(getString(R.string.debatetopic));
+        titleContainer.add(getString(R.string.detaildivide));
 
         backBt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -313,7 +374,7 @@ public class DetailsActivity extends BaseActivity {
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }
         });
-        //这逼一设置就出错，搁置一下。
+        //????????????????????
 //        mTagContainerLayout.setTags(tags);
 
 
@@ -376,7 +437,7 @@ public class DetailsActivity extends BaseActivity {
         }
     }
 
-    //处理Fragment和ViewPager的适配器
+    //????Fragment??ViewPager????????
     private class fgViewPagerAdapter extends FragmentPagerAdapter {
 
         public fgViewPagerAdapter(FragmentManager fm) {

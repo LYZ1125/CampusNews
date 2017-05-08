@@ -27,7 +27,7 @@
                     android:layout_height="wrap_content"/>
                 <TextView
                     android:paddingTop="4dp"
-                    android:text="  这是发表的东西的测试内容，内容为123131231313131313111313131111555555555555555555555555555555555555"
+                    android:text="  权利天赋即自然权利（Natural Right），最早的表述或来自古希腊斯多噶学派，强调人类在自然状态下固有的，神圣不可侵犯和剥夺的权利。因此，人类的权利来自天然，所以一切..."
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
             </LinearLayout>

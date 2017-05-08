@@ -5,9 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.FrameLayout;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
-import android.view.animation.*;
+import android.widget.FrameLayout;
 
 import com.baibian.R;
 

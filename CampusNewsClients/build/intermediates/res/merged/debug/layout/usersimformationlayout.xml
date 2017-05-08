@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/user_information_all"
     android:background="#fffff0"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -84,10 +85,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
-        <TextView
+        <EditText
+            android:id="@+id/personalized_signature_edit"
             android:layout_gravity="center_horizontal"
+            android:background="@null"
+            android:singleLine="true"
             android:textSize="18dp"
-            android:text="编辑心情"
+            android:hint="编辑心情"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>

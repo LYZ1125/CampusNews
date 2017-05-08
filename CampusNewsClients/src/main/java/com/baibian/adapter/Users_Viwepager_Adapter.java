@@ -1,25 +1,20 @@
 package com.baibian.adapter;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
-
-import java.util.List;
-import android.widget.*;
+import android.widget.LinearLayout;
 
 import com.baibian.R;
-import com.baibian.activity.MainActivity;
 import com.baibian.activity.setting.SettingsActivity;
-import com.baibian.view.SwitchButton;
-import com.flyco.dialog.widget.ActionSheetDialog;
-import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+
+import java.util.List;
 
 
-public class Users_Viwepager_Adapter extends PagerAdapter  {
+public class Users_Viwepager_Adapter extends PagerAdapter {
 
     /**
      *
@@ -32,7 +27,7 @@ public class Users_Viwepager_Adapter extends PagerAdapter  {
             this.Viewlist=Viewlist;
         }
         /**
-         * ����ҳ����Ŀ
+         * ??????????
          */
         public  int getCount(){
             return Viewlist.size();
@@ -41,21 +36,21 @@ public class Users_Viwepager_Adapter extends PagerAdapter  {
 
 
         /**
-         *View�Ƿ����Զ���
+         *View??????????
          */
         public boolean isViewFromObject(View arg0, Object arg1){
             return  arg0==arg1;
         }
 
         /**
-         * ʵ����һ��ҳ��
+         * ???????????
          */
         // public Object instantiateItem(ViewGroup container,int position){
         //    container.addView(Viewlist.get(position));
         //    return Viewlist.get(position);
         //  }
         /**
-         * ����һ��ҳ��
+         * ??????????
          */
         public void destroyItem(ViewGroup container, int position, Object object){
 
@@ -70,7 +65,7 @@ public class Users_Viwepager_Adapter extends PagerAdapter  {
             }
 
             /**
-             * ���������һ������ʱ
+             * ?????????????????
              */
            else if (arg1== 1){
                 settting_linearlayout=(LinearLayout) arg0.findViewById(R.id.settting_layout);

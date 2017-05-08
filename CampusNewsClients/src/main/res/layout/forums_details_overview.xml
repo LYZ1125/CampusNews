@@ -1,139 +1,353 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
     >
-
-
-    <TextView
-        android:text="请选择具体角度："
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
-        android:layout_marginLeft="10dp"
-        android:textSize="28sp"
-        android:textColor="#00a0e9"
-        android:id="@+id/background"
-        />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginRight="17dp"
-        android:hint="最多四个角度"
-        android:textSize="20dp"
-        android:gravity="center"
-
-        android:textAlignment="center"
-        android:id="@+id/tag_edit" />
-
-    <ImageButton
-        android:src="@mipmap/blue_add_mipmap"
-        android:id="@+id/imageButton"
-        android:layout_marginLeft="15dp"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:background="@drawable/accountbackgroundchange" />
-
     <LinearLayout
-        android:orientation="horizontal"
+        android:id="@+id/forums_details_itemlayout1"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
+        <!--第1行-->
+        <LinearLayout
+            android:visibility="invisible"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
 
-    <Button
-        android:text="天指先天"
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:id="@+id/button4"
-        android:layout_marginLeft="30dp"
-        android:textSize="15dp"
-        android:layout_marginRight="50dp"
+            <FrameLayout
+                android:background="#3ee3a004"
+                android:layout_width="180dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:padding="30dp"
+                    android:textSize="20sp"
+                    android:text="军事"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <LinearLayout
+                android:layout_width="20dp"
+                android:layout_height="match_parent"/>
+            <FrameLayout
+                android:background="#48eb0d"
+                android:layout_marginRight="30dp"
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
+                >
+                <TextView
+                    android:padding="30dp"
+                    android:textSize="20sp"
+                    android:text="军事"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
 
-        android:background="@drawable/switch_btn_on"
-        />
 
-        <Button
-            android:text="天指自然"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:background="@drawable/switch_btn_on"
-            android:gravity="center"
-            android:textSize="15dp"
-            android:layout_marginRight="30dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/button3" />
 
+        </LinearLayout>
+        <!--第2行-->
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <FrameLayout
+                android:id="@+id/framelayoute21"
+                android:background="#9940de5a"
+                android:layout_marginLeft="30dp"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:layout_height="match_parent">
+                <TextView
+                    android:padding="40dp"
+                    android:textSize="30sp"
+                    android:text="军事"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <LinearLayout
+                android:layout_width="10dp"
+                android:layout_height="match_parent"/>
+            <FrameLayout
+                android:id="@+id/framelayoute22"
+
+                android:background="#99ffd71b"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="match_parent">
+                <TextView
+                    android:padding="40dp"
+                    android:textSize="30sp"
+                    android:text="经济"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+
+
+        </LinearLayout>
+        <!--第3行-->
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <FrameLayout
+                android:id="@+id/framelayoute31"
+
+                android:background="#9acc99cc"
+
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="match_parent">
+                <TextView
+                    android:padding="40dp"
+                    android:textSize="30sp"
+                    android:text="文化"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="10dp"
+                android:layout_height="match_parent"/>
+            <FrameLayout
+                android:id="@+id/framelayoute32"
+
+                android:background="#984e6cef"
+                android:layout_marginRight="30dp"
+
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:layout_height="match_parent">
+                <TextView
+                    android:padding="40dp"
+                    android:textSize="30sp"
+                    android:text="政治"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+
+
+        </LinearLayout>
+        <!--第4行-->
+        <LinearLayout
+            android:visibility="invisible"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <FrameLayout
+                android:background="#48eb0d"
+                android:layout_marginLeft="30dp"
+                android:layout_width="140dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:padding="40dp"
+                    android:textSize="30sp"
+                    android:text="军事"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+            <LinearLayout
+                android:layout_width="20dp"
+                android:layout_height="match_parent"/>
+            <FrameLayout
+                android:background="#e3a004"
+                android:layout_width="180dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:padding="30dp"
+                    android:textSize="20sp"
+                    android:text="军事"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </FrameLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:orientation="vertical"
+        android:id="@+id/forums_details_itemlayout2"
+        android:visibility="gone"
+        android:padding="30dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:background="#9cfffff0"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="请选择具体角度："
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="28sp"
+                android:textColor="#00a0e9"
+                android:id="@+id/background"
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="17dp"
+                android:layout_marginRight="17dp"
+                android:hint="最多四个角度"
+                android:textSize="20dp"
+                android:gravity="center"
+
+                android:textAlignment="center"
+                android:id="@+id/tag_edit" />
+
+            <ImageButton
+                android:src="@mipmap/blue_add_mipmap"
+                android:id="@+id/imageButton"
+                android:layout_marginLeft="15dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/accountbackgroundchange" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:singleLine="true"
+                    android:text="天指先天"
+                    android:layout_weight="4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:id="@+id/button4"
+                    android:layout_marginLeft="30dp"
+                    android:textSize="15dp"
+                    android:layout_marginRight="50dp"
+
+                    android:background="@drawable/switch_btn_on"
+                    />
+
+                <Button
+                    android:text="天指自然"
+                    android:layout_weight="4"
+                    android:layout_width="0dp"
+                    android:background="@drawable/switch_btn_on"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView"
+                    android:layout_weight="1.7" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:singleLine="true"
+                    android:text="人指人性"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:id="@+id/button5"
+                    android:layout_marginLeft="30dp"
+                    android:textSize="15dp"
+                    android:layout_marginRight="10dp"
+
+                    android:background="@drawable/switch_btn_on"
+                    />
+
+
+                <Button
+                    android:ellipsize="marquee"
+
+                    android:text="人指人类社会"
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:background="@drawable/switch_btn_on"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button6" />
+                <Button
+                    android:singleLine="true"
+                    android:text="人指个人"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:background="@drawable/switch_btn_on"
+                    android:gravity="center"
+                    android:textSize="15dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button7" />
+
+            </LinearLayout>
+            <!--<co.lujun.androidtagview.TagContainerLayout-->
+            <!--android:id="@+id/tagcontainerLayout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="0dp"-->
+            <!--android:padding="10dp"-->
+            <!--app:container_enable_drag="false"-->
+            <!--app:horizontal_interval="10dp"-->
+            <!--app:vertical_interval="10dp"-->
+            <!--app:tag_clickable="true"-->
+            <!--app:tag_theme="pure_teal" />-->
+
+        </LinearLayout>
         <TextView
+            android:id="@+id/begin_discussion"
+            android:textSize="30sp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#00a0e9"
+            android:text="开启我的BB之旅"
+            android:singleLine="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView"
-            android:layout_weight="1.7" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:text="人指人性"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:id="@+id/button5"
-            android:layout_marginLeft="30dp"
-            android:textSize="15dp"
-            android:layout_marginRight="20dp"
-
-            android:background="@drawable/switch_btn_on"
-         />
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
 
 
-        <Button
-            android:text="人指人类社会"
-            android:layout_weight="1.6"
-            android:layout_width="0dp"
-            android:background="@drawable/switch_btn_on"
-            android:gravity="center"
-            android:textSize="15dp"
-            android:layout_marginRight="25dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/button6" />
-        <Button
-            android:text="人指个人"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:background="@drawable/switch_btn_on"
-            android:gravity="center"
-            android:textSize="15dp"
-            android:layout_marginRight="30dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/button7" />
-
-    </LinearLayout>
-    <!--<co.lujun.androidtagview.TagContainerLayout-->
-        <!--android:id="@+id/tagcontainerLayout"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_margin="0dp"-->
-        <!--android:padding="10dp"-->
-        <!--app:container_enable_drag="false"-->
-        <!--app:horizontal_interval="10dp"-->
-        <!--app:vertical_interval="10dp"-->
-        <!--app:tag_clickable="true"-->
-        <!--app:tag_theme="pure_teal" />-->
 
 
-</LinearLayout>
+</RelativeLayout>

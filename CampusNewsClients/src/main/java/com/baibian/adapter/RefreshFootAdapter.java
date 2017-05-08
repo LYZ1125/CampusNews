@@ -13,22 +13,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * èƒ½å¤Ÿå®ç°ä¸Šå•¦åˆ·æ–°ï¼Œä¸‹æ»‘åŠ è½½æ›´å¤šçš„adapter,,ä½œä¸ºä¸€ä¸ªåŸºç¡€ç”¨ä½œå€Ÿé‰´
+ * ÄÜ¹»ÊµÏÖÉÏÀ²Ë¢ĞÂ£¬ÏÂ»¬¼ÓÔØ¸ü¶àµÄadapter,,×÷ÎªÒ»¸ö»ù´¡ÓÃ×÷½è¼ø
  */
 public class RefreshFootAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
-    //ä¸Šæ‹‰åŠ è½½æ›´å¤š
+    //ÉÏÀ­¼ÓÔØ¸ü¶à
     public static final int  PULLUP_LOAD_MORE=0;
-    //æ­£åœ¨åŠ è½½ä¸­
+    //ÕıÔÚ¼ÓÔØÖĞ
     public static final int  LOADING_MORE=1;
-    //ä¸Šæ‹‰åŠ è½½æ›´å¤šçŠ¶æ€-é»˜è®¤ä¸º0
+    //ÉÏÀ­¼ÓÔØ¸ü¶à×´Ì¬-Ä¬ÈÏÎª0
 
-    public static final int FIRST_ITEM=2;//ç¬¬ä¸€ä¸ªå­é¡¹æ›´æ”¹çš„è¯·æ±‚
+    public static final int FIRST_ITEM=2;//µÚÒ»¸ö×ÓÏî¸ü¸ÄµÄÇëÇó
 
     private int load_more_status=0;
     private LayoutInflater mInflater;
     private List<String> mTitles=null;
-    private static final int TYPE_ITEM = 0;  //æ™®é€šItem View
-    private static final int TYPE_FOOTER = 1;  //é¡¶éƒ¨FootView
+    private static final int TYPE_ITEM = 0;  //ÆÕÍ¨Item View
+    private static final int TYPE_FOOTER = 1;  //¶¥²¿FootView
     public RefreshFootAdapter(Context context){
         this.mInflater= LayoutInflater.from(context);
         this.mTitles=new ArrayList<String>();
@@ -38,29 +38,29 @@ public class RefreshFootAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         }
     }
     /**
-     * itemæ˜¾ç¤ºç±»å‹
+     * itemÏÔÊ¾ÀàĞÍ
      * @param parent
      * @param viewType
      * @return
      */
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        //è¿›è¡Œåˆ¤æ–­æ˜¾ç¤ºç±»å‹ï¼Œæ¥åˆ›å»ºè¿”å›ä¸åŒçš„View
+        //½øĞĞÅĞ¶ÏÏÔÊ¾ÀàĞÍ£¬À´´´½¨·µ»Ø²»Í¬µÄView
         if(viewType==TYPE_ITEM){
             View view=mInflater.inflate(R.layout.item_recycler_layout,parent,false);
-            //è¿™è¾¹å¯ä»¥åšä¸€äº›å±æ€§è®¾ç½®ï¼Œç”šè‡³äº‹ä»¶ç›‘å¬ç»‘å®š
+            //Õâ±ß¿ÉÒÔ×öÒ»Ğ©ÊôĞÔÉèÖÃ£¬ÉõÖÁÊÂ¼ş¼àÌı°ó¶¨
             //view.setBackgroundColor(Color.RED);
             ItemViewHolder itemViewHolder=new ItemViewHolder(view);
             return itemViewHolder;
         }else if(viewType==TYPE_FOOTER){
             View foot_view=mInflater.inflate(R.layout.recycler_load_more_layout,parent,false);
-            //è¿™è¾¹å¯ä»¥åšä¸€äº›å±æ€§è®¾ç½®ï¼Œç”šè‡³äº‹ä»¶ç›‘å¬ç»‘å®š
+            //Õâ±ß¿ÉÒÔ×öÒ»Ğ©ÊôĞÔÉèÖÃ£¬ÉõÖÁÊÂ¼ş¼àÌı°ó¶¨
             //view.setBackgroundColor(Color.RED);
             FootViewHolder footViewHolder=new FootViewHolder(foot_view);
             return footViewHolder;
         }else if (viewType==FIRST_ITEM){
-            //ç¬¬ä¸€ä¸ªå­é¡¹æ›´æ”¹æˆä¸ºviewpager
+            //µÚÒ»¸ö×ÓÏî¸ü¸Ä³ÉÎªviewpager
           //  View view=mInflater.inflate(R.layout.testlayout,parent,false);
-            //è¿™è¾¹å¯ä»¥åšä¸€äº›å±æ€§è®¾ç½®ï¼Œç”šè‡³äº‹ä»¶ç›‘å¬ç»‘å®š
+            //Õâ±ß¿ÉÒÔ×öÒ»Ğ©ÊôĞÔÉèÖÃ£¬ÉõÖÁÊÂ¼ş¼àÌı°ó¶¨
             //view.setBackgroundColor(Color.RED);
        //     FirstViewHolder firstViewHolder=new FirstViewHolder(view);
          //   return firstViewHolder;
@@ -69,7 +69,7 @@ public class RefreshFootAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     /**
-     * æ•°æ®çš„ç»‘å®šæ˜¾ç¤º
+     * Êı¾İµÄ°ó¶¨ÏÔÊ¾
      * @param holder
      * @param position
      */
@@ -91,17 +91,17 @@ public class RefreshFootAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     /**
-     * è¿›è¡Œåˆ¤æ–­æ˜¯æ™®é€šItemè§†å›¾è¿˜æ˜¯FootViewè§†å›¾
+     * ½øĞĞÅĞ¶ÏÊÇÆÕÍ¨ItemÊÓÍ¼»¹ÊÇFootViewÊÓÍ¼
      * @param position
      * @return
      */
     @Override
     public int getItemViewType(int position) {
         if (position==0){
-            //å½“æ—¶ç¬¬ä¸€ä¸ªå­é¡¹æ—¶ï¼Œè¿”å›ä½¿æ›´æ”¹
+            //µ±Ê±µÚÒ»¸ö×ÓÏîÊ±£¬·µ»ØÊ¹¸ü¸Ä
            return FIRST_ITEM;
         }
-        // æœ€åä¸€ä¸ªitemè®¾ç½®ä¸ºfooterView
+        // ×îºóÒ»¸öitemÉèÖÃÎªfooterView
         else if (position + 1 == getItemCount()) {
             return TYPE_FOOTER;
         } else {
@@ -112,7 +112,7 @@ public class RefreshFootAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public int getItemCount() {
         return mTitles.size()+1;
     }
-    //è‡ªå®šä¹‰çš„ViewHolderï¼ŒæŒæœ‰æ¯ä¸ªItemçš„çš„æ‰€æœ‰ç•Œé¢å…ƒç´ 
+    //×Ô¶¨ÒåµÄViewHolder£¬³ÖÓĞÃ¿¸öItemµÄµÄËùÓĞ½çÃæÔªËØ
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
         public TextView item_tv;
         public ItemViewHolder(View view){
@@ -122,7 +122,7 @@ public class RefreshFootAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     /**
-     * é¡¶éƒ¨çš„å¸ƒå±€
+     * ¶¥²¿µÄ²¼¾Ö
      */
     public static class FirstViewHolder extends RecyclerView.ViewHolder {
         public TextView item_tv;
@@ -132,7 +132,7 @@ public class RefreshFootAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         }
     }
     /**
-     * åº•éƒ¨FootViewå¸ƒå±€
+     * µ×²¿FootView²¼¾Ö
      */
     public static class FootViewHolder extends  RecyclerView.ViewHolder{
         private TextView foot_view_item_tv;
@@ -142,7 +142,7 @@ public class RefreshFootAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         }
     }
 
-    //æ·»åŠ æ•°æ®
+    //Ìí¼ÓÊı¾İ
     public void addItem(List<String> newDatas) {
         //mTitles.add(position, data);
         //notifyItemInserted(position);
@@ -158,11 +158,11 @@ public class RefreshFootAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     }
 
     /**
-     * //ä¸Šæ‹‰åŠ è½½æ›´å¤š
+     * //ÉÏÀ­¼ÓÔØ¸ü¶à
      * PULLUP_LOAD_MORE=0;
-     * //æ­£åœ¨åŠ è½½ä¸­
+     * //ÕıÔÚ¼ÓÔØÖĞ
      * LOADING_MORE=1;
-     * //åŠ è½½å®Œæˆå·²ç»æ²¡æœ‰æ›´å¤šæ•°æ®äº†
+     * //¼ÓÔØÍê³ÉÒÑ¾­Ã»ÓĞ¸ü¶àÊı¾İÁË
      * NO_MORE_DATA=2;
      * @param status
      */

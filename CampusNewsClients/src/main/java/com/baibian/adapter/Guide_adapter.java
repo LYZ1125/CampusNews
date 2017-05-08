@@ -8,17 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.baibian.activity.login.Login4Activity;
-import com.baibian.activity.MainActivity;
 import com.baibian.R;
+import com.baibian.activity.MainActivity;
+import com.baibian.activity.login.Login4Activity;
 import com.baibian.activity.login.registerActivity;
-import com.baibian.app.AppApplication;
-import com.baibian.tool.PrefTools;
 
 import java.util.List;
 
 /**
- * å¼•å¯¼ç•Œé¢çš„Viewpagerçš„adapter
+ * Òıµ¼½çÃæµÄViewpagerµÄadapter
  */
 public class Guide_adapter extends PagerAdapter {
     public List<View> Viewlist;
@@ -33,7 +31,7 @@ public class Guide_adapter extends PagerAdapter {
     }
 
     /**
-     * è¿”å›é¡µå¡æ•°ç›®
+     * ·µ»ØÒ³¿¨ÊıÄ¿
      */
     public int getCount() {
         return Viewlist.size();
@@ -41,14 +39,14 @@ public class Guide_adapter extends PagerAdapter {
 
 
     /**
-     * Viewæ˜¯å¦æ¥è‡ªå¯¹è±¡
+     * ViewÊÇ·ñÀ´×Ô¶ÔÏó
      */
     public boolean isViewFromObject(View arg0, Object arg1) {
         return arg0 == arg1;
     }
 
     /**
-     * å®ä¾‹åŒ–ä¸€ä¸ªé¡µå¡
+     * ÊµÀı»¯Ò»¸öÒ³¿¨
      */
     // public Object instantiateItem(ViewGroup container,int position){
     //    container.addView(Viewlist.get(position));
@@ -56,7 +54,7 @@ public class Guide_adapter extends PagerAdapter {
     //  }
 
     /**
-     * é”€æ¯ä¸€ä¸ªé¡µå¡
+     * Ïú»ÙÒ»¸öÒ³¿¨
      */
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView(Viewlist.get(position));
@@ -69,14 +67,14 @@ public class Guide_adapter extends PagerAdapter {
 
         ((ViewPager) arg0).addView(Viewlist.get(arg1), 0);
         /**
-         * å½“è¿›å…¥æœ€åä¸€ä¸ªç•Œé¢æ—¶ï¼Œå®ä¾‹åŒ–ä¸‰ä¸ªæŒ‰é’®ï¼Œ
+         * µ±½øÈë×îºóÒ»¸ö½çÃæÊ±£¬ÊµÀı»¯Èı¸ö°´Å¥£¬
          */
         if (arg1 == Viewlist.size() - 1) {
             guide_login_btn = (Button) arg0.findViewById(R.id.guide_login_btn);
             guide_register_btn = (Button) arg0.findViewById(R.id.guide_register_btn);
             guide_visitor_btn = (Button) arg0.findViewById(R.id.guide_visitor_btn);
             /**
-             * ç™»å½•æŒ‰é’®ï¼Œè¿›å…¥ç™»å½•ç•Œé¢
+             * µÇÂ¼°´Å¥£¬½øÈëµÇÂ¼½çÃæ
              */
             guide_login_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -87,7 +85,7 @@ public class Guide_adapter extends PagerAdapter {
                 }
             });
             /**
-             * æ³¨å†ŒæŒ‰é’®ï¼Œè¿›å…¥æ³¨å†Œç•Œé¢
+             * ×¢²á°´Å¥£¬½øÈë×¢²á½çÃæ
              */
             guide_register_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -98,7 +96,7 @@ public class Guide_adapter extends PagerAdapter {
                 }
             });
             /**
-             * æ¸¸å®¢æ¨¡å¼æŒ‰é’®ï¼Œè¿›å…¥ä¸»ç•Œé¢
+             * ÓÎ¿ÍÄ£Ê½°´Å¥£¬½øÈëÖ÷½çÃæ
              */
             guide_visitor_btn.setOnClickListener(new View.OnClickListener() {
                 @Override

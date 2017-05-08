@@ -9,14 +9,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.baibian.R;
 
-import android.view.WindowManager;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -24,20 +24,18 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 
-
-
 /**
- * èƒ½å¤Ÿå®ç°ä¸Šå•¦åˆ·æ–°ï¼Œä¸‹æ»‘åŠ è½½æ›´å¤šçš„adapter
+ * ÄÜ¹»ÊµÏÖÉÏÀ²Ë¢ĞÂ£¬ÏÂ»¬¼ÓÔØ¸ü¶àµÄadapter
  */
 public class Forums_Integration_Refresh_FootAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private MyItemClickListener mItemClickListener;
     /**
-     *progresstextæ­£æ–¹ä¸­ç«‹ï¼Œåæ–¹çš„æ•°é‡çš„å®šä¹‰,,è¿™é‡Œæš‚æ—¶ä½¿ç”¨åˆå§‹æ•°å€¼ä½œä¸ºæµ‹è¯•
+     *progresstextÕı·½ÖĞÁ¢£¬·´·½µÄÊıÁ¿µÄ¶¨Òå,,ÕâÀïÔİÊ±Ê¹ÓÃ³õÊ¼ÊıÖµ×÷Îª²âÊÔ
      */
-    private float positiveNumber=560;//æ­£æ–¹æ•°é‡
-    private float neutralNumber=234;//ä¸­ç«‹æ•°é‡
-    private float negetiveNumber=640;//åæ–¹æ•°é‡
+    private float positiveNumber=560;//Õı·½ÊıÁ¿
+    private float neutralNumber=234;//ÖĞÁ¢ÊıÁ¿
+    private float negetiveNumber=640;//·´·½ÊıÁ¿
 
     private Context mContext;
     private ScheduledExecutorService scheduledExecutorService;
@@ -50,46 +48,46 @@ public class Forums_Integration_Refresh_FootAdapter extends RecyclerView.Adapter
     private List<View> dots;
     private static int oldPosition;
 
-    //ä¸Šæ‹‰åŠ è½½æ›´å¤š
+    //ÉÏÀ­¼ÓÔØ¸ü¶à
     public static final int PULLUP_LOAD_MORE = 0;
-    //æ­£åœ¨åŠ è½½ä¸­
+    //ÕıÔÚ¼ÓÔØÖĞ
     public static final int LOADING_MORE = 1;
-    //ä¸Šæ‹‰åŠ è½½æ›´å¤šçŠ¶æ€-é»˜è®¤ä¸º0
+    //ÉÏÀ­¼ÓÔØ¸ü¶à×´Ì¬-Ä¬ÈÏÎª0
 
- //   public static final int FIRST_ITEM = 2;//ç¬¬ä¸€ä¸ªå­é¡¹æ›´æ”¹çš„è¯·æ±‚
+ //   public static final int FIRST_ITEM = 2;//µÚÒ»¸ö×ÓÏî¸ü¸ÄµÄÇëÇó
 
     private int load_more_status = 0;
     private LayoutInflater mInflater;
     private List<String> mTitles = null;
-    private static final int TYPE_ITEM = 0;  //æ™®é€šItem View
-    private static final int TYPE_FOOTER = 1;  //é¡¶éƒ¨FootView
+    private static final int TYPE_ITEM = 0;  //ÆÕÍ¨Item View
+    private static final int TYPE_FOOTER = 1;  //¶¥²¿FootView
 
     public Forums_Integration_Refresh_FootAdapter(Context context) {
         this.mContext = context;
         this.mInflater = LayoutInflater.from(context);
         this.mTitles = new ArrayList<String>();
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 2; i++) {
             int index = i + 1;
-            mTitles.add("item" + index);
+            mTitles.add(context.getString(R.string.text_topic));
         }
 
     }
 
     /**
-     * itemæ˜¾ç¤ºç±»å‹
+     * itemÏÔÊ¾ÀàĞÍ
      *
      */
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        //è¿›è¡Œåˆ¤æ–­æ˜¾ç¤ºç±»å‹ï¼Œæ¥åˆ›å»ºè¿”å›ä¸åŒçš„View
+        //½øĞĞÅĞ¶ÏÏÔÊ¾ÀàĞÍ£¬À´´´½¨·µ»Ø²»Í¬µÄView
         if (viewType == TYPE_ITEM) {
             View view = mInflater.inflate(R.layout.forums_recycler_item_layout, parent, false);
-            //è¿™è¾¹å¯ä»¥åšä¸€äº›å±æ€§è®¾ç½®ï¼Œç”šè‡³äº‹ä»¶ç›‘å¬ç»‘å®š
+            //Õâ±ß¿ÉÒÔ×öÒ»Ğ©ÊôĞÔÉèÖÃ£¬ÉõÖÁÊÂ¼ş¼àÌı°ó¶¨
             //view.setBackgroundColor(Color.RED);
             ItemViewHolder itemViewHolder = new ItemViewHolder(view,mItemClickListener);
             return itemViewHolder;
         } else if (viewType == TYPE_FOOTER) {
             View foot_view = mInflater.inflate(R.layout.recycler_load_more_layout, parent, false);
-            //è¿™è¾¹å¯ä»¥åšä¸€äº›å±æ€§è®¾ç½®ï¼Œç”šè‡³äº‹ä»¶ç›‘å¬ç»‘å®š
+            //Õâ±ß¿ÉÒÔ×öÒ»Ğ©ÊôĞÔÉèÖÃ£¬ÉõÖÁÊÂ¼ş¼àÌı°ó¶¨
             //view.setBackgroundColor(Color.RED);
             FootViewHolder footViewHolder = new FootViewHolder(foot_view);
             return footViewHolder;
@@ -101,7 +99,7 @@ public class Forums_Integration_Refresh_FootAdapter extends RecyclerView.Adapter
 
 
     /**
-     * æ•°æ®çš„ç»‘å®šæ˜¾ç¤º
+     * Êı¾İµÄ°ó¶¨ÏÔÊ¾
      *
      * @param holder
      * @param position
@@ -111,7 +109,7 @@ public class Forums_Integration_Refresh_FootAdapter extends RecyclerView.Adapter
             ((ItemViewHolder) holder).item_tv.setText(mTitles.get(position));
             holder.itemView.setTag(position);
             /**
-             * progresstextçš„ç®—æ³•
+             * progresstextµÄËã·¨
              */
             WindowManager wm = (WindowManager) mContext
                     .getSystemService(Context.WINDOW_SERVICE);
@@ -146,14 +144,14 @@ public class Forums_Integration_Refresh_FootAdapter extends RecyclerView.Adapter
     }
 
     /**
-     * è¿›è¡Œåˆ¤æ–­æ˜¯æ™®é€šItemè§†å›¾è¿˜æ˜¯FootViewè§†å›¾
+     * ½øĞĞÅĞ¶ÏÊÇÆÕÍ¨ItemÊÓÍ¼»¹ÊÇFootViewÊÓÍ¼
      *
      * @param position
      * @return
      */
     @Override
     public int getItemViewType(int position) {
-        // æœ€åä¸€ä¸ªitemè®¾ç½®ä¸ºfooterView
+        // ×îºóÒ»¸öitemÉèÖÃÎªfooterView
          if (position + 1 == getItemCount()) {
             return TYPE_FOOTER;
         } else {
@@ -166,7 +164,7 @@ public class Forums_Integration_Refresh_FootAdapter extends RecyclerView.Adapter
         return mTitles.size() ;
     }
 
-    //è‡ªå®šä¹‰çš„ViewHolderï¼ŒæŒæœ‰æ¯ä¸ªItemçš„çš„æ‰€æœ‰ç•Œé¢å…ƒç´ 
+    //×Ô¶¨ÒåµÄViewHolder£¬³ÖÓĞÃ¿¸öItemµÄµÄËùÓĞ½çÃæÔªËØ
     public static class ItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public float itemwidth;
         private LinearLayout forums_item_all_layout;
@@ -202,7 +200,7 @@ public class Forums_Integration_Refresh_FootAdapter extends RecyclerView.Adapter
             itemView.setOnClickListener(this);
         }
         /**
-         * å®ç°OnClickListeneræ¥å£é‡å†™çš„æ–¹æ³•
+         * ÊµÏÖOnClickListener½Ó¿ÚÖØĞ´µÄ·½·¨
          * @param v
          */
         @Override
@@ -215,7 +213,7 @@ public class Forums_Integration_Refresh_FootAdapter extends RecyclerView.Adapter
     }
 
     /**
-     * é¡¶éƒ¨çš„å¸ƒå±€
+     * ¶¥²¿µÄ²¼¾Ö
      */
     public static class FirstViewHolder extends RecyclerView.ViewHolder {
         public TextView item_tv;
@@ -227,7 +225,7 @@ public class Forums_Integration_Refresh_FootAdapter extends RecyclerView.Adapter
     }
 
     /**
-     * åº•éƒ¨FootViewå¸ƒå±€
+     * µ×²¿FootView²¼¾Ö
      */
     public static class FootViewHolder extends RecyclerView.ViewHolder {
         private TextView foot_view_item_tv;
@@ -238,7 +236,7 @@ public class Forums_Integration_Refresh_FootAdapter extends RecyclerView.Adapter
         }
     }
 
-    //æ·»åŠ æ•°æ®
+    //Ìí¼ÓÊı¾İ
     public void addItem(List<String> newDatas) {
         //mTitles.add(position, data);
         //notifyItemInserted(position);
@@ -254,11 +252,11 @@ public class Forums_Integration_Refresh_FootAdapter extends RecyclerView.Adapter
     }
 
     /**
-     * //ä¸Šæ‹‰åŠ è½½æ›´å¤š
+     * //ÉÏÀ­¼ÓÔØ¸ü¶à
      * PULLUP_LOAD_MORE=0;
-     * //æ­£åœ¨åŠ è½½ä¸­
+     * //ÕıÔÚ¼ÓÔØÖĞ
      * LOADING_MORE=1;
-     * //åŠ è½½å®Œæˆå·²ç»æ²¡æœ‰æ›´å¤šæ•°æ®äº†
+     * //¼ÓÔØÍê³ÉÒÑ¾­Ã»ÓĞ¸ü¶àÊı¾İÁË
      * NO_MORE_DATA=2;
      *
      * @param status
@@ -335,13 +333,13 @@ public class Forums_Integration_Refresh_FootAdapter extends RecyclerView.Adapter
 
         public ViewHolder(View itemView, MyItemClickListener myItemClickListener) {
             super(itemView);
-            //å°†å…¨å±€çš„ç›‘å¬èµ‹å€¼ç»™æ¥å£
+            //½«È«¾ÖµÄ¼àÌı¸³Öµ¸ø½Ó¿Ú
             this.mListener = myItemClickListener;
             itemView.setOnClickListener(this);
         }
 
         /**
-         * å®ç°OnClickListeneræ¥å£é‡å†™çš„æ–¹æ³•
+         * ÊµÏÖOnClickListener½Ó¿ÚÖØĞ´µÄ·½·¨
          * @param v
          */
         @Override
@@ -354,14 +352,14 @@ public class Forums_Integration_Refresh_FootAdapter extends RecyclerView.Adapter
     }
 
     /**
-     * åˆ›å»ºä¸€ä¸ªå›è°ƒæ¥å£
+     * ´´½¨Ò»¸ö»Øµ÷½Ó¿Ú
      */
     public interface MyItemClickListener {
         void onItemClick(View view, int position);
     }
 
     /**
-     * åœ¨activityé‡Œé¢adapterå°±æ˜¯è°ƒç”¨çš„è¿™ä¸ªæ–¹æ³•,å°†ç‚¹å‡»äº‹ä»¶ç›‘å¬ä¼ é€’è¿‡æ¥,å¹¶èµ‹å€¼ç»™å…¨å±€çš„ç›‘å¬
+     * ÔÚactivityÀïÃæadapter¾ÍÊÇµ÷ÓÃµÄÕâ¸ö·½·¨,½«µã»÷ÊÂ¼ş¼àÌı´«µİ¹ıÀ´,²¢¸³Öµ¸øÈ«¾ÖµÄ¼àÌı
      *
      * @param myItemClickListener
      */

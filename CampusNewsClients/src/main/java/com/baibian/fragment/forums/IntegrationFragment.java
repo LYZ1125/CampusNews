@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.baibian.activity.ChoiceDirectionActivity;
 import com.baibian.R;
+import com.baibian.activity.DetailsActivity;
 import com.baibian.adapter.Forums_Integration_Refresh_FootAdapter;
 import com.baibian.adapter.RefreshFootAdapter;
 
@@ -77,7 +78,7 @@ public class IntegrationFragment extends Fragment {
             public void onItemClick(View view, int position) {
                 if(position==0){
                     //这里进入选择辩题方向的界面，暂时只是用第一个来进行测试
-                    Intent intent= new Intent(mActivity, ChoiceDirectionActivity.class);
+                    Intent intent= new Intent(mActivity, DetailsActivity.class);
                     startActivity(intent);
                 }else
                 Toast.makeText(getActivity(), R.string.drawer_right_logout_hint_text + position, Toast.LENGTH_SHORT).show();
