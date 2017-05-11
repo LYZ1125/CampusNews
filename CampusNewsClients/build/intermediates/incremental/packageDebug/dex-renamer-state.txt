@@ -1,7 +1,7 @@
-#Thu May 11 15:50:36 CST 2017
+#Thu May 11 20:35:58 CST 2017
 base.0=C\:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_f06b527e87d62283620d4b783eee3d8b9fdb1308
-renamed.1=classes2.dex
-renamed.0=classes.dex
+renamed.1=classes.dex
+renamed.0=classes2.dex
 file.1=C\:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_4d699667cb512ac41f1f5b9905fa5b1029471e0f\\classes.dex
 base.1=C\:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_4d699667cb512ac41f1f5b9905fa5b1029471e0f
 file.0=C\:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_f06b527e87d62283620d4b783eee3d8b9fdb1308\\classes.dex

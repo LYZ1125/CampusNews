@@ -38,7 +38,9 @@ import com.baibian.base.BaseActivity;
 import com.baibian.tool.UI_Tools;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 import co.lujun.androidtagview.TagContainerLayout;
 import co.lujun.androidtagview.TagView;
@@ -74,7 +76,7 @@ public class DetailsActivity extends BaseActivity {
     private Activity activity;
     private TextView begin_discussion;
     private ImageButton backToChoice;
-
+    private LinkedList<FrameLayout> frameLayouts = new LinkedList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -255,91 +257,92 @@ public class DetailsActivity extends BaseActivity {
                 if (position==1){
 
                     final FrameLayout framelayoute21=(FrameLayout) findViewById(R.id.framelayoute21);
-                    final FrameLayout frameLayout22 = (FrameLayout) findViewById(R.id.framelayoute22);
-                    final FrameLayout frameLayout31 = (FrameLayout) findViewById(R.id.framelayoute31);
-                    final FrameLayout frameLayout32 = (FrameLayout) findViewById(R.id.framelayoute32);
+                    forums_details_itemlayout1=(LinearLayout) findViewById(R.id.forums_details_itemlayout1);
+                    forums_details_itemlayout2=(RelativeLayout)findViewById(R.id.forums_details_itemlayout2);
+                    backToChoice = (ImageButton) findViewById(R.id.btn_back_choice);
+
                     framelayoute21.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            forums_details_itemlayout1=(LinearLayout) findViewById(R.id.forums_details_itemlayout1);
-                            forums_details_itemlayout2=(RelativeLayout)findViewById(R.id.forums_details_itemlayout2);
                             begin_discussion=(TextView)findViewById(R.id.begin_discussion);
-                            backToChoice = (ImageButton) findViewById(R.id.btn_back_choice);
                             /*
                             forums_details_itemlayout1.setVisibility(View.GONE);
                             forums_details_itemlayout2.setVisibility(View.VISIBLE);*/
-                            TranslateAnimation translateAnimationLeft = new TranslateAnimation(0, -400, 0, 0);
-                            TranslateAnimation translateAnimationRight = new TranslateAnimation(0, 400, 0, 0);
-                            translateAnimationRight.setDuration(800);
-                            translateAnimationLeft.setDuration(800);
-                            translateAnimationLeft.setAnimationListener(new Animation.AnimationListener() {
-                                @Override
-                                public void onAnimationStart(Animation animation) {
-
-                                }
-
-                                @Override
-                                public void onAnimationEnd(Animation animation) {
-                                    forums_details_itemlayout1.setVisibility(View.GONE);
-                                    forums_details_itemlayout2.setVisibility(View.VISIBLE);
-                                    TranslateAnimation translateAnimationRightInner = new TranslateAnimation(800, 0, 0, 0);
-                                    translateAnimationRightInner.setDuration(800);
-                                    forums_details_itemlayout2.setAnimation(translateAnimationRightInner);
-                                }
-
-                                @Override
-                                public void onAnimationRepeat(Animation animation) {
-
-                                }
-                            });
-                            framelayoute21.startAnimation(translateAnimationLeft);
-                            frameLayout22.startAnimation(translateAnimationRight);
-                            frameLayout31.startAnimation(translateAnimationLeft);
-                            frameLayout32.startAnimation(translateAnimationRight);
-                            begin_discussion.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    Intent intent=new Intent(activity,DiscussionActivity.class);
-                                    startActivity(intent);
-                                }
-                            });
+                            /**
+                             * Here the method is set to Animate those four Square FrameLayouts
+                             */
+                            setFrameLayoutAnimation(true);
                             backToChoice.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    TranslateAnimation translateAnimationRight = new TranslateAnimation(0, 800, 0, 0);
-                                    translateAnimationRight.setDuration(800);
-                                    forums_details_itemlayout2.setAnimation(translateAnimationRight);
-                                    forums_details_itemlayout2.setVisibility(View.GONE);
-                                    translateAnimationRight.setAnimationListener(new Animation.AnimationListener() {
-                                        @Override
-                                        public void onAnimationStart(Animation animation) {
-
-                                        }
-
-                                        @Override
-                                        public void onAnimationEnd(Animation animation) {
-                                            TranslateAnimation translateAnimationLeft = new TranslateAnimation(-400, 0, 0, 0);
-                                            TranslateAnimation translateAnimationRight = new TranslateAnimation(400, 0, 0, 0);
-                                            translateAnimationRight.setDuration(800);
-                                            translateAnimationLeft.setDuration(800);
-                                            framelayoute21.setAnimation(translateAnimationLeft);
-                                            frameLayout31.setAnimation(translateAnimationLeft);
-                                            frameLayout22.setAnimation(translateAnimationRight);
-                                            frameLayout32.setAnimation(translateAnimationRight);
-                                            forums_details_itemlayout1.setVisibility(View.VISIBLE);
-                                        }
-
-                                        @Override
-                                        public void onAnimationRepeat(Animation animation) {
-
-                                        }
-                                    });
+                                    setFrameLayoutAnimation(false);
                                 }
                             });
                             editTag = (EditText) findViewById(R.id.tag_edit);
                                  UI_Tools ui_tools=new UI_Tools();
                                   ui_tools.CancelFocusOne(activity,forums_details_all_layout,editTag);
                             ui_tools.CancelFocusOne(activity,container,editTag);
+                        }
+
+                        private void setFrameLayoutAnimation(Boolean flag) {
+                            setFrameLayouts(forums_details_itemlayout1);
+                            if (flag) {
+                                TranslateAnimation tempTranslateAnimation = translateAnimationGenerator(0, -400, 1000, 0);
+                                for (int i = 0; i < frameLayouts.size(); i++) {
+                                    if (i == 2 || i == 4) {
+                                        frameLayouts.get(i).startAnimation(tempTranslateAnimation);
+                                    } else {
+                                        frameLayouts.get(i).startAnimation(translateAnimationGenerator(0, 400, 1000, 0));
+                                    }
+                                }
+                                frameLayouts.clear();
+                                tempTranslateAnimation.setAnimationListener(new Animation.AnimationListener() {
+                                    @Override
+                                    public void onAnimationStart(Animation animation) {
+
+                                    }
+
+                                    @Override
+                                    public void onAnimationEnd(Animation animation) {
+                                        forums_details_itemlayout1.setVisibility(View.GONE);
+                                        forums_details_itemlayout2.setVisibility(View.VISIBLE);
+                                        forums_details_itemlayout2.startAnimation(translateAnimationGenerator(800, 0, 1000, 0));
+                                    }
+
+                                    @Override
+                                    public void onAnimationRepeat(Animation animation) {
+
+                                    }
+                                });
+                            }else {
+                                TranslateAnimation tempTranslateAnimation = translateAnimationGenerator(0, 800, 1000, 0);
+                                forums_details_itemlayout2.startAnimation(tempTranslateAnimation);
+                                tempTranslateAnimation.setAnimationListener(new Animation.AnimationListener() {
+                                    @Override
+                                    public void onAnimationStart(Animation animation) {
+
+                                    }
+
+                                    @Override
+                                    public void onAnimationEnd(Animation animation) {
+                                        for (int i = 0; i < frameLayouts.size(); i++){
+                                            if (i == 2 || i == 4){
+                                                frameLayouts.get(i).startAnimation(translateAnimationGenerator(-400, 0, 1000, 1000));
+                                            }else {
+                                                frameLayouts.get(i).startAnimation(translateAnimationGenerator(400, 0, 1000, 1000));
+                                            }
+                                        }
+                                        frameLayouts.clear();
+                                        forums_details_itemlayout2.setVisibility(View.GONE);
+                                        forums_details_itemlayout1.setVisibility(View.VISIBLE);
+                                    }
+
+                                    @Override
+                                    public void onAnimationRepeat(Animation animation) {
+
+                                    }
+                                });
+                            }
                         }
                     });
 //                    TextView textViewbegin=(TextView) findViewById(R.id.begin_discussion);
@@ -410,7 +413,7 @@ public class DetailsActivity extends BaseActivity {
         tabStrip = (PagerTabStrip) this.findViewById(R.id.tab_strip);
         backBt = (Button) this.findViewById(R.id.forums_details_back);
         addTag1 = (Button) this.findViewById(R.id.button4);
-
+        frameLayouts = new LinkedList<>();
         forums_details_all_layout=(LinearLayout) findViewById(R.id.forums_details_all_layout);
         List<String> tags = new ArrayList<String>();
 
@@ -508,6 +511,20 @@ public class DetailsActivity extends BaseActivity {
         }
     }
 
+    private TranslateAnimation translateAnimationGenerator(int fromX, int toX, int duration, int random){
+        TranslateAnimation translateAnimation = new TranslateAnimation(fromX, toX, 0, 0);
+        translateAnimation.setDuration(duration + (int) (random * Math.random()));
+        return translateAnimation;
+    }
+    private void setFrameLayouts(ViewGroup viewGroup){
+        for (int i = 0; i < viewGroup.getChildCount(); i ++){
+            if (viewGroup.getChildAt(i) instanceof FrameLayout){
+                frameLayouts.add((FrameLayout) viewGroup.getChildAt(i));
+            }else {
+                setFrameLayouts((ViewGroup) viewGroup.getChildAt(i));
+            }
+        }
+    }
     //????Fragment??ViewPager????????
     private class fgViewPagerAdapter extends FragmentPagerAdapter {
 
