@@ -67,13 +67,15 @@
                 android:layout_width="0dp"
                 android:layout_weight="4"
                 android:layout_height="match_parent">
+
                 <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:padding="40dp"
-                    android:textSize="30sp"
                     android:text="军事"
                     android:textColor="#FFFFFF"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textSize="30sp" />
             </FrameLayout>
             <LinearLayout
                 android:layout_width="10dp"
@@ -196,6 +198,14 @@
         android:focusableInTouchMode="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <ImageButton
+            android:id="@+id/btn_back_choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="#9cfffff0"
+            android:src="@drawable/btn_back_detail_normal"/>
         <LinearLayout
             android:background="#9cfffff0"
             android:orientation="vertical"
@@ -206,7 +216,7 @@
                 android:text="请选择具体角度："
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="17dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
                 android:textSize="28sp"
                 android:textColor="#00a0e9"

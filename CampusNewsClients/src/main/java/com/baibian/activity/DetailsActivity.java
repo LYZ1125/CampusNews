@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -21,9 +22,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -69,6 +73,7 @@ public class DetailsActivity extends BaseActivity {
     private RelativeLayout forums_details_itemlayout2;
     private Activity activity;
     private TextView begin_discussion;
+    private ImageButton backToChoice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -249,20 +254,86 @@ public class DetailsActivity extends BaseActivity {
                 ((ViewPager) container).addView(viewContainter.get(position));
                 if (position==1){
 
-                      FrameLayout framelayoute21=(FrameLayout) findViewById(R.id.framelayoute21);
+                    final FrameLayout framelayoute21=(FrameLayout) findViewById(R.id.framelayoute21);
+                    final FrameLayout frameLayout22 = (FrameLayout) findViewById(R.id.framelayoute22);
+                    final FrameLayout frameLayout31 = (FrameLayout) findViewById(R.id.framelayoute31);
+                    final FrameLayout frameLayout32 = (FrameLayout) findViewById(R.id.framelayoute32);
                     framelayoute21.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                           forums_details_itemlayout1=(LinearLayout) findViewById(R.id.forums_details_itemlayout1);
+                            forums_details_itemlayout1=(LinearLayout) findViewById(R.id.forums_details_itemlayout1);
                             forums_details_itemlayout2=(RelativeLayout)findViewById(R.id.forums_details_itemlayout2);
                             begin_discussion=(TextView)findViewById(R.id.begin_discussion);
+                            backToChoice = (ImageButton) findViewById(R.id.btn_back_choice);
+                            /*
                             forums_details_itemlayout1.setVisibility(View.GONE);
-                            forums_details_itemlayout2.setVisibility(View.VISIBLE);
+                            forums_details_itemlayout2.setVisibility(View.VISIBLE);*/
+                            TranslateAnimation translateAnimationLeft = new TranslateAnimation(0, -400, 0, 0);
+                            TranslateAnimation translateAnimationRight = new TranslateAnimation(0, 400, 0, 0);
+                            translateAnimationRight.setDuration(800);
+                            translateAnimationLeft.setDuration(800);
+                            translateAnimationLeft.setAnimationListener(new Animation.AnimationListener() {
+                                @Override
+                                public void onAnimationStart(Animation animation) {
+
+                                }
+
+                                @Override
+                                public void onAnimationEnd(Animation animation) {
+                                    forums_details_itemlayout1.setVisibility(View.GONE);
+                                    forums_details_itemlayout2.setVisibility(View.VISIBLE);
+                                    TranslateAnimation translateAnimationRightInner = new TranslateAnimation(800, 0, 0, 0);
+                                    translateAnimationRightInner.setDuration(800);
+                                    forums_details_itemlayout2.setAnimation(translateAnimationRightInner);
+                                }
+
+                                @Override
+                                public void onAnimationRepeat(Animation animation) {
+
+                                }
+                            });
+                            framelayoute21.startAnimation(translateAnimationLeft);
+                            frameLayout22.startAnimation(translateAnimationRight);
+                            frameLayout31.startAnimation(translateAnimationLeft);
+                            frameLayout32.startAnimation(translateAnimationRight);
                             begin_discussion.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
                                     Intent intent=new Intent(activity,DiscussionActivity.class);
                                     startActivity(intent);
+                                }
+                            });
+                            backToChoice.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    TranslateAnimation translateAnimationRight = new TranslateAnimation(0, 800, 0, 0);
+                                    translateAnimationRight.setDuration(800);
+                                    forums_details_itemlayout2.setAnimation(translateAnimationRight);
+                                    forums_details_itemlayout2.setVisibility(View.GONE);
+                                    translateAnimationRight.setAnimationListener(new Animation.AnimationListener() {
+                                        @Override
+                                        public void onAnimationStart(Animation animation) {
+
+                                        }
+
+                                        @Override
+                                        public void onAnimationEnd(Animation animation) {
+                                            TranslateAnimation translateAnimationLeft = new TranslateAnimation(-400, 0, 0, 0);
+                                            TranslateAnimation translateAnimationRight = new TranslateAnimation(400, 0, 0, 0);
+                                            translateAnimationRight.setDuration(800);
+                                            translateAnimationLeft.setDuration(800);
+                                            framelayoute21.setAnimation(translateAnimationLeft);
+                                            frameLayout31.setAnimation(translateAnimationLeft);
+                                            frameLayout22.setAnimation(translateAnimationRight);
+                                            frameLayout32.setAnimation(translateAnimationRight);
+                                            forums_details_itemlayout1.setVisibility(View.VISIBLE);
+                                        }
+
+                                        @Override
+                                        public void onAnimationRepeat(Animation animation) {
+
+                                        }
+                                    });
                                 }
                             });
                             editTag = (EditText) findViewById(R.id.tag_edit);
