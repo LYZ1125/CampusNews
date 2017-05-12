@@ -233,6 +233,75 @@ public class DetailsActivity extends BaseActivity {
 //        recyclerView.setAdapter(adapter);
     }
 
+    /**
+     * There is something improper with the parameters of the following method
+     * I wanna drag the method out of the outer method, "initViewPager", while I have no idea dealing with the variables in the inner class passed to this method
+     * thus I have no other way but to add some specific final parameters "LinearLayout" and "RelativeLayout"
+     * If forums_details_itemlayout1or2 can be initiated in the "initView" then the problem can be tackled probably from my own perspective-WangYY
+     * @param flag
+     * @param forums_details_itemlayout1
+     * @param forums_details_itemlayout2
+     */
+    private void setFrameLayoutAnimation(Boolean flag, final  LinearLayout forums_details_itemlayout1, final RelativeLayout forums_details_itemlayout2) {
+        setFrameLayouts(forums_details_itemlayout1);
+        if (flag) {
+            TranslateAnimation tempTranslateAnimation = translateAnimationGenerator(0, -400, 1000, 0);
+            for (int i = 0; i < frameLayouts.size(); i++) {
+                if (i == 2 || i == 4) {
+                    frameLayouts.get(i).startAnimation(tempTranslateAnimation);
+                } else {
+                    frameLayouts.get(i).startAnimation(translateAnimationGenerator(0, 400, 1000, 0));
+                }
+            }
+            frameLayouts.clear();
+            tempTranslateAnimation.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    forums_details_itemlayout1.setVisibility(View.GONE);
+                    forums_details_itemlayout2.setVisibility(View.VISIBLE);
+                    forums_details_itemlayout2.startAnimation(translateAnimationGenerator(800, 0, 1000, 0));
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+
+                }
+            });
+        }else {
+            TranslateAnimation tempTranslateAnimation = translateAnimationGenerator(0, 800, 1000, 0);
+            forums_details_itemlayout2.startAnimation(tempTranslateAnimation);
+            tempTranslateAnimation.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    for (int i = 0; i < frameLayouts.size(); i++){
+                        if (i == 2 || i == 4){
+                            frameLayouts.get(i).startAnimation(translateAnimationGenerator(-400, 0, 1000, 1000));
+                        }else {
+                            frameLayouts.get(i).startAnimation(translateAnimationGenerator(400, 0, 1000, 1000));
+                        }
+                    }
+                    frameLayouts.clear();
+                    forums_details_itemlayout2.setVisibility(View.GONE);
+                    forums_details_itemlayout1.setVisibility(View.VISIBLE);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+
+                }
+            });
+        }
+    }
 
     private void initViewPager() {
         viewPager.setAdapter(new PagerAdapter() {
@@ -257,13 +326,13 @@ public class DetailsActivity extends BaseActivity {
                 if (position==1){
 
                     final FrameLayout framelayoute21=(FrameLayout) findViewById(R.id.framelayoute21);
-                    forums_details_itemlayout1=(LinearLayout) findViewById(R.id.forums_details_itemlayout1);
-                    forums_details_itemlayout2=(RelativeLayout)findViewById(R.id.forums_details_itemlayout2);
                     backToChoice = (ImageButton) findViewById(R.id.btn_back_choice);
 
                     framelayoute21.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+                            forums_details_itemlayout1=(LinearLayout) findViewById(R.id.forums_details_itemlayout1);
+                            forums_details_itemlayout2=(RelativeLayout)findViewById(R.id.forums_details_itemlayout2);
                             begin_discussion=(TextView)findViewById(R.id.begin_discussion);
                             /*
                             forums_details_itemlayout1.setVisibility(View.GONE);
@@ -271,11 +340,11 @@ public class DetailsActivity extends BaseActivity {
                             /**
                              * Here the method is set to Animate those four Square FrameLayouts
                              */
-                            setFrameLayoutAnimation(true);
+                            setFrameLayoutAnimation(true, forums_details_itemlayout1, forums_details_itemlayout2);
                             backToChoice.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    setFrameLayoutAnimation(false);
+                                    setFrameLayoutAnimation(false, forums_details_itemlayout1, forums_details_itemlayout2);
                                 }
                             });
                             editTag = (EditText) findViewById(R.id.tag_edit);
@@ -284,66 +353,6 @@ public class DetailsActivity extends BaseActivity {
                             ui_tools.CancelFocusOne(activity,container,editTag);
                         }
 
-                        private void setFrameLayoutAnimation(Boolean flag) {
-                            setFrameLayouts(forums_details_itemlayout1);
-                            if (flag) {
-                                TranslateAnimation tempTranslateAnimation = translateAnimationGenerator(0, -400, 1000, 0);
-                                for (int i = 0; i < frameLayouts.size(); i++) {
-                                    if (i == 2 || i == 4) {
-                                        frameLayouts.get(i).startAnimation(tempTranslateAnimation);
-                                    } else {
-                                        frameLayouts.get(i).startAnimation(translateAnimationGenerator(0, 400, 1000, 0));
-                                    }
-                                }
-                                frameLayouts.clear();
-                                tempTranslateAnimation.setAnimationListener(new Animation.AnimationListener() {
-                                    @Override
-                                    public void onAnimationStart(Animation animation) {
-
-                                    }
-
-                                    @Override
-                                    public void onAnimationEnd(Animation animation) {
-                                        forums_details_itemlayout1.setVisibility(View.GONE);
-                                        forums_details_itemlayout2.setVisibility(View.VISIBLE);
-                                        forums_details_itemlayout2.startAnimation(translateAnimationGenerator(800, 0, 1000, 0));
-                                    }
-
-                                    @Override
-                                    public void onAnimationRepeat(Animation animation) {
-
-                                    }
-                                });
-                            }else {
-                                TranslateAnimation tempTranslateAnimation = translateAnimationGenerator(0, 800, 1000, 0);
-                                forums_details_itemlayout2.startAnimation(tempTranslateAnimation);
-                                tempTranslateAnimation.setAnimationListener(new Animation.AnimationListener() {
-                                    @Override
-                                    public void onAnimationStart(Animation animation) {
-
-                                    }
-
-                                    @Override
-                                    public void onAnimationEnd(Animation animation) {
-                                        for (int i = 0; i < frameLayouts.size(); i++){
-                                            if (i == 2 || i == 4){
-                                                frameLayouts.get(i).startAnimation(translateAnimationGenerator(-400, 0, 1000, 1000));
-                                            }else {
-                                                frameLayouts.get(i).startAnimation(translateAnimationGenerator(400, 0, 1000, 1000));
-                                            }
-                                        }
-                                        frameLayouts.clear();
-                                        forums_details_itemlayout2.setVisibility(View.GONE);
-                                        forums_details_itemlayout1.setVisibility(View.VISIBLE);
-                                    }
-
-                                    @Override
-                                    public void onAnimationRepeat(Animation animation) {
-
-                                    }
-                                });
-                            }
-                        }
                     });
 //                    TextView textViewbegin=(TextView) findViewById(R.id.begin_discussion);
 //                    textViewbegin.setOnClickListener(new View.OnClickListener() {
@@ -511,11 +520,24 @@ public class DetailsActivity extends BaseActivity {
         }
     }
 
+    /**
+     * to generate translateAnimation on X ray only, specifically it can generate animation with random duration.-WangYY
+     * @param fromX
+     * @param toX
+     * @param duration
+     * @param random
+     * @return
+     */
     private TranslateAnimation translateAnimationGenerator(int fromX, int toX, int duration, int random){
         TranslateAnimation translateAnimation = new TranslateAnimation(fromX, toX, 0, 0);
         translateAnimation.setDuration(duration + (int) (random * Math.random()));
         return translateAnimation;
     }
+
+    /**
+     * this method is set to find all the FrameLayouts under a ViewGroup while needed specific way of layout.-WangYY
+     * @param viewGroup
+     */
     private void setFrameLayouts(ViewGroup viewGroup){
         for (int i = 0; i < viewGroup.getChildCount(); i ++){
             if (viewGroup.getChildAt(i) instanceof FrameLayout){
