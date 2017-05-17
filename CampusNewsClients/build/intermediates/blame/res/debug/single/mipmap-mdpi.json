@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\details_floating_adding_btn.png",
+        "source": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\details_floating_adding_btn.png"
+    },
+    {
         "merged": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\blue_add_mipmap.png",
         "source": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\blue_add_mipmap.png"
     },
