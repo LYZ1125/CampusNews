@@ -668,6 +668,10 @@
         "source": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\src\\main\\res\\drawable\\login4img13.png"
     },
     {
+        "merged": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable\\detalis_tag_background.xml",
+        "source": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\src\\main\\res\\drawable\\detalis_tag_background.xml"
+    },
+    {
         "merged": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable\\title.png",
         "source": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\src\\main\\res\\drawable\\title.png"
     },

@@ -1,4 +1,4 @@
-#Wed May 17 20:24:19 CST 2017
+#Thu May 18 21:15:55 CST 2017
 base.0=C\:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_f06b527e87d62283620d4b783eee3d8b9fdb1308
 renamed.1=classes.dex
 renamed.0=classes2.dex

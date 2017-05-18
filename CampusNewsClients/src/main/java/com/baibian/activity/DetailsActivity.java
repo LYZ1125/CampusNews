@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Build;
 import android.os.Bundle;
@@ -87,7 +88,7 @@ public class DetailsActivity extends BaseActivity {
     /**
      * Create five GridLayouts to hold Buttons
      * Create grids to get GridLayout randomly
-     * Create previousButtons to save last button that has been set in one GridLayout previously
+     * Create previousTexts to save last button that has been set in one GridLayout previously
      * Create columns and column1,2,3 to simulate a Matrix and by deleting them one by one to achieve setting Buttons randomly
      * --WangYY 2017.5.16
      */
@@ -95,16 +96,10 @@ public class DetailsActivity extends BaseActivity {
     private GridLayout gridSecond;
     private GridLayout gridThird;
     private GridLayout gridFourth;
-    private GridLayout gridFifth;
     private LinkedList<GridLayout> grids = new LinkedList<>();
-    private LinkedList<Button> previousButtons = new LinkedList<>();/*
-    private LinkedList<Integer> column1 = new LinkedList<>();
-    private LinkedList<Integer> column2 = new LinkedList<>();
-    private LinkedList<Integer> column3 = new LinkedList<>();
-    private LinkedList<Integer> column4 = new LinkedList<>();
-    private LinkedList<Integer> column5 = new LinkedList<>();*/
+    private LinkedList<TextView> previousTexts = new LinkedList<>();
     private LinkedList<LinkedList<Integer>> columns = new LinkedList<>();
-    private String items[] = {"去你丫的", "高数", "线代", "大物", "马克思", "工程制图", "C语言", "军事理论课", "思修", "职业发展教育", "形式与政策", "恕我直言", "这些", "统统都是","L A J I"};
+    private String items[] = { "高数", "线代", "大物", "马克思", "工程制图", "C语言", "军事理论课", "思修", "职业发展教育", "恕我直言", "这些", "统统都是"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -384,12 +379,17 @@ public class DetailsActivity extends BaseActivity {
                             randomRow = getRandomIn(columns.size());
                         }
                         int randomColumn = getRandomIn(columns.get(randomRow).size());
-                        Button temp = new Button(DetailsActivity.this);
+                        TextView temp = new TextView(DetailsActivity.this);
                         temp.setText(items[i]);
-                        if (previousButtons.get(randomRow).getText() != "") {
-                            ratio = getRatio(temp, previousButtons.get(randomRow));
+                        temp.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                        temp.setPadding(30, 30, 30, 30);
+                        temp.setTextColor(Color.WHITE);
+                        temp.setBackgroundResource(R.drawable.detalis_tag_background);
+                        temp.setElevation(5.0f);
+                        if (previousTexts.get(randomRow).getText() == "") {
+                            previousTexts.set(randomRow, temp);
                         }
-                        previousButtons.set(randomRow, temp);
+                        ratio = getRatio(temp, previousTexts.get(randomRow));
                         GridLayout.Spec columnTest = GridLayout.spec(columns.get(randomRow).get(randomColumn), ratio);
                         GridLayout.LayoutParams params = new GridLayout.LayoutParams(rowTest, columnTest);
                         grids.get(randomRow).addView(temp, params);
@@ -484,7 +484,6 @@ public class DetailsActivity extends BaseActivity {
         gridSecond = (GridLayout) findViewById(R.id.forums_details_grid_second);
         gridThird = (GridLayout) findViewById(R.id.forums_details_grid_third);
         gridFourth = (GridLayout) findViewById(R.id.forums_details_grid_fourth);
-        gridFifth = (GridLayout) findViewById(R.id.forums_details_grid_fifth);
 
         /**
          * Add GridLayouts to grids
@@ -493,12 +492,11 @@ public class DetailsActivity extends BaseActivity {
         grids.add(gridSecond);
         grids.add(gridThird);
         grids.add(gridFourth);
-        grids.add(gridFifth);
 
         /**
          * Initiate a 2-dimension list to make up a Matrix-alike
          */
-        for (int i = 0; i < 5; i++){
+        for (int i = 0; i < 4; i++){
             LinkedList<Integer> tempColumn = new LinkedList<>();
             for (int j = 0; j < 3; j++){
                 tempColumn.add(j);
@@ -506,10 +504,10 @@ public class DetailsActivity extends BaseActivity {
             columns.add(tempColumn);
         }
         /**
-         * add buttons to avoid exception
+         * add textViews to avoid exception
          */
         for (int i = 0; i < items.length; i++){
-            previousButtons.add(new Button(DetailsActivity.this));
+            previousTexts.add(new TextView(DetailsActivity.this));
         }
     }
 
@@ -677,7 +675,7 @@ public class DetailsActivity extends BaseActivity {
      * @param two
      * @return
      */
-    private float getRatio(Button one, Button two){
+    private float getRatio(TextView one, TextView two){
         float ratio = getTextWidth(one.getText().toString(), one.getTextSize())/getTextWidth(two.getText().toString(), two.getTextSize());
         return ratio;
     }

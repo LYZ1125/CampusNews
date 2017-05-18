@@ -246,15 +246,20 @@
                 app:fabSize="mini"
                 android:layout_marginLeft="@dimen/widget_margin"
                 android:src="@mipmap/details_floating_adding_btn"/>
-            <GridLayout
-            android:id="@+id/forums_details_grid_first"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="5"
-            android:rowCount="1"
-            android:layoutAnimation="@anim/layout_alpha_in">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/widget_margin">
+                  <GridLayout
+                    android:id="@+id/forums_details_grid_first"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="5"
+                    android:rowCount="1"
+                    android:layoutAnimation="@anim/layout_alpha_in">
 
-        </GridLayout>
+                  </GridLayout>
         <GridLayout
             android:id="@+id/forums_details_grid_second"
             android:layout_width="match_parent"
@@ -291,6 +296,7 @@
             android:layoutAnimation="@anim/layout_alpha_in">
 
         </GridLayout>
+            </LinearLayout>
 
         </LinearLayout>
         <TextView
