@@ -2,108 +2,9 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/CampusNewsClients/build.gradle" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/activity/ChannelActivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/activity/CityListActivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/activity/DetailsActivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/activity/DiscussionActivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/activity/Edit_Information_Activity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/activity/ImageShowActivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/activity/MainActivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/activity/UsersImformationActivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/activity/login/GuideActivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/activity/login/Login4Activity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/activity/login/Welcome.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/activity/login/registerActivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/activity/newsDetailsActivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/activity/periodical/PeriodicalActivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/activity/setting/MessageSettingAcitivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/activity/setting/PushSetting.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/activity/setting/SettingsActivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/activity/tempActivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/adapter/CityAdapter.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/adapter/Discussion_FootAdapter.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/adapter/DragAdapter.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/adapter/EditImformation_ListView_Adapter.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/adapter/Forums_Integration_Refresh_FootAdapter.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/adapter/Guide_adapter.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/adapter/Homepage_ListAdapter.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/adapter/Homepage_Refresh_FootAdapter.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/adapter/Homepage_ViewpagerAdapter.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/adapter/ImagePagerAdapter.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/adapter/NewsAdapter.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/adapter/NewsFragmentPagerAdapter.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/adapter/OtherAdapter.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/adapter/Profile_Drawer_Right_ViewPager_Adapter.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/adapter/RefreshFootAdapter.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/adapter/Tablayout_Adapter_Right.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/adapter/Users_Viwepager_Adapter.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/app/AppApplication.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/base/BaseActivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/bean/ChannelItem.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/bean/ChannelManage.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/bean/CityEntity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/bean/NewsEntity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/bean/crawlerItem.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/crawler/CrawlerChannel.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/crawler/StreamTool.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/dao/ChannelDao.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/dao/ChannelDaoInface.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/db/DBUtil.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/db/SQLHelper.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/fragment/PeriodicalsFragment.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/fragment/forums/ClassificationFragment.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/fragment/forums/FocusFragment.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/fragment/forums/HotFragment.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/fragment/forums/IntegrationFragment.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/fragment/forums/RealTimeFragment.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/fragment/forums/overviewFragment.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/fragment/forums/subdivideFragment.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/fragment/main/FindFragment.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/fragment/main/ForumsFragment.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/fragment/main/HomepageFragment.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/fragment/main/NewsFragment.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/fragment/main/PeriodicalsFragment.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/fragment/users_imformation/BaiBianImformationFragment.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/fragment/users_imformation/BaiBianStatementFragment.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/listener/BackGestureListener.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/load/refresh.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/service/NewsDetailsService.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/tool/BaseTools.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/tool/Constants.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/tool/DataTools.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/tool/DateTools.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/tool/HttpTool.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/tool/LinearLayout_Inflaterable.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/tool/Options.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/tool/PrefTools.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/tool/RoundImageView.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/tool/ToastTools.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/tool/UI_Tools.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/tool/XZY.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/tool/springindicator/Point.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/tool/springindicator/SpringIndicator.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/tool/springindicator/SpringView.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/tool/springindicator/TabClickListener.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/tool/springindicator/viewpager/FixedSpeedScroller.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/tool/springindicator/viewpager/ScrollerViewPager.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/view/ColumnHorizontalScrollView.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/view/DragGrid.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/view/HeadListView.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/view/HomepageListView.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/view/ListView_in_ScrollView.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/view/OtherGridView.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/view/SlidingDrawerView.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/view/SwitchButton.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/view/ToastDialog.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/view/TopToastView.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/view/imageshow/EclairMotionEvent.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/view/imageshow/ImageShowViewPager.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/view/imageshow/TouchImageView.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/baibian/view/imageshow/WrapMotionEvent.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/ChannelActivity.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/ChoiceDirectionActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/CityListActivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/DetailsActivity.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/DetailsActivity.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/DiscussionActivity.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/Edit_Information_Activity.java" charset="GBK" />
@@ -111,7 +12,6 @@
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/MainActivity.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/UsersImformationActivity.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/newsDetailsActivity.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/tempActivity.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/tempActivity.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/adapter/CityAdapter.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/adapter/Discussion_FootAdapter.java" charset="GBK" />
@@ -132,6 +32,7 @@
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/adapter/Users_Viwepager_Adapter.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/bean/ChannelItem.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/bean/CityEntity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/tool/DateTools.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/view/HeadListView.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/view/TopToastView.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/res/drawable-hdpi/blue_bar.xml" charset="GBK" />

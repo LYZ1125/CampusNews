@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="17"
+        android:minSdkVersion="21"
         android:targetSdkVersion="25" />
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -34,7 +34,7 @@
     <application
         android:name="com.baibian.app.AppApplication"
         android:allowBackup="true"
-        android:icon="@drawable/icon"
+        android:icon="@drawable/icon3"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >

@@ -5,6 +5,7 @@ package com.baibian.activity.login;
         import android.os.Bundle;
         import android.os.Handler;
         import android.os.Message;
+        import android.util.Log;
         import android.view.View;
         import android.view.Window;
         import android.widget.Button;
@@ -19,6 +20,9 @@ package com.baibian.activity.login;
         import com.baibian.tool.ToastTools;
         import com.baibian.tool.UI_Tools;
         import com.squareup.okhttp.Response;
+
+        import org.json.JSONArray;
+        import org.json.JSONObject;
 
         import java.io.IOException;
         import java.util.HashMap;
@@ -129,7 +133,6 @@ public class registerActivity extends Activity implements View.OnClickListener {
                             } catch (IOException e) {
                                 e.printStackTrace();
                             }
-
                             isSignUpOK = responseBody.startsWith("{\"user\"");
                             isAccountHava = responseBody.startsWith("{\"error\"");
                             //response监测点

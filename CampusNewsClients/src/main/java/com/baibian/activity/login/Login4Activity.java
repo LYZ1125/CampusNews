@@ -1,5 +1,6 @@
 package com.baibian.activity.login;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -15,11 +16,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baibian.R;
+import com.baibian.activity.MainActivity;
+import com.baibian.app.AppApplication;
 import com.baibian.base.BaseActivity;
 import com.baibian.tool.HttpTool;
+import com.baibian.tool.PrefTools;
 import com.baibian.tool.ToastTools;
 import com.baibian.tool.UI_Tools;
 import com.squareup.okhttp.Response;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.IOException;
 
 /**
  * 登录界面的活动
@@ -63,6 +72,9 @@ public class Login4Activity extends BaseActivity {
         login4AccountEdit = (EditText) findViewById(R.id.login4AccountEdit);
         login4passwordEdit = (EditText) findViewById(R.id.login4passwordEdit);
         login4_all_layout=(LinearLayout) findViewById(R.id.login4_all_layout);
+        String account_string = PrefTools.getString(
+                Login4Activity.this, "saved_account", "");
+        login4AccountEdit.setText(account_string);
         UI_Tools ui_tools = new UI_Tools();
         ui_tools.CancelFocusOne(this, login4_all_layout, login4AccountEdit);
         ImageViewAnimation(); //这个方法负责初始化时，7张图片的动画效果
@@ -78,19 +90,28 @@ public class Login4Activity extends BaseActivity {
                 } else if (password.length() > 16 || password.length() < 6) {
                     Toast.makeText(Login4Activity.this, R.string.please6to16, Toast.LENGTH_SHORT).show();
                 } else {
-                    //用于接受登录、注册子线程的返回数据
+                    //用于接受登录、注册子线程的返回数据`
                     handler = new Handler() {
                         @Override
                         public void handleMessage(Message msg) {
                             super.handleMessage(msg);
                             signInResponse = (Response) msg.obj;
                             if (signInResponse.code() == 200) {
-                                System.out.println("返回值为200");
+                                String string="";
+                                try{
+                                     string=signInResponse.body().string();//获取信息
+                                }catch (IOException e){
+
+                                }
                                 ToastTools.ToastShow(getString(R.string.signIn_OK));
+                                string=ChangeToJSON(string);
+                                parseJSONObject(string);
+                                Log.d("response.body.string:" ,string);
                                 //开启新线程，并将response传过去。
                                 Intent intent1 = new Intent();
                                 intent1.putExtra("response", String.valueOf(signInResponse));
                                 setResult(LOGIN4_REQUEST, intent1);
+                                PrefTools.setString(AppApplication.getContext(), "saved_account", account);
                                 finish();
                             } else if (signInResponse.code() == 401) {
                                 System.out.println("返回值为401");
@@ -102,6 +123,7 @@ public class Login4Activity extends BaseActivity {
                         }
                     };
                     signIn(account, password);
+
                 }
 
             }
@@ -127,7 +149,12 @@ public class Login4Activity extends BaseActivity {
         });
     }
 
-
+    private String ChangeToJSON(String string){
+        string =string.replace("{\"user\":","");
+        string=string.replace("}}","}");
+        string="["+string+"]";
+        return string;
+    }
     public void get() {
         final String[] htmlStr = new String[1];
         new Thread() {
@@ -162,6 +189,28 @@ public class Login4Activity extends BaseActivity {
         }.start();
         return post[0];
     }
+    private void parseJSONObject(String josnData){
+        Log.d("josndata",josnData);
+        try{
+            JSONArray jsonArray =new JSONArray(josnData);
+            for(int i =0;i<jsonArray.length();i++){
+                JSONObject jsonObject=jsonArray.getJSONObject(i);
+                String id ="";
+                id=jsonObject.getString("id");
+                Log.d("id",id);
+                String auth_token=jsonObject.getString("auth_token");
+                SharedPreferences.Editor editor=getSharedPreferences("usersimformation",MODE_PRIVATE).edit();
+                editor.putString("id",id);
+                editor.putString("auth_token",auth_token);
+                editor.commit();
+            }
+        }catch (Exception e ){
+            e.printStackTrace();
+        }
+    }
+    /**
+     * 引导界面初始化部分存储登录账号
+     */
 
     //这个方法负责初始化时，7张图片的动画效果
     protected void ImageViewAnimation() {

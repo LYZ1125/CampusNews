@@ -54,6 +54,7 @@
 
         </LinearLayout>
         <TextView
+            android:id="@+id/username"
             android:layout_gravity="center_horizontal"
              android:textSize="32dp"
              android:text="name"

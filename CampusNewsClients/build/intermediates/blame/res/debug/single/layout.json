@@ -128,10 +128,6 @@
         "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_activity_chooser_view.xml"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_action_tombstone.xml"
-    },
-    {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
         "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\abc_screen_toolbar.xml"
     },
@@ -288,10 +284,6 @@
         "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\layout\\welcome.xml"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_template_icon_group.xml"
-    },
-    {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\login4_layout.xml",
         "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\layout\\login4_layout.xml"
     },
@@ -354,10 +346,6 @@
     {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\forums_details_subdivide.xml",
         "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\layout\\forums_details_subdivide.xml"
-    },
-    {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\layout\\notification_action.xml"
     },
     {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
