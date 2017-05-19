@@ -2,19 +2,32 @@ package com.baibian.activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.os.StrictMode;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.baibian.R;
 import com.baibian.adapter.Users_Viwepager_Adapter;
+import com.baibian.tool.HttpTool;
+import com.baibian.tool.ToastTools;
 import com.baibian.tool.UI_Tools;
+import com.squareup.okhttp.Response;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,17 +37,27 @@ public class UsersImformationActivity extends Activity implements View.OnClickLi
     private Button BB_imformation_btn;
     private Button choise_direction_back;
     private ViewPager users_imformation_pager;
-    private Users_Viwepager_Adapter fAdapter;                               //¶¨Òåadapter
+    private Users_Viwepager_Adapter fAdapter;                               //ï¿½ï¿½ï¿½ï¿½adapter
     private List<View> viewList;
     private LinearLayout user_information_all;
     private EditText personalized_signature_edit;
+    private Response informationResponse;
+    private Handler handler;
+    private TextView username;
+    private final int EDIT_REQUEST=1;
+    private String UserInformation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.usersimformationlayout);
+        //ä¸‹é¢è¿™éƒ¨åˆ†ä»£ç å¼ºåˆ¶ä½¿ç”¨åœ¨ä¸»çº¿ç¨‹ä¸­ç½‘ç»œè¯·æ±‚ï¼Œä½†æ˜¯æˆ‘çœŸæ˜¯æ—¥äº†ç‹—äº†ï¼Œï¼Œæˆ‘æ˜æ˜å®åœ¨å­çº¿ç¨‹ä¸­è°ƒç”¨çš„ç½‘ç»œè¯·æ±‚ï¼Œï¼Œéè¦è¯´æˆ‘æ˜¯ä¸»çº¿ç¨‹ä¸­è°ƒç”¨ï¼Œmmp
+        if (android.os.Build.VERSION.SDK_INT > 9) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
         initview();
-        init_viewpager();//µ×²¿viewpagerµÄ³õÊ¼»¯
+        init_viewpager();//ï¿½×²ï¿½viewpagerï¿½Ä³ï¿½Ê¼ï¿½ï¿½
     }
 
     private void initview() {
@@ -45,63 +68,173 @@ public class UsersImformationActivity extends Activity implements View.OnClickLi
         BB_imformation_btn=(Button) findViewById(R.id.BB_imformation_btn);
         user_information_all=(LinearLayout)findViewById(R.id.user_information_all);
         personalized_signature_edit=(EditText) findViewById(R.id.personalized_signature_edit);
+        username=(TextView) findViewById(R.id.username);
         choise_direction_back.setOnClickListener(this);
         user_information_edit.setOnClickListener(this);
         UI_Tools ui_tools=new UI_Tools();
         ui_tools.CancelFocusOne(this,user_information_all,personalized_signature_edit);
+        init_information();
     }
 
     @Override
     public void onClick(View view) {
 
         switch (view.getId()) {
-            case R.id.choise_direction_back://µã»÷ÁË·µ»Ø¼ü
+            case R.id.choise_direction_back://ï¿½ï¿½ï¿½ï¿½Ë·ï¿½ï¿½Ø¼ï¿½
                 finish();
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 break;
-            case R.id.user_information_edit://´ò¿ª¸öÈË×ÊÁÏ±à¼­»î¶¯
+            case R.id.user_information_edit://ï¿½ò¿ª¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï±à¼­ï¿½î¶¯
                 Intent intent=new Intent(UsersImformationActivity.this,Edit_Information_Activity.class);
-                startActivity(intent);
+                intent.putExtra("responseString", UserInformation);
+                startActivityForResult(intent,EDIT_REQUEST);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             default:
                 break;
         }
     }
-
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // æ ¹æ®ä¸Šé¢å‘é€è¿‡å»çš„è¯·æ±‚å—æ¥åŒºåˆ«
+        switch (requestCode) {
+            case 1:
+//               String result_usersString= data.getExtras().getString("result_usersString");
+////                Log.d("ä¼ è¿‡å»å",result_usersString);
+//                ToastTools.ToastShow(result_usersString);
+//                parseResultJSONObject(result_usersString);
+                init_information();;
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void init_information(){
+        SharedPreferences preferences=getSharedPreferences("usersimformation",MODE_PRIVATE);
+        String  id =preferences.getString("id","");//ï¿½ï¿½È¡ï¿½ï¿½Ç°ï¿½ï¿½Â¼ï¿½Ã»ï¿½ï¿½ï¿½id
+        Log.d("idÎª",id);
+        handler = new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                informationResponse = (Response) msg.obj;
+                if (informationResponse.code() == 200) {
+                    UserInformation="";
+                    try{
+                 UserInformation= informationResponse.body().string();//ï¿½ï¿½È¡ï¿½ï¿½Ï¢
+                  }catch (IOException e){
+                        e.printStackTrace();
+                   }
+                    UserInformation =ChangeToJSON(UserInformation);
+                    parseJSONObject(UserInformation);
+                    Log.d("response.body.string:" ,UserInformation);
+                    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß³Ì£ï¿½ï¿½ï¿½ï¿½ï¿½responseï¿½ï¿½ï¿½ï¿½È¥ï¿½ï¿½
+                } else{
+                    ToastTools.ToastShow(getString(R.string.timeout));
+                }
+            }
+        };
+        getin(id);
+    }
+    private Response getin(String id ) {
+        String path="/api/users/"+id+"";
+        Log.d("idpath",path);
+        Response response = GetUserImformation(path,id);
+//        System.out.println("response" + response);
+//        System.out.println("responsecode" + response.body());
+
+        return response;
+    }
+
+    public Response GetUserImformation(final String path,final String id ){
+        final Response[] post = new Response[1];
+        new Thread() {
+            public void run() {
+                post[0] = HttpTool.doGetOkHttpResponse(path);
+                Message message = Message.obtain();
+                message.obj = post[0];
+                handler.sendMessage(message);
+            }
+        }.start();
+        return post[0];
+    }
+
+    private String ChangeToJSON(String string){
+        string =string.replace("{\"user\":","");
+        string=string.replace("}}","}");
+        string="["+string+"]";
+        return string;
+    }
+    private void parseResultJSONObject(String josnData) {
+//        Log.d("josndata", josnData);
+        try {
+            JSONArray jsonArray = new JSONArray(josnData);
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                String nickname = "";
+                nickname = jsonObject.getString("nickname");
+                username.setText(nickname);
+                Log.d("nickname", nickname);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    private void parseJSONObject(String josnData) {
+        Log.d("josndata", josnData);
+        try {
+            JSONArray jsonArray = new JSONArray(josnData);
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                String nickname = "";
+
+                nickname = jsonObject.getString("nickname");
+                username.setText(nickname);
+                Log.d("nickname", nickname);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+    @Override//ï¿½ï¿½ï¿½Â·ï¿½ï¿½Ø¼ï¿½
     public void onBackPressed() {
         // TODO Auto-generated method stub
         super.onBackPressed();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
+
+
     private void init_viewpager() {
         viewList=new ArrayList<View>();
         /**
-         * 2¸öView·Ö±ğ¶ÔÓ¦Èı¸ö½çÃæ
+         * 2ï¿½ï¿½Viewï¿½Ö±ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
          */
         View view1=View.inflate(this, R.layout.bb_statement_layout,null);
         View view2=View.inflate(this, R.layout.bb_imformation_layout,null);
         viewList.add(view1);
         viewList.add(view2);
         fAdapter=new Users_Viwepager_Adapter(viewList,UsersImformationActivity.this);
-        //viewpager¼ÓÔØadapter
+        //viewpagerï¿½ï¿½ï¿½ï¿½adapter
         users_imformation_pager.setAdapter(fAdapter);
         users_imformation_pager.setOffscreenPageLimit(0);
 
         /**
-         * ÕâÖÖĞ´·¨Ö»ÓĞ°ì·¨Ö§³ÖÁ©¸öButtonÈç¹û½øÈëÁËÈı¸öbuttonµÄÊ±ºò£¬Çë»»Ò»ÖÖÊ¹ÓÃ·½·¨
+         * ï¿½ï¿½ï¿½ï¿½Ğ´ï¿½ï¿½Ö»ï¿½Ğ°ì·¨Ö§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Buttonï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½buttonï¿½ï¿½Ê±ï¿½ï¿½ï¿½ë»»Ò»ï¿½ï¿½Ê¹ï¿½Ã·ï¿½ï¿½ï¿½
          */
         BB_state_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                users_imformation_pager.arrowScroll(1);//ÏòÇ°·­Ò³
+                users_imformation_pager.arrowScroll(1);//ï¿½ï¿½Ç°ï¿½ï¿½Ò³
             }
         });
         BB_imformation_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                users_imformation_pager.arrowScroll(2);//Ïòºó·­Ò³
+                users_imformation_pager.arrowScroll(2);//ï¿½ï¿½ï¿½Ò³
             }
         });
         users_imformation_pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {

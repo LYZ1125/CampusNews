@@ -52,6 +52,10 @@
         "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\drawable-mdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
     {
+        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\icon3.jpg",
+        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\drawable-mdpi\\icon3.jpg"
+    },
+    {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png",
         "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.1\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },

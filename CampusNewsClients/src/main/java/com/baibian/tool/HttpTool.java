@@ -1,5 +1,9 @@
 package com.baibian.tool;
 
+import android.content.Context;
+import android.media.session.MediaSession;
+import android.util.Log;
+
 import com.baibian.crawler.StreamTool;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
@@ -46,6 +50,55 @@ public class HttpTool {
         return htmlStr[0];
     }
 
+    public static Response doGetOkHttpResponse( String path) {
+        Response getedresponse=null;
+        final Response[] htmlRes = new Response[1];
+        final String[] htmlStr = {"error"};
+        //创建okHttpClient对象
+        OkHttpClient mOkHttpClient = new OkHttpClient();
+        //创建一个Request
+        final Request request = new Request.Builder()
+                .url(BASE_URL + path).get()
+                .build();
+        //new call
+        Call call = mOkHttpClient.newCall(request);
+        try {
+            getedresponse=call.execute();
+        }catch (IOException e ){
+            e.printStackTrace();
+        }
+        if (getedresponse==null)Log.d("错误问题","11111");
+        return getedresponse;
+    }
+    public static Response doPutOkHttpResponse(String path, String json, String auth_token) {
+        Response getedresponse=null;
+        final String[] htmlStr = {"error"};
+        //创建okHttpClient对象
+        OkHttpClient mOkHttpClient = new OkHttpClient();
+        String auth_token2= "Token token="+auth_token+"";
+        //创建一个Request.
+        Log.d("权限",auth_token);
+        final Request request = new Request.Builder().addHeader("Authorization",auth_token2)
+                .url(BASE_URL + path).put(RequestBody.create(JSON, json))
+                .build();
+
+
+//        request.header("Authorization")="\"Token token="+auth_token+"\"";
+
+
+        //new call
+        Call call = mOkHttpClient.newCall(request);
+        try {
+            getedresponse=call.execute();
+            System.out.println("response" + getedresponse);
+        }catch (IOException e ){
+            e.printStackTrace();
+        }
+        if (getedresponse==null)Log.d("错误问题","11111");
+        Log.d(" ",getedresponse.toString());
+        return getedresponse;
+    }
+
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
     public static String getSignUpJson(String username, String password) {
@@ -65,7 +118,6 @@ public class HttpTool {
                 .url(BASE_URL + path)
                 .post(RequestBody.create(JSON, json))
                 .build();
-
         Response response = null;
         try {
             response = mOkHttpClient.newCall(request).execute();

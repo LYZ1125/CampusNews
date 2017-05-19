@@ -111,7 +111,7 @@ MERGED from [com.android.support:support-compat:25.3.1] C:\Users\lenovo\Document
 	android:allowBackup
 		ADDED from C:\Users\lenovo\Documents\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:24:9-35
 	android:icon
-		ADDED from C:\Users\lenovo\Documents\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:25:9-38
+		ADDED from C:\Users\lenovo\Documents\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:25:9-39
 	android:theme
 		ADDED from C:\Users\lenovo\Documents\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:27:9-40
 	android:name

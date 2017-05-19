@@ -3,7 +3,7 @@
     package="com.jeremyfeinstein.slidingmenu.lib.test" >
 
     <uses-sdk
-        android:minSdkVersion="17"
+        android:minSdkVersion="21"
         android:targetSdkVersion="25" />
 
     <instrumentation
