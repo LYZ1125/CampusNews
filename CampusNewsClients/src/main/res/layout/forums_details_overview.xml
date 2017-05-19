@@ -193,7 +193,7 @@
     <RelativeLayout
         android:orientation="vertical"
         android:id="@+id/forums_details_itemlayout2"
-        android:visibility="visible"
+        android:visibility="gone"
         android:padding="30dp"
         android:focusable="true"
         android:focusableInTouchMode="true"
@@ -245,7 +245,7 @@
                 app:backgroundTint="#66ccff"
                 app:fabSize="mini"
                 android:layout_marginLeft="@dimen/widget_margin"
-                android:src="@mipmap/details_floating_adding_btn"/>
+                android:src="@drawable/details_floating_adding_btn"/>
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
