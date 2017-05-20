@@ -1,7 +1,7 @@
 package com.baibian.view;
 
 /**
- * Created by ×ÞÌØÇ¿ on 2017/5/20.
+ * Created by é‚¹ç‰¹å¼º on 2017/5/20.
  */
 
 public class TipView {
