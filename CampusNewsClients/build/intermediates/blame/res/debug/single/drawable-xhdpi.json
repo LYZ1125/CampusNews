@@ -72,12 +72,12 @@
         "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\drawable-xhdpi\\account_icon_kaixin.png"
     },
     {
-        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\title.png",
-        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\drawable-xhdpi\\title.png"
-    },
-    {
         "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\login3_loginbtn.png",
         "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\drawable-xhdpi\\login3_loginbtn.png"
+    },
+    {
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\title.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\drawable-xhdpi\\title.png"
     },
     {
         "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_drawer_search_normal.png",

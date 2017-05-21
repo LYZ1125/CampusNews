@@ -11,8 +11,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f86c7447-043f-4552-ba8b-5d196ef6c0e7" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/CampusNewsClients/build/intermediates/res/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_SlidingMenu/build/outputs/aar/library_SlidingMenu-debug.aar" afterPath="$PROJECT_DIR$/library_SlidingMenu/build/outputs/aar/library_SlidingMenu-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_SlidingMenu/build/outputs/aar/library_SlidingMenu-release.aar" afterPath="$PROJECT_DIR$/library_SlidingMenu/build/outputs/aar/library_SlidingMenu-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/view/TipView.java" afterPath="$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/view/TipView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/CampusNewsClients.iml" afterPath="$PROJECT_DIR$/CampusNewsClients/CampusNewsClients.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/build/generated/source/r/debug/android/support/design/R.java" afterPath="$PROJECT_DIR$/CampusNewsClients/build/generated/source/r/debug/android/support/design/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/CampusNewsClients/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/build/generated/source/r/debug/com/baibian/R.java" afterPath="$PROJECT_DIR$/CampusNewsClients/build/generated/source/r/debug/com/baibian/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/build/generated/source/r/debug/com/flyco/dialog/R.java" afterPath="$PROJECT_DIR$/CampusNewsClients/build/generated/source/r/debug/com/flyco/dialog/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/build/generated/source/r/debug/com/jeremyfeinstein/slidingmenu/lib/R.java" afterPath="$PROJECT_DIR$/CampusNewsClients/build/generated/source/r/debug/com/jeremyfeinstein/slidingmenu/lib/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/build/intermediates/blame/res/debug/single/drawable-xhdpi.json" afterPath="$PROJECT_DIR$/CampusNewsClients/build/intermediates/blame/res/debug/single/drawable-xhdpi.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/build/intermediates/blame/res/debug/single/mipmap-mdpi.json" afterPath="$PROJECT_DIR$/CampusNewsClients/build/intermediates/blame/res/debug/single/mipmap-mdpi.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/build/intermediates/blame/res/debug/single/mipmap-xhdpi.json" afterPath="$PROJECT_DIR$/CampusNewsClients/build/intermediates/blame/res/debug/single/mipmap-xhdpi.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/build/intermediates/blame/res/debug/single/mipmap-xxhdpi.json" afterPath="$PROJECT_DIR$/CampusNewsClients/build/intermediates/blame/res/debug/single/mipmap-xxhdpi.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/build/intermediates/blame/res/debug/single/mipmap-xxxhdpi.json" afterPath="$PROJECT_DIR$/CampusNewsClients/build/intermediates/blame/res/debug/single/mipmap-xxxhdpi.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/CampusNewsClients/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/CampusNewsClients/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/CampusNewsClients/build/intermediates/symbols/debug/R.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/adapter/Discussion_FootAdapter.java" afterPath="$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/adapter/Discussion_FootAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/src/main/res/layout/discussionlayout.xml" afterPath="$PROJECT_DIR$/CampusNewsClients/src/main/res/layout/discussionlayout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CampusNewsClients/src/main/res/layout/disscussion_item_layout.xml" afterPath="$PROJECT_DIR$/CampusNewsClients/src/main/res/layout/disscussion_item_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_SlidingMenu/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/library_SlidingMenu/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_SlidingMenu/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/library_SlidingMenu/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_SlidingMenu/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/library_SlidingMenu/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_SlidingMenu/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/library_SlidingMenu/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_SlidingMenu/library_SlidingMenu.iml" afterPath="$PROJECT_DIR$/library_SlidingMenu/library_SlidingMenu.iml" />
     </list>
     <ignored path="CampusNews.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,21 +78,77 @@
       <file leaf-file-name="TipItem.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/view/TipItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
+            <state relative-caret-position="240">
               <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TipView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TipView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/view/TipView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2066">
+            <state relative-caret-position="22590">
               <caret line="755" column="0" selection-start-line="755" selection-start-column="0" selection-end-line="755" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DiscussionActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/DiscussionActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Discussion_FootAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/adapter/Discussion_FootAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="85" column="80" selection-start-line="85" selection-start-column="80" selection-end-line="85" selection-end-column="80" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="disscussion_item_layout.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/res/layout/disscussion_item_layout.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="48" column="15" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GuideActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/login/GuideActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="discussionlayout.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/res/layout/discussionlayout.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -2752,9 +2834,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/MainActivity.java" />
-        <option value="$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/login/Welcome.java" />
-        <option value="$PROJECT_DIR$/CampusNewsClients/src/main/res/layout/main.xml" />
         <option value="$PROJECT_DIR$/CampusNewsClients/src/main/res/layout/welcome.xml" />
         <option value="$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/app/AppApplication.java" />
         <option value="$PROJECT_DIR$/CampusNewsClients/src/main/res/layout/focus_fragment_layout.xml" />
@@ -2791,7 +2870,6 @@
         <option value="$PROJECT_DIR$/CampusNewsClients/src/main/res/layout/usersimformationlayout.xml" />
         <option value="$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/ChannelActivity.java" />
         <option value="$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/crawler/CrawlerChannel.java" />
-        <option value="$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/login/GuideActivity.java" />
         <option value="$PROJECT_DIR$/CampusNewsClients/build.gradle" />
         <option value="$PROJECT_DIR$/library_SlidingMenu/build.gradle" />
         <option value="$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/tool/HttpTool.java" />
@@ -2803,6 +2881,10 @@
         <option value="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
         <option value="$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/view/TipItem.java" />
         <option value="$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/view/TipView.java" />
+        <option value="$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/login/GuideActivity.java" />
+        <option value="$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/adapter/Discussion_FootAdapter.java" />
+        <option value="$PROJECT_DIR$/CampusNewsClients/src/main/res/layout/discussionlayout.xml" />
+        <option value="$PROJECT_DIR$/CampusNewsClients/src/main/res/layout/disscussion_item_layout.xml" />
       </list>
     </option>
   </component>
@@ -2852,11 +2934,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane />
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2874,9 +2954,19 @@
               <option name="myItemId" value="CampusNews2" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="library_SlidingMenu" />
+              <option name="myItemId" value="CampusNews2" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CampusNewsClients" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2887,6 +2977,14 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="CampusNewsClients" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2906,10 +3004,6 @@
               <option name="myItemId" value="baibian" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2919,19 +3013,13 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="CampusNewsClients" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="baibian" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2941,7 +3029,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../LunDao" />
     <property name="android.project.structure.last.selected" value="library_SlidingMenu" />
     <property name="android.project.structure.proportion" value="0.15" />
-    <property name="device.picker.selection" value="Nexus_5X_API_24" />
+    <property name="device.picker.selection" value="FFK0217421010332" />
     <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlPreviewForm.SHOW" value="false" />
   </component>
   <component name="RecentsManager">
@@ -3376,7 +3464,14 @@
       <option name="project" value="LOCAL" />
       <updated>1495328883633</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="TipView">
+      <created>1495328978820</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1495328978820</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -3393,12 +3488,13 @@
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3266979" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2114486" sideWeight="0.49785408" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2104019" sideWeight="0.49785408" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21077283" sideWeight="0.50214595" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25995317" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.643026" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299356" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26580796" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32505912" sideWeight="0.49785408" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290398" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -3422,7 +3518,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32819906" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -3496,7 +3591,8 @@
     <MESSAGE value="滚你大爷滚你全家滚你祖宗八代" />
     <MESSAGE value="长按功能" />
     <MESSAGE value="TipItem" />
-    <option name="LAST_COMMIT_MESSAGE" value="TipItem" />
+    <MESSAGE value="TipView" />
+    <option name="LAST_COMMIT_MESSAGE" value="TipView" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3519,32 +3615,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/adapter/OtherAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-125">
-          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/res/drawable/search_bg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/res/drawable/search_bg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/res/mipmap-hdpi/gray_direction_right.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/res/layout/find_layout.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3764,7 +3834,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3930">
           <caret line="159" column="21" selection-start-line="159" selection-start-column="21" selection-end-line="160" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3780,7 +3849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3819,7 +3887,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3827,7 +3894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="960">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3835,7 +3901,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3843,14 +3908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
           <caret line="218" column="40" selection-start-line="218" selection-start-column="40" selection-end-line="218" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/login/GuideActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -3870,7 +3927,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/view/TipItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
+        <state relative-caret-position="240">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
@@ -3878,11 +3935,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/view/TipView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2066">
+        <state relative-caret-position="22590">
           <caret line="755" column="0" selection-start-line="755" selection-start-column="0" selection-end-line="755" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/DiscussionActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="40" column="36" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/adapter/Discussion_FootAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="85" column="80" selection-start-line="85" selection-start-column="80" selection-end-line="85" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/login/GuideActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/res/layout/discussionlayout.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="98" column="21" selection-start-line="98" selection-start-column="21" selection-end-line="98" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CampusNewsClients/src/main/res/layout/disscussion_item_layout.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="48" column="15" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -28,12 +28,12 @@
         "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\message.png"
     },
     {
-        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\delete_mipmap.png",
-        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\delete_mipmap.png"
-    },
-    {
         "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\report2.png",
         "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\report2.png"
+    },
+    {
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\delete_mipmap.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\delete_mipmap.png"
     },
     {
         "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\copy.png",
