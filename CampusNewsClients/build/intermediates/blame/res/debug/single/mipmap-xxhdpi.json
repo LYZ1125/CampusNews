@@ -1,70 +1,110 @@
 [
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\setting_mipmap.png",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\setting_mipmap.png"
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\share2.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\share2.png"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\yellow_pan.png",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\yellow_pan.png"
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ask2.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\ask2.png"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\yellow_direction_right.png",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\yellow_direction_right.png"
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\copy.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\copy.png"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\delete_mipmap.png",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\delete_mipmap.png"
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\search_icon.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\search_icon.png"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\gray_direction_right.png",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\gray_direction_right.png"
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\blue_add_mipmap.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\blue_add_mipmap.png"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\left_item_right_img.png",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\left_item_right_img.png"
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\back_direction.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\back_direction.png"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\red_minus.png",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\red_minus.png"
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\red_minus.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\red_minus.png"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\gray_house.png",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\gray_house.png"
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\gray_direction_right.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\gray_direction_right.png"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\blue_add_mipmap.png",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\blue_add_mipmap.png"
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\report.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\report.png"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\copy2.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\copy2.png"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\gray_back_mipmap.png",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\gray_back_mipmap.png"
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\share.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\share.png"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\gray_bag.png",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\gray_bag.png"
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ic_launcher.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\add_mipmap.png",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\add_mipmap.png"
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\delete_mipmap.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\delete_mipmap.png"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\back_mipmap_yellow.png",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\back_mipmap_yellow.png"
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\yellow_pan.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\yellow_pan.png"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\blue_add.png",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\blue_add.png"
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\report2.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\report2.png"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\search_icon.png",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\search_icon.png"
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\message2.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\message2.png"
     },
     {
-        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\back_direction.png",
-        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\back_direction.png"
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\gray_bag.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\gray_bag.png"
+    },
+    {
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\message.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\message.png"
+    },
+    {
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\yellow_direction_right.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\yellow_direction_right.png"
+    },
+    {
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\gray_back_mipmap.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\gray_back_mipmap.png"
+    },
+    {
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\setting_mipmap.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\setting_mipmap.png"
+    },
+    {
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\gray_house.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\gray_house.png"
+    },
+    {
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\left_item_right_img.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\left_item_right_img.png"
+    },
+    {
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\back_mipmap_yellow.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\back_mipmap_yellow.png"
+    },
+    {
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\blue_add.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\blue_add.png"
+    },
+    {
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\ask.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\ask.png"
+    },
+    {
+        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\add_mipmap.png",
+        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\mipmap-xxhdpi\\add_mipmap.png"
     }
 ]

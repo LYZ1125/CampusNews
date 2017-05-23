@@ -9,7 +9,8 @@
         android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:layout_marginTop="5dp">
 
         <com.baibian.tool.RoundImageView
             android:layout_gravity="center_horizontal"
@@ -20,7 +21,8 @@
             android:layout_gravity="center_horizontal"
             android:text="xzy2017"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"/>
     </LinearLayout>
 
 
@@ -50,13 +52,17 @@
                 android:layout_toLeftOf="@id/floor_account"
                 android:text="2017/4/22/22:10" />
         </RelativeLayout>
-
+        <RelativeLayout
+            android:id="@+id/textview_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
         <TextView
             android:id="@+id/content_textview"
             android:text="自古以后我们都认为。。"
             android:maxLines="4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+        </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -77,7 +83,7 @@
                     app:dots_secondary_color="@color/colorPrimary"
                     app:icon_size="25dp"
                     app:icon_type="Star"
-                    app:is_enabled="false"
+                    app:is_enabled="true"
                     app:like_drawable="@drawable/star_on"
                     app:liked="true"
                     app:unlike_drawable="@drawable/star_off" />
@@ -99,7 +105,7 @@
                     app:dots_secondary_color="@color/colorPrimary"
                     app:icon_size="25dp"
                     app:icon_type="heart"
-                    app:is_enabled="false"
+                    app:is_enabled="true"
                     app:like_drawable="@drawable/heart_on"
                     app:liked="true"
                     app:unlike_drawable="@drawable/heart_off" />

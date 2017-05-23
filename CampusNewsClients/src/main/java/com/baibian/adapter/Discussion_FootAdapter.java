@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -15,6 +16,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.baibian.R;
+import com.baibian.view.TipItem;
+import com.baibian.view.TipView;
 import com.like.LikeButton;
 import com.like.OnLikeListener;
 
@@ -55,6 +58,8 @@ public class Discussion_FootAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     private LikeButton like_btn;
     private LikeButton collect_btn;
     private Button respond_btn;
+    private TextView content_textview;//长按文本的内容
+    private RelativeLayout rv;//存储TipView的根视图
     public Discussion_FootAdapter(Context context) {
         this.mContext = context;
         this.mInflater = LayoutInflater.from(context);
@@ -74,9 +79,11 @@ public class Discussion_FootAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         //进行判断显示类型，来创建返回不同的View
         if (viewType == TYPE_ITEM) {
             View view = mInflater.inflate(R.layout.disscussion_item_layout, parent, false);
+            rv=(RelativeLayout)view.findViewById(R.id.textview_layout);
             collect_btn=(LikeButton) view.findViewById(R.id.collect_btn);
             like_btn=(LikeButton) view.findViewById(R.id.like_btn);
             respond_btn=(Button) view.findViewById(R.id.respond_btn);
+            content_textview=(TextView)view.findViewById(R.id.content_textview);
             respond_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -102,6 +109,40 @@ public class Discussion_FootAdapter extends RecyclerView.Adapter<RecyclerView.Vi
                 @Override
                 public void unLiked(LikeButton likeButton) {
 
+                }
+            });
+            /*对文本实现长按监听*/
+            content_textview.setOnTouchListener(new View.OnTouchListener() {
+                int x = 0;int y = 0;
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    x = (int) event.getX();
+                    y = (int) event.getY();//获取触摸位置，这个代码很好
+                    content_textview.setOnLongClickListener(new View.OnLongClickListener() {
+                        @Override
+                        public boolean onLongClick(View v) {
+                            TipView share = new TipView.Builder(mContext,rv,x+v.getLeft(),y+v.getTop())//这里的rv是容器，我们把tipView加到容器中其本身就成为一个组件，与其它组件地位相同
+                                    .addItem(new TipItem("反驳"))//添加各个TipItem具体内容
+                                    .addItem(new TipItem("提问"))
+                                    .addItem(new TipItem("复制"))
+                                    .addItem(new TipItem("举报"))
+                                    .addItem(new TipItem("分享"))
+                                    .setOnItemClickListener(new TipView.OnItemClickListener() {//对每个Item设置监听
+                                        @Override
+                                        public void onItemClick(String str,int a) {
+                                         /*这里有点坑，因为TipView一个整体是一个view,而其每个部分都是画上去的，不能对每个Item都onItemClickListener*/
+                                         /*并且它点击实现的实际功能其实并不是在这里实现，而要在TipView实现，这是这个代码的缺点*/
+                                         /*得在TipView内部的DrawItemUp和DrawItemDown实现每个Item的监听*/
+                                        }
+                                        @Override
+                                        public void dismiss() {
+                                        }
+                                    })
+                                    .create();
+                            return false;
+                        }
+                    });
+                    return false;//神奇这里把true改为false就行了，妈蛋！！！害我想这么久//宇宙无敌大坑
                 }
             });
             //这边可以做一些属性设置，甚至事件监听绑定
