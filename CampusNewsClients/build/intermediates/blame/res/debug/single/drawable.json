@@ -16,12 +16,12 @@
         "source": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\src\\main\\res\\drawable\\commentbg_listpage.xml"
     },
     {
-        "merged": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_sina.xml",
-        "source": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\src\\main\\res\\drawable\\btn_sina.xml"
-    },
-    {
         "merged": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable\\csdn.jpg",
         "source": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\src\\main\\res\\drawable\\csdn.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_sina.xml",
+        "source": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\src\\main\\res\\drawable\\btn_sina.xml"
     },
     {
         "merged": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_corner.xml",

@@ -193,7 +193,7 @@
     <RelativeLayout
         android:orientation="vertical"
         android:id="@+id/forums_details_itemlayout2"
-        android:visibility="gone"
+        android:visibility="visible"
         android:padding="30dp"
         android:focusable="true"
         android:focusableInTouchMode="true"

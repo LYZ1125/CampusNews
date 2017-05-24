@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -83,6 +84,7 @@ public class DetailsActivity extends BaseActivity {
     private TextView begin_discussion;
 
     private ImageButton backToChoice;
+    private FloatingActionButton popupInput;
     private LinkedList<FrameLayout> frameLayouts = new LinkedList<>();
     private LinkedList<Button> buttons = new LinkedList<>();
     /**
@@ -379,13 +381,19 @@ public class DetailsActivity extends BaseActivity {
                             randomRow = getRandomIn(columns.size());
                         }
                         int randomColumn = getRandomIn(columns.get(randomRow).size());
-                        TextView temp = new TextView(DetailsActivity.this);
+                        final TextView temp = new TextView(DetailsActivity.this);
                         temp.setText(items[i]);
                         temp.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                         temp.setPadding(30, 30, 30, 30);
                         temp.setTextColor(Color.WHITE);
                         temp.setBackgroundResource(R.drawable.detalis_tag_background);
                         temp.setElevation(5.0f);
+                        temp.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                editTag.append(temp.getText() + " ");
+                            }
+                        });
                         if (previousTexts.get(randomRow).getText() == "") {
                             previousTexts.set(randomRow, temp);
                         }
@@ -413,6 +421,7 @@ public class DetailsActivity extends BaseActivity {
                         }
 
                     });
+
 //                    TextView textViewbegin=(TextView) findViewById(R.id.begin_discussion);
 //                    textViewbegin.setOnClickListener(new View.OnClickListener() {
 //                        @Override
@@ -517,6 +526,8 @@ public class DetailsActivity extends BaseActivity {
         backBt = (Button) this.findViewById(R.id.forums_details_back);
 //        addTag1 = (Button) this.findViewById(R.id.button4);
         frameLayouts = new LinkedList<>();
+        popupInput = (FloatingActionButton) findViewById(R.id.adding_button);
+
         forums_details_all_layout=(LinearLayout) findViewById(R.id.forums_details_all_layout);
 
         List<String> tags = new ArrayList<String>();
