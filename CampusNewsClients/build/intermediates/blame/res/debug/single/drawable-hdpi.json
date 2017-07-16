@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\details_floating_adding_btn.png",
+        "source": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\src\\main\\res\\drawable-hdpi\\details_floating_adding_btn.png"
+    },
+    {
         "merged": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\ic_launcher.png",
         "source": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\src\\main\\res\\drawable-hdpi\\ic_launcher.png"
     }

@@ -4,6 +4,10 @@
         "source": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\src\\main\\res\\drawable-mdpi\\icon2.png"
     },
     {
+        "merged": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\details_floating_adding_btn.png",
+        "source": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\src\\main\\res\\drawable-mdpi\\details_floating_adding_btn.png"
+    },
+    {
         "merged": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi\\common_listview_headview_red_arrow.png",
         "source": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\src\\main\\res\\drawable-mdpi\\common_listview_headview_red_arrow.png"
     },

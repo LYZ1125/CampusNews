@@ -32,6 +32,10 @@
         "source": "C:\\Users\\Ellly\\.android\\build-cache\\62e1525d19af48d9f807cd801b66b424d8f64581\\output\\res\\anim\\design_snackbar_out.xml"
     },
     {
+        "merged": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\anim\\layout_alpha_in.xml",
+        "source": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\src\\main\\res\\anim\\layout_alpha_in.xml"
+    },
+    {
         "merged": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\anim\\slide_left_out.xml",
         "source": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\src\\main\\res\\anim\\slide_left_out.xml"
     },
@@ -50,6 +54,10 @@
     {
         "merged": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
         "source": "C:\\Users\\Ellly\\.android\\build-cache\\1ead68c499c9867fc36eeab714be3b13d75f861d\\output\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\anim\\alpha_in.xml",
+        "source": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\src\\main\\res\\anim\\alpha_in.xml"
     },
     {
         "merged": "C:\\Users\\Ellly\\AndroidStudioProjects\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",

@@ -4,7 +4,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.support.annotation.RequiresApi;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -21,9 +27,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.GridLayout;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -32,9 +42,12 @@ import android.widget.Toast;
 import com.baibian.R;
 import com.baibian.base.BaseActivity;
 import com.baibian.tool.UI_Tools;
+import com.like.LikeButton;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 import co.lujun.androidtagview.TagContainerLayout;
 import co.lujun.androidtagview.TagView;
@@ -70,6 +83,25 @@ public class DetailsActivity extends BaseActivity {
     private Activity activity;
     private TextView begin_discussion;
 
+    private ImageButton backToChoice;
+    private FloatingActionButton popupInput;
+    private LinkedList<FrameLayout> frameLayouts = new LinkedList<>();
+    private LinkedList<Button> buttons = new LinkedList<>();
+    /**
+     * Create five GridLayouts to hold Buttons
+     * Create grids to get GridLayout randomly
+     * Create previousTexts to save last button that has been set in one GridLayout previously
+     * Create columns and column1,2,3 to simulate a Matrix and by deleting them one by one to achieve setting Buttons randomly
+     * --WangYY 2017.5.16
+     */
+    private GridLayout gridFirst;
+    private GridLayout gridSecond;
+    private GridLayout gridThird;
+    private GridLayout gridFourth;
+    private LinkedList<GridLayout> grids = new LinkedList<>();
+    private LinkedList<TextView> previousTexts = new LinkedList<>();
+    private LinkedList<LinkedList<Integer>> columns = new LinkedList<>();
+    private String items[] = { "高数", "线代", "大物", "马克思", "工程制图", "C语言", "军事理论课", "思修", "职业发展教育", "恕我直言", "这些", "统统都是"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -226,6 +258,78 @@ public class DetailsActivity extends BaseActivity {
 //        recyclerView.setAdapter(adapter);
     }
 
+    /**
+     * There is something improper with the parameters of the following method
+     * I wanna drag the method out of the outer method, "initViewPager", while I have no idea dealing with the variables in the inner class passed to this method
+     * thus I have no other way but to add some specific final parameters "LinearLayout" and "RelativeLayout"
+     * If forums_details_itemlayout1or2 can be initiated in the "initView" then the problem can be tackled probably from my own perspective-WangYY
+     * @param flag
+     * @param forums_details_itemlayout1
+     * @param forums_details_itemlayout2
+     */
+    private void setFrameLayoutAnimation(Boolean flag, final  LinearLayout forums_details_itemlayout1, final RelativeLayout forums_details_itemlayout2) {
+        setFrameLayouts(forums_details_itemlayout1);
+        if (flag) {
+            TranslateAnimation tempTranslateAnimation = translateAnimationGenerator(0, -400, 1000, 0);
+            for (int i = 0; i < frameLayouts.size(); i++) {
+                if (i == 2 || i == 4) {
+                    frameLayouts.get(i).startAnimation(tempTranslateAnimation);
+                } else {
+                    frameLayouts.get(i).startAnimation(translateAnimationGenerator(0, 400, 1000, 0));
+                }
+            }
+            frameLayouts.clear();
+            tempTranslateAnimation.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    forums_details_itemlayout1.setVisibility(View.GONE);
+                    forums_details_itemlayout2.setVisibility(View.VISIBLE);
+                    forums_details_itemlayout2.startAnimation(translateAnimationGenerator(800, 0, 1000, 0));
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+
+                }
+            });
+        }else {
+            TranslateAnimation tempTranslateAnimation = translateAnimationGenerator(0, 800, 1000, 0);
+            forums_details_itemlayout2.startAnimation(tempTranslateAnimation);
+            tempTranslateAnimation.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    for (int i = 0; i < frameLayouts.size(); i++){
+                        /**
+                         * sliding animation on every square of perspectives, those left sliding to left side and so do the right ones. -- WangYY
+                         */
+                        if (i == 2 || i == 4){
+                            frameLayouts.get(i).startAnimation(translateAnimationGenerator(-400, 0, 1000, 1000));
+                        }else {
+                            frameLayouts.get(i).startAnimation(translateAnimationGenerator(400, 0, 1000, 1000));
+                        }
+                    }
+                    frameLayouts.clear();
+                    forums_details_itemlayout2.setVisibility(View.GONE);
+                    forums_details_itemlayout1.setVisibility(View.VISIBLE);
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+
+                }
+            });
+        }
+    }
 
     private void initViewPager() {
         viewPager.setAdapter(new PagerAdapter() {
@@ -244,33 +348,86 @@ public class DetailsActivity extends BaseActivity {
             }
 
             //??λ????????????????
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public Object instantiateItem(final ViewGroup container, final int position) {
                 ((ViewPager) container).addView(viewContainter.get(position));
                 if (position==1){
 
-                      FrameLayout framelayoute21=(FrameLayout) findViewById(R.id.framelayoute21);
+                    final FrameLayout framelayoute21=(FrameLayout) findViewById(R.id.framelayoute21);
+                    backToChoice = (ImageButton) findViewById(R.id.btn_back_choice);
+                    backToChoice.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            setFrameLayoutAnimation(false, forums_details_itemlayout1, forums_details_itemlayout2);
+                        }
+                    });
+                    forums_details_itemlayout1=(LinearLayout) findViewById(R.id.forums_details_itemlayout1);
+                    forums_details_itemlayout2=(RelativeLayout)findViewById(R.id.forums_details_itemlayout2);
+                    begin_discussion=(TextView)findViewById(R.id.begin_discussion);
+                    editTag = (EditText) findViewById(R.id.tag_edit);
+
+                    begin_discussion.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            startActivity(new Intent(activity, DiscussionActivity.class));
+                        }
+                    });
+
+                    initGridThings();
+
+                    GridLayout.Spec rowTest = GridLayout.spec(0);
+                    float ratio = 1;
+                    for (int i = 0; i < items.length; i++){
+                        int randomRow = getRandomIn(columns.size());
+                        while (columns.get(randomRow).size() == 0){
+                            randomRow = getRandomIn(columns.size());
+                        }
+                        int randomColumn = getRandomIn(columns.get(randomRow).size());
+                        final TextView temp = new TextView(DetailsActivity.this);
+                        temp.setText(items[i]);
+                        temp.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                        temp.setPadding(30, 30, 30, 30);
+                        temp.setTextColor(Color.WHITE);
+                        temp.setBackgroundResource(R.drawable.detalis_tag_background);
+                        temp.setElevation(5.0f);
+                        temp.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                editTag.append(temp.getText() + " ");
+                            }
+                        });
+                        if (previousTexts.get(randomRow).getText() == "") {
+                            previousTexts.set(randomRow, temp);
+                        }
+                        ratio = getRatio(temp, previousTexts.get(randomRow));
+                        GridLayout.Spec columnTest = GridLayout.spec(columns.get(randomRow).get(randomColumn), ratio);
+                        GridLayout.LayoutParams params = new GridLayout.LayoutParams(rowTest, columnTest);
+                        grids.get(randomRow).addView(temp, params);
+                        if (columns.get(randomRow).size() != 0){
+                            columns.get(randomRow).remove(randomColumn);
+                        }
+                    }
+                    /**
+                     * I think I can apply this listener to every framelayout of perspectives with "frameLayouts" set previously which holds all this kind of frames while I have not done it now since I don't know whether there is a better way or it is necessary. --WangYY
+                     */
                     framelayoute21.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                           forums_details_itemlayout1=(LinearLayout) findViewById(R.id.forums_details_itemlayout1);
-                            forums_details_itemlayout2=(RelativeLayout)findViewById(R.id.forums_details_itemlayout2);
-                            begin_discussion=(TextView)findViewById(R.id.begin_discussion);
+                            /*
                             forums_details_itemlayout1.setVisibility(View.GONE);
-                            forums_details_itemlayout2.setVisibility(View.VISIBLE);
-                            begin_discussion.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    Intent intent=new Intent(activity,DiscussionActivity.class);
-                                    startActivity(intent);
-                                }
-                            });
-                            editTag = (EditText) findViewById(R.id.tag_edit);
+                            forums_details_itemlayout2.setVisibility(View.VISIBLE);*/
+                            /**
+                             * Here the method is set to Animate those four Square FrameLayouts
+                             */
+                            setFrameLayoutAnimation(true, forums_details_itemlayout1, forums_details_itemlayout2);
                                  UI_Tools ui_tools=new UI_Tools();
                                   ui_tools.CancelFocusOne(activity,forums_details_all_layout,editTag);
                             ui_tools.CancelFocusOne(activity,container,editTag);
                         }
+
                     });
+
 //                    TextView textViewbegin=(TextView) findViewById(R.id.begin_discussion);
 //                    textViewbegin.setOnClickListener(new View.OnClickListener() {
 //                        @Override
@@ -334,13 +491,51 @@ public class DetailsActivity extends BaseActivity {
         });
     }
 
+    private void initGridThings() {
+        /**
+         * Initiate  five GridLayouts
+         */
+        gridFirst = (GridLayout) findViewById(R.id.forums_details_grid_first);
+        gridSecond = (GridLayout) findViewById(R.id.forums_details_grid_second);
+        gridThird = (GridLayout) findViewById(R.id.forums_details_grid_third);
+        gridFourth = (GridLayout) findViewById(R.id.forums_details_grid_fourth);
+
+        /**
+         * Add GridLayouts to grids
+         */
+        grids.add(gridFirst);
+        grids.add(gridSecond);
+        grids.add(gridThird);
+        grids.add(gridFourth);
+
+        /**
+         * Initiate a 2-dimension list to make up a Matrix-alike
+         */
+        for (int i = 0; i < 4; i++){
+            LinkedList<Integer> tempColumn = new LinkedList<>();
+            for (int j = 0; j < 3; j++){
+                tempColumn.add(j);
+            }
+            columns.add(tempColumn);
+        }
+        /**
+         * add textViews to avoid exception
+         */
+        for (int i = 0; i < items.length; i++){
+            previousTexts.add(new TextView(DetailsActivity.this));
+        }
+    }
+
     private void initView() {
         viewPager = (ViewPager) this.findViewById(R.id.viewpager);
         tabStrip = (PagerTabStrip) this.findViewById(R.id.tab_strip);
         backBt = (Button) this.findViewById(R.id.forums_details_back);
-        addTag1 = (Button) this.findViewById(R.id.button4);
+//        addTag1 = (Button) this.findViewById(R.id.button4);
+        frameLayouts = new LinkedList<>();
+        popupInput = (FloatingActionButton) findViewById(R.id.adding_button);
 
         forums_details_all_layout=(LinearLayout) findViewById(R.id.forums_details_all_layout);
+
         List<String> tags = new ArrayList<String>();
 
         tags.add("123");
@@ -437,6 +632,87 @@ public class DetailsActivity extends BaseActivity {
         }
     }
 
+    /**
+     * to generate translateAnimation on X ray only, specifically it can generate animation with random duration.-WangYY
+     * @param fromX
+     * @param toX
+     * @param duration
+     * @param random
+     * @return
+     */
+    private TranslateAnimation translateAnimationGenerator(int fromX, int toX, int duration, int random){
+        TranslateAnimation translateAnimation = new TranslateAnimation(fromX, toX, 0, 0);
+        translateAnimation.setDuration(duration + (int) (random * Math.random()));
+        return translateAnimation;
+    }
+
+    /**
+     * this method is set to find all the FrameLayouts under a ViewGroup while needed specific way of layout.-WangYY
+     * @param viewGroup
+     */
+    private void setFrameLayouts(ViewGroup viewGroup){
+        for (int i = 0; i < viewGroup.getChildCount(); i ++){
+            if (viewGroup.getChildAt(i) instanceof FrameLayout){
+                frameLayouts.add((FrameLayout) viewGroup.getChildAt(i));
+            }else {
+                setFrameLayouts((ViewGroup) viewGroup.getChildAt(i));
+            }
+        }
+    }
+
+    /**
+     * a better way to go through ViewGroup(Though not used yet :<)
+     * @param root
+     */
+    private void setButtons(View root){
+        if (root instanceof ViewGroup){
+            int childCount = ((ViewGroup) root).getChildCount();
+            for (int i = 0; i < childCount; i++){
+                setButtons(((ViewGroup) root).getChildAt(i));
+            }
+        }else if (root instanceof View){
+            if (root instanceof Button){
+                buttons.add((Button) root);
+            }
+        }
+    }
+
+    /**
+     * to get a random number
+     * @param size
+     * @return
+     */
+    private int getRandomIn(int size){
+        return (int) (size * Math.random());
+    }
+
+    /**
+     * to get ratio between two buttons by textWidth
+     * @param one
+     * @param two
+     * @return
+     */
+    private float getRatio(TextView one, TextView two){
+        float ratio = getTextWidth(one.getText().toString(), one.getTextSize())/getTextWidth(two.getText().toString(), two.getTextSize());
+        return ratio;
+    }
+
+    /**
+     * to get the width of a button with a specific size
+     * @param text
+     * @param size
+     * @return
+     */
+    private float getTextWidth(String text, float size){
+        if (null == text || "".equals(text)){
+            return 0;
+        }else {
+            Paint paint = new Paint();
+            paint.setTextSize(size);
+            float width = paint.measureText(text);
+            return width;
+        }
+    }
     //????Fragment??ViewPager????????
     private class fgViewPagerAdapter extends FragmentPagerAdapter {
 
