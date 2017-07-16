@@ -59,14 +59,12 @@ public class DetailsActivity extends BaseActivity {
     ArrayList<String> titleContainer = new ArrayList<String>();
     public String TAG = "tag";
     Button backBt = null;
-    private LinearLayout forums_details_all_layout;
+    private RelativeLayout forums_details_all_layout;
     private TagContainerLayout mTagContainerLayout1, mTagContainerLayout2, mTagContainerLayout3, mTagContainerLayout4;
     private Button addTag1;
     private EditText editTag;
     private ViewPager viewPager;
     List<Fragment> viewPagerList;
-    private LinearLayout forums_details_itemlayout1;
-    private RelativeLayout forums_details_itemlayout2;
     private Activity activity;
     private TextView begin_discussion;
 
@@ -248,29 +246,6 @@ public class DetailsActivity extends BaseActivity {
             public Object instantiateItem(final ViewGroup container, final int position) {
                 ((ViewPager) container).addView(viewContainter.get(position));
                 if (position==1){
-
-                      FrameLayout framelayoute21=(FrameLayout) findViewById(R.id.framelayoute21);
-                    framelayoute21.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                           forums_details_itemlayout1=(LinearLayout) findViewById(R.id.forums_details_itemlayout1);
-                            forums_details_itemlayout2=(RelativeLayout)findViewById(R.id.forums_details_itemlayout2);
-                            begin_discussion=(TextView)findViewById(R.id.begin_discussion);
-                            forums_details_itemlayout1.setVisibility(View.GONE);
-                            forums_details_itemlayout2.setVisibility(View.VISIBLE);
-                            begin_discussion.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    Intent intent=new Intent(activity,DiscussionActivity.class);
-                                    startActivity(intent);
-                                }
-                            });
-                            editTag = (EditText) findViewById(R.id.tag_edit);
-                                 UI_Tools ui_tools=new UI_Tools();
-                                  ui_tools.CancelFocusOne(activity,forums_details_all_layout,editTag);
-                            ui_tools.CancelFocusOne(activity,container,editTag);
-                        }
-                    });
 //                    TextView textViewbegin=(TextView) findViewById(R.id.begin_discussion);
 //                    textViewbegin.setOnClickListener(new View.OnClickListener() {
 //                        @Override
@@ -338,11 +313,8 @@ public class DetailsActivity extends BaseActivity {
         viewPager = (ViewPager) this.findViewById(R.id.viewpager);
         tabStrip = (PagerTabStrip) this.findViewById(R.id.tab_strip);
         backBt = (Button) this.findViewById(R.id.forums_details_back);
-        addTag1 = (Button) this.findViewById(R.id.button4);
-
-        forums_details_all_layout=(LinearLayout) findViewById(R.id.forums_details_all_layout);
+        forums_details_all_layout=(RelativeLayout) findViewById(R.id.forums_details_all_layout);
         List<String> tags = new ArrayList<String>();
-
         tags.add("123");
         tags.add("134455");
 //        TagContainerLayout  mTagContainerLayout = (TagContainerLayout) findViewById(R.id.tagcontainerLayout);

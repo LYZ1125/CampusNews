@@ -5,12 +5,12 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="left_drawer_no_login_tip">登录后，将推荐给你更多感兴趣的文章</string>
-    <string name="left_drawer_item_search">搜索</string>
-    <string name="left_drawer_item_favorite">收藏</string>
-    <string name="left_drawer_item_message">消息</string>
-    <string name="left_drawer_item_offline">离线</string>
+    <string name="left_drawer_item_focus">我的关注</string>
+    <string name="left_drawer_item_favorite">我的收藏</string>
+    <string name="left_drawer_item_book">我的书架</string>
+    <string name="left_drawer_item_history_read">历史浏览</string>
     <string name="left_drawer_item_offline_cancel">取消离线</string>
-    <string name="left_drawer_item_activity">活动</string>
+    <string name="left_drawer_item_help">反馈与帮助</string>
     <string name="left_drawer_item_setting">设置</string>
     <string name="left_drawer_item_feedback">反馈</string>
     <string name="left_drawer_item_appstore">精彩应用</string>
@@ -93,9 +93,12 @@
     <string name="timeout">网络错误，请检查网络</string>
     <string name="signUp_OK">注册成功</string>
     <string name="haved_account">该账号已存在</string>
-    <string name="detaildivide">角度细分</string>
-    <string name="debatetopic">辩题概述</string>
+    <string name="detaildivide">资料导读</string>
+    <string name="debatetopic">辩题背景</string>
     <string name="text_topic">人权天赋还是取决自己</string>
+    <string name="LunBa">论吧</string>
+    <string name="LunTan">论坛</string>
+    <string name="LunXun">论讯</string>
 
 
 </resources>

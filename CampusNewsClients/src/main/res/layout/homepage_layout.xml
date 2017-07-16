@@ -3,17 +3,11 @@
     android:id="@+id/homepage_all_layout"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FFF"
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
-    <Button
-        android:layout_alignParentTop="true"
-        android:id="@+id/homepage_search_button"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/top_search_img"
-        />
+
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/homepage_swiperefreshlayout"
         android:layout_width="fill_parent"

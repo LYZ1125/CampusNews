@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baibian.R;
@@ -108,6 +109,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
      */
     private ImageView top_more;
     /**
+     * 头部的中间文字
+     */
+    private TextView top_text;
+    /**
      * 请求CODE
      */
     public final static int CHANNELREQUEST = 1;
@@ -126,7 +131,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
     private ImageView baibian_btn;//通过百辩账号登录
     private final int LOGIN4_REQUEST=11;//进入login4activity的请求码
     private LinearLayout logout_layout_not_login;//未登录布局
-    private LinearLayout login_layout;//带有圆形头像的布局，用来更换原来的布局
+    private RelativeLayout login_layout;//带有圆形头像的布局，用来更换原来的布局
 
     /**
      * 引导界面添加内容
@@ -174,7 +179,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
         fragmentLayout2.setOnClickListener(this);
         fragmentLayout3.setOnClickListener(this);
         fragmentLayout4.setOnClickListener(this);
-
+        top_text=(TextView) findViewById(R.id.top_text);
 
         top_head = (ImageView) findViewById(R.id.top_head);
         top_more = (ImageView) findViewById(R.id.top_more);
@@ -214,6 +219,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
                 // 当点击了消息tab时，选中第1个tab
                 InputMethodManager imm = (InputMethodManager) this.getSystemService(this.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(fragmentLayout1.getWindowToken(), 0);//这行代码隐藏软键盘
+                top_text.setText(R.string.LunXun);
                 setTabSelection(0);
                 break;
             case R.id.fragment2_layout:
@@ -221,12 +227,16 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
                 InputMethodManager imm2 = (InputMethodManager) this.getSystemService(this.INPUT_METHOD_SERVICE);
                 imm2.hideSoftInputFromWindow(fragmentLayout1.getWindowToken(), 0);//这行代码隐藏软键盘
                 setTabSelection(1);
+                top_text.setText(R.string.LunTan);
+
                 break;
             case R.id.fragment3_layout:
                 // 当点击了动态tab时，选中第3个tab
                 InputMethodManager imm3 = (InputMethodManager) this.getSystemService(this.INPUT_METHOD_SERVICE);
                 imm3.hideSoftInputFromWindow(fragmentLayout1.getWindowToken(), 0);//这行代码隐藏软键盘
                 setTabSelection(2);
+                top_text.setText(R.string.LunBa);
+
                 break;
             case R.id.fragment4_layout:
                 // 当点击了动态tab时，选中第3个tab
@@ -252,7 +262,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
         hideFragments(transaction);
         switch (index) {
             case 0:
-                fragmentImage1.setImageResource(R.drawable.homefragment_selected);
+                fragmentImage1.setImageResource(R.mipmap.black_mipmap);
                 fragmentLayout1.setBackgroundColor(getResources().getColor(R.color.main_layout_selected));
                 if (homepageFragment == null) {
                     homepageFragment = new HomepageFragment();
@@ -263,7 +273,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
                 break;
             case 1:
 
-                fragmentImage2.setImageResource(R.drawable.forumsfragment_selected);
+                fragmentImage2.setImageResource(R.mipmap.black_mipmap);
                 fragmentLayout2.setBackgroundColor(getResources().getColor(R.color.main_layout_selected));
                 if (forumsFragment == null) {
                     forumsFragment = new ForumsFragment();
@@ -273,7 +283,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
                 }
                 break;
             case 2:
-                fragmentImage3.setImageResource(R.drawable.findfragment_selected);
+                fragmentImage3.setImageResource(R.mipmap.black_mipmap);
                 fragmentLayout3.setBackgroundColor(getResources().getColor(R.color.main_layout_selected));
                 if (findFragment == null) {
                     findFragment = new FindFragment();
@@ -304,15 +314,15 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
      * 清除掉所有的选中状态。
      */
     private void clearSelection() {
-        fragmentImage1.setImageResource(R.drawable.homefragment);
-        fragmentLayout1.setBackgroundColor(getResources().getColor(R.color.main_layout1_unselected));
+        fragmentImage1.setImageResource(R.mipmap.black_mipmap);
+//        fragmentLayout1.setBackgroundColor(getResources().getColor(R.color.main_layout1_unselected));
      //   fragmentLayout1.setBackgroundColor(getResources().getColor(
       //          R.color.mainFragment_background
       //  ));
-        fragmentImage2.setImageResource(R.drawable.forumsfragment);
-        fragmentLayout2.setBackgroundColor(getResources().getColor(R.color.main_layout1_unselected));
-        fragmentImage3.setImageResource(R.drawable.findfragment);
-        fragmentLayout3.setBackgroundColor(getResources().getColor(R.color.main_layout1_unselected));
+        fragmentImage2.setImageResource(R.mipmap.black_mipmap);
+//        fragmentLayout2.setBackgroundColor(getResources().getColor(R.color.main_layout1_unselected));
+        fragmentImage3.setImageResource(R.mipmap.black_mipmap);
+//        fragmentLayout3.setBackgroundColor(getResources().getColor(R.color.main_layout1_unselected));
         fragmentImage4.setImageResource(R.drawable.periodicalsfragment);
         fragmentLayout4.setBackgroundColor(getResources().getColor(R.color.main_layout1_unselected));
     }
@@ -368,7 +378,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
         /**
          * 登录切换顶部布局
          */
-       login_layout=(LinearLayout) side_drawer.findViewById(R.id.login_layout);
+       login_layout=(RelativeLayout) side_drawer.findViewById(R.id.login_layout);
         baibian_btn=(ImageView) side_drawer.findViewById(R.id.baibian_btn);//百辩登录按钮
         logout_layout_not_login=(LinearLayout) side_drawer.findViewById(R.id.logout_layout_not_login);//未登录布局
 

@@ -12,8 +12,16 @@
         "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\blue_add_mipmap.png"
     },
     {
+        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\three_yellow_bar.png",
+        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\three_yellow_bar.png"
+    },
+    {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\yellow_direction_right.png",
         "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\yellow_direction_right.png"
+    },
+    {
+        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\yellow_back_img.png",
+        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\yellow_back_img.png"
     },
     {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\gray_direction_right.png",
@@ -32,6 +40,10 @@
         "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\left_item_right_img.png"
     },
     {
+        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\white_search.png",
+        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\white_search.png"
+    },
+    {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\gray_bag.png",
         "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\gray_bag.png"
     },
@@ -40,8 +52,16 @@
         "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\back_direction.png"
     },
     {
+        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\yellow_search.png",
+        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\yellow_search.png"
+    },
+    {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\search_icon.png",
         "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\search_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\black_mipmap.png",
+        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\black_mipmap.png"
     },
     {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher.png",
@@ -50,6 +70,10 @@
     {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\setting_mipmap.png",
         "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\setting_mipmap.png"
+    },
+    {
+        "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\black_search.png",
+        "source": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\src\\main\\res\\mipmap-mdpi\\black_search.png"
     },
     {
         "merged": "C:\\Users\\lenovo\\Documents\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\blue_add.png",

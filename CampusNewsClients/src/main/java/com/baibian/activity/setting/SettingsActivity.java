@@ -5,15 +5,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.baibian.R;
 import com.baibian.base.BaseActivity;
 
 public class SettingsActivity extends BaseActivity {
-private RelativeLayout message_setting;
+private LinearLayout message_setting;
 	private Button choise_direction_back;
-	private RelativeLayout push_layout;
+	private LinearLayout push_layout;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -48,9 +49,9 @@ private RelativeLayout message_setting;
 	}
 	
 	private void initView() {
-		message_setting=(RelativeLayout) findViewById(R.id.message_setting);
+		message_setting=(LinearLayout) findViewById(R.id.message_setting);
 		choise_direction_back=(Button) findViewById(R.id.choise_direction_back);
-		push_layout=(RelativeLayout) findViewById(R.id.push_layout);
+		push_layout=(LinearLayout) findViewById(R.id.push_layout);
 	}
 
 	private void initData() {

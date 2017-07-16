@@ -10,24 +10,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <include layout="@layout/main_head" />
+                    <include layout="@layout/main_head" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
                 <FrameLayout
                     android:layout_marginBottom="60dp"
                     android:id="@+id/content"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
                 </FrameLayout>
 
 
                 <!--底部布局部分-->
                 <LinearLayout
+                    android:elevation="5dp"
                     android:layout_alignParentBottom="true"
-                    android:background="#2180dc"
+                    android:background="#FFF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <LinearLayout
@@ -41,12 +42,21 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1" >
-                            <ImageView
-                                android:id="@+id/fragment1_img"
-                                android:layout_centerHorizontal="true"
-                                android:src="@drawable/homefragment"
-                                android:layout_width="60dp"
-                                android:layout_height="60dp" />
+                                <ImageView
+                                    android:id="@+id/fragment1_img"
+                                    android:layout_centerHorizontal="true"
+                                    android:src="@mipmap/black_mipmap"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp" />
+                                <TextView
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_below="@id/fragment1_img"
+                                    android:textColor="#000000"
+                                    android:text="论讯"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+
                         </RelativeLayout>
                         <!--第二个碎片按钮部分-->
                         <RelativeLayout
@@ -57,12 +67,20 @@
                             <ImageView
                                 android:id="@+id/fragment2_img"
                                 android:layout_centerHorizontal="true"
-                                android:src="@drawable/forumsfragment"
-                                android:layout_width="60dp"
-                                android:layout_height="60dp" />
+                                android:src="@mipmap/black_mipmap"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp" />
+                            <TextView
+                                android:layout_centerHorizontal="true"
+                                android:layout_below="@id/fragment2_img"
+                                android:textColor="#000000"
+                                android:text="论坛"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
                         </RelativeLayout>
                         <!--中间部分-->
                         <LinearLayout
+                            android:visibility="gone"
                             android:layout_weight="1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
@@ -78,14 +96,22 @@
                             <ImageView
                                 android:id="@+id/fragment3_img"
                                 android:layout_centerHorizontal="true"
-                                android:src="@drawable/findfragment"
-                                android:layout_width="60dp"
-                                android:layout_height="60dp" />
+                                android:src="@mipmap/black_mipmap"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp" />
+                            <TextView
+                                android:layout_centerHorizontal="true"
+                                android:layout_below="@id/fragment3_img"
+                                android:textColor="#000000"
+                                android:text="论吧"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
                         </RelativeLayout>
 
                         <!--第四个碎片按钮部分-->
 
                         <RelativeLayout
+                            android:visibility="gone"
                             android:id="@+id/fragment4_layout"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"

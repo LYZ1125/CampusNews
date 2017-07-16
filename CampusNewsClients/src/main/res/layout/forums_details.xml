@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/forums_details_all_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,9 +18,11 @@
     </LinearLayout>
 
     <android.support.v4.view.ViewPager
+        android:layout_below="@id/choise_direction_all_layout"
         android:id="@+id/viewpager"
+        android:layout_marginBottom="50dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <android.support.v4.view.PagerTabStrip
             android:layout_width="wrap_content"
@@ -32,4 +34,10 @@
 
         </android.support.v4.view.PagerTabStrip>
     </android.support.v4.view.ViewPager>
-</LinearLayout>
+    <Button
+        android:layout_alignParentBottom="true"
+        android:text="进入辩题"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+</RelativeLayout>

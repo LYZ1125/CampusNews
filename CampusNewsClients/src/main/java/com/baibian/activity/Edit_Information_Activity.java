@@ -9,6 +9,8 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -20,7 +22,7 @@ import com.baibian.tool.HttpTool;
 import com.baibian.tool.LinearLayout_Inflaterable;
 import com.baibian.tool.ToastTools;
 import com.baibian.tool.UI_Tools;
-import com.nostra13.universalimageloader.utils.L;
+
 import com.squareup.okhttp.Response;
 
 import org.json.JSONArray;
@@ -53,7 +55,9 @@ public class Edit_Information_Activity extends Activity implements View.OnClickL
     private String newString = "";
     private final int EDIT_REQUEST = 1;
     private Intent mIntent;
-
+    private CheckBox female_checkbox;
+    private CheckBox male_checkbox;
+    private String gender="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,7 +86,7 @@ public class Edit_Information_Activity extends Activity implements View.OnClickL
     }
 
     private void initResult(String newString) {
-         mIntent = new Intent();
+        mIntent = new Intent();
 //        Log.d("传过去前",result_usersString);
         // 设置结果，并进行传送
         this.setResult(EDIT_REQUEST, mIntent);
@@ -96,11 +100,35 @@ public class Edit_Information_Activity extends Activity implements View.OnClickL
         add_house_layout = (View) findViewById(R.id.add_house_layout);
         add_advantage_layout = (View) findViewById(R.id.add_advantage_layout);
         advantage_LinearLayout = (LinearLayout) findViewById(R.id.advantage_LinearLayout);
+        female_checkbox = (CheckBox) findViewById(R.id.female_checkbox);
+        male_checkbox = (CheckBox) findViewById(R.id.male_checkbox);
         complete = (TextView) findViewById(R.id.complete);//完成textview
         Intent intent = getIntent();
         responseString = intent.getStringExtra("responseString");
+        initcheckbox();
         parseJSONObject(responseString);
 
+    }
+
+    private void initcheckbox() {
+        male_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked ) {
+                    female_checkbox.setChecked(false);
+                    gender="male";
+                }
+            }
+        });
+        female_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked ) {
+                    male_checkbox.setChecked(false);
+                    gender="female";
+                }
+            }
+        });
     }
 
     @Override
@@ -119,17 +147,9 @@ public class Edit_Information_Activity extends Activity implements View.OnClickL
             case R.id.complete:
                 //既然点击了完成  那么就要修改信息咯
                 String user_name = user_name_edittext.getText().toString();
-                String params = "{ \"user\": {\"mobile\": \"" + "13000000001" + "\",\"gender\": \"" + "male" + "\",\"experience\": " + "[]" + ",\"educations\": " + "[]" + ",\"locations\": " + "[]" + ",\"nickname\": \"" + user_name + "\",\"birthday\": " + "1491835565" + "}}";
+                String params = "{ \"user\": {\"mobile\": \"" + "13000000001" + "\",\"gender\": \"" + gender + "\",\"experience\": " + "[]" + ",\"educations\": " + "[\"456466\",\"456\"]" + ",\"locations\": " + "[]" + ",\"nickname\": \"" + user_name + "\",\"birthday\": " + "1491835565" + "}}";
                 Log.d("个人信息", params);
                 CompleteInformaion(params);
-                Log.d("1244564645643",newString);
-                if (newString!=null){
-
-
-                }else {
-                    ToastTools.ToastShow("怎么回事?");
-                }
-
                 finish();
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 break;
@@ -156,9 +176,7 @@ public class Edit_Information_Activity extends Activity implements View.OnClickL
                         e.printStackTrace();
                     }
                     string = ChangeToJSON(string);
-
-//                    newString=string;
-//                    initResult(newString);
+                    Log.d("changedInformation",string);
                     ToastTools.ToastShow("Edit Succeed");
                     //??????????????response???????
                 } else {
@@ -202,6 +220,13 @@ public class Edit_Information_Activity extends Activity implements View.OnClickL
                 String nickname = "";
                 nickname = jsonObject.getString("nickname");
                 user_name_edittext.setText(nickname);
+                gender=jsonObject.getString("gender");
+                Log.d("gender",gender);
+                if (gender.equalsIgnoreCase("male")){
+                    male_checkbox.setChecked(true);
+                }else if (gender.equalsIgnoreCase("female")){
+                    female_checkbox.setChecked(true);
+                }
                 Log.d("nickname", nickname);
             }
         } catch (Exception e) {

@@ -31,7 +31,7 @@
     <dimen name="tab_space_plus1">3.0dip</dimen>
     <dimen name="tab_space_bottom_line">36.0sp</dimen>
     <dimen name="tab_space_unselected_top">6.0sp</dimen>
-    <dimen name="title_bar_height">44.0dip</dimen>
+    <dimen name="title_bar_height">60.0dip</dimen>
     <dimen name="tab_bar_height">48.0dip</dimen>
     <dimen name="indicator_right_padding">10.0dip</dimen>
     <dimen name="indicator_corner_radius">12.0dip</dimen>
@@ -76,7 +76,7 @@
     <dimen name="ss_share_titlebar_height">5.0dip</dimen>
     <dimen name="ss_share_diglog_margin_x">8.0dip</dimen>
     <dimen name="ss_share_dialog_pos_y">28.0dip</dimen>
-    <dimen name="head_size">28.0dip</dimen>
+    <dimen name="head_size">40.0dip</dimen>
     <dimen name="item_image_width">86.0dip</dimen>
     <dimen name="item_image_height">60.0dip</dimen>
     <dimen name="item_image_total_padding">60.0dip</dimen>

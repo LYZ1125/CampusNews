@@ -54,34 +54,33 @@ public class ForumsFragment extends Fragment{
         integrationFragment = new IntegrationFragment();
         hotFragment = new HotFragment();
         realTimeFragment  = new RealTimeFragment();
-        classificationFragment = new ClassificationFragment();
-        focusFragment  = new FocusFragment();
+//        classificationFragment = new ClassificationFragment();
+//        focusFragment  = new FocusFragment();
 
         //将fragment装进列表中
         list_fragment = new ArrayList<Fragment>();
         list_fragment.add(integrationFragment);
         list_fragment.add(hotFragment);
         list_fragment.add(realTimeFragment);
-        list_fragment.add(classificationFragment);
-        list_fragment.add(focusFragment);
+//        list_fragment.add(classificationFragment);
+//        list_fragment.add(focusFragment);
 
         //将名称加载tab名字列表，正常情况下，我们应该在values/arrays.xml中进行定义然后调用
         list_title = new ArrayList<>();
         list_title.add(getString(R.string.integration));
         list_title.add(getString(R.string.hot));
         list_title.add(getString(R.string.real_time));
-        list_title.add(getString(R.string.classification));
-        list_title.add(getString(R.string.focus));
+//        list_title.add(getString(R.string.classification));
+//        list_title.add(getString(R.string.focus));
         //设置TabLayout的模式
         forums_title.setTabMode(TabLayout.MODE_FIXED);
         //为TabLayout添加tab名称
         forums_title.addTab(forums_title.newTab().setText(list_title.get(0)));
         forums_title.addTab(forums_title.newTab().setText(list_title.get(1)));
         forums_title.addTab(forums_title.newTab().setText(list_title.get(2)));
-        forums_title.addTab(forums_title.newTab().setText(list_title.get(3)));
-        forums_title.addTab(forums_title.newTab().setText(list_title.get(4)));
+//        forums_title.addTab(forums_title.newTab().setText(list_title.get(3)));
+//        forums_title.addTab(forums_title.newTab().setText(list_title.get(4)));
         fAdapter = new Tablayout_Adapter_Right(getChildFragmentManager(),list_fragment,list_title);
-
         //viewpager加载adapter
         forums_pager.setAdapter(fAdapter);
         //tab_FindFragment_title.setViewPager(vp_FindFragment_pager);

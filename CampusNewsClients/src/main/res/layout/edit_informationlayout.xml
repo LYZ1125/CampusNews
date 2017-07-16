@@ -105,6 +105,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                         <CheckBox
+                            android:id="@+id/male_checkbox"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                         <TextView
@@ -112,6 +113,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                         <CheckBox
+                            android:id="@+id/female_checkbox"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
                         <TextView

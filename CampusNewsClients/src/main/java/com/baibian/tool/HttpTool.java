@@ -72,7 +72,6 @@ public class HttpTool {
     }
     public static Response doPutOkHttpResponse(String path, String json, String auth_token) {
         Response getedresponse=null;
-        final String[] htmlStr = {"error"};
         //创建okHttpClient对象
         OkHttpClient mOkHttpClient = new OkHttpClient();
         String auth_token2= "Token token="+auth_token+"";

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/title_bar"
-    android:background="@color/baibian_back_color"
+    android:background="#FFF"
+    android:elevation="5dp"
     style="@style/title_bar_style" >
 
     <ImageView
@@ -25,9 +26,8 @@
             android:layout_width="@dimen/head_size"
             android:layout_height="@dimen/head_size"
             android:layout_gravity="center_vertical"
-            android:background="@drawable/bg_head"
             android:padding="2.0dip"
-            android:src="@drawable/default_round_head"
+            android:src="@mipmap/three_yellow_bar"
             android:scaleType="fitXY" />
     </FrameLayout>
 
@@ -52,7 +52,7 @@
         android:gravity="center"
         android:padding="5dp"
         android:scaleType="centerInside"
-        android:src="@mipmap/add_mipmap"/>
+        android:src="@mipmap/yellow_search"/>
 
     <TextView
         android:id="@+id/top_right_count"
@@ -79,12 +79,6 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true" >
 
-            <ImageView
-                android:id="@+id/title_recent"
-                android:layout_width="95dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/big_loadpic_empty_listpage" />
 
             <TextView
                 android:id="@+id/title"
@@ -96,6 +90,15 @@
                 android:paddingLeft="6.0dip"
                 android:paddingRight="6.0dip"
                 android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/top_text"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:text="论讯"
+                android:textColor="#454545"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </FrameLayout>
 
         <ImageView

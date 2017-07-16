@@ -166,11 +166,11 @@ public class NewsFragment extends Fragment {
                         mAdapter.notifyDataSetChanged();
                     }
 
-                    ((FindFragment) getParentFragment()).setOnRefreshListener(new FindFragment.OnRefreshListener() {
+                    ((Rubbish_java) getParentFragment()).setOnRefreshListener(new Rubbish_java.OnRefreshListener() {
 
                         public void onRefresh() {
 //						getDataFromServer();
-                            ((FindFragment) getParentFragment()).rotateTopRefresh();
+                            ((Rubbish_java) getParentFragment()).rotateTopRefresh();
                             crawlerChannel.pullToRefresh(channel_id);
                         }
                     });
@@ -205,7 +205,7 @@ public class NewsFragment extends Fragment {
                         @Override
                         public void onRefresh() {
 //						getDataFromServer();
-                            ((FindFragment) getParentFragment()).rotateTopRefresh();
+                            ((Rubbish_java  ) getParentFragment()).rotateTopRefresh();
                             crawlerChannel.pullToRefresh(channel_id);
                         }
 

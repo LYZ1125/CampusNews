@@ -11,13 +11,13 @@
         android:color="#fffdfe" />
     <!-- 圆角的幅度 -->
     <corners
-        android:topLeftRadius="10dip"
-        android:topRightRadius="10dip"
-        android:bottomLeftRadius="10dip"
-        android:bottomRightRadius="10dip" />
+        android:topLeftRadius="8dip"
+        android:topRightRadius="8dip"
+        android:bottomLeftRadius="8dip"
+        android:bottomRightRadius="8dip" />
 
     <padding
         android:top="@dimen/tab_padding_top"
-        android:bottom="@dimen/tab_padding_bottom"/>
+        android:bottom="0dp"/>
 
 </shape>

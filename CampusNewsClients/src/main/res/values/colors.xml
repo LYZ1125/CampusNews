@@ -523,7 +523,7 @@
     <color name="left_drawer_item_text_normal">#ff4e4e4e</color>
     <color name="left_drawer_item_text_pressed">#ffd4d4d4</color>
     <color name="left_drawer_item_text_tip">#fffe3232</color>
-    <color name="left_drawer_item_bg_normal">#505254</color>
+    <color name="left_drawer_item_bg_normal">#ffffff</color>
     <color name="left_drawer_itme_bg_normal_day">#ffd71b</color>
     <color name="left_drawer_item_bg_pressed">#ff292929</color>
     <color name="left_drawer_item_line">#c4c2c4</color>

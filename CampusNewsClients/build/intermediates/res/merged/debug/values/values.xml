@@ -581,7 +581,7 @@
     <color name="item_title_disabled_night">#ff505050</color>
     <color name="item_title_normal">#ff444444</color>
     <item name="item_title_normal_night" type="color">@color/default_text_night</item>
-    <color name="left_drawer_item_bg_normal">#505254</color>
+    <color name="left_drawer_item_bg_normal">#ffffff</color>
     <color name="left_drawer_item_bg_pressed">#ff292929</color>
     <color name="left_drawer_item_line">#c4c2c4</color>
     <color name="left_drawer_item_text_normal">#ff4e4e4e</color>
@@ -1446,7 +1446,7 @@
     <dimen name="feedback_avatar_size">30.0dip</dimen>
     <dimen name="feedback_image_padding">180.0dip</dimen>
     <dimen name="feedback_sumbit_thumbnail_size">50.0dip</dimen>
-    <dimen name="head_size">28.0dip</dimen>
+    <dimen name="head_size">40.0dip</dimen>
     <dimen name="header_footer_left_right_padding">30.0dip</dimen>
     <dimen name="header_footer_top_bottom_padding">12.0dip</dimen>
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
@@ -1531,7 +1531,7 @@
     <dimen name="tab_space_plus1">3.0dip</dimen>
     <dimen name="tab_space_top">4.0dip</dimen>
     <dimen name="tab_space_unselected_top">6.0sp</dimen>
-    <dimen name="title_bar_height">44.0dip</dimen>
+    <dimen name="title_bar_height">60.0dip</dimen>
     <dimen name="top_category_height">40.0dip</dimen>
     <dimen name="top_category_scroll_item_margin">8.0dip</dimen>
     <dimen name="top_category_scroll_text_padding">5.0dip</dimen>
@@ -1569,6 +1569,9 @@
     <integer name="status_bar_notification_info_maxnum">999</integer>
     <string name="BBimformation">BB资料</string>
     <string name="BBstate">BB发言</string>
+    <string name="LunBa">论吧</string>
+    <string name="LunTan">论坛</string>
+    <string name="LunXun">论讯</string>
     <string name="Press_again_to_exit">再按一次退出</string>
     <string name="REGISTER">注册</string>
     <string name="abc_action_bar_home_description">Navigate home</string>
@@ -1620,8 +1623,8 @@
     <string name="day_before">前天</string>
     <string name="day_today">今天</string>
     <string name="day_yesterday">昨天</string>
-    <string name="debatetopic">辩题概述</string>
-    <string name="detaildivide">角度细分</string>
+    <string name="debatetopic">辩题背景</string>
+    <string name="detaildivide">资料导读</string>
     <string name="different_password">俩次输入的密码不一样</string>
     <string name="dislike_dlg_lable_speech">读文章</string>
     <string name="drawer_btn_rss">频道管理</string>
@@ -1639,14 +1642,14 @@
     <string name="hot">热门</string>
     <string name="integration">综合</string>
     <string name="label_cancel_dislike">撤消</string>
-    <string name="left_drawer_item_activity">活动</string>
     <string name="left_drawer_item_appstore">精彩应用</string>
-    <string name="left_drawer_item_favorite">收藏</string>
+    <string name="left_drawer_item_book">我的书架</string>
+    <string name="left_drawer_item_favorite">我的收藏</string>
     <string name="left_drawer_item_feedback">反馈</string>
-    <string name="left_drawer_item_message">消息</string>
-    <string name="left_drawer_item_offline">离线</string>
+    <string name="left_drawer_item_focus">我的关注</string>
+    <string name="left_drawer_item_help">反馈与帮助</string>
+    <string name="left_drawer_item_history_read">历史浏览</string>
     <string name="left_drawer_item_offline_cancel">取消离线</string>
-    <string name="left_drawer_item_search">搜索</string>
     <string name="left_drawer_item_setting">设置</string>
     <string name="left_drawer_no_login_tip">登录后，将推荐给你更多感兴趣的文章</string>
     <string name="load_more">上拉加载更多...</string>
@@ -3582,7 +3585,7 @@
         <item name="android:layout_height">0.5dip</item>
     </style>
     <style name="left_drawer_item_text">
-        <item name="android:textSize">15.0sp</item>
+        <item name="android:textSize">20.0sp</item>
         <item name="android:textColor">@color/left_drawer_item_text</item>
         <item name="android:gravity">center</item>
         <item name="android:paddingTop">9.0dip</item>
@@ -3590,6 +3593,11 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:drawablePadding">25.0dip</item>
+    </style>
+    <style name="left_drawer_text_style">
+    <item name="android:layout_marginLeft">30dip</item>
+    <item name="android:layout_marginTop">5dip</item>
+    <item name="android:textColor">#000000</item>
     </style>
     <style name="list_notify_cancel_btn">
         <item name="android:textSize">14.0sp</item>
@@ -3642,6 +3650,11 @@
         <item name="android:layout_marginRight">10.0dip</item>
         <item name="android:layout_weight">0.0</item>
     </style>
+    <style name="setting_comment">
+        <item name="android:textSize">13.0sp</item>
+        <item name="android:layout_marginLeft">5dip</item>
+        <item name="android:textColor">#737275</item>
+    </style>
     <style name="setting_copyright">
         <item name="android:textSize">13.0sp</item>
         <item name="android:textColor">@color/setting_copyright</item>
@@ -3688,6 +3701,13 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">6.0dip</item>
         <item name="android:layout_marginBottom">8.0dip</item>
+    </style>
+    <style name="setting_top_text_style">
+        <item name="android:textSize">20.0sp</item>
+
+        <item name="android:layout_marginLeft">5dip</item>
+        <item name="android:layout_marginTop">5dip</item>
+        <item name="android:textColor">#FFC72A</item>
     </style>
     <style name="slide_bottom_to_top" parent="@android:style/Animation.Dialog">
         <item name="android:windowEnterAnimation">@anim/slide_in_left</item>

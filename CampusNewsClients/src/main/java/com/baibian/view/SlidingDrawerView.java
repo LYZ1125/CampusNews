@@ -17,6 +17,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baibian.activity.setting.SettingsActivity;
 import com.flyco.dialog.listener.OnOperItemClickL;
 import com.flyco.dialog.widget.ActionSheetDialog;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
@@ -41,33 +42,22 @@ public class SlidingDrawerView implements OnClickListener{
 	 * 左侧侧滑菜单Srollview的item
 	 */
 	//字体部分
-	private  TextView left_search_text;//左侧搜索的字体
-	private TextView left_favorite_text;
-	private TextView message_text;
-	private  TextView offline_btn_text;
-	private TextView app_activity_text;
-	private TextView left_drawer_setting_text;
-	private TextView left_drawer_feedback_text;
-	private TextView left_drawer_appstore_text;
+
 
 
 	private final Activity activity;
 	SlidingMenu localSlidingMenu;
 	private ImageView baibian_btn;//左侧侧滑菜单中百辩登录的按钮
 	private LinearLayout left_top_layout;
-
-	private RelativeLayout setting_btn;
-
 	private AlertDialog alert;
 	private AlertDialog.Builder builder;
     private ViewPager profile_drawer_right_viewpager;
 	private List<View> viewList;
-	private Button buttonTest;
 	private ActionSheetDialog actionSheetDialog;
 	String[] items;
-
 	private LinearLayout logout_layout_not_login;//未登录布局
 	private LinearLayout login_layout;//带有圆形头像的布局，用来更换原来的布局
+	private RelativeLayout setting_btn_layout;
 
 
 
@@ -121,18 +111,10 @@ public class SlidingDrawerView implements OnClickListener{
 		left_top_layout=(LinearLayout)localSlidingMenu .findViewById(R.id.left_top_layout);
 		left_drawer_all=(LinearLayout)localSlidingMenu.findViewById(R.id.left_drawer_all);
 		left_drawer_ScrollView=(LinearLayout) localSlidingMenu.findViewById(R.id.left_drawer_ScrollView);
+		setting_btn_layout=(RelativeLayout) localSlidingMenu.findViewById(R.id.setting_btn_layout);
 		left_drawer_top_text=(TextView) localSlidingMenu.findViewById(R.id.left_drawer_top_text);
-		left_search_text=(TextView) localSlidingMenu.findViewById(R.id.left_search_text);
-		left_favorite_text=(TextView)localSlidingMenu.findViewById(R.id.left_favorite_text);
-		message_text =(TextView) localSlidingMenu.findViewById(R.id.message_text);
-		offline_btn_text=(TextView) localSlidingMenu.findViewById(R.id.offline_btn_text);
-		app_activity_text =(TextView) localSlidingMenu.findViewById(R.id.app_activity_text);
-		left_drawer_setting_text=(TextView) localSlidingMenu.findViewById(R.id.left_drawer_setting_text);
-		 left_drawer_feedback_text=(TextView) localSlidingMenu.findViewById(R.id.left_drawer_feedback_text);
-		 left_drawer_appstore_text=(TextView) localSlidingMenu.findViewById(R.id.left_drawer_appstore_text);
-		setting_btn =(RelativeLayout)localSlidingMenu.findViewById(R.id.setting_btn);
-		setting_btn.setOnClickListener(this);
 		baibian_btn.setOnClickListener(this);
+		setting_btn_layout.setOnClickListener(this);
 	}
 	@Override
 	public void onClick(View v) {
@@ -141,8 +123,9 @@ public class SlidingDrawerView implements OnClickListener{
 			Intent intent_baibian_btn=new Intent(activity,Login4Activity.class);
 			activity.startActivityForResult(intent_baibian_btn,REQUESTCODE);
 			break;
-		case R.id.setting_btn:
-			break;
+			case R.id.setting_btn_layout:
+				Intent intent_setting_btn_layout=new Intent(activity, SettingsActivity.class);
+				activity.startActivity(intent_setting_btn_layout);
 		default:
 			break;
 		}
