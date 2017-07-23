@@ -99,19 +99,23 @@
         <LinearLayout
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
-            android:layout_height="40dp">
+            android:layout_height="40dp"
+            android:elevation="10dp">
             <EditText
                 android:id="@+id/send_edittext"
                 android:layout_weight="6"
                 android:layout_width="0dp"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:text="添加申论/驳论"
+                android:textColor="@color/gray"/>
             <Button
                 android:textSize="15sp"
                 android:text="发送"
-                android:background="@drawable/blue_bubble"
+                android:background="@drawable/yellow_bubble"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="match_parent" />
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"/>
         </LinearLayout>
     </RelativeLayout>
 

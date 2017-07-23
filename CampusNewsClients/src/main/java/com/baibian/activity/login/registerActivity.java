@@ -35,7 +35,7 @@ package com.baibian.activity.login;
  * 注册界面的活动
  */
 public class registerActivity extends Activity implements View.OnClickListener {
-    protected ImageView register_imageView;//头像部分
+    //protected ImageView register_imageView;//头像部分
     protected EditText register_AccountEdit;//账号
     protected EditText register_password1;//第一次输入的密码
     protected EditText register_password2;//再次确认时输入的密码
@@ -85,11 +85,11 @@ public class registerActivity extends Activity implements View.OnClickListener {
     }
 
     private void initView() {
-        register_imageView = (ImageView) findViewById(R.id.register_imageView);
+      //  register_imageView = (ImageView) findViewById(R.id.register_imageView);
         register_AccountEdit = (EditText) findViewById(R.id.register_AccountEdit);
         register_password1 = (EditText) findViewById(R.id.register_first_passwords);
         register_password2 = (EditText) findViewById(R.id.register_confirm_editText);
-        register_loginButton = (Button) findViewById(R.id.regiter_loginButton);
+        register_loginButton = (Button) findViewById(R.id.register_loginButton);
         register_or_login_button = (Button) findViewById(R.id.register_or_login_button);
         register_all_layout=(LinearLayout)findViewById(R.id.register_all_layout);
         UI_Tools ui_tools = new UI_Tools();
@@ -103,7 +103,7 @@ public class registerActivity extends Activity implements View.OnClickListener {
      */
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.regiter_loginButton:
+            case R.id.register_loginButton:
                 account = register_AccountEdit.getText().toString();
                 password1 = register_password1.getText().toString();
                 password2 = register_password2.getText().toString();

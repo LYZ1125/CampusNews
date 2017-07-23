@@ -1,18 +1,18 @@
 [
     {
-        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout-xlarge-v4\\temp.xml",
-        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\layout-xlarge\\temp.xml"
+        "merged": "D:\\MyAndroid\\CampusNews4\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout-xlarge-v4\\temp.xml",
+        "source": "D:\\MyAndroid\\CampusNews4\\CampusNewsClients\\src\\main\\res\\layout-xlarge\\temp.xml"
     },
     {
-        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout-xlarge-v4\\view_recyclerview_item.xml",
-        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\layout-xlarge\\view_recyclerview_item.xml"
+        "merged": "D:\\MyAndroid\\CampusNews4\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout-xlarge-v4\\main_head.xml",
+        "source": "D:\\MyAndroid\\CampusNews4\\CampusNewsClients\\src\\main\\res\\layout-xlarge\\main_head.xml"
     },
     {
-        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout-xlarge-v4\\content_main.xml",
-        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\layout-xlarge\\content_main.xml"
+        "merged": "D:\\MyAndroid\\CampusNews4\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout-xlarge-v4\\content_main.xml",
+        "source": "D:\\MyAndroid\\CampusNews4\\CampusNewsClients\\src\\main\\res\\layout-xlarge\\content_main.xml"
     },
     {
-        "merged": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout-xlarge-v4\\main_head.xml",
-        "source": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\layout-xlarge\\main_head.xml"
+        "merged": "D:\\MyAndroid\\CampusNews4\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout-xlarge-v4\\view_recyclerview_item.xml",
+        "source": "D:\\MyAndroid\\CampusNews4\\CampusNewsClients\\src\\main\\res\\layout-xlarge\\view_recyclerview_item.xml"
     }
 ]

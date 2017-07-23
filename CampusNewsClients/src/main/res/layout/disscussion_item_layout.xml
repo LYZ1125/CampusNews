@@ -6,7 +6,7 @@
     android:orientation="horizontal">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -17,12 +17,6 @@
             android:layout_width="44dp"
             android:layout_height="44dp"
             android:src="@drawable/default_round_head" />
-        <TextView
-            android:layout_gravity="center_horizontal"
-            android:text="xzy2017"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"/>
     </LinearLayout>
 
 
@@ -32,67 +26,52 @@
         android:layout_weight="6"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:id="@+id/floor_account"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:text="1楼" />
-
-            <TextView
-                android:id="@+id/time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toLeftOf="@id/floor_account"
-                android:text="2017/4/22/22:10" />
-        </RelativeLayout>
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:text="xzy2017"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"/>
         <RelativeLayout
             android:id="@+id/textview_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
         <TextView
             android:id="@+id/content_textview"
-            android:text="自古以后我们都认为。。"
+            android:text="自古以后我们都认为。。程序员程序员程序员程序员程序员程序员程序员程序员程序员程序员程序员程序员程序员程序员程序员程序员程序员程序员程序员"
             android:maxLines="4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"/>
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="2小时前"
+                />
+            </LinearLayout>
+            <LinearLayout
                 android:layout_alignParentRight="true"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <com.like.LikeButton
-                    android:id="@+id/collect_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:anim_scale_factor="2"
-                    app:circle_end_color="@color/colorAccent"
-                    app:circle_start_color="@color/colorPrimary"
-                    app:dots_primary_color="@color/colorAccent"
-                    app:dots_secondary_color="@color/colorPrimary"
-                    app:icon_size="25dp"
-                    app:icon_type="Star"
-                    app:is_enabled="true"
-                    app:like_drawable="@drawable/star_on"
-                    app:liked="true"
-                    app:unlike_drawable="@drawable/star_off" />
-
+                android:orientation="horizontal"
+                android:layout_marginRight="8dp">
                 <TextView
-                    android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="666" />
+                    android:text="查看对话"
+                    android:layout_gravity="center_vertical"
+                    />
+
 
                 <com.like.LikeButton
                     android:id="@+id/like_btn"
@@ -114,16 +93,10 @@
                     android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="666" />
+                    android:text="666"
+                    android:paddingLeft="5dp"
+                    android:textColor="#d81e06"/>
 
-                <Button
-                    android:id="@+id/respond_btn"
-                    android:layout_gravity="center_vertical"
-                    android:layout_width="40dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/blue_bubble"
-                    android:text="回复"
-                    android:textColor="#FFFFFF" />
             </LinearLayout>
 
         </RelativeLayout>

@@ -4,12 +4,16 @@ import android.app.FragmentManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.view.GestureDetector;
 import android.view.KeyEvent;
 import android.view.Menu;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
@@ -22,8 +26,10 @@ import android.widget.Toast;
 
 import com.baibian.R;
 import com.baibian.activity.login.Login4Activity;
+import com.baibian.adapter.Forums_Integration_Refresh_FootAdapter;
 import com.baibian.adapter.NewsFragmentPagerAdapter;
 import com.baibian.bean.ChannelItem;
+import com.baibian.fragment.forums.IntegrationFragment;
 import com.baibian.fragment.main.FindFragment;
 import com.baibian.fragment.main.ForumsFragment;
 import com.baibian.fragment.main.HomepageFragment;
@@ -34,6 +40,7 @@ import com.baibian.view.SlidingDrawerView;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *  模拟还原今日头条 --新闻阅读器
@@ -138,6 +145,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
      */
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;//判断是否是第一次登陆使用
+    private GestureDetector gestureDetector;
+    private SwipeRefreshLayout integration_swiperefreshlayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,6 +155,28 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 //        StrictMode.setVmPolicy(
 //                new StrictMode.VmPolicy.Builder().detectLeakedSqlLiteObjects().detectLeakedClosableObjects().penaltyLog().penaltyDeath().build());
         setContentView(R.layout.main);
+        View integrationFragment=View.inflate(getApplicationContext(),R.layout.integration_fragment_layout,null);
+        integration_swiperefreshlayout=(SwipeRefreshLayout) integrationFragment.findViewById(R.id.integration_swiperefreshlayout);
+        final Forums_Integration_Refresh_FootAdapter adapter=new Forums_Integration_Refresh_FootAdapter(getApplicationContext());
+        gestureDetector=new GestureDetector(this,new GestureDetector.SimpleOnGestureListener()
+        {
+            @Override
+            public boolean onDoubleTap(MotionEvent event)
+            {
+                 List<String> newDatas = new ArrayList<String>();
+                 for (int i = 0; i < 5; i++) {
+                     /**
+                      * 这列是刷新的测试数据的内容
+                      */
+                     int index = i + 1;
+                     newDatas.add("new 用户" + index);
+                 }
+                 adapter.addItem(newDatas);
+                 integration_swiperefreshlayout.setRefreshing(false);
+                 Toast.makeText(MainActivity.this, R.string.reflesh, Toast.LENGTH_SHORT).show();
+                return super.onDoubleTap(event);
+            }
+        });
         mScreenWidth = BaseTools.getWindowsWidth(this);
         mItemWidth = mScreenWidth / 4;// ???Item?????????1/4
 
@@ -210,6 +241,12 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
                  */
                 // TODO Auto-generated method stub
 
+            }
+        });
+        fragmentLayout2.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return gestureDetector.onTouchEvent(event);
             }
         });
     }

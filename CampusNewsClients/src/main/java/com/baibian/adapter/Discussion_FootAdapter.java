@@ -80,16 +80,16 @@ public class Discussion_FootAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         if (viewType == TYPE_ITEM) {
             View view = mInflater.inflate(R.layout.disscussion_item_layout, parent, false);
             rv=(RelativeLayout)view.findViewById(R.id.textview_layout);
-            collect_btn=(LikeButton) view.findViewById(R.id.collect_btn);
+            //collect_btn=(LikeButton) view.findViewById(R.id.collect_btn);
             like_btn=(LikeButton) view.findViewById(R.id.like_btn);
-            respond_btn=(Button) view.findViewById(R.id.respond_btn);
+           // respond_btn=(Button) view.findViewById(R.id.respond_btn);
             content_textview=(TextView)view.findViewById(R.id.content_textview);
-            respond_btn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
+            //respond_btn.setOnClickListener(new View.OnClickListener() {
+             //   @Override
+              //  public void onClick(View v) {
 
-                }
-            });
+              //  }
+           // });
             like_btn.setOnLikeListener(new OnLikeListener() {
                 @Override
                 public void liked(LikeButton likeButton) {
@@ -100,17 +100,17 @@ public class Discussion_FootAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 
                 }
             });
-            collect_btn.setOnLikeListener(new OnLikeListener() {
-                @Override
-                public void liked(LikeButton likeButton) {
+           // collect_btn.setOnLikeListener(new OnLikeListener() {
+             //   @Override
+             //   public void liked(LikeButton likeButton) {
 
-                }
+              //  }
 
-                @Override
-                public void unLiked(LikeButton likeButton) {
+               // @Override
+              //  public void unLiked(LikeButton likeButton) {
 
-                }
-            });
+              //  }
+          //  });
             /*对文本实现长按监听*/
             content_textview.setOnTouchListener(new View.OnTouchListener() {
                 int x = 0;int y = 0;

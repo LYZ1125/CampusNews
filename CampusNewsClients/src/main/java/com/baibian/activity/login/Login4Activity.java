@@ -43,7 +43,7 @@ public class Login4Activity extends BaseActivity {
     protected ImageView imageView32;
     protected EditText login4AccountEdit;
     protected EditText login4passwordEdit;
-    protected Button login4loginbutton;
+    protected ImageView login4loginbutton;
     protected Button login4RegisterButton;
     protected Button login4ForgetButton;
     protected String account;
@@ -59,14 +59,14 @@ public class Login4Activity extends BaseActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.login4_layout);
-        imageView11 = (TextView) findViewById(R.id.login4img11);
-        imageView12 = (ImageView) findViewById(R.id.login4img12);
-        imageView13 = (ImageView) findViewById(R.id.login4img13);
-        imageView21 = (ImageView) findViewById(R.id.login4img21);
-        imageView22 = (ImageView) findViewById(R.id.login4img22);
-        imageView31 = (ImageView) findViewById(R.id.login4img31);
-        imageView32 = (ImageView) findViewById(R.id.login4img32);
-        login4loginbutton = (Button) findViewById(R.id.login4loginButton);
+        //imageView11 = (TextView) findViewById(R.id.login4img11);
+        //imageView12 = (ImageView) findViewById(R.id.login4img12);
+        //imageView13 = (ImageView) findViewById(R.id.login4img13);
+        //imageView21 = (ImageView) findViewById(R.id.login4img21);
+        //imageView22 = (ImageView) findViewById(R.id.login4img22);
+        //imageView31 = (ImageView) findViewById(R.id.login4img31);
+        //imageView32 = (ImageView) findViewById(R.id.login4img32);
+        login4loginbutton = (ImageView) findViewById(R.id.login4loginButton);
         login4RegisterButton = (Button) findViewById(R.id.login4registerbutton);
         login4ForgetButton = (Button) findViewById(R.id.login4forgetbutton);
         login4AccountEdit = (EditText) findViewById(R.id.login4AccountEdit);
@@ -234,12 +234,12 @@ public class Login4Activity extends BaseActivity {
         AlphaAnimation aa32 = new AlphaAnimation(0, 1);
         aa32.setDuration(300);
         aa32.setStartOffset(500 * 2 + 300 * 4);
-        imageView11.startAnimation(aa11);
-        imageView12.startAnimation(aa12);
-        imageView13.startAnimation(aa13);
-        imageView21.startAnimation(aa21);
-        imageView22.startAnimation(aa22);
-        imageView31.startAnimation(aa31);
-        imageView32.startAnimation(aa32);
+       //imageView11.startAnimation(aa11);
+       //imageView12.startAnimation(aa12);
+       //imageView13.startAnimation(aa13);
+       //imageView21.startAnimation(aa21);
+       //imageView22.startAnimation(aa22);
+       //imageView31.startAnimation(aa31);
+       //imageView32.startAnimation(aa32);
     }
 }

@@ -18,6 +18,7 @@ import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,7 +67,7 @@ public class DetailsActivity extends BaseActivity {
     private ViewPager viewPager;
     List<Fragment> viewPagerList;
     private Activity activity;
-    private TextView begin_discussion;
+    private Button begin_discussion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +83,15 @@ public class DetailsActivity extends BaseActivity {
 
         initView();
         initViewPager();
+        begin_discussion.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                Intent intent=new Intent(DetailsActivity.this,DiscussionActivity.class);
+                startActivity(intent);
+            }
+        });
 //        viewpager????????
 //        viewPagerList=new ArrayList<Fragment>();
 //        viewPagerList.add(new overviewFragment());
@@ -282,7 +292,7 @@ public class DetailsActivity extends BaseActivity {
             public CharSequence getPageTitle(int position) {
                 SpannableStringBuilder ssb = new SpannableStringBuilder(" "
                         + titleContainer.get(position)); // space added before text for
-                ForegroundColorSpan fcs = new ForegroundColorSpan(getResources().getColor(R.color.baibian_back_color));//???????????????
+                ForegroundColorSpan fcs = new ForegroundColorSpan(getResources().getColor(R.color.black));//文字颜色
                 ssb.setSpan(fcs, 1, ssb.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);//???????????
                 ssb.setSpan(new RelativeSizeSpan(1.2f), 1, ssb.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 return ssb;
@@ -310,6 +320,7 @@ public class DetailsActivity extends BaseActivity {
     }
 
     private void initView() {
+        begin_discussion=(Button)findViewById(R.id.begin_discussion) ;//进入辩题按钮
         viewPager = (ViewPager) this.findViewById(R.id.viewpager);
         tabStrip = (PagerTabStrip) this.findViewById(R.id.tab_strip);
         backBt = (Button) this.findViewById(R.id.forums_details_back);
@@ -322,10 +333,11 @@ public class DetailsActivity extends BaseActivity {
         //???tab??????????
         tabStrip.setDrawFullUnderline(false);
         //????tab??????
-        tabStrip.setBackgroundColor(this.getResources().getColor(R.color.white));
+        tabStrip.setBackgroundColor(this.getResources().getColor(R.color.gray_white));
         //??????tab????????????
-        tabStrip.setTabIndicatorColor(this.getResources().getColor(R.color.baibian_back_color));
+        tabStrip.setTabIndicatorColor(this.getResources().getColor(R.color.gray_white));//横杠颜色
         tabStrip.setTextSpacing(200);
+        tabStrip.setTextSize(TypedValue.COMPLEX_UNIT_SP,18);//第一个参数为指定单位作用
 
         View view1 = LayoutInflater.from(this).inflate(R.layout.forums_details_subdivide, null);
         View view2 = LayoutInflater.from(this).inflate(R.layout.forums_details_overview, null);//大方向分类
@@ -336,17 +348,16 @@ public class DetailsActivity extends BaseActivity {
         viewContainter.add(view2);
 //        viewContainter.add(view3);
         //????
-        titleContainer.add(getString(R.string.debatetopic));
+        titleContainer.add("辩题详情");
         titleContainer.add(getString(R.string.detaildivide));
 
-        backBt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-            }
-        });
-        //????????????????????
+       backBt.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               finish();
+               overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+           }
+       });
 //        mTagContainerLayout.setTags(tags);
 
 
