@@ -1,55 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:padding="30dp">
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:elevation="5dp"
 
+        >
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/yellow_rect2"
+        >
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="10dp"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:elevation="3dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="#c5fffff0"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/background"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="6dp"
-            android:layout_marginTop="6dp"
-            android:text="辩题背景："
-            android:textColor="#00a0e9"
-            android:textSize="28sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:layout_width="20dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/blue_bar" />
+        android:orientation="vertical"
+        android:background="#ffff">
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:lineSpacingExtra="8sp"
-                android:maxLines="15"
                 android:text="    权利天赋即自然权利（Natural Right），最早的表述或来自古希腊斯多噶学派，强调人类在自然状态下固有的，神圣不可侵犯和剥夺的权利。因此，人类的权利来自天然，所以一切人为的国家、政权、社会、风尚、秩序，都必须经过人的权利。\n    而另有一些人则认为，在自然状态下，只有弱肉强食、物竞天择、胜者为王，没有人权，更没有平等。是人，在与自然的抗争中，与人类自身博弈中，从理性出发，假借更高的名义，将所谓的“权利”赋予给了自己。\n     因此，观念中的自然权利究竟该作何论，权利到底是得授于天，还是来自我们自己？让我们期待这场比赛将带给我们的启发。"
                 android:textAlignment="viewStart"
-                android:textSize="18sp" />
-        </LinearLayout>
+                android:textSize="18sp"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
 
-
-
-
-
+                />
     </LinearLayout>
 
 </ScrollView>
+    </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

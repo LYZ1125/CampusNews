@@ -33,9 +33,9 @@ public class Forums_Integration_Refresh_FootAdapter extends RecyclerView.Adapter
     /**
      *progresstext正方中立，反方的数量的定义,,这里暂时使用初始数值作为测试
      */
-    private float positiveNumber=560;//正方数量
-    private float neutralNumber=234;//中立数量
-    private float negetiveNumber=640;//反方数量
+    private float positiveNumber=0;//正方数量
+    private float neutralNumber=0;//中立数量
+    private float negetiveNumber=0;//反方数量
 
     private Context mContext;
     private ScheduledExecutorService scheduledExecutorService;
@@ -106,8 +106,8 @@ public class Forums_Integration_Refresh_FootAdapter extends RecyclerView.Adapter
      */
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof ItemViewHolder) {
-            ((ItemViewHolder) holder).item_tv.setText(mTitles.get(position));
-            holder.itemView.setTag(position);
+            ((ItemViewHolder) holder).item_tv.setText(mTitles.get(position));//在这里设置题目内容
+            holder.itemView.setTag(position);//给每个item设置一个标签，可以分辨每个item
             /**
              * progresstext的算法
              */

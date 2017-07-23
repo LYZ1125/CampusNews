@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
+        "outputFile": "D:\\MyAndroid\\CampusNews4\\CampusNewsClients\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
         "map": [
             {
                 "to": {
@@ -12,7 +12,7 @@
                     "endOffset": 201
                 },
                 "from": {
-                    "file": "D:\\MyAndroid\\CampusNews2\\CampusNewsClients\\src\\main\\res\\values-v14\\styles.xml",
+                    "file": "D:\\MyAndroid\\CampusNews4\\CampusNewsClients\\src\\main\\res\\values-v14\\styles.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,

@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 
 
 /**
- * 能够实现上啦刷新，下滑加载更多的adapter
+ * 能够实现上啦刷新，下滑加载更多的adapter,其实就是recyclerview的adapter
  */
 public class Homepage_Refresh_FootAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private MyItemClickListener mItemClickListener;
