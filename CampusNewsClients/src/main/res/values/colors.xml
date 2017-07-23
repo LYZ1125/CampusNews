@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="gray_white">#f7f5f3</color>
     <color name="baibian_back_color">#02a2e8</color>
     <color name="abc_search_url_text_normal">#ff7fa87f</color>
 

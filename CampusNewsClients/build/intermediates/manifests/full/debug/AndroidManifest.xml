@@ -63,6 +63,7 @@
         <activity android:name="com.baibian.activity.Edit_Information_Activity" />
         <activity android:name="com.baibian.activity.DetailsActivity" />
         <activity android:name="com.baibian.activity.DiscussionActivity" />
+        <activity android:name="com.baibian.activity.LargeActivity" />
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"

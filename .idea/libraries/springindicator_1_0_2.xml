@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="springindicator-1.0.2">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/401a6e854a9e8de4eeef428ec2afe5a0cd91ac97/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/401a6e854a9e8de4eeef428ec2afe5a0cd91ac97/output/res" />
+      <root url="file://$USER_HOME$/.android/build-cache/bba2d587f87ee363c3171e7ddedecff5b8376e11/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/bba2d587f87ee363c3171e7ddedecff5b8376e11/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

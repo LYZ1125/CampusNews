@@ -9,6 +9,7 @@
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/DiscussionActivity.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/Edit_Information_Activity.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/ImageShowActivity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/LargeActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/MainActivity.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/UsersImformationActivity.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/activity/newsDetailsActivity.java" charset="GBK" />
@@ -36,6 +37,7 @@
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/view/HeadListView.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/view/SwitchButton.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/java/com/baibian/view/TopToastView.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/res" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/res/drawable-hdpi/blue_bar.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/res/drawable/find_btn_bg.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/res/drawable/search_bg.xml" charset="GBK" />
@@ -105,6 +107,6 @@
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/res/layout/usersimformationlayout.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/res/layout/view_recyclerview_item.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/CampusNewsClients/src/main/res/layout/welcome.xml" charset="GBK" />
-    <file url="PROJECT" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

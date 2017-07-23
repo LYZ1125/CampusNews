@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\Ellly\\Desktop\\SourceCodeTempOnDesktop\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
+        "source": "C:\\Users\\Ellly\\.android\\build-cache\\62e1525d19af48d9f807cd801b66b424d8f64581\\output\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
+    },
+    {
         "merged": "D:\\MyAndroid\\CampusNews4\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13\\design_layout_snackbar.xml",
         "source": "C:\\Users\\邹特强\\.android\\build-cache\\14ec6aa046c0f047ffdf78c56205aba295f9d210\\output\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
     }

@@ -14,31 +14,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp">
-               <ImageView
-                   android:layout_width="20dp"
-                   android:layout_height="match_parent"
-                   android:src="@drawable/forums_light"
-                   />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="10dp"
                 android:id="@+id/forums_top_linearlayout"
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="11dp"
-                android:layout_marginRight="11dp">
+                android:layout_height="wrap_content">
                 <TextView
                     android:id="@+id/item_tv"
                     android:text="题目"
                     android:layout_gravity="center_vertical"
-                    android:textSize="20dp"
+                    android:textSize="32dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:layout_marginLeft="11dp"/>
+                    android:layout_height="wrap_content"/>
                 <TextView
                     android:paddingTop="4dp"
                     android:text="  权利天赋即自然权利（Natural Right），最早的表述或来自古希腊斯多噶学派，强调人类在自然状态下固有的，神圣不可侵犯和剥夺的权利。因此，人类的权利来自天然，所以一切..."
@@ -51,52 +37,25 @@
                 <LinearLayout
                     android:id="@+id/forums_second_linearlayout"
                     android:layout_below="@id/forums_top_linearlayout"
+                    android:layout_alignParentRight="true"
                     android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_marginLeft="2dp"
-                    >
-                    <ImageView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:src="@mipmap/img_forums_praise"
-                        android:layout_marginLeft="10dp"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:text="参与人数："
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
                     <TextView
                         android:text="6666"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="10dp"/>
-                    <ImageView
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent" />
-                    <ImageView
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:src="@mipmap/img_forums_concentrate"/>
-                    <TextView
-                        android:layout_weight="2"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:text="1420"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="10dp"/>
-                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:layout_weight="3"
-                       >
-                    </LinearLayout>
+                        android:layout_height="wrap_content"/>
+
                     <TextView
-                        android:text="2017-02-14"
+                        android:paddingLeft="10dp"
+                        android:text="2016.07.16"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="5"
-                        android:gravity="center"/>
+                        android:layout_height="wrap_content"/>
+
                 </LinearLayout>
             <!--使用text布局来实现-->
             <LinearLayout
@@ -104,7 +63,7 @@
                 android:layout_below="@id/forums_second_linearlayout"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="0dp">
+                android:layout_height="15dp">
                 <RelativeLayout
                     android:id="@+id/progress_relativelayout1"
 
