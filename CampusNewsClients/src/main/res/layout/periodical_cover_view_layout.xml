@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/periodical_cover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@draw"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+    <TextView
+        android:id="@+id/periodical_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textColor="#000000"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/periodical_cover"
+        android:layout_toEndOf="@+id/periodical_cover" />
+    <TextView
+        android:id="@+id/periodical_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="subTitle"
+        android:textColor="#000000"
+        android:layout_toRightOf="@id/periodical_cover"
+        android:layout_below="@id/periodical_title" />
+</RelativeLayout>

@@ -35,6 +35,7 @@ import com.baibian.adapter.Users_Viwepager_Adapter;
 import com.baibian.tool.HttpTool;
 import com.baibian.tool.ToastTools;
 import com.baibian.tool.UI_Tools;
+import com.baibian.view.PeriodicalCoverView;
 import com.flyco.dialog.listener.OnOperItemClickL;
 import com.flyco.dialog.widget.ActionSheetDialog;
 import com.squareup.okhttp.Response;
@@ -73,6 +74,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
     private ImageView likeButton;
     private TextView backNav;
     private Toolbar toolbar;
+    private LinearLayout shareLinearLayout;
     private String saveImageShared;
     public String path;
     final private String[] items = {"Scoop", "Capture", "Chosen from album"};
@@ -109,7 +111,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         likeButton = (ImageView) findViewById(R.id.like_button);
         backNav = (TextView) findViewById(R.id.back_nav_toolbar);
         toolbar = (Toolbar) findViewById(R.id.user_tool_bar);
-
+        shareLinearLayout = (LinearLayout) findViewById(R.id.share_linear_layout);
         /**
          * Here to support my toolbar I switch AppTheme to NoActionbar in AndroidManifest.
          * In any case if this switch will make bugs unknown to me presently in the future
@@ -127,7 +129,15 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         likeButton.setOnClickListener(this);
         path= Environment.getExternalStorageDirectory().getAbsolutePath()+"/a.png";
         userPortrait.setImageBitmap(getSaveImageShared());
-
+        /**
+         * Temporarily add view in this way since I don't know in what way would the "periodical" be loaded
+         * maybe methods will be written for changing image, title and subtitle.
+         * Wrong margin.
+         */
+        PeriodicalCoverView coverTemp1 = new PeriodicalCoverView(this);
+        PeriodicalCoverView coverTemp2 = new PeriodicalCoverView(this);
+        shareLinearLayout.addView(coverTemp1);
+        shareLinearLayout.addView(coverTemp2);
 /*        UI_Tools ui_tools=new UI_Tools();
         ui_tools.CancelFocusOne(this,user_information_all,personalized_signature_edit);*/
         init_information();
