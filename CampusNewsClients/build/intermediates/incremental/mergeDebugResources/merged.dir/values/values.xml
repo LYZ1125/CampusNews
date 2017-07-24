@@ -544,6 +544,7 @@
     <color name="gray">#ff808080</color>
     <color name="gray_dark">#616161</color>
     <color name="gray_light">#9e9e9e</color>
+    <color name="gray_white">#f7f5f3</color>
     <color name="green">#ff00ff00</color>
     <color name="guide_download_btn_text">#ffb4b4b4</color>
     <color name="guide_start_btn_text">#ffffffff</color>

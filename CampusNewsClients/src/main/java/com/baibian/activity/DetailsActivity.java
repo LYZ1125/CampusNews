@@ -333,9 +333,11 @@ public class DetailsActivity extends BaseActivity {
         //???tab??????????
         tabStrip.setDrawFullUnderline(false);
         //????tab??????
+
         tabStrip.setBackgroundColor(this.getResources().getColor(R.color.gray_white));
         //??????tab????????????
         tabStrip.setTabIndicatorColor(this.getResources().getColor(R.color.gray_white));//横杠颜色
+
         tabStrip.setTextSpacing(200);
         tabStrip.setTextSize(TypedValue.COMPLEX_UNIT_SP,18);//第一个参数为指定单位作用
 
