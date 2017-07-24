@@ -72,7 +72,7 @@
                 android:layout_height="43dp" />
             <!--注册按钮部分-->
             <Button
-                android:id="@+id/regiter_loginButton"
+                android:id="@+id/register_loginButton"
                 android:text="注册"
                 android:textColor="#00a0e9"
                 android:textSize="23sp"

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86"
-    api-level="24"
+    abi="arm64-v8a,armeabi-v7a,armeabi"
+    api-level="22"
     build-mode="FULL"
-    density="xxhdpi"
+    density="xhdpi"
     format="10"
-    plugin-version="2.3.2"
-    timestamp="1500818214068"
+    plugin-version="2.3.3"
+    timestamp="1500902638760"
     token="-4704128385544400452"
     verifier="FULL_BUILD_REQUESTED" >
 

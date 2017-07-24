@@ -1,29 +1,5 @@
 [
     {
-        "outputFile": "D:\\MyAndroid\\CampusNews4\\library_SlidingMenu\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1008,
-                    "endColumn": 42,
-                    "endOffset": 1046
-                },
-                "from": {
-                    "file": "D:\\MyAndroid\\CampusNews4\\library_SlidingMenu\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 4,
-                        "startOffset": 1008,
-                        "endColumn": 42,
-                        "endOffset": 1046
-                    }
-                }
-            }
-        ]
-    },
-    {
         "outputFile": "C:\\Users\\Ellly\\Desktop\\SourceCodeTempOnDesktop\\CampusNews\\library_SlidingMenu\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
