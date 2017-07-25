@@ -1,136 +1,288 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/user_information_all"
-    android:background="#fffff0"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:scrollbars="vertical"
+    android:fadingEdge="vertical">
 
-    <RelativeLayout
-        android:id="@+id/choise_direction_all_layout"
-        android:background="@color/transparent"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/title_bar_height">
-        <Button
-            android:id="@+id/choise_direction_back"
-            android:layout_width="44dp"
-            android:layout_height="fill_parent"
-            android:background="@mipmap/back_mipmap_yellow"/>
-        <Button
-            android:id="@+id/users_information_more"
-            android:textColor="#ffd71b"
-            android:background="@color/transparent"
-            android:textSize="32sp"
-            android:layout_alignParentEnd="true"
-            android:text="···"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"/>
-        <ImageView
-            android:id="@+id/user_information_edit"
-            android:padding="5dp"
-            android:background="@color/transparent"
-            android:src="@mipmap/yellow_pan"
-            android:layout_toLeftOf="@id/users_information_more"
-            android:layout_width="40dp"
-            android:layout_height="55dp"/>
-
-
-    </RelativeLayout>
-    <!--顶部的个人资料部分-->
     <LinearLayout
+        android:id="@+id/user_information_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
+        android:divider="#000000"
+        android:showDividers="middle">
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <com.baibian.tool.RoundImageView
-                android:src="@drawable/default_round_head"
-                android:layout_width="60dip"
-                android:layout_height="60dip" />
+            <LinearLayout
+                android:id="@+id/user_tool_bar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/colorAccent"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/user_tool_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="#00000000"
+                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    android:fitsSystemWindows="true">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/back_nav_toolbar"
+                        android:drawableStart="@drawable/ic_toast_bury"
+                        android:drawableLeft="@drawable/ic_toast_bury"
+                        android:text="返回"
+                        android:textColor="#ffffff"
+                        android:textSize="22sp"
+                        android:gravity="center_vertical"/>
+                </android.support.v7.widget.Toolbar>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/like_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_action_favor"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_portrait"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="90dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/default_round_head" />
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:text="祈梦之子"
+                android:layout_below="@+id/user_portrait"
+                android:layout_centerHorizontal="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="220dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/like_amount_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="获赞总数"
+                    android:textSize="18sp"
+                    android:textColor="#000000" />
+
+                <TextView
+                    android:id="@+id/focus_amount_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="关注数"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/focused_amount_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="被关注数"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="240dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/like_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="888"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:gravity="center" />
+
+                <TextView
+                    android:textColor="#000000"
+                    android:id="@+id/focus_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="888"
+                    android:textSize="18sp"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/focused_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="888"
+                    android:textSize="18sp"
+                    android:textColor="#000000"
+                    android:gravity="center" />
+            </LinearLayout>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="123456789"
+                android:textColor="#000000"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_drawer_appstore"
+                android:layout_marginStart="22dp"
+                android:drawablePadding="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="男 18岁 双鱼座"
+                android:textColor="#000000"
+                android:drawableLeft="@drawable/ic_drawer_favorite"
+                android:gravity="center_vertical"
+                android:layout_marginStart="22dp"
+                android:drawablePadding="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="学生"
+                android:textColor="#000000"
+                android:drawableLeft="@drawable/ic_drawer_feedback"
+                android:gravity="center_vertical"
+                android:layout_marginStart="22dp"
+                android:drawablePadding="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18937018596"
+                android:textColor="#000000"
+                android:drawableLeft="@drawable/ic_drawer_message"
+                android:gravity="center_vertical"
+                android:layout_marginStart="22dp"
+                android:drawablePadding="10dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lv.7"
+                android:textColor="#000000"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_drawer_offline"
+                android:layout_marginStart="22dp"
+                android:drawablePadding="10dp"/>
+            <TextView
+                android:id="@+id/edit_personal_signal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="编辑个性签名"
+                android:textColor="#000000"
+                android:drawableLeft="@drawable/ic_drawer_pgc"
+                android:gravity="center_vertical"
+                android:layout_marginStart="22dp"
+                android:drawablePadding="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="#000000"
+                android:drawableLeft="@drawable/ic_drawer_setting"
+                android:gravity="center_vertical"
+                android:layout_marginStart="22dp"
+                android:drawablePadding="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发表期刊"
+                android:textColor="#000000"
+                android:drawableLeft="@drawable/ic_drawer_search"
+                android:gravity="center_vertical"
+                android:layout_marginStart="22dp"
+                android:drawablePadding="10dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="1dp"
+                    android:background="@color/colorAccent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="70dp" />
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="1dp"
+                    android:background="@color/colorAccent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="70dp"
+                    android:layout_alignParentEnd="true"/>
+                <TextView
+                    android:id="@+id/my_share"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    android:gravity="center_horizontal"
+                    android:text="  ·我的分享·  " />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="期刊分享"
+                    android:textColor="#000000"
+                    android:drawableStart="@drawable/ic_drawer_feedback_pressed"
+                    android:layout_marginStart="22dp"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="10dp" />
+                
+            </LinearLayout>
 
         </LinearLayout>
-        <TextView
-            android:id="@+id/username"
-            android:layout_gravity="center_horizontal"
-             android:textSize="32dp"
-             android:text="name"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"/>
-
-        <LinearLayout
-            android:layout_gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_gravity="center_horizontal"
-                android:textSize="18dp"
-                android:text="最佳辩手"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:layout_gravity="center_horizontal"
-                android:paddingLeft="10dp"
-                android:textSize="18dp"
-                android:text="粉丝："
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:layout_gravity="center_horizontal"
-                android:textSize="18dp"
-                android:text="666"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-        <EditText
-            android:id="@+id/personalized_signature_edit"
-            android:layout_gravity="center_horizontal"
-            android:background="@null"
-            android:singleLine="true"
-            android:textSize="18dp"
-            android:hint="编辑心情"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+    
     </LinearLayout>
 
-    <ImageView style="@style/left_drawer_item_line" />
-    <LinearLayout
-        android:paddingTop="5dp"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:background="@color/transparent"
-        android:layout_height="45dp">
-        <!--这里采用一次嵌套的方法来解决背景正方形铺屏的问题，如果以后有优化的方法请解决-->
-        <Button
-            android:id="@+id/BB_state_btn"
-            android:text="BB发言"
-            android:background="#FFFFFF"
-            android:layout_marginRight="40dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"/>
-        <Button
-            android:id="@+id/BB_imformation_btn"
-            android:text="BB资料"
-            android:background="#FFFFFF"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"/>
-    </LinearLayout>
-    <ImageView style="@style/left_drawer_item_line" />
-
-
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/users_imformation_pager"
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        />
-
-</LinearLayout>
+</ScrollView>

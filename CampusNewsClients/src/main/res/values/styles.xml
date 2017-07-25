@@ -79,7 +79,7 @@
 
     <!-- Application theme. -->
     <!--从自定义的主题更改成为了系统默认主题，为了可以兼容包，，但是不知道有没有什么地方会受到影响-->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
             <item name="android:windowNoTitle">true</item>
