@@ -99,6 +99,7 @@
     <string name="LunBa">论吧</string>
     <string name="LunTan">论坛</string>
     <string name="LunXun">论讯</string>
+    <string name="text_point">·</string>
 
 
 </resources>

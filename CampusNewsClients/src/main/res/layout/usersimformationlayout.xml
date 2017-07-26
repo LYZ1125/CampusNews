@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--Unsure on contents of text, directly using hardcoded string-->
+<!--Dividers of LinearLayout proved invalid on low-api machine, compatible version should be used-->
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -179,15 +181,17 @@
                 android:gravity="center_vertical"
                 android:layout_marginStart="22dp"
                 android:drawablePadding="10dp"/>
+
             <TextView
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="18937018596"
-                android:textColor="#000000"
-                android:drawableLeft="@drawable/ic_drawer_message"
-                android:gravity="center_vertical"
                 android:layout_marginStart="22dp"
-                android:drawablePadding="10dp"/>
+                android:drawableLeft="@drawable/ic_drawer_message"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:text="18937018596"
+                android:textColor="#000000" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -265,23 +269,90 @@
                 android:layout_width="match_parent"
                 android:layout_height="10dp"/>
 
-            <LinearLayout
-                android:id="@+id/share_linear_layout"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
+                android:text="期刊分享"
+                android:textColor="#000000"
+                android:layout_marginStart="22dp"
+                android:drawableStart="@drawable/ic_drawer_feedback_pressed"
+                android:gravity="center_vertical"
+                android:drawablePadding="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <View
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"/>
+
+                <LinearLayout
+                    android:id="@+id/share_linear_layout"
                     android:layout_height="wrap_content"
-                    android:text="期刊分享"
-                    android:textColor="#000000"
-                    android:drawableStart="@drawable/ic_drawer_feedback_pressed"
-                    android:layout_marginStart="22dp"
-                    android:gravity="center_vertical"
-                    android:drawablePadding="10dp" />
-                
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
+                </LinearLayout>
             </LinearLayout>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="1dp"
+                    android:background="@color/colorAccent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="70dp" />
+
+                <View
+                    android:layout_width="50dp"
+                    android:layout_height="1dp"
+                    android:background="@color/colorAccent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="70dp"
+                    android:layout_alignParentEnd="true"/>
+                <TextView
+                    android:id="@+id/my_achievements"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    android:gravity="center_horizontal"
+                    android:text="  ·我的成就·  " />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="成就"
+                android:textColor="#000000"
+                android:drawableLeft="@drawable/ic_drawer_message"
+                android:gravity="center_vertical"
+                android:layout_marginStart="22dp"
+                android:drawablePadding="10dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <View
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"/>
+                <LinearLayout
+                    android:id="@+id/achievements_linear_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+            </LinearLayout>
         </LinearLayout>
     
     </LinearLayout>

@@ -7,7 +7,7 @@
         android:id="@+id/periodical_cover"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@draw"
+        android:src="@mipmap/ic_launcher"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
     <TextView

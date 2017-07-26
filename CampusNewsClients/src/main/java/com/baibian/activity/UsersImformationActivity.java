@@ -35,6 +35,7 @@ import com.baibian.adapter.Users_Viwepager_Adapter;
 import com.baibian.tool.HttpTool;
 import com.baibian.tool.ToastTools;
 import com.baibian.tool.UI_Tools;
+import com.baibian.view.AchievementView;
 import com.baibian.view.PeriodicalCoverView;
 import com.flyco.dialog.listener.OnOperItemClickL;
 import com.flyco.dialog.widget.ActionSheetDialog;
@@ -75,6 +76,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
     private TextView backNav;
     private Toolbar toolbar;
     private LinearLayout shareLinearLayout;
+    private LinearLayout achieveLinearLayout;
     private String saveImageShared;
     public String path;
     final private String[] items = {"Scoop", "Capture", "Chosen from album"};
@@ -112,6 +114,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         backNav = (TextView) findViewById(R.id.back_nav_toolbar);
         toolbar = (Toolbar) findViewById(R.id.user_tool_bar);
         shareLinearLayout = (LinearLayout) findViewById(R.id.share_linear_layout);
+        achieveLinearLayout = (LinearLayout) findViewById(R.id.achievements_linear_layout);
         /**
          * Here to support my toolbar I switch AppTheme to NoActionbar in AndroidManifest.
          * In any case if this switch will make bugs unknown to me presently in the future
@@ -138,6 +141,12 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         PeriodicalCoverView coverTemp2 = new PeriodicalCoverView(this);
         shareLinearLayout.addView(coverTemp1);
         shareLinearLayout.addView(coverTemp2);
+
+        AchievementView achievement1 = new AchievementView(this);
+        AchievementView achievement2 = new AchievementView(this);
+        achievement1.achieves.setText("五连绝世");
+        achieveLinearLayout.addView(achievement1);
+        achieveLinearLayout.addView(achievement2);
 /*        UI_Tools ui_tools=new UI_Tools();
         ui_tools.CancelFocusOne(this,user_information_all,personalized_signature_edit);*/
         init_information();

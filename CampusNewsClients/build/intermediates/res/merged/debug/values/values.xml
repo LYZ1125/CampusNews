@@ -1866,6 +1866,7 @@
     <string name="sure_exit">确定要退出Bai辩吗？</string>
     <string name="switch_off"/>
     <string name="switch_on"/>
+    <string name="text_point">·</string>
     <string name="text_topic">人权天赋还是取决自己</string>
     <string name="timeout">网络错误，请检查网络</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
