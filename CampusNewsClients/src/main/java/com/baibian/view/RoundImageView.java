@@ -20,7 +20,6 @@ import android.util.TypedValue;
 import android.widget.ImageView;
 
 import com.baibian.R;
-
 public class RoundImageView extends ImageView {
     // ImageView类型
     private int type;
@@ -60,18 +59,18 @@ public class RoundImageView extends ImageView {
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
         // 获取自定义属性值
-        TypedArray array = context.getTheme().obtainStyledAttributes(attrs,R.styleable.RoundImageView,defStyle, 0);
+        TypedArray array = context.getTheme().obtainStyledAttributes(attrs,R.styleable.SpringIndicator,defStyle, 0);
         int count = array.getIndexCount();
         for (int i = 0; i < count; i++) {
             int attr = array.getIndex(i);
             switch (attr) {
-                case R.styleable.RoundImageView_borderRadius:
+                case R.styleable.SpringIndicator_RoundImageView_borderRadius:
                     // 获取圆角大小
-                    mBorderRadius = array.getDimensionPixelSize(R.styleable.RoundImageView_borderRadius, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, BORDER_RADIUS_DEFAULT, getResources().getDisplayMetrics()));
+                    mBorderRadius = array.getDimensionPixelSize(R.styleable.SpringIndicator_RoundImageView_borderRadius, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, BORDER_RADIUS_DEFAULT, getResources().getDisplayMetrics()));
                     break;
-                case R.styleable.RoundImageView_imageType:
+                case R.styleable.SpringIndicator_RoundImageView_imageType:
                     // 获取ImageView的类型
-                    type = array.getInt(R.styleable.RoundImageView_imageType, TYPE_CIRCLE);
+                    type = array.getInt(R.styleable.SpringIndicator_RoundImageView_imageType, TYPE_CIRCLE);
                     break;
             }
         }

@@ -1,7 +1,0 @@
-#Fri Jul 21 17:30:30 GMT+08:00 2017
-base.0=D\:\\MyAndroid\\CampusNews4\\CampusNewsClients\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_fba0e0795260db18e781e00962f7b1e2638f8121
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=D\:\\MyAndroid\\CampusNews4\\CampusNewsClients\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_4ae38cda40ffc0ba5e375b0f463e41515c9df617\\classes.dex
-base.1=D\:\\MyAndroid\\CampusNews4\\CampusNewsClients\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_4ae38cda40ffc0ba5e375b0f463e41515c9df617
-file.0=D\:\\MyAndroid\\CampusNews4\\CampusNewsClients\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_fba0e0795260db18e781e00962f7b1e2638f8121\\classes.dex

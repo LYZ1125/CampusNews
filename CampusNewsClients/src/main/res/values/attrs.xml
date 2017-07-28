@@ -25,6 +25,9 @@
 
         <!--min indicator radius when moving-->
         <attr name="siRadiusMin" format="dimension"/>
+        <!--I don't know whether it's the right way to fix the non-attr problem for the one who are dealing with this, thus I add the following 2 lines to deal with the bug  -->
+        <attr name="RoundImageView_borderRadius" format="dimension"/>
+        <attr name="RoundImageView_imageType" format="reference|integer"/>
 
     </declare-styleable>
 

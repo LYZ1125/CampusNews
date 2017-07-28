@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/point_text"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_centerVertical="true"
+        android:src="@color/colorAccent"/>
+    <TextView
+        android:id="@+id/achievement_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="十分厉害"
+        android:textColor="#000000"
+        android:layout_toRightOf="@id/point_text"
+        android:layout_marginStart="10dp"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"/>
+    <View
+        android:layout_below="@id/achievement_content"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+</RelativeLayout>

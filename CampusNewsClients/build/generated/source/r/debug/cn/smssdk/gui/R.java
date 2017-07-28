@@ -36,15 +36,15 @@ public final class R {
         public static final int smssdk_country_group_z = 0x7f090019;
     }
     public static final class color {
-        public static final int smssdk_black = 0x7f0e01e2;
-        public static final int smssdk_gray = 0x7f0e01e3;
-        public static final int smssdk_gray_press = 0x7f0e01e4;
-        public static final int smssdk_lv_item_divider = 0x7f0e01e5;
-        public static final int smssdk_lv_item_selector = 0x7f0e01e6;
-        public static final int smssdk_lv_title_color = 0x7f0e01e7;
-        public static final int smssdk_lv_tv_color = 0x7f0e01e8;
-        public static final int smssdk_transparent = 0x7f0e01e9;
-        public static final int smssdk_white = 0x7f0e01ea;
+        public static final int smssdk_black = 0x7f0e01e3;
+        public static final int smssdk_gray = 0x7f0e01e4;
+        public static final int smssdk_gray_press = 0x7f0e01e5;
+        public static final int smssdk_lv_item_divider = 0x7f0e01e6;
+        public static final int smssdk_lv_item_selector = 0x7f0e01e7;
+        public static final int smssdk_lv_title_color = 0x7f0e01e8;
+        public static final int smssdk_lv_tv_color = 0x7f0e01e9;
+        public static final int smssdk_transparent = 0x7f0e01ea;
+        public static final int smssdk_white = 0x7f0e01eb;
     }
     public static final class drawable {
         public static final int smssdk_back_arrow = 0x7f02018d;
