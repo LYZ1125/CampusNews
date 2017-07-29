@@ -1448,6 +1448,7 @@
     <dimen name="feedback_avatar_size">30.0dip</dimen>
     <dimen name="feedback_image_padding">180.0dip</dimen>
     <dimen name="feedback_sumbit_thumbnail_size">50.0dip</dimen>
+    <dimen name="gap_in_user_information">7dp</dimen>
     <dimen name="head_size">40.0dip</dimen>
     <dimen name="header_footer_left_right_padding">30.0dip</dimen>
     <dimen name="header_footer_top_bottom_padding">12.0dip</dimen>
@@ -1537,6 +1538,9 @@
     <dimen name="top_category_height">40.0dip</dimen>
     <dimen name="top_category_scroll_item_margin">8.0dip</dimen>
     <dimen name="top_category_scroll_text_padding">5.0dip</dimen>
+    <dimen name="user_information_imageview_padding_right">10dp</dimen>
+    <dimen name="user_information_margin_start">22dp</dimen>
+    <dimen name="user_large_text_size">18sp</dimen>
     <dimen name="widget_margin">8.0dip</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
@@ -1632,6 +1636,7 @@
     <string name="drawer_btn_rss">频道管理</string>
     <string name="drawer_right_logout_hint_text">"登录后 可关注好友评论和收藏        （测试项目，严禁传播；如有侵权请联系QQ1142182057删除。）"</string>
     <string name="drawer_right_tip_no_login">未登录</string>
+    <string name="edit_personal_signal">编辑个性签名</string>
     <string name="exit_not_account">注销当前账号</string>
     <string name="favorite_btn_cancel">取消</string>
     <string name="favorite_btn_delete">删除</string>
@@ -1869,6 +1874,7 @@
     <string name="text_point">·</string>
     <string name="text_topic">人权天赋还是取决自己</string>
     <string name="timeout">网络错误，请检查网络</string>
+    <string name="user_share_divider_text">·我的分享·</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

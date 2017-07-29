@@ -45,5 +45,4 @@ dependencies {
     compile 'co.lujun:androidtagview:1.1.0'
     compile 'com.github.jd-alexander:LikeButton:0.2.0'
     compile 'de.hdodenhof:circleimageview:2.1.0'
-
 }

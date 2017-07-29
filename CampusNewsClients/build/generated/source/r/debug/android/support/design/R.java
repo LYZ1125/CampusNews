@@ -563,31 +563,31 @@ public final class R {
         public static final int design_tab_text_size_2line = 0x7f0a008d;
         public static final int disabled_alpha_material_dark = 0x7f0a009a;
         public static final int disabled_alpha_material_light = 0x7f0a009b;
-        public static final int highlight_alpha_material_colored = 0x7f0a00a9;
-        public static final int highlight_alpha_material_dark = 0x7f0a00aa;
-        public static final int highlight_alpha_material_light = 0x7f0a00ab;
-        public static final int hint_alpha_material_dark = 0x7f0a00ac;
-        public static final int hint_alpha_material_light = 0x7f0a00ad;
-        public static final int hint_pressed_alpha_material_dark = 0x7f0a00ae;
-        public static final int hint_pressed_alpha_material_light = 0x7f0a00af;
-        public static final int item_touch_helper_max_drag_scroll_per_frame = 0x7f0a00bc;
-        public static final int item_touch_helper_swipe_escape_max_velocity = 0x7f0a00bd;
-        public static final int item_touch_helper_swipe_escape_velocity = 0x7f0a00be;
-        public static final int notification_action_icon_size = 0x7f0a00c2;
-        public static final int notification_action_text_size = 0x7f0a00c3;
-        public static final int notification_big_circle_margin = 0x7f0a00c4;
+        public static final int highlight_alpha_material_colored = 0x7f0a00aa;
+        public static final int highlight_alpha_material_dark = 0x7f0a00ab;
+        public static final int highlight_alpha_material_light = 0x7f0a00ac;
+        public static final int hint_alpha_material_dark = 0x7f0a00ad;
+        public static final int hint_alpha_material_light = 0x7f0a00ae;
+        public static final int hint_pressed_alpha_material_dark = 0x7f0a00af;
+        public static final int hint_pressed_alpha_material_light = 0x7f0a00b0;
+        public static final int item_touch_helper_max_drag_scroll_per_frame = 0x7f0a00bd;
+        public static final int item_touch_helper_swipe_escape_max_velocity = 0x7f0a00be;
+        public static final int item_touch_helper_swipe_escape_velocity = 0x7f0a00bf;
+        public static final int notification_action_icon_size = 0x7f0a00c3;
+        public static final int notification_action_text_size = 0x7f0a00c4;
+        public static final int notification_big_circle_margin = 0x7f0a00c5;
         public static final int notification_content_margin_start = 0x7f0a001b;
-        public static final int notification_large_icon_height = 0x7f0a00c5;
-        public static final int notification_large_icon_width = 0x7f0a00c6;
+        public static final int notification_large_icon_height = 0x7f0a00c6;
+        public static final int notification_large_icon_width = 0x7f0a00c7;
         public static final int notification_main_column_padding_top = 0x7f0a001c;
         public static final int notification_media_narrow_margin = 0x7f0a001d;
-        public static final int notification_right_icon_size = 0x7f0a00c7;
+        public static final int notification_right_icon_size = 0x7f0a00c8;
         public static final int notification_right_side_padding_top = 0x7f0a0019;
-        public static final int notification_small_icon_background_padding = 0x7f0a00c8;
-        public static final int notification_small_icon_size_as_large = 0x7f0a00c9;
-        public static final int notification_subtext_size = 0x7f0a00ca;
-        public static final int notification_top_pad = 0x7f0a00cb;
-        public static final int notification_top_pad_large_text = 0x7f0a00cc;
+        public static final int notification_small_icon_background_padding = 0x7f0a00c9;
+        public static final int notification_small_icon_size_as_large = 0x7f0a00ca;
+        public static final int notification_subtext_size = 0x7f0a00cb;
+        public static final int notification_top_pad = 0x7f0a00cc;
+        public static final int notification_top_pad_large_text = 0x7f0a00cd;
     }
     public static final class drawable {
         public static final int abc_ab_share_pack_mtrl_alpha = 0x7f020000;
@@ -776,7 +776,7 @@ public final class R {
         public static final int line3 = 0x7f0f019d;
         public static final int listMode = 0x7f0f0010;
         public static final int list_item = 0x7f0f0055;
-        public static final int masked = 0x7f0f01df;
+        public static final int masked = 0x7f0f01e7;
         public static final int media_actions = 0x7f0f0190;
         public static final int middle = 0x7f0f003f;
         public static final int mini = 0x7f0f003d;
@@ -851,7 +851,7 @@ public final class R {
         public static final int up = 0x7f0f000e;
         public static final int useLogo = 0x7f0f0019;
         public static final int view_offset_helper = 0x7f0f000f;
-        public static final int visible = 0x7f0f01de;
+        public static final int visible = 0x7f0f01e6;
         public static final int withText = 0x7f0f0044;
         public static final int wrap_content = 0x7f0f002d;
     }
@@ -963,11 +963,11 @@ public final class R {
         public static final int appbar_scrolling_view_behavior = 0x7f0800d0;
         public static final int bottom_sheet_behavior = 0x7f0800d1;
         public static final int character_counter_pattern = 0x7f0800d3;
-        public static final int password_toggle_content_description = 0x7f0800fe;
-        public static final int path_password_eye = 0x7f0800ff;
-        public static final int path_password_eye_mask_strike_through = 0x7f080100;
-        public static final int path_password_eye_mask_visible = 0x7f080101;
-        public static final int path_password_strike_through = 0x7f080102;
+        public static final int password_toggle_content_description = 0x7f0800ff;
+        public static final int path_password_eye = 0x7f080100;
+        public static final int path_password_eye_mask_strike_through = 0x7f080101;
+        public static final int path_password_eye_mask_visible = 0x7f080102;
+        public static final int path_password_strike_through = 0x7f080103;
         public static final int search_menu_title = 0x7f080013;
         public static final int status_bar_notification_info_overflow = 0x7f080014;
     }

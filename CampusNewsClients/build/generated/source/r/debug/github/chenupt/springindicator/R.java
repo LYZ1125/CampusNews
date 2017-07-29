@@ -290,9 +290,9 @@ public final class R {
         public static final int abc_text_size_title_material_toolbar = 0x7f0a0004;
         public static final int disabled_alpha_material_dark = 0x7f0a009a;
         public static final int disabled_alpha_material_light = 0x7f0a009b;
-        public static final int si_default_radius_max = 0x7f0a00d5;
-        public static final int si_default_radius_min = 0x7f0a00d6;
-        public static final int si_default_text_size = 0x7f0a00d7;
+        public static final int si_default_radius_max = 0x7f0a00d6;
+        public static final int si_default_radius_min = 0x7f0a00d7;
+        public static final int si_default_text_size = 0x7f0a00d8;
     }
     public static final class drawable {
         public static final int abc_btn_check_material = 0x7f020003;

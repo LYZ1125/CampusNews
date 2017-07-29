@@ -1,6 +1,5 @@
 package com.baibian.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -15,28 +14,32 @@ import android.provider.MediaStore;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baibian.R;
 import com.baibian.adapter.Users_Viwepager_Adapter;
+import com.baibian.bean.PeriodicalItem;
 import com.baibian.tool.HttpTool;
 import com.baibian.tool.ToastTools;
-import com.baibian.tool.UI_Tools;
-import com.baibian.view.AchievementView;
-import com.baibian.view.PeriodicalCoverView;
 import com.flyco.dialog.listener.OnOperItemClickL;
 import com.flyco.dialog.widget.ActionSheetDialog;
 import com.squareup.okhttp.Response;
@@ -54,7 +57,7 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class UsersImformationActivity extends AppCompatActivity implements View.OnClickListener{
+public class UsersImformationActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener{
     private ImageView user_information_edit;
     private Button BB_state_btn;
     private Button BB_imformation_btn;
@@ -75,11 +78,31 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
     private ImageView likeButton;
     private TextView backNav;
     private Toolbar toolbar;
-    private LinearLayout shareLinearLayout;
-    private LinearLayout achieveLinearLayout;
+
+    private RecyclerView periodicalRecyView;
+    private PeriodicalAdapter periodicalAdapter;
+    private List<PeriodicalItem> periodicalItems;
+
+    private LinearLayout personalInformationDebateLayout;
+    private LinearLayout userInformationSwitchBtns;
+
+    private TextView switchToSwitches;
+    private TextView switchBack;
+
+    private Switch debateTopicSwitch;
+    private Switch debatePointSwitch;
+    private Switch debatePresentationSwitch;
+
+    private RelativeLayout myTopicLayout;
+    private RelativeLayout myPointLayout;
+    private RelativeLayout myPresentationLayout;
+
+    private SharedPreferences isSwitchCheckedPreferences;
     private String saveImageShared;
-    public String path;
     final private String[] items = {"Scoop", "Capture", "Chosen from album"};
+
+    public String path;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,9 +115,58 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
             StrictMode.setThreadPolicy(policy);
         }
         initview();
-        /*init_viewpager();//???viewpager??????
-    */}
+        initPersonalInfoCheckedVisible();
+        /*init_viewpager();//???viewpager??????*/
+    }
 
+    private void initPersonalInfoCheckedVisible() {
+
+        if (!isSwitchCheckedPreferences.getBoolean("is_debate_topic_checked", false)){
+            myTopicLayout.setVisibility(View.GONE);
+            debateTopicSwitch.setChecked(false);
+        }
+        if (!isSwitchCheckedPreferences.getBoolean("is_debate_point_checked", false)){
+            myPointLayout.setVisibility(View.GONE);
+            debatePointSwitch.setChecked(false);
+        }
+        if (!isSwitchCheckedPreferences.getBoolean("is_debate_presentation_checked", false)){
+            myPresentationLayout.setVisibility(View.GONE);
+            debatePresentationSwitch.setChecked(false);
+        }
+    }
+
+    class PeriodicalAdapter extends RecyclerView.Adapter<PeriodicalAdapter.MyViewHolder>{
+
+        @Override
+        public PeriodicalAdapter.MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+
+            return new MyViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.periodical_cover_view_layout, viewGroup, false));
+        }
+
+        @Override
+        public void onBindViewHolder(PeriodicalAdapter.MyViewHolder myViewHolder, int position) {
+            myViewHolder.tv.setText(periodicalItems.get(position).getTextContent());
+//          Glide with context load pictures into iv;
+        }
+
+        @Override
+        public int getItemCount() {
+            return periodicalItems.size();
+        }
+
+        class MyViewHolder extends RecyclerView.ViewHolder{
+
+            TextView tv;
+
+            ImageView iv;
+            MyViewHolder(View itemView) {
+                super(itemView);
+                tv = (TextView) itemView.findViewById(R.id.periodical_text_content);
+                iv = (ImageView) itemView.findViewById(R.id.periodical_image_cover);
+            }
+
+        }
+    }
     private void initview() {
         /*choise_direction_back = (Button) findViewById(R.id.choise_direction_back);
         users_imformation_pager = (ViewPager) findViewById(R.id.users_imformation_pager);
@@ -108,13 +180,32 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         user_information_edit.setOnClickListener(this);
 *//*
         user_information_all = (LinearLayout) findViewById(R.id.user_information_all);*/
+
+        isSwitchCheckedPreferences = getSharedPreferences("IS_SWITCH_CHECKED", MODE_PRIVATE);
+
+        initRecyItemsData();
+
         userPortrait = (CircleImageView) findViewById(R.id.user_portrait);
         editPersonalSignal = (TextView) findViewById(R.id.edit_personal_signal);
-        likeButton = (ImageView) findViewById(R.id.like_button);
+//        likeButton = (ImageView) findViewById(R.id.like_button);
         backNav = (TextView) findViewById(R.id.back_nav_toolbar);
         toolbar = (Toolbar) findViewById(R.id.user_tool_bar);
-        shareLinearLayout = (LinearLayout) findViewById(R.id.share_linear_layout);
-        achieveLinearLayout = (LinearLayout) findViewById(R.id.achievements_linear_layout);
+        personalInformationDebateLayout = (LinearLayout) findViewById(R.id.personal_information_on_debate_layout);
+        userInformationSwitchBtns = (LinearLayout) findViewById(R.id.user_information_toggle_btn_layout);
+        switchToSwitches = (TextView) findViewById(R.id.switch_to_toggle_buttons);
+        switchBack = (TextView) findViewById(R.id.switch_back_to_information);
+        debateTopicSwitch = (Switch) findViewById(R.id.debate_topic_switch);
+        debatePointSwitch = (Switch) findViewById(R.id.debate_point_switch);
+        debatePresentationSwitch = (Switch) findViewById(R.id.debate_presentation_switch);
+        myTopicLayout = (RelativeLayout) findViewById(R.id.my_topic_holder_layout);
+        myPointLayout = (RelativeLayout) findViewById(R.id.my_point_holder_layout);
+        myPresentationLayout = (RelativeLayout) findViewById(R.id.my_presentation_holder_layout);
+        periodicalRecyView = (RecyclerView) findViewById(R.id.periodical_recycler_view) ;
+
+
+
+        initRecyclerView();
+
         /**
          * Here to support my toolbar I switch AppTheme to NoActionbar in AndroidManifest.
          * In any case if this switch will make bugs unknown to me presently in the future
@@ -126,31 +217,79 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
             actionBar.setDisplayHomeAsUpEnabled(false);
             actionBar.setTitle("");
         }
+
+        debateTopicSwitch.setOnCheckedChangeListener(this);
+        debatePointSwitch.setOnCheckedChangeListener(this);
+        debatePresentationSwitch.setOnCheckedChangeListener(this);
+
+        switchToSwitches.setOnClickListener(this);
+        switchBack.setOnClickListener(this);
         backNav.setOnClickListener(this);
         userPortrait.setOnClickListener(this);
         editPersonalSignal.setOnClickListener(this);
-        likeButton.setOnClickListener(this);
+//        likeButton.setOnClickListener(this);
         path= Environment.getExternalStorageDirectory().getAbsolutePath()+"/a.png";
         userPortrait.setImageBitmap(getSaveImageShared());
-        /**
-         * Temporarily add view in this way since I don't know in what way would the "periodical" be loaded
-         * maybe methods will be written for changing image, title and subtitle.
-         * Wrong margin.
-         */
-        PeriodicalCoverView coverTemp1 = new PeriodicalCoverView(this);
-        PeriodicalCoverView coverTemp2 = new PeriodicalCoverView(this);
-        shareLinearLayout.addView(coverTemp1);
-        shareLinearLayout.addView(coverTemp2);
-
-        AchievementView achievement1 = new AchievementView(this);
-        AchievementView achievement2 = new AchievementView(this);
-        achievement1.achieves.setText("五连绝世");
-        achieveLinearLayout.addView(achievement1);
-        achieveLinearLayout.addView(achievement2);
 /*        UI_Tools ui_tools=new UI_Tools();
         ui_tools.CancelFocusOne(this,user_information_all,personalized_signature_edit);*/
         init_information();
     }
+
+    private void initRecyclerView() {
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        llm.setOrientation(LinearLayoutManager.HORIZONTAL);
+        periodicalRecyView.setLayoutManager(llm);
+        periodicalRecyView.setAdapter(periodicalAdapter = new PeriodicalAdapter());
+    }
+
+    private void initRecyItemsData() {
+        periodicalItems = new ArrayList<>();
+        for (int i = 0; i < 7; i++){
+            PeriodicalItem tempPeriodicalItem = new PeriodicalItem();
+            //TODO with text contents and image source of the item
+            tempPeriodicalItem.setTextContent("hiahiahiahiahia");
+            periodicalItems.add(tempPeriodicalItem);
+        }
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+        SharedPreferences.Editor editor = isSwitchCheckedPreferences.edit();
+
+        switch (buttonView.getId()){
+            case R.id.debate_topic_switch:
+                if (isChecked){
+                    myTopicLayout.setVisibility(View.VISIBLE);
+                }else {
+                    myTopicLayout.setVisibility(View.GONE);
+                }
+                editor.putBoolean("is_debate_topic_checked", isChecked);
+                editor.apply();
+                break;
+            case R.id.debate_point_switch:
+                if (isChecked){
+                    myPointLayout.setVisibility(View.VISIBLE);
+                }else {
+                    myPointLayout.setVisibility(View.GONE);
+                }
+                editor.putBoolean("is_debate_point_checked", isChecked);
+                editor.apply();
+                break;
+            case R.id.debate_presentation_switch:
+                if (isChecked){
+                    myPresentationLayout.setVisibility(View.VISIBLE);
+                }else {
+                    myPresentationLayout.setVisibility(View.GONE);
+                }
+                editor.putBoolean("is_debate_presentation_checked", isChecked);
+                editor.apply();
+                break;
+            default:
+                break;
+        }
+    }
+
 
     @Override
     public void onClick(View view) {
@@ -161,10 +300,18 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
                 finish();
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 break;
-*/
+*//*
             case R.id.like_button:
 
+                break;*/
+
+            case R.id.switch_to_toggle_buttons:
+                personalInformationDebateLayout.setVisibility(View.GONE);
+                userInformationSwitchBtns.setVisibility(View.VISIBLE);
                 break;
+            case R.id.switch_back_to_information:
+                userInformationSwitchBtns.setVisibility(View.GONE);
+                personalInformationDebateLayout.setVisibility(View.VISIBLE);
             case R.id.back_nav_toolbar:
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 break;
@@ -217,6 +364,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
 ////                Log.d("传过去后",result_usersString);
 //                ToastTools.ToastShow(result_usersString);
 //                parseResultJSONObject(result_usersString);
+
                 init_information();
                 break;
             /**
@@ -432,7 +580,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         mBitmap.compress(Bitmap.CompressFormat.PNG, 80, byteArrayOutputStream);
         byte[] bytes = byteArrayOutputStream.toByteArray();
-        saveImageShared = new String(Base64.encodeToString(bytes, Base64.DEFAULT));
+        saveImageShared = Base64.encodeToString(bytes, Base64.DEFAULT);
         SharedPreferences sharedPreferences = getSharedPreferences("testSP", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("image", saveImageShared);

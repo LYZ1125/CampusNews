@@ -13,9 +13,7 @@
         android:id="@+id/user_information_all"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:divider="#000000"
-        android:showDividers="middle">
+        android:orientation="vertical">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -23,7 +21,7 @@
                 android:id="@+id/user_tool_bar_layout"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@color/colorAccent"
+                android:background="#47bafe"
                 android:orientation="vertical">
 
                 <android.support.v7.widget.Toolbar
@@ -45,6 +43,7 @@
                         android:textSize="22sp"
                         android:gravity="center_vertical"/>
                 </android.support.v7.widget.Toolbar>
+<!--
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
@@ -56,6 +55,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentBottom="true"/>
                 </RelativeLayout>
+-->
             </LinearLayout>
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -75,286 +75,410 @@
                 android:text="祈梦之子"
                 android:layout_below="@+id/user_portrait"
                 android:layout_centerHorizontal="true" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="220dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/like_amount_textview"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="获赞总数"
-                    android:textSize="18sp"
-                    android:textColor="#000000" />
-
-                <TextView
-                    android:id="@+id/focus_amount_textview"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="关注数"
-                    android:textSize="18sp"
-                    android:textColor="#000000"
-                    android:gravity="center" />
-
-                <TextView
-                    android:id="@+id/focused_amount_textview"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="被关注数"
-                    android:textColor="#000000"
-                    android:textSize="18sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="240dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/like_amount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="888"
-                    android:textSize="18sp"
-                    android:textColor="#000000"
-                    android:gravity="center" />
-
-                <TextView
-                    android:textColor="#000000"
-                    android:id="@+id/focus_amount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="888"
-                    android:textSize="18sp"
-                    android:gravity="center" />
-
-                <TextView
-                    android:id="@+id/focused_account"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="888"
-                    android:textSize="18sp"
-                    android:textColor="#000000"
-                    android:gravity="center" />
-            </LinearLayout>
-        </RelativeLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="123456789"
-                android:textColor="#000000"
-                android:gravity="center_vertical"
-                android:drawableLeft="@drawable/ic_drawer_appstore"
-                android:layout_marginStart="22dp"
-                android:drawablePadding="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="男 18岁 双鱼座"
-                android:textColor="#000000"
-                android:drawableLeft="@drawable/ic_drawer_favorite"
-                android:gravity="center_vertical"
-                android:layout_marginStart="22dp"
-                android:drawablePadding="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="学生"
-                android:textColor="#000000"
-                android:drawableLeft="@drawable/ic_drawer_feedback"
-                android:gravity="center_vertical"
-                android:layout_marginStart="22dp"
-                android:drawablePadding="10dp"/>
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="22dp"
-                android:drawableLeft="@drawable/ic_drawer_message"
-                android:drawablePadding="10dp"
-                android:gravity="center_vertical"
-                android:text="18937018596"
-                android:textColor="#000000" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Lv.7"
-                android:textColor="#000000"
-                android:gravity="center_vertical"
-                android:drawableLeft="@drawable/ic_drawer_offline"
-                android:layout_marginStart="22dp"
-                android:drawablePadding="10dp"/>
             <TextView
                 android:id="@+id/edit_personal_signal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="编辑个性签名"
+                android:text="@string/edit_personal_signal"
                 android:textColor="#000000"
-                android:drawableLeft="@drawable/ic_drawer_pgc"
+                android:layout_below="@id/user_name"
+                android:drawableEnd="@drawable/ic_action_write"
                 android:gravity="center_vertical"
-                android:layout_marginStart="22dp"
-                android:drawablePadding="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:textColor="#000000"
-                android:drawableLeft="@drawable/ic_drawer_setting"
-                android:gravity="center_vertical"
-                android:layout_marginStart="22dp"
-                android:drawablePadding="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="发表期刊"
-                android:textColor="#000000"
-                android:drawableLeft="@drawable/ic_drawer_search"
-                android:gravity="center_vertical"
-                android:layout_marginStart="22dp"
-                android:drawablePadding="10dp"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="5dp"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <View
-                    android:layout_width="50dp"
-                    android:layout_height="1dp"
-                    android:background="@color/colorAccent"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="70dp" />
-
-                <View
-                    android:layout_width="50dp"
-                    android:layout_height="1dp"
-                    android:background="@color/colorAccent"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="70dp"
-                    android:layout_alignParentEnd="true"/>
-                <TextView
-                    android:id="@+id/my_share"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="20sp"
-                    android:gravity="center_horizontal"
-                    android:text="  ·我的分享·  " />
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp" />
             </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="10dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="期刊分享"
-                android:textColor="#000000"
-                android:layout_marginStart="22dp"
-                android:drawableStart="@drawable/ic_drawer_feedback_pressed"
-                android:gravity="center_vertical"
-                android:drawablePadding="10dp" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <View
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"/>
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/share_linear_layout"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/accounts_linear_layout"
                     android:layout_width="match_parent"
-                    android:orientation="vertical">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/like_amount_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="获赞总数"
+                        android:textSize="18sp"
+                        android:textColor="#000000" />
+
+                    <TextView
+                        android:id="@+id/focus_amount_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="关注数"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:id="@+id/focused_amount_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="被关注数"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
                 </LinearLayout>
-            </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="10dp"/>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <View
-                    android:layout_width="50dp"
-                    android:layout_height="1dp"
-                    android:background="@color/colorAccent"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="70dp" />
+                <LinearLayout
+                    android:id="@+id/numbers_linear_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/like_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="888"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:gravity="center" />
 
+                    <TextView
+                        android:textColor="#000000"
+                        android:id="@+id/focus_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="888"
+                        android:textSize="18sp"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:id="@+id/focused_account"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="888"
+                        android:textSize="18sp"
+                        android:textColor="#000000"
+                        android:gravity="center" />
+                </LinearLayout>
                 <View
-                    android:layout_width="50dp"
+                    android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/colorAccent"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="70dp"
-                    android:layout_alignParentEnd="true"/>
+                    android:layout_marginTop="@dimen/gap_in_user_information"
+                    android:layout_marginBottom="@dimen/gap_in_user_information"
+                    android:background="@color/account_account_bind"/>
+
                 <TextView
-                    android:id="@+id/my_achievements"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="20sp"
-                    android:gravity="center_horizontal"
-                    android:text="  ·我的成就·  " />
-            </RelativeLayout>
+                    android:text="西安电子科技大学"
+                    android:textColor="#000000"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/ic_drawer_appstore"
+                    android:layout_marginStart="@dimen/user_information_margin_start"
+                    android:drawablePadding="@dimen/user_information_imageview_padding_right"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="成就"
-                android:textColor="#000000"
-                android:drawableLeft="@drawable/ic_drawer_message"
-                android:gravity="center_vertical"
-                android:layout_marginStart="22dp"
-                android:drawablePadding="10dp"
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <View
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="男 18岁 双鱼座"
+                    android:textColor="#000000"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/ic_drawer_favorite_normal"
+                    android:layout_marginStart="@dimen/user_information_margin_start"
+                    android:drawablePadding="@dimen/user_information_imageview_padding_right"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="陕西省   西安市"
+                    android:textColor="#000000"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/ic_drawer_offline"
+                    android:layout_marginStart="@dimen/user_information_margin_start"
+                    android:drawablePadding="@dimen/user_information_imageview_padding_right"/>
                 <LinearLayout
-                    android:id="@+id/achievements_linear_layout"
+                    android:id="@+id/user_honor_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_drawer_message"
+                        android:paddingRight="@dimen/user_information_imageview_padding_right"
+                        android:layout_marginStart="@dimen/user_information_margin_start"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lv.7"
+                    android:textColor="#000000"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/ic_drawer_offline"
+                    android:layout_marginStart="@dimen/user_information_margin_start"
+                    android:drawablePadding="@dimen/user_information_imageview_padding_right"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/gap_in_user_information"
+                    android:layout_marginBottom="@dimen/gap_in_user_information"
+                    android:background="@color/account_account_bind"/>
+
+                <LinearLayout
+                    android:id="@+id/personal_information_on_debate_layout"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent">
+
+                    <RelativeLayout
+                        android:layout_margin="@dimen/gap_in_user_information"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/switch_to_toggle_buttons"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="向他人展示"
+                            android:textSize="@dimen/user_large_text_size"
+                            android:textColor="#000000"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
+                            android:gravity="center_vertical"
+                            android:drawableLeft="@drawable/ic_action_report" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/my_topic_holder_layout"
+                        android:layout_margin="@dimen/gap_in_user_information"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="我的辩题"
+                            android:textSize="@dimen/user_large_text_size"
+                            android:textColor="#000000"
+                            android:layout_marginLeft="@dimen/user_information_margin_start" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5"
+                            android:textSize="@dimen/user_large_text_size"
+                            android:textColor="#000000"
+                            android:layout_alignParentRight="true"
+
+                            android:drawablePadding="@dimen/user_information_margin_start"
+                            android:drawableRight="@drawable/arrow_drawer" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/my_point_holder_layout"
+                        android:layout_margin="@dimen/gap_in_user_information"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="我的论点"
+                            android:textSize="@dimen/user_large_text_size"
+                            android:textColor="#000000"
+                            android:layout_marginLeft="@dimen/user_information_margin_start" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="55"
+                            android:textSize="@dimen/user_large_text_size"
+                            android:textColor="#000000"
+                            android:layout_alignParentRight="true"
+                            android:drawablePadding="@dimen/user_information_margin_start"
+                            android:drawableRight="@drawable/arrow_drawer" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/my_presentation_holder_layout"
+                        android:layout_margin="@dimen/gap_in_user_information"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="我的发言"
+                            android:textSize="@dimen/user_large_text_size"
+                            android:textColor="#000000"
+                            android:layout_marginLeft="@dimen/user_information_margin_start" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="555"
+                            android:textSize="@dimen/user_large_text_size"
+                            android:textColor="#000000"
+                            android:layout_alignParentRight="true"
+                            android:drawablePadding="@dimen/user_information_margin_start"
+                            android:drawableRight="@drawable/arrow_drawer" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/user_information_toggle_btn_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:orientation="vertical">
 
+                    <RelativeLayout
+                        android:layout_margin="@dimen/gap_in_user_information"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/switch_back_to_information"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="完成"
+                            android:layout_marginRight="@dimen/gap_in_user_information"
+                            android:textColor="#000000"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentTop="true"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/user_large_text_size"
+                            android:drawableLeft="@drawable/ic_drawer_setting" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_margin="@dimen/gap_in_user_information"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="我的辩题"
+                            android:textSize="@dimen/user_large_text_size"
+                            android:textColor="#000000"
+                            android:layout_marginLeft="@dimen/user_information_margin_start" />
+                        <Switch
+                            android:id="@+id/debate_topic_switch"
+                            android:layout_alignParentRight="true"
+                            android:checked="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_margin="@dimen/gap_in_user_information"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="我的论点"
+                            android:textSize="@dimen/user_large_text_size"
+                            android:textColor="#000000"
+                            android:layout_marginLeft="@dimen/user_information_margin_start" />
+
+                        <Switch
+                            android:id="@+id/debate_point_switch"
+                            android:layout_alignParentRight="true"
+                            android:checked="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_margin="@dimen/gap_in_user_information"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="我的发言"
+                            android:textSize="@dimen/user_large_text_size"
+                            android:textColor="#000000"
+                            android:layout_marginLeft="@dimen/user_information_margin_start" />
+
+                        <Switch
+                            android:id="@+id/debate_presentation_switch"
+                            android:layout_alignParentRight="true"
+                            android:checked="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </RelativeLayout>
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/gap_in_user_information"
+                    android:layout_marginBottom="@dimen/gap_in_user_information"
+                    android:background="@color/account_account_bind"/>
+                <RelativeLayout
+                    android:layout_margin="@dimen/gap_in_user_information"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/my_share"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="20sp"
+                        android:gravity="center_horizontal"
+                        android:layout_centerHorizontal="true"
+                        android:text="@string/user_share_divider_text" />
+                    <View
+                        android:layout_width="80dp"
+                        android:layout_height="1dp"
+                        android:background="@color/colorAccent"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/my_share"
+                        android:layout_marginLeft="@dimen/user_information_margin_start"/>
+
+                    <View
+                        android:layout_width="80dp"
+                        android:layout_height="1dp"
+                        android:background="@color/colorAccent"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/user_information_margin_start"
+                        android:layout_toLeftOf="@id/my_share"/>
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="期刊分享"
+                    android:textSize="@dimen/user_large_text_size"
+                    android:drawableLeft="@drawable/ic_drawer_favorite"
+                    android:gravity="center_vertical"
+                    android:textColor="#000000"
+                    android:layout_marginStart="@dimen/user_information_margin_start"
+                    android:drawablePadding="@dimen/user_information_imageview_padding_right"/>
+                <android.support.v7.widget.RecyclerView
+                    android:layout_marginLeft="@dimen/user_information_margin_start"
+                    android:layout_marginRight="@dimen/user_information_margin_start"
+                    android:layout_marginTop="@dimen/gap_in_user_information"
+                    android:id="@+id/periodical_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </android.support.v7.widget.RecyclerView>
             </LinearLayout>
-        </LinearLayout>
-    
+
+
     </LinearLayout>
 
 </ScrollView>
