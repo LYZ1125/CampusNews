@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -39,6 +40,7 @@ import com.baibian.R;
 import com.baibian.adapter.Users_Viwepager_Adapter;
 import com.baibian.bean.PeriodicalItem;
 import com.baibian.tool.HttpTool;
+import com.baibian.tool.SpaceItemDecoration;
 import com.baibian.tool.ToastTools;
 import com.flyco.dialog.listener.OnOperItemClickL;
 import com.flyco.dialog.widget.ActionSheetDialog;
@@ -75,16 +77,18 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
 
     private CircleImageView userPortrait;
     private TextView editPersonalSignal;
-    private ImageView likeButton;
     private TextView backNav;
     private Toolbar toolbar;
 
     private RecyclerView periodicalRecyView;
     private PeriodicalAdapter periodicalAdapter;
+    private LinearLayoutManager llm;
     private List<PeriodicalItem> periodicalItems;
+    private int lastVisibleItem;
 
     private LinearLayout personalInformationDebateLayout;
     private LinearLayout userInformationSwitchBtns;
+    private LinearLayout honorLayout;
 
     private TextView switchToSwitches;
     private TextView switchBack;
@@ -240,21 +244,56 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         myPointLayout = (RelativeLayout) findViewById(R.id.my_point_holder_layout);
         myPresentationLayout = (RelativeLayout) findViewById(R.id.my_presentation_holder_layout);
         periodicalRecyView = (RecyclerView) findViewById(R.id.periodical_recycler_view) ;
+        honorLayout = (LinearLayout) findViewById(R.id.user_honor_layout);
+
+        addHonorImageView(R.drawable.ic_action_favor);
+
+    }
+
+    private void addHonorImageView(int resID) {
+        ImageView tempImage = new ImageView(this);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        tempImage.setImageResource(resID);
+        honorLayout.addView(tempImage, params);
+//        tempImage.setPadding(0, 0, R.dimen.bg_row_padding_right);
     }
 
     private void initRecyclerView() {
-        LinearLayoutManager llm = new LinearLayoutManager(this);
+        llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.HORIZONTAL);
+        periodicalAdapter = new PeriodicalAdapter();
         periodicalRecyView.setLayoutManager(llm);
-        periodicalRecyView.setAdapter(periodicalAdapter = new PeriodicalAdapter());
+        periodicalRecyView.setAdapter(periodicalAdapter);
+        periodicalRecyView.addItemDecoration(new SpaceItemDecoration(15));
+        periodicalRecyView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                if (newState == RecyclerView.SCROLL_STATE_IDLE && lastVisibleItem + 2 >= llm.getItemCount()){
+                    for (int i = 0; i < 3; i++){
+                        PeriodicalItem tempItem = new PeriodicalItem();
+                        tempItem.setTextContent("ruaruaraurauraururauraurauraurau");
+                        periodicalItems.add(tempItem);
+                    }
+                    ToastTools.ToastShow("loading more");
+                    periodicalAdapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                lastVisibleItem = llm.findLastVisibleItemPosition();
+            }
+        });
     }
 
     private void initRecyItemsData() {
         periodicalItems = new ArrayList<>();
-        for (int i = 0; i < 7; i++){
+        for (int i = 0; i < 3; i++){
             PeriodicalItem tempPeriodicalItem = new PeriodicalItem();
             //TODO with text contents and image source of the item
-            tempPeriodicalItem.setTextContent("hiahiahiahiahia");
+            tempPeriodicalItem.setTextContent("hiahiahiahiahiahiahiahiahiahihaihaihaihaihiahiahiahiahai");
             periodicalItems.add(tempPeriodicalItem);
         }
     }
@@ -263,7 +302,10 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
         SharedPreferences.Editor editor = isSwitchCheckedPreferences.edit();
-
+        /**
+         * To test the result I make the switches switch on the user interface.
+         * (originally they should switch the interface that others see rather than the user's)
+         */
         switch (buttonView.getId()){
             case R.id.debate_topic_switch:
                 if (isChecked){
