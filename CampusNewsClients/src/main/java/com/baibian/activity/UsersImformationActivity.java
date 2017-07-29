@@ -119,6 +119,9 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         /*init_viewpager();//???viewpager??????*/
     }
 
+    /**
+     * Set the states of switches before entering the activity
+     */
     private void initPersonalInfoCheckedVisible() {
 
         if (!isSwitchCheckedPreferences.getBoolean("is_debate_topic_checked", false)){
@@ -146,7 +149,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         @Override
         public void onBindViewHolder(PeriodicalAdapter.MyViewHolder myViewHolder, int position) {
             myViewHolder.tv.setText(periodicalItems.get(position).getTextContent());
-//          Glide with context load pictures into iv;
+            //TODO Glide with context load pictures into iv;
         }
 
         @Override
@@ -157,8 +160,8 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         class MyViewHolder extends RecyclerView.ViewHolder{
 
             TextView tv;
-
             ImageView iv;
+
             MyViewHolder(View itemView) {
                 super(itemView);
                 tv = (TextView) itemView.findViewById(R.id.periodical_text_content);
@@ -181,30 +184,11 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
 *//*
         user_information_all = (LinearLayout) findViewById(R.id.user_information_all);*/
 
-        isSwitchCheckedPreferences = getSharedPreferences("IS_SWITCH_CHECKED", MODE_PRIVATE);
 
         initRecyItemsData();
-
-        userPortrait = (CircleImageView) findViewById(R.id.user_portrait);
-        editPersonalSignal = (TextView) findViewById(R.id.edit_personal_signal);
-//        likeButton = (ImageView) findViewById(R.id.like_button);
-        backNav = (TextView) findViewById(R.id.back_nav_toolbar);
-        toolbar = (Toolbar) findViewById(R.id.user_tool_bar);
-        personalInformationDebateLayout = (LinearLayout) findViewById(R.id.personal_information_on_debate_layout);
-        userInformationSwitchBtns = (LinearLayout) findViewById(R.id.user_information_toggle_btn_layout);
-        switchToSwitches = (TextView) findViewById(R.id.switch_to_toggle_buttons);
-        switchBack = (TextView) findViewById(R.id.switch_back_to_information);
-        debateTopicSwitch = (Switch) findViewById(R.id.debate_topic_switch);
-        debatePointSwitch = (Switch) findViewById(R.id.debate_point_switch);
-        debatePresentationSwitch = (Switch) findViewById(R.id.debate_presentation_switch);
-        myTopicLayout = (RelativeLayout) findViewById(R.id.my_topic_holder_layout);
-        myPointLayout = (RelativeLayout) findViewById(R.id.my_point_holder_layout);
-        myPresentationLayout = (RelativeLayout) findViewById(R.id.my_presentation_holder_layout);
-        periodicalRecyView = (RecyclerView) findViewById(R.id.periodical_recycler_view) ;
-
-
-
+        initVariousViews();
         initRecyclerView();
+        initListenersOnView();
 
         /**
          * Here to support my toolbar I switch AppTheme to NoActionbar in AndroidManifest.
@@ -218,21 +202,44 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
             actionBar.setTitle("");
         }
 
+        isSwitchCheckedPreferences = getSharedPreferences("IS_SWITCH_CHECKED", MODE_PRIVATE);
+        path= Environment.getExternalStorageDirectory().getAbsolutePath()+"/a.png";
+        userPortrait.setImageBitmap(getSaveImageShared());
+
+
+        /*        UI_Tools ui_tools=new UI_Tools();
+        ui_tools.CancelFocusOne(this,user_information_all,personalized_signature_edit);*/
+
+        init_information();
+    }
+
+    private void initListenersOnView() {
         debateTopicSwitch.setOnCheckedChangeListener(this);
         debatePointSwitch.setOnCheckedChangeListener(this);
         debatePresentationSwitch.setOnCheckedChangeListener(this);
-
         switchToSwitches.setOnClickListener(this);
         switchBack.setOnClickListener(this);
         backNav.setOnClickListener(this);
         userPortrait.setOnClickListener(this);
         editPersonalSignal.setOnClickListener(this);
-//        likeButton.setOnClickListener(this);
-        path= Environment.getExternalStorageDirectory().getAbsolutePath()+"/a.png";
-        userPortrait.setImageBitmap(getSaveImageShared());
-/*        UI_Tools ui_tools=new UI_Tools();
-        ui_tools.CancelFocusOne(this,user_information_all,personalized_signature_edit);*/
-        init_information();
+    }
+
+    private void initVariousViews() {
+        userPortrait = (CircleImageView) findViewById(R.id.user_portrait);
+        editPersonalSignal = (TextView) findViewById(R.id.edit_personal_signal);
+        backNav = (TextView) findViewById(R.id.back_nav_toolbar);
+        toolbar = (Toolbar) findViewById(R.id.user_tool_bar);
+        personalInformationDebateLayout = (LinearLayout) findViewById(R.id.personal_information_on_debate_layout);
+        userInformationSwitchBtns = (LinearLayout) findViewById(R.id.user_information_toggle_btn_layout);
+        switchToSwitches = (TextView) findViewById(R.id.switch_to_toggle_buttons);
+        switchBack = (TextView) findViewById(R.id.switch_back_to_information);
+        debateTopicSwitch = (Switch) findViewById(R.id.debate_topic_switch);
+        debatePointSwitch = (Switch) findViewById(R.id.debate_point_switch);
+        debatePresentationSwitch = (Switch) findViewById(R.id.debate_presentation_switch);
+        myTopicLayout = (RelativeLayout) findViewById(R.id.my_topic_holder_layout);
+        myPointLayout = (RelativeLayout) findViewById(R.id.my_point_holder_layout);
+        myPresentationLayout = (RelativeLayout) findViewById(R.id.my_presentation_holder_layout);
+        periodicalRecyView = (RecyclerView) findViewById(R.id.periodical_recycler_view) ;
     }
 
     private void initRecyclerView() {
