@@ -62,6 +62,9 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UsersImformationActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener{
+    private static final int CHANGE_IMAGE = 1;
+    private static final int FROM_CAMERA = 2;
+    private static final int FROM_ALBUM = 3;
     private ImageView user_information_edit;
     private Button BB_state_btn;
     private Button BB_imformation_btn;
@@ -108,6 +111,8 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
     final private String[] items = {"Scoop", "Capture", "Chosen from album"};
 
     public String path;
+
+    private Handler imageLoadHandler;
 
 
     @Override
@@ -158,12 +163,13 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         }
 
         @Override
-        public void onBindViewHolder(PeriodicalAdapter.MyViewHolder myViewHolder, final int position) {
+        public void onBindViewHolder(final PeriodicalAdapter.MyViewHolder myViewHolder,  int position) {
             myViewHolder.tv.setText(periodicalItems.get(position).getTextContent());
             if (mItemListener != null){
                 myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        int position = myViewHolder.getLayoutPosition();
                         mItemListener.onItemClick(v, position);
                     }
                 });
@@ -214,26 +220,62 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
          * In any case if this switch will make bugs unknown to me presently in the future
          * I would turn toolbar into RelativeLayout as the previous one.
          */
+        initToolBar();
+
+        isSwitchCheckedPreferences = getSharedPreferences("IS_SWITCH_CHECKED", MODE_PRIVATE);
+
+        initUserPortraitInAdvance();
+        init_information();
+        /*        UI_Tools ui_tools=new UI_Tools();
+        ui_tools.CancelFocusOne(this,user_information_all,personalized_signature_edit);*/
+
+    }
+
+    private void initToolBar() {
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(false);
             actionBar.setTitle("");
         }
+    }
 
-        isSwitchCheckedPreferences = getSharedPreferences("IS_SWITCH_CHECKED", MODE_PRIVATE);
+    /**
+     * To initialize the user's portrait in advance
+     */
+    private void initUserPortraitInAdvance() {
 
-        /**
-         * To initialize the user's portrait in advance
-         */
         path= Environment.getExternalStorageDirectory().getAbsolutePath()+"/a.png";
-        userPortrait.setImageBitmap(getSaveImageShared());
-
-
-        /*        UI_Tools ui_tools=new UI_Tools();
-        ui_tools.CancelFocusOne(this,user_information_all,personalized_signature_edit);*/
-
-        init_information();
+        imageLoadHandler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                switch (msg.what){
+                    case CHANGE_IMAGE:
+                        userPortrait.setImageBitmap(getSaveImageShared());
+                        break;
+                    case FROM_CAMERA:
+                        Bundle bundleFromCamera = msg.getData();
+                        Bitmap bitmap = bundleFromCamera.getParcelable("data");
+                        setSaveImageShared(bitmap);
+                        userPortrait.setImageBitmap(bitmap);
+                        break;
+                    case FROM_ALBUM:
+                        Bundle bundleFromAlbum = msg.getData();
+                        Uri uri = bundleFromAlbum.getParcelable("image_uri");
+                        getImg(uri);
+                }
+            }
+        };
+        new Thread(){
+            @Override
+            public void run() {
+                Message msg = new Message();
+                msg.what = CHANGE_IMAGE;
+                imageLoadHandler.sendMessage(msg);
+                Log.d("thread_test", "Thread Testing");
+            }
+        }.start();
     }
 
     private void initListenersOnView() {
@@ -449,9 +491,10 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
             case 2:
                 if (data != null) {
                     Bundle bundle = data.getExtras();
-                    Bitmap bitmap = bundle.getParcelable("data");
-                    setSaveImageShared(bitmap);
-                    userPortrait.setImageBitmap(bitmap);
+                    Message camMeg = new Message();
+                    camMeg.what = FROM_CAMERA;
+                    camMeg.setData(bundle);
+                    imageLoadHandler.sendMessage(camMeg);
                 } else {
                     return;
                 }
@@ -459,7 +502,12 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
             case 3:
                 if (data != null) {
                     Uri uri = data.getData();
-                    getImg(uri);
+                    Message alMsg = new Message();
+                    alMsg.what = FROM_ALBUM;
+                    Bundle bundle = new Bundle();
+                    bundle.putParcelable("image_uri", uri);
+                    alMsg.setData(bundle);
+                    imageLoadHandler.sendMessage(alMsg);
                 } else {
                     return;
                 }
@@ -670,7 +718,6 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         Bitmap bitmap = BitmapFactory.decodeStream(byteArrayInputStream);
         return bitmap;
     }
-
     private void getImg(Uri uri) {
         try {
             InputStream inputStream = getContentResolver().openInputStream(uri);
