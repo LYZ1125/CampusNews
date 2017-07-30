@@ -121,4 +121,5 @@
     <dimen name="user_information_margin_start">22dp</dimen>
     <dimen name="user_information_imageview_padding_right">10dp</dimen>
     <dimen name="user_large_text_size">18sp</dimen>
+    <dimen name="portrait_size">100dp</dimen>
 </resources>

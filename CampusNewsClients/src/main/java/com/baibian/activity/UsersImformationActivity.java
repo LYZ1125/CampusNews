@@ -39,9 +39,11 @@ import android.widget.Toast;
 import com.baibian.R;
 import com.baibian.adapter.Users_Viwepager_Adapter;
 import com.baibian.bean.PeriodicalItem;
+import com.baibian.listener.OnPeriodicalItemClickListener;
 import com.baibian.tool.HttpTool;
 import com.baibian.tool.SpaceItemDecoration;
 import com.baibian.tool.ToastTools;
+import com.baibian.view.TipView;
 import com.flyco.dialog.listener.OnOperItemClickL;
 import com.flyco.dialog.widget.ActionSheetDialog;
 import com.squareup.okhttp.Response;
@@ -142,8 +144,13 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         }
     }
 
-    class PeriodicalAdapter extends RecyclerView.Adapter<PeriodicalAdapter.MyViewHolder>{
+    class PeriodicalAdapter extends RecyclerView.Adapter<PeriodicalAdapter.MyViewHolder> {
 
+        private OnPeriodicalItemClickListener mItemListener;
+
+        public void setOnClickItemListener(OnPeriodicalItemClickListener listener){
+            mItemListener = listener;
+        }
         @Override
         public PeriodicalAdapter.MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
 
@@ -151,8 +158,16 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         }
 
         @Override
-        public void onBindViewHolder(PeriodicalAdapter.MyViewHolder myViewHolder, int position) {
+        public void onBindViewHolder(PeriodicalAdapter.MyViewHolder myViewHolder, final int position) {
             myViewHolder.tv.setText(periodicalItems.get(position).getTextContent());
+            if (mItemListener != null){
+                myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mItemListener.onItemClick(v, position);
+                    }
+                });
+            }
             //TODO Glide with context load pictures into iv;
         }
 
@@ -207,6 +222,10 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         }
 
         isSwitchCheckedPreferences = getSharedPreferences("IS_SWITCH_CHECKED", MODE_PRIVATE);
+
+        /**
+         * To initialize the user's portrait in advance
+         */
         path= Environment.getExternalStorageDirectory().getAbsolutePath()+"/a.png";
         userPortrait.setImageBitmap(getSaveImageShared());
 
@@ -262,6 +281,12 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.HORIZONTAL);
         periodicalAdapter = new PeriodicalAdapter();
+        periodicalAdapter.setOnClickItemListener(new OnPeriodicalItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                ToastTools.ToastShow("Test" + position);
+            }
+        });
         periodicalRecyView.setLayoutManager(llm);
         periodicalRecyView.setAdapter(periodicalAdapter);
         periodicalRecyView.addItemDecoration(new SpaceItemDecoration(15));
@@ -361,7 +386,9 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
             case R.id.switch_back_to_information:
                 userInformationSwitchBtns.setVisibility(View.GONE);
                 personalInformationDebateLayout.setVisibility(View.VISIBLE);
+                break;
             case R.id.back_nav_toolbar:
+                finish();
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 break;
             case R.id.edit_personal_signal://????????????

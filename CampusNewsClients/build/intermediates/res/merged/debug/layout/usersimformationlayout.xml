@@ -84,6 +84,8 @@
                 android:layout_below="@id/user_name"
                 android:drawableEnd="@drawable/ic_action_write"
                 android:gravity="center_vertical"
+                android:maxEms="50"
+                android:maxLines="3"
                 android:layout_centerHorizontal="true"
                 android:layout_margin="10dp" />
             </RelativeLayout>
