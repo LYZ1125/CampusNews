@@ -65,12 +65,18 @@
         <activity android:name="com.baibian.activity.DetailsActivity" />
         <activity android:name="com.baibian.activity.DiscussionActivity" />
         <activity android:name="com.baibian.activity.LargeActivity" />
+        <activity android:name="com.baibian.activity.EditPortraitActivity" />
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity android:name="com.baibian.activity.EditPortraitActivity" />
+
+        <receiver
+            android:name="com.baibian.receiver.ImageLoadReceiver"
+            android:enabled="true"
+            android:exported="false" >
+        </receiver>
     </application>
 
 </manifest>

@@ -1,6 +1,9 @@
 package com.baibian.activity;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -40,6 +43,8 @@ import com.baibian.R;
 import com.baibian.adapter.Users_Viwepager_Adapter;
 import com.baibian.bean.PeriodicalItem;
 import com.baibian.listener.OnPeriodicalItemClickListener;
+import com.baibian.listener.ReceiverImageLoadingHelper;
+import com.baibian.receiver.ImageLoadReceiver;
 import com.baibian.tool.HttpTool;
 import com.baibian.tool.SpaceItemDecoration;
 import com.baibian.tool.ToastTools;
@@ -110,10 +115,9 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
     private String saveImageShared;
     final private String[] items = {"Scoop", "Capture", "Chosen from album"};
 
-    public String path;
-
+    private Bitmap mBitmap;
     private Handler imageLoadHandler;
-
+    private ImageLoadReceiver receiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -126,14 +130,15 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
             StrictMode.setThreadPolicy(policy);
         }
         initview();
-        initPersonalInfoCheckedVisible();
         /*init_viewpager();//???viewpager??????*/
     }
 
     /**
      * Set the states of switches before entering the activity
      */
-    private void initPersonalInfoCheckedVisible() {
+     private void initPersonalInfoCheckedVisible() {
+
+        isSwitchCheckedPreferences = getSharedPreferences("IS_SWITCH_CHECKED", MODE_PRIVATE);
 
         if (!isSwitchCheckedPreferences.getBoolean("is_debate_topic_checked", false)){
             myTopicLayout.setVisibility(View.GONE);
@@ -195,6 +200,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
 
         }
     }
+
     private void initview() {
         /*choise_direction_back = (Button) findViewById(R.id.choise_direction_back);
         users_imformation_pager = (ViewPager) findViewById(R.id.users_imformation_pager);
@@ -221,11 +227,10 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
          * I would turn toolbar into RelativeLayout as the previous one.
          */
         initToolBar();
-
-        isSwitchCheckedPreferences = getSharedPreferences("IS_SWITCH_CHECKED", MODE_PRIVATE);
-
-        initUserPortraitInAdvance();
+        initUserPortrait();
         init_information();
+        initPersonalInfoCheckedVisible();
+
         /*        UI_Tools ui_tools=new UI_Tools();
         ui_tools.CancelFocusOne(this,user_information_all,personalized_signature_edit);*/
 
@@ -240,40 +245,49 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(receiver);
+    }
+
     /**
      * To initialize the user's portrait in advance
      */
-    private void initUserPortraitInAdvance() {
-
-        path= Environment.getExternalStorageDirectory().getAbsolutePath()+"/a.png";
+    private void initUserPortrait() {
         imageLoadHandler = new Handler(){
             @Override
             public void handleMessage(Message msg) {
                 super.handleMessage(msg);
                 switch (msg.what){
                     case CHANGE_IMAGE:
-                        userPortrait.setImageBitmap(getSaveImageShared());
+                        userPortrait.setImageBitmap(mBitmap);
                         break;
-                    case FROM_CAMERA:
-                        Bundle bundleFromCamera = msg.getData();
-                        Bitmap bitmap = bundleFromCamera.getParcelable("data");
-                        setSaveImageShared(bitmap);
-                        userPortrait.setImageBitmap(bitmap);
-                        break;
-                    case FROM_ALBUM:
-                        Bundle bundleFromAlbum = msg.getData();
-                        Uri uri = bundleFromAlbum.getParcelable("image_uri");
-                        getImg(uri);
                 }
             }
         };
+        /**
+         * To receive broadcast from EditPortraitActivity that notify the change of image.
+         */
+        receiver = new ImageLoadReceiver();
+        receiver.setImageLoadingHelper(new ReceiverImageLoadingHelper() {
+            @Override
+            public void doTasks() {
+                Log.d("load_image", "LoadImage");
+                mBitmap = EditPortraitActivity.getSaveImageShared();
+                userPortrait.setImageBitmap(mBitmap);
+            }
+        });
+
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("com.baibian.image_change");
+        registerReceiver(receiver, filter);
+
         new Thread(){
             @Override
             public void run() {
-                Message msg = new Message();
-                msg.what = CHANGE_IMAGE;
-                imageLoadHandler.sendMessage(msg);
-                Log.d("thread_test", "Thread Testing");
+                mBitmap = EditPortraitActivity.getSaveImageShared();
+                imageLoadHandler.sendEmptyMessage(CHANGE_IMAGE);
             }
         }.start();
     }
@@ -406,7 +420,6 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         }
     }
 
-
     @Override
     public void onClick(View view) {
 
@@ -440,39 +453,13 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.user_portrait:
-                final ActionSheetDialog dialog = new ActionSheetDialog(UsersImformationActivity.this, items, view);
-                dialog.isTitleShow(false).show();
-                dialog.setOnOperItemClickL(new OnOperItemClickL() {
-                    @Override
-                    public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        switch (items[position]){
-                            case "Capture":
-                                Intent intent=new Intent();
-                                intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
-                                startActivityForResult(intent,2);
-                                dialog.dismiss();
-                                break;
-                            case "Chosen from album":
-                                Intent intent1=new Intent();
-                                intent1.setType("image/*");
-                                intent1.setAction(Intent.ACTION_GET_CONTENT);
-                                startActivityForResult(intent1,3);
-                                dialog.dismiss();
-                                break;
-                            case "Scoop":
-                                Intent forLarge = new Intent(UsersImformationActivity.this, LargeActivity.class);
-                                startActivity(forLarge);
-                                dialog.dismiss();
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                });
+                Intent intentToEditPortrait = new Intent(UsersImformationActivity.this, EditPortraitActivity.class);
+                startActivity(intentToEditPortrait);
             default:
                 break;
         }
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // 根据上面发送过去的请求吗来区别
@@ -484,33 +471,6 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
 //                parseResultJSONObject(result_usersString);
 
                 init_information();
-                break;
-            /**
-             * case 2 and 3 are used for accepting captures and photos from albums to set portrait
-             */
-            case 2:
-                if (data != null) {
-                    Bundle bundle = data.getExtras();
-                    Message camMeg = new Message();
-                    camMeg.what = FROM_CAMERA;
-                    camMeg.setData(bundle);
-                    imageLoadHandler.sendMessage(camMeg);
-                } else {
-                    return;
-                }
-                break;
-            case 3:
-                if (data != null) {
-                    Uri uri = data.getData();
-                    Message alMsg = new Message();
-                    alMsg.what = FROM_ALBUM;
-                    Bundle bundle = new Bundle();
-                    bundle.putParcelable("image_uri", uri);
-                    alMsg.setData(bundle);
-                    imageLoadHandler.sendMessage(alMsg);
-                } else {
-                    return;
-                }
                 break;
             default:
                 break;
@@ -542,6 +502,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         }
         return true;
     }
+
     private void init_information(){
         SharedPreferences preferences=getSharedPreferences("usersimformation",MODE_PRIVATE);
         String  id =preferences.getString("id","");//??????????????id
@@ -569,6 +530,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         };
         getin(id);
     }
+
     private Response getin(String id ) {
         String path="/api/users/"+id+"";
         Log.d("idpath",path);
@@ -598,6 +560,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         string="["+string+"]";
         return string;
     }
+
     private void parseResultJSONObject(String josnData) {
 //        Log.d("josndata", josnData);
         try {
@@ -613,6 +576,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
             e.printStackTrace();
         }
     }
+
     private void parseJSONObject(String josnData) {
         Log.d("josndata", josnData);
         try {
@@ -630,15 +594,12 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         }
     }
 
-
-
     @Override//???·????
     public void onBackPressed() {
         // TODO Auto-generated method stub
         super.onBackPressed();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
-
 
     private void init_viewpager() {
         viewList=new ArrayList<View>();
@@ -710,6 +671,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         editor.putString("image", saveImageShared);
         editor.apply();
     }
+
     private Bitmap getSaveImageShared(){
         SharedPreferences sharedPreferences = getSharedPreferences("testSP", MODE_PRIVATE);
         saveImageShared = sharedPreferences.getString("image", "");
@@ -718,6 +680,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         Bitmap bitmap = BitmapFactory.decodeStream(byteArrayInputStream);
         return bitmap;
     }
+
     private void getImg(Uri uri) {
         try {
             InputStream inputStream = getContentResolver().openInputStream(uri);

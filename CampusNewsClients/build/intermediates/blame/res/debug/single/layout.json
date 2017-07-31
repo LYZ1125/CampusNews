@@ -24,12 +24,12 @@
         "source": "C:\\Users\\Ellly\\Desktop\\SourceCodeTempOnDesktop\\CampusNews\\CampusNewsClients\\src\\main\\res\\layout\\qqqqqfind_layout.xml"
     },
     {
-        "merged": "C:\\Users\\Ellly\\Desktop\\SourceCodeTempOnDesktop\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
-        "source": "C:\\Users\\Ellly\\.android\\build-cache\\62e1525d19af48d9f807cd801b66b424d8f64581\\output\\res\\layout\\design_menu_item_action_area.xml"
-    },
-    {
         "merged": "C:\\Users\\Ellly\\Desktop\\SourceCodeTempOnDesktop\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
         "source": "C:\\Users\\Ellly\\.android\\build-cache\\1ead68c499c9867fc36eeab714be3b13d75f861d\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ellly\\Desktop\\SourceCodeTempOnDesktop\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
+        "source": "C:\\Users\\Ellly\\.android\\build-cache\\62e1525d19af48d9f807cd801b66b424d8f64581\\output\\res\\layout\\design_menu_item_action_area.xml"
     },
     {
         "merged": "C:\\Users\\Ellly\\Desktop\\SourceCodeTempOnDesktop\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
@@ -60,12 +60,12 @@
         "source": "C:\\Users\\Ellly\\Desktop\\SourceCodeTempOnDesktop\\CampusNews\\CampusNewsClients\\src\\main\\res\\layout\\list_item_section.xml"
     },
     {
-        "merged": "C:\\Users\\Ellly\\Desktop\\SourceCodeTempOnDesktop\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
-        "source": "C:\\Users\\Ellly\\.android\\build-cache\\1ead68c499c9867fc36eeab714be3b13d75f861d\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
-    },
-    {
         "merged": "C:\\Users\\Ellly\\Desktop\\SourceCodeTempOnDesktop\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
         "source": "C:\\Users\\Ellly\\.android\\build-cache\\1ead68c499c9867fc36eeab714be3b13d75f861d\\output\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ellly\\Desktop\\SourceCodeTempOnDesktop\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "C:\\Users\\Ellly\\.android\\build-cache\\1ead68c499c9867fc36eeab714be3b13d75f861d\\output\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
         "merged": "C:\\Users\\Ellly\\Desktop\\SourceCodeTempOnDesktop\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
@@ -112,12 +112,12 @@
         "source": "C:\\Users\\Ellly\\Desktop\\SourceCodeTempOnDesktop\\CampusNews\\CampusNewsClients\\src\\main\\res\\layout\\homepage_list_item_viewpager.xml"
     },
     {
-        "merged": "C:\\Users\\Ellly\\Desktop\\SourceCodeTempOnDesktop\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\design_text_input_password_icon.xml",
-        "source": "C:\\Users\\Ellly\\.android\\build-cache\\62e1525d19af48d9f807cd801b66b424d8f64581\\output\\res\\layout\\design_text_input_password_icon.xml"
-    },
-    {
         "merged": "C:\\Users\\Ellly\\Desktop\\SourceCodeTempOnDesktop\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\list_item.xml",
         "source": "C:\\Users\\Ellly\\Desktop\\SourceCodeTempOnDesktop\\CampusNews\\CampusNewsClients\\src\\main\\res\\layout\\list_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ellly\\Desktop\\SourceCodeTempOnDesktop\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\design_text_input_password_icon.xml",
+        "source": "C:\\Users\\Ellly\\.android\\build-cache\\62e1525d19af48d9f807cd801b66b424d8f64581\\output\\res\\layout\\design_text_input_password_icon.xml"
     },
     {
         "merged": "C:\\Users\\Ellly\\Desktop\\SourceCodeTempOnDesktop\\CampusNews\\CampusNewsClients\\build\\intermediates\\res\\merged\\debug\\layout\\choise_direction_layout.xml",

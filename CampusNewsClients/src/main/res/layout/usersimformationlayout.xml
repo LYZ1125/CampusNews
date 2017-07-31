@@ -43,19 +43,6 @@
                         android:textSize="22sp"
                         android:gravity="center_vertical"/>
                 </android.support.v7.widget.Toolbar>
-<!--
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-                    <ImageView
-                        android:id="@+id/like_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_action_favor"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"/>
-                </RelativeLayout>
--->
             </LinearLayout>
 
             <de.hdodenhof.circleimageview.CircleImageView

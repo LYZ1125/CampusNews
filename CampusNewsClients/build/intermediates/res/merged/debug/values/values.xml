@@ -1587,7 +1587,7 @@
     <dimen name="popover_drawable_padding">6.0dip</dimen>
     <dimen name="popover_item_width">85.0dip</dimen>
     <dimen name="popover_row_margin_top">28.0dip</dimen>
-    <dimen name="portrait_size">100dp</dimen>
+    <dimen name="portrait_size">150dp</dimen>
     <dimen name="right_image_height">60.0dip</dimen>
     <dimen name="right_image_width">86.0dip</dimen>
     <dimen name="section_height">20.0dip</dimen>
@@ -1765,6 +1765,8 @@
     <string name="pattern_update">发现%1$d条更新</string>
     <string name="please6to16">请输入6~16位密码</string>
     <string name="please_account">请输入正确账号</string>
+    <string name="portrait_image_save_file_dir_name">LunDao</string>
+    <string name="portrait_image_save_file_name">head_portrait</string>
     <string name="real_time">实时</string>
     <string name="reflesh">更新了5条数据</string>
     <string name="register_name_digits">._0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLIMNOPQRSTUVWXYZ@</string>

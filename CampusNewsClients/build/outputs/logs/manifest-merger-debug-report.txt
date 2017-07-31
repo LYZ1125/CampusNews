@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:2:1-71:12
+ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:2:1-77:12
 	package
 		ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:3:5-26
 		INJECTED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml
@@ -101,7 +101,7 @@ ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsC
 	android:name
 		ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:29:22-77
 application
-ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:31:5-69:19
+ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:31:5-75:19
 MERGED from [:SMSSDK-2.1.3:] C:\Users\Ellly\.android\build-cache\41d52973ef46f4d087cd1b6a420fb3393b7ad44f\output\AndroidManifest.xml:11:5-12:19
 MERGED from [:SMSSDKGUI-2.1.3:] C:\Users\Ellly\.android\build-cache\1b0f63f74001fdeeaeb6bceb366b47a273ed13d4\output\AndroidManifest.xml:11:5-12:19
 MERGED from [com.github.chenupt.android:springindicator:1.0.2] C:\Users\Ellly\.android\build-cache\bba2d587f87ee363c3171e7ddedecff5b8376e11\output\AndroidManifest.xml:11:5-20
@@ -216,20 +216,28 @@ activity#com.baibian.activity.LargeActivity
 ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:62:9-60
 	android:name
 		ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:62:19-57
-activity#com.mob.tools.MobUIShell
-ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:63:9-67:70
-	android:windowSoftInputMode
-		ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:67:13-67
-	android:configChanges
-		ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:65:13-74
-	android:theme
-		ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:66:13-72
-	android:name
-		ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:64:13-52
 activity#com.baibian.activity.EditPortraitActivity
-ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:68:9-76
+ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:63:9-67
 	android:name
-		ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:68:19-64
+		ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:63:19-64
+activity#com.mob.tools.MobUIShell
+ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:64:9-68:70
+	android:windowSoftInputMode
+		ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:68:13-67
+	android:configChanges
+		ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:66:13-74
+	android:theme
+		ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:67:13-72
+	android:name
+		ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:65:13-52
+receiver#com.baibian.receiver.ImageLoadReceiver
+ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:70:9-74:20
+	android:enabled
+		ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:72:13-35
+	android:exported
+		ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:73:13-37
+	android:name
+		ADDED from C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\src\main\AndroidManifest.xml:71:13-55
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:25.3.1] C:\Users\Ellly\.android\build-cache\62e1525d19af48d9f807cd801b66b424d8f64581\output\AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:transition:25.3.1] C:\Users\Ellly\.android\build-cache\4e6656af28b78e393e99c5d7ce5b8deb1a9a36ed\output\AndroidManifest.xml:22:5-24:34

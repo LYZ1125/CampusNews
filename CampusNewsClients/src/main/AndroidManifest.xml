@@ -60,12 +60,18 @@
         <activity android:name=".activity.DetailsActivity" />
         <activity android:name=".activity.DiscussionActivity" />
         <activity android:name=".activity.LargeActivity" />
+        <activity android:name=".activity.EditPortraitActivity" />
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity android:name=".activity.EditPortraitActivity"></activity>
+
+        <receiver
+            android:name=".receiver.ImageLoadReceiver"
+            android:enabled="true"
+            android:exported="false">
+        </receiver>
     </application>
 
 </manifest>
