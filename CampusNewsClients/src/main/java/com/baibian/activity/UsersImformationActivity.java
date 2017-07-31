@@ -449,7 +449,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
             case R.id.edit_personal_signal://????????????
                 Intent intent=new Intent(UsersImformationActivity.this,Edit_Information_Activity.class);
                 intent.putExtra("responseString", UserInformation);
-                startActivityForResult(intent,EDIT_REQUEST);
+                startActivityForResult(intent, EDIT_REQUEST);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.user_portrait:

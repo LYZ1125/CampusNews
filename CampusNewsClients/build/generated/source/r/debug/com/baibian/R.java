@@ -4913,7 +4913,7 @@ containing a value of this type.
     public static final class id {
         public static final int HeadImage=0x7f0f0121;
         public static final int PersonalizedSignature=0x7f0f0123;
-        public static final int accounts_linear_layout=0x7f0f01d7;
+        public static final int accounts_linear_layout=0x7f0f01d9;
         public static final int achievement_content=0x7f0f0088;
         public static final int action0=0x7f0f0195;
         public static final int action_bar=0x7f0f0078;
@@ -4939,7 +4939,7 @@ containing a value of this type.
         public static final int action_previous=0x7f0f01cc;
         public static final int action_report=0x7f0f01ce;
         public static final int action_repost=0x7f0f01cb;
-        public static final int action_settings=0x7f0f01ef;
+        public static final int action_settings=0x7f0f01f1;
         public static final int action_share=0x7f0f01d0;
         public static final int action_text=0x7f0f0194;
         public static final int action_view_comment=0x7f0f01c9;
@@ -4959,6 +4959,7 @@ containing a value of this type.
         public static final int app_activity_btn=0x7f0f013b;
         public static final int app_activity_layout=0x7f0f013a;
         public static final int app_activity_text=0x7f0f013c;
+        public static final int app_bar=0x7f0f01d1;
         public static final int article_layout=0x7f0f0142;
         public static final int article_top_layout=0x7f0f0143;
         public static final int auto=0x7f0f0036;
@@ -4974,7 +4975,7 @@ containing a value of this type.
         public static final int btn_add_tag=0x7f0f00b2;
         public static final int btn_category=0x7f0f0181;
         public static final int btn_pop_close=0x7f0f0166;
-        public static final int button=0x7f0f01ec;
+        public static final int button=0x7f0f01ee;
         public static final int buttonPanel=0x7f0f005f;
         public static final int button_more_columns=0x7f0f01b5;
         public static final int cancel_action=0x7f0f0196;
@@ -4998,6 +4999,7 @@ containing a value of this type.
         public static final int clip_horizontal=0x7f0f0040;
         public static final int clip_vertical=0x7f0f0041;
         public static final int collapseActionView=0x7f0f0048;
+        public static final int collapsing_bar_background_image=0x7f0f01d2;
         public static final int collect_btn=0x7f0f00e4;
         public static final int comment_arrow=0x7f0f0158;
         public static final int comment_content=0x7f0f015a;
@@ -5012,9 +5014,9 @@ containing a value of this type.
         public static final int customPanel=0x7f0f0068;
         public static final int customview_layout=0x7f0f00ce;
         public static final int data_information=0x7f0f00f8;
-        public static final int debate_point_switch=0x7f0f01e8;
-        public static final int debate_presentation_switch=0x7f0f01e9;
-        public static final int debate_topic_switch=0x7f0f01e7;
+        public static final int debate_point_switch=0x7f0f01ea;
+        public static final int debate_presentation_switch=0x7f0f01eb;
+        public static final int debate_topic_switch=0x7f0f01e9;
         public static final int decor_content_parent=0x7f0f0076;
         public static final int default_activity_button=0x7f0f005b;
         public static final int design_bottom_sheet=0x7f0f00b9;
@@ -5036,7 +5038,7 @@ containing a value of this type.
         public static final int drawer_shadow=0x7f0f00cd;
         public static final int edit_information_all_layout=0x7f0f00e9;
         public static final int edit_information_back=0x7f0f00ea;
-        public static final int edit_personal_signal=0x7f0f01d6;
+        public static final int edit_personal_signal=0x7f0f01d8;
         public static final int edit_query=0x7f0f007a;
         public static final int edit_text=0x7f0f00e8;
         public static final int empty_notify_view=0x7f0f0191;
@@ -5054,10 +5056,10 @@ containing a value of this type.
         public static final int fill_vertical=0x7f0f003b;
         public static final int fixed=0x7f0f004e;
         public static final int floor_account=0x7f0f00e0;
-        public static final int focus_amount=0x7f0f01dd;
-        public static final int focus_amount_textview=0x7f0f01d9;
-        public static final int focused_account=0x7f0f01de;
-        public static final int focused_amount_textview=0x7f0f01da;
+        public static final int focus_amount=0x7f0f01df;
+        public static final int focus_amount_textview=0x7f0f01db;
+        public static final int focused_account=0x7f0f01e0;
+        public static final int focused_amount_textview=0x7f0f01dc;
         public static final int foot_view_item_tv=0x7f0f01b8;
         public static final int forums_details_all_layout=0x7f0f00f3;
         public static final int forums_details_back=0x7f0f00f4;
@@ -5137,8 +5139,8 @@ containing a value of this type.
         public static final int left_favorite_text=0x7f0f0131;
         public static final int left_search_text=0x7f0f012f;
         public static final int left_top_layout=0x7f0f0125;
-        public static final int like_amount=0x7f0f01dc;
-        public static final int like_amount_textview=0x7f0f01d8;
+        public static final int like_amount=0x7f0f01de;
+        public static final int like_amount_textview=0x7f0f01da;
         public static final int like_btn=0x7f0f00e5;
         public static final int line1=0x7f0f01a3;
         public static final int line3=0x7f0f01a5;
@@ -5173,7 +5175,7 @@ containing a value of this type.
         public static final int mViewPager=0x7f0f01b7;
         public static final int male_checkbox=0x7f0f00ed;
         public static final int margin=0x7f0f004d;
-        public static final int masked=0x7f0f01ee;
+        public static final int masked=0x7f0f01f0;
         public static final int media_actions=0x7f0f0198;
         public static final int message_btn=0x7f0f0132;
         public static final int message_setting=0x7f0f01c1;
@@ -5185,10 +5187,10 @@ containing a value of this type.
         public static final int multiply=0x7f0f0030;
         public static final int my_category_text=0x7f0f0093;
         public static final int my_category_tip_text=0x7f0f0094;
-        public static final int my_point_holder_layout=0x7f0f01e3;
-        public static final int my_presentation_holder_layout=0x7f0f01e4;
-        public static final int my_share=0x7f0f01ea;
-        public static final int my_topic_holder_layout=0x7f0f01e2;
+        public static final int my_point_holder_layout=0x7f0f01e5;
+        public static final int my_presentation_holder_layout=0x7f0f01e6;
+        public static final int my_share=0x7f0f01ec;
+        public static final int my_topic_holder_layout=0x7f0f01e4;
         public static final int navigation_header_container=0x7f0f00bc;
         public static final int never=0x7f0f004a;
         public static final int night_mode_btn=0x7f0f008e;
@@ -5202,7 +5204,7 @@ containing a value of this type.
         public static final int notify_view_cancel_layout=0x7f0f00ca;
         public static final int notify_view_divider=0x7f0f00cb;
         public static final int notify_view_text=0x7f0f00c9;
-        public static final int numbers_linear_layout=0x7f0f01db;
+        public static final int numbers_linear_layout=0x7f0f01dd;
         public static final int offline_btn=0x7f0f0136;
         public static final int offline_btn_text=0x7f0f0138;
         public static final int offline_icon=0x7f0f0137;
@@ -5216,9 +5218,9 @@ containing a value of this type.
         public static final int parent=0x7f0f0010;
         public static final int parentPanel=0x7f0f0061;
         public static final int periodical_image_cover=0x7f0f01a8;
-        public static final int periodical_recycler_view=0x7f0f01eb;
+        public static final int periodical_recycler_view=0x7f0f01ed;
         public static final int periodical_text_content=0x7f0f01a9;
-        public static final int personal_information_on_debate_layout=0x7f0f01e0;
+        public static final int personal_information_on_debate_layout=0x7f0f01e2;
         public static final int pgc_btn=0x7f0f012c;
         public static final int pgc_name=0x7f0f012d;
         public static final int pin=0x7f0f003f;
@@ -5272,6 +5274,7 @@ containing a value of this type.
         public static final int scrollIndicatorDown=0x7f0f0067;
         public static final int scrollIndicatorUp=0x7f0f0063;
         public static final int scrollView=0x7f0f0064;
+        public static final int scroll_view=0x7f0f01d5;
         public static final int scrollable=0x7f0f004f;
         public static final int search_badge=0x7f0f007c;
         public static final int search_bar=0x7f0f007b;
@@ -5321,8 +5324,8 @@ containing a value of this type.
         public static final int submenuarrow=0x7f0f0072;
         public static final int submit_area=0x7f0f0083;
         public static final int subscribe_main_layout=0x7f0f0092;
-        public static final int switch_back_to_information=0x7f0f01e6;
-        public static final int switch_to_toggle_buttons=0x7f0f01e1;
+        public static final int switch_back_to_information=0x7f0f01e8;
+        public static final int switch_to_toggle_buttons=0x7f0f01e3;
         public static final int tabMode=0x7f0f001b;
         public static final int tab_strip=0x7f0f00f6;
         public static final int tagcontainerLayout1=0x7f0f00b0;
@@ -5382,16 +5385,15 @@ containing a value of this type.
         public static final int up=0x7f0f000e;
         public static final int useLogo=0x7f0f0021;
         public static final int userGridView=0x7f0f0096;
-        public static final int user_honor_layout=0x7f0f01df;
-        public static final int user_information_all=0x7f0f01d1;
-        public static final int user_information_toggle_btn_layout=0x7f0f01e5;
-        public static final int user_name=0x7f0f01d5;
+        public static final int user_honor_layout=0x7f0f01e1;
+        public static final int user_information_all=0x7f0f01d6;
+        public static final int user_information_toggle_btn_layout=0x7f0f01e7;
+        public static final int user_name=0x7f0f01d7;
         public static final int user_name_edittext=0x7f0f00ec;
         public static final int user_portrait=0x7f0f0089;
-        public static final int user_share=0x7f0f01f0;
+        public static final int user_share=0x7f0f01f2;
         public static final int user_tool_bar=0x7f0f01d3;
-        public static final int user_tool_bar_layout=0x7f0f01d2;
-        public static final int user_write=0x7f0f01f1;
+        public static final int user_write=0x7f0f01f3;
         public static final int usersName=0x7f0f0122;
         public static final int v_dot0=0x7f0f0119;
         public static final int v_dot1=0x7f0f011a;
@@ -5401,7 +5403,7 @@ containing a value of this type.
         public static final int view1layout=0x7f0f010c;
         public static final int view_offset_helper=0x7f0f000f;
         public static final int viewpager=0x7f0f00f5;
-        public static final int visible=0x7f0f01ed;
+        public static final int visible=0x7f0f01ef;
         public static final int vp_top_news=0x7f0f015d;
         public static final int wb_details=0x7f0f00c6;
         public static final int wechat_btn=0x7f0f0129;
@@ -5920,6 +5922,39 @@ containing a value of this type.
         public static final int Animation_AppCompat_DropDownUp=0x7f0b00a5;
         public static final int Animation_Design_BottomSheetDialog=0x7f0b00a6;
         /**  API 14 theme customizations can go here. 
+
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
          */
         public static final int AppBaseTheme=0x7f0b0028;
         public static final int AppTheme=0x7f0b00a7;

@@ -212,7 +212,7 @@ public class EditPortraitActivity extends AppCompatActivity implements View.OnCl
     private Bitmap getImg(Uri uri) {
         try {
             InputStream inputStream = getContentResolver().openInputStream(uri);
-            //从输入流中解码位图
+            //从输入流中解码位图00
             bitmap = BitmapFactory.decodeStream(inputStream);
             //保存位图
             //关闭流
