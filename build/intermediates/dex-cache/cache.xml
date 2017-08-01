@@ -21,6 +21,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\libs\jsoup-1.7.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="872693211fd68d1c4e116cf90021603207725e19">
+        <dex dex="C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\2\jsoup-1.7.2_fa62f52b38d4c6930748916d1aa95e6ce3f0750e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
@@ -39,15 +48,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\libs\jsoup-1.7.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="872693211fd68d1c4e116cf90021603207725e19">
-        <dex dex="C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\2\jsoup-1.7.2_fa62f52b38d4c6930748916d1aa95e6ce3f0750e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\libs\MobCommons-2016.1201.1839.jar"
         jumboMode="true"
         optimize="true"
@@ -61,7 +61,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="2cd09aaecf433c01dd5e64702ea2ca270f7d2b2f">
+        sha1="a6180e25a48bb81988c7d5de60c1f1bac8ef62e7">
         <dex dex="C:\Users\Ellly\Desktop\SourceCodeTempOnDesktop\CampusNews\CampusNewsClients\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_d8c7e075e4c9670dd5123bd2f7d7a56014de0361\classes.dex" />
     </item>
     <item

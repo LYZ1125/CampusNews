@@ -1,10 +1,13 @@
 package com.baibian.activity;
 
-import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -15,28 +18,37 @@ import android.provider.MediaStore;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baibian.R;
 import com.baibian.adapter.Users_Viwepager_Adapter;
+import com.baibian.bean.PeriodicalItem;
+import com.baibian.listener.OnPeriodicalItemClickListener;
+import com.baibian.listener.ReceiverImageLoadingHelper;
+import com.baibian.receiver.ImageLoadReceiver;
 import com.baibian.tool.HttpTool;
+import com.baibian.tool.SpaceItemDecoration;
 import com.baibian.tool.ToastTools;
-import com.baibian.tool.UI_Tools;
-import com.baibian.view.AchievementView;
-import com.baibian.view.PeriodicalCoverView;
+import com.baibian.view.TipView;
 import com.flyco.dialog.listener.OnOperItemClickL;
 import com.flyco.dialog.widget.ActionSheetDialog;
 import com.squareup.okhttp.Response;
@@ -54,7 +66,12 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class UsersImformationActivity extends AppCompatActivity implements View.OnClickListener{
+public class UsersImformationActivity extends AppCompatActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener{
+    private static final int CHANGE_IMAGE = 1;
+    private static final int FROM_CAMERA = 2;
+    private static final int FROM_ALBUM = 3;
+    private static final String FILE_NAME_PORTRAIT = "head_portrait";
+    private static final String FILE_NAME = "portrait_background";
     private ImageView user_information_edit;
     private Button BB_state_btn;
     private Button BB_imformation_btn;
@@ -72,15 +89,40 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
 
     private CircleImageView userPortrait;
     private TextView editPersonalSignal;
-    private ImageView likeButton;
     private TextView backNav;
     private Toolbar toolbar;
-    private LinearLayout shareLinearLayout;
-    private LinearLayout achieveLinearLayout;
+
+    private RecyclerView periodicalRecyView;
+    private PeriodicalAdapter periodicalAdapter;
+    private LinearLayoutManager llm;
+    private List<PeriodicalItem> periodicalItems;
+    private int lastVisibleItem;
+
+    private LinearLayout personalInformationDebateLayout;
+    private LinearLayout userInformationSwitchBtns;
+    private LinearLayout honorLayout;
+
+    private TextView switchToSwitches;
+    private TextView switchBack;
+
+    private Switch debateTopicSwitch;
+    private Switch debatePointSwitch;
+    private Switch debatePresentationSwitch;
+
+    private RelativeLayout myTopicLayout;
+    private RelativeLayout myPointLayout;
+    private RelativeLayout myPresentationLayout;
+
+    private SharedPreferences isSwitchCheckedPreferences;
     private String saveImageShared;
-    public String path;
     final private String[] items = {"Scoop", "Capture", "Chosen from album"};
 
+    private Bitmap mBitmap;
+    private Handler imageLoadHandler;
+    private ImageLoadReceiver receiver;
+
+    private ImageView collapsingBarLayoutBackground;
+    private Bitmap mBackGroundBitmap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,8 +134,76 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
             StrictMode.setThreadPolicy(policy);
         }
         initview();
-        /*init_viewpager();//???viewpager??????
-    */}
+        /*init_viewpager();//???viewpager??????*/
+    }
+
+    /**
+     * Set the states of switches before entering the activity
+     */
+     private void initPersonalInfoCheckedVisible() {
+
+        isSwitchCheckedPreferences = getSharedPreferences("IS_SWITCH_CHECKED", MODE_PRIVATE);
+
+        if (!isSwitchCheckedPreferences.getBoolean("is_debate_topic_checked", false)){
+            myTopicLayout.setVisibility(View.GONE);
+            debateTopicSwitch.setChecked(false);
+        }
+        if (!isSwitchCheckedPreferences.getBoolean("is_debate_point_checked", false)){
+            myPointLayout.setVisibility(View.GONE);
+            debatePointSwitch.setChecked(false);
+        }
+        if (!isSwitchCheckedPreferences.getBoolean("is_debate_presentation_checked", false)){
+            myPresentationLayout.setVisibility(View.GONE);
+            debatePresentationSwitch.setChecked(false);
+        }
+    }
+
+    class PeriodicalAdapter extends RecyclerView.Adapter<PeriodicalAdapter.MyViewHolder> {
+
+        private OnPeriodicalItemClickListener mItemListener;
+
+        public void setOnClickItemListener(OnPeriodicalItemClickListener listener){
+            mItemListener = listener;
+        }
+        @Override
+        public PeriodicalAdapter.MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+
+            return new MyViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.periodical_cover_view_layout, viewGroup, false));
+        }
+
+        @Override
+        public void onBindViewHolder(final PeriodicalAdapter.MyViewHolder myViewHolder,  int position) {
+            myViewHolder.tv.setText(periodicalItems.get(position).getTextContent());
+            if (mItemListener != null){
+                myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int position = myViewHolder.getLayoutPosition();
+                        mItemListener.onItemClick(v, position);
+                    }
+                });
+            }
+            //TODO Glide with context load pictures into iv;
+        }
+
+        @Override
+        public int getItemCount() {
+            return periodicalItems.size();
+        }
+
+        class MyViewHolder extends RecyclerView.ViewHolder{
+
+            TextView tv;
+            ImageView iv;
+
+            MyViewHolder(View itemView) {
+                super(itemView);
+                tv = (TextView) itemView.findViewById(R.id.periodical_text_content);
+                iv = (ImageView) itemView.findViewById(R.id.periodical_image_cover);
+            }
+
+        }
+    }
 
     private void initview() {
         /*choise_direction_back = (Button) findViewById(R.id.choise_direction_back);
@@ -108,48 +218,222 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         user_information_edit.setOnClickListener(this);
 *//*
         user_information_all = (LinearLayout) findViewById(R.id.user_information_all);*/
-        userPortrait = (CircleImageView) findViewById(R.id.user_portrait);
-        editPersonalSignal = (TextView) findViewById(R.id.edit_personal_signal);
-        likeButton = (ImageView) findViewById(R.id.like_button);
-        backNav = (TextView) findViewById(R.id.back_nav_toolbar);
-        toolbar = (Toolbar) findViewById(R.id.user_tool_bar);
-        shareLinearLayout = (LinearLayout) findViewById(R.id.share_linear_layout);
-        achieveLinearLayout = (LinearLayout) findViewById(R.id.achievements_linear_layout);
+
+
+        initRecyItemsData();
+        initVariousViews();
+        initRecyclerView();
+        initListenersOnView();
+
         /**
          * Here to support my toolbar I switch AppTheme to NoActionbar in AndroidManifest.
          * In any case if this switch will make bugs unknown to me presently in the future
          * I would turn toolbar into RelativeLayout as the previous one.
          */
+        initToolBar();
+        initUserPortrait();
+
+        init_information();
+        initPersonalInfoCheckedVisible();
+
+        /*        UI_Tools ui_tools=new UI_Tools();
+        ui_tools.CancelFocusOne(this,user_information_all,personalized_signature_edit);*/
+
+    }
+
+    private void initToolBar() {
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null){
             actionBar.setDisplayHomeAsUpEnabled(false);
             actionBar.setTitle("");
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(receiver);
+    }
+
+    /**
+     * To initialize the user's portrait in advance
+     */
+    private void initUserPortrait() {
+        imageLoadHandler = new Handler(){
+            @Override
+            public void handleMessage(Message msg) {
+                super.handleMessage(msg);
+                switch (msg.what){
+                    case CHANGE_IMAGE:
+                        userPortrait.setImageBitmap(mBitmap);
+                        collapsingBarLayoutBackground.setImageBitmap(mBackGroundBitmap);
+                        break;
+                    case FROM_ALBUM:
+                    case FROM_CAMERA:
+                        collapsingBarLayoutBackground.setImageBitmap(mBackGroundBitmap);
+                        break;
+                }
+            }
+        };
+        /**
+         * To receive broadcast from EditPortraitActivity that notify the change of image.
+         */
+        receiver = new ImageLoadReceiver();
+        receiver.setImageLoadingHelper(new ReceiverImageLoadingHelper() {
+            @Override
+            public void doTasks() {
+                Log.d("load_image", "LoadImage");
+                mBitmap = EditPortraitActivity.getSaveImageShared(FILE_NAME_PORTRAIT);
+                userPortrait.setImageBitmap(mBitmap);
+            }
+        });
+
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("com.baibian.image_change");
+        registerReceiver(receiver, filter);
+
+        /**
+         * To get image that has been changed
+         */
+        new Thread(){
+            @Override
+            public void run() {
+                mBitmap = EditPortraitActivity.getSaveImageShared(FILE_NAME_PORTRAIT);
+                mBackGroundBitmap = EditPortraitActivity.getSaveImageShared(FILE_NAME);
+                imageLoadHandler.sendEmptyMessage(CHANGE_IMAGE);
+            }
+        }.start();
+    }
+
+    private void initListenersOnView() {
+        debateTopicSwitch.setOnCheckedChangeListener(this);
+        debatePointSwitch.setOnCheckedChangeListener(this);
+        debatePresentationSwitch.setOnCheckedChangeListener(this);
+        collapsingBarLayoutBackground.setOnClickListener(this);
+        switchToSwitches.setOnClickListener(this);
+        switchBack.setOnClickListener(this);
         backNav.setOnClickListener(this);
         userPortrait.setOnClickListener(this);
         editPersonalSignal.setOnClickListener(this);
-        likeButton.setOnClickListener(this);
-        path= Environment.getExternalStorageDirectory().getAbsolutePath()+"/a.png";
-        userPortrait.setImageBitmap(getSaveImageShared());
-        /**
-         * Temporarily add view in this way since I don't know in what way would the "periodical" be loaded
-         * maybe methods will be written for changing image, title and subtitle.
-         * Wrong margin.
-         */
-        PeriodicalCoverView coverTemp1 = new PeriodicalCoverView(this);
-        PeriodicalCoverView coverTemp2 = new PeriodicalCoverView(this);
-        shareLinearLayout.addView(coverTemp1);
-        shareLinearLayout.addView(coverTemp2);
+    }
 
-        AchievementView achievement1 = new AchievementView(this);
-        AchievementView achievement2 = new AchievementView(this);
-        achievement1.achieves.setText("五连绝世");
-        achieveLinearLayout.addView(achievement1);
-        achieveLinearLayout.addView(achievement2);
-/*        UI_Tools ui_tools=new UI_Tools();
-        ui_tools.CancelFocusOne(this,user_information_all,personalized_signature_edit);*/
-        init_information();
+    private void initVariousViews() {
+        collapsingBarLayoutBackground = (ImageView) findViewById(R.id.collapsing_bar_background_image);
+        userPortrait = (CircleImageView) findViewById(R.id.user_portrait);
+        editPersonalSignal = (TextView) findViewById(R.id.edit_personal_signal);
+        backNav = (TextView) findViewById(R.id.back_nav_toolbar);
+        toolbar = (Toolbar) findViewById(R.id.user_tool_bar);
+        personalInformationDebateLayout = (LinearLayout) findViewById(R.id.personal_information_on_debate_layout);
+        userInformationSwitchBtns = (LinearLayout) findViewById(R.id.user_information_toggle_btn_layout);
+        switchToSwitches = (TextView) findViewById(R.id.switch_to_toggle_buttons);
+        switchBack = (TextView) findViewById(R.id.switch_back_to_information);
+        debateTopicSwitch = (Switch) findViewById(R.id.debate_topic_switch);
+        debatePointSwitch = (Switch) findViewById(R.id.debate_point_switch);
+        debatePresentationSwitch = (Switch) findViewById(R.id.debate_presentation_switch);
+        myTopicLayout = (RelativeLayout) findViewById(R.id.my_topic_holder_layout);
+        myPointLayout = (RelativeLayout) findViewById(R.id.my_point_holder_layout);
+        myPresentationLayout = (RelativeLayout) findViewById(R.id.my_presentation_holder_layout);
+        periodicalRecyView = (RecyclerView) findViewById(R.id.periodical_recycler_view) ;
+        honorLayout = (LinearLayout) findViewById(R.id.user_honor_layout);
+
+        addHonorImageView(R.drawable.ic_action_favor);
+
+    }
+
+    private void addHonorImageView(int resID) {
+        ImageView tempImage = new ImageView(this);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        tempImage.setImageResource(resID);
+        honorLayout.addView(tempImage, params);
+//        tempImage.setPadding(0, 0, R.dimen.bg_row_padding_right);
+    }
+
+    private void initRecyclerView() {
+        llm = new LinearLayoutManager(this);
+        llm.setOrientation(LinearLayoutManager.HORIZONTAL);
+        periodicalAdapter = new PeriodicalAdapter();
+        periodicalAdapter.setOnClickItemListener(new OnPeriodicalItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                ToastTools.ToastShow("Test" + position);
+            }
+        });
+        periodicalRecyView.setLayoutManager(llm);
+        periodicalRecyView.setAdapter(periodicalAdapter);
+        periodicalRecyView.addItemDecoration(new SpaceItemDecoration(15));
+        periodicalRecyView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                if (newState == RecyclerView.SCROLL_STATE_IDLE && lastVisibleItem + 2 >= llm.getItemCount()){
+                    for (int i = 0; i < 3; i++){
+                        PeriodicalItem tempItem = new PeriodicalItem();
+                        tempItem.setTextContent("ruaruaraurauraururauraurauraurau");
+                        periodicalItems.add(tempItem);
+                    }
+                    ToastTools.ToastShow("loading more");
+                    periodicalAdapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                lastVisibleItem = llm.findLastVisibleItemPosition();
+            }
+        });
+    }
+
+    private void initRecyItemsData() {
+        periodicalItems = new ArrayList<>();
+        for (int i = 0; i < 3; i++){
+            PeriodicalItem tempPeriodicalItem = new PeriodicalItem();
+            //TODO with text contents and image source of the item
+            tempPeriodicalItem.setTextContent("hiahiahiahiahiahiahiahiahiahihaihaihaihaihiahiahiahiahai");
+            periodicalItems.add(tempPeriodicalItem);
+        }
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+        SharedPreferences.Editor editor = isSwitchCheckedPreferences.edit();
+        /**
+         * To test the result I make the switches switch on the user interface.
+         * (originally they should switch the interface that others see rather than the user's)
+         */
+        switch (buttonView.getId()){
+            case R.id.debate_topic_switch:
+                if (isChecked){
+                    myTopicLayout.setVisibility(View.VISIBLE);
+                }else {
+                    myTopicLayout.setVisibility(View.GONE);
+                }
+                editor.putBoolean("is_debate_topic_checked", isChecked);
+                editor.apply();
+                break;
+            case R.id.debate_point_switch:
+                if (isChecked){
+                    myPointLayout.setVisibility(View.VISIBLE);
+                }else {
+                    myPointLayout.setVisibility(View.GONE);
+                }
+                editor.putBoolean("is_debate_point_checked", isChecked);
+                editor.apply();
+                break;
+            case R.id.debate_presentation_switch:
+                if (isChecked){
+                    myPresentationLayout.setVisibility(View.VISIBLE);
+                }else {
+                    myPresentationLayout.setVisibility(View.GONE);
+                }
+                editor.putBoolean("is_debate_presentation_checked", isChecked);
+                editor.apply();
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
@@ -161,20 +445,11 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
                 finish();
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 break;
-*/
+*//*
             case R.id.like_button:
 
-                break;
-            case R.id.back_nav_toolbar:
-                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-                break;
-            case R.id.edit_personal_signal://????????????
-                Intent intent=new Intent(UsersImformationActivity.this,Edit_Information_Activity.class);
-                intent.putExtra("responseString", UserInformation);
-                startActivityForResult(intent,EDIT_REQUEST);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                break;
-            case R.id.user_portrait:
+                break;*/
+            case R.id.collapsing_bar_background_image:
                 final ActionSheetDialog dialog = new ActionSheetDialog(UsersImformationActivity.this, items, view);
                 dialog.isTitleShow(false).show();
                 dialog.setOnOperItemClickL(new OnOperItemClickL() {
@@ -184,18 +459,19 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
                             case "Capture":
                                 Intent intent=new Intent();
                                 intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
-                                startActivityForResult(intent,2);
+                                startActivityForResult(intent,FROM_CAMERA);
                                 dialog.dismiss();
                                 break;
                             case "Chosen from album":
                                 Intent intent1=new Intent();
                                 intent1.setType("image/*");
                                 intent1.setAction(Intent.ACTION_GET_CONTENT);
-                                startActivityForResult(intent1,3);
+                                startActivityForResult(intent1,FROM_ALBUM);
                                 dialog.dismiss();
                                 break;
                             case "Scoop":
                                 Intent forLarge = new Intent(UsersImformationActivity.this, LargeActivity.class);
+                                forLarge.putExtra("file_name", FILE_NAME);
                                 startActivity(forLarge);
                                 dialog.dismiss();
                                 break;
@@ -204,10 +480,32 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
                         }
                     }
                 });
+            case R.id.switch_to_toggle_buttons:
+                personalInformationDebateLayout.setVisibility(View.GONE);
+                userInformationSwitchBtns.setVisibility(View.VISIBLE);
+                break;
+            case R.id.switch_back_to_information:
+                userInformationSwitchBtns.setVisibility(View.GONE);
+                personalInformationDebateLayout.setVisibility(View.VISIBLE);
+                break;
+            case R.id.back_nav_toolbar:
+                finish();
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                break;
+            case R.id.edit_personal_signal://????????????
+                Intent intent=new Intent(UsersImformationActivity.this,Edit_Information_Activity.class);
+                intent.putExtra("responseString", UserInformation);
+                startActivityForResult(intent, EDIT_REQUEST);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                break;
+            case R.id.user_portrait:
+                Intent intentToEditPortrait = new Intent(UsersImformationActivity.this, EditPortraitActivity.class);
+                startActivity(intentToEditPortrait);
             default:
                 break;
         }
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // 根据上面发送过去的请求吗来区别
@@ -219,27 +517,35 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
 //                parseResultJSONObject(result_usersString);
                 init_information();
                 break;
-            /**
-             * case 2 and 3 are used for accepting captures and photos from albums to set portrait
-             */
-            case 2:
+            case FROM_CAMERA:
                 if (data != null) {
-                    Bundle bundle = data.getExtras();
-                    Bitmap bitmap = bundle.getParcelable("data");
-                    setSaveImageShared(bitmap);
-                    userPortrait.setImageBitmap(bitmap);
+                    final Bundle bundle = data.getExtras();
+                    final Message camMsg = new Message();
+                    new Thread(){
+                        @Override
+                        public void run() {
+                            mBackGroundBitmap = bundle.getParcelable("data");
+                            EditPortraitActivity.setSaveImageShared(mBackGroundBitmap, FILE_NAME);
+                            camMsg.what = FROM_CAMERA;
+                            imageLoadHandler.sendMessage(camMsg);
+                        }
+                    }.start();
                 } else {
                     return;
                 }
                 break;
-            case 3:
-                if (data != null) {
-                    Uri uri = data.getData();
-                    getImg(uri);
-                } else {
-                    return;
-                }
-                break;
+            case FROM_ALBUM:
+                final Uri uri = data.getData();
+                new Thread(){
+                    @Override
+                    public void run() {
+                        mBackGroundBitmap = EditPortraitActivity.getBitmapFromUri(uri, UsersImformationActivity.this);
+                        EditPortraitActivity.setSaveImageShared(mBackGroundBitmap, FILE_NAME);
+                        Message alMsg = new Message();
+                        alMsg.what = FROM_ALBUM;
+                        imageLoadHandler.sendMessage(alMsg);
+                    }
+                }.start();
             default:
                 break;
         }
@@ -270,6 +576,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         }
         return true;
     }
+
     private void init_information(){
         SharedPreferences preferences=getSharedPreferences("usersimformation",MODE_PRIVATE);
         String  id =preferences.getString("id","");//??????????????id
@@ -297,6 +604,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         };
         getin(id);
     }
+
     private Response getin(String id ) {
         String path="/api/users/"+id+"";
         Log.d("idpath",path);
@@ -326,6 +634,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         string="["+string+"]";
         return string;
     }
+
     private void parseResultJSONObject(String josnData) {
 //        Log.d("josndata", josnData);
         try {
@@ -341,6 +650,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
             e.printStackTrace();
         }
     }
+
     private void parseJSONObject(String josnData) {
         Log.d("josndata", josnData);
         try {
@@ -358,15 +668,12 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         }
     }
 
-
-
     @Override//???·????
     public void onBackPressed() {
         // TODO Auto-generated method stub
         super.onBackPressed();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
-
 
     private void init_viewpager() {
         viewList=new ArrayList<View>();
@@ -423,21 +730,22 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         });
 
     }
-
-    /**
+/*
+    *//**
      * the following three methods are all used for saving capture
-     * @param mBitmap
-     */
+     * @param
+     *//*
     private void setSaveImageShared(Bitmap mBitmap){
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         mBitmap.compress(Bitmap.CompressFormat.PNG, 80, byteArrayOutputStream);
         byte[] bytes = byteArrayOutputStream.toByteArray();
-        saveImageShared = new String(Base64.encodeToString(bytes, Base64.DEFAULT));
+        saveImageShared = Base64.encodeToString(bytes, Base64.DEFAULT);
         SharedPreferences sharedPreferences = getSharedPreferences("testSP", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("image", saveImageShared);
         editor.apply();
     }
+
     private Bitmap getSaveImageShared(){
         SharedPreferences sharedPreferences = getSharedPreferences("testSP", MODE_PRIVATE);
         saveImageShared = sharedPreferences.getString("image", "");
@@ -445,24 +753,20 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytes);
         Bitmap bitmap = BitmapFactory.decodeStream(byteArrayInputStream);
         return bitmap;
-    }
-
+    }*/
+/*
     private void getImg(Uri uri) {
         try {
             InputStream inputStream = getContentResolver().openInputStream(uri);
             //从输入流中解码位图
             Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
             //保存位图
-            setSaveImageShared(bitmap);
-            userPortrait.setImageBitmap(bitmap);
 
             //关闭流
             inputStream.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
 }

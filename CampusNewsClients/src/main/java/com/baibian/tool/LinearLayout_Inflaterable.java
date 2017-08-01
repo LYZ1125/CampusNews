@@ -18,7 +18,7 @@ import java.util.List;
  * 这是一个用来代替ListView的一个布局，里面内置了方法有，
  * 初始化数据，获取所有editview的字符串
  */
-public class LinearLayout_Inflaterable {
+public class  LinearLayout_Inflaterable {
     private LayoutInflater layoutInflater;
     private Context context;
     private LinearLayout linearLayout;

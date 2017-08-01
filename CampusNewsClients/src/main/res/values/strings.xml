@@ -100,6 +100,10 @@
     <string name="LunTan">论坛</string>
     <string name="LunXun">论讯</string>
     <string name="text_point">·</string>
+    <string name="edit_personal_signal">编辑个性签名</string>
+    <string name="user_share_divider_text">·我的分享·</string>
+    <string name="portrait_image_save_file_dir_name">LunDao</string>
+    <string name="portrait_image_save_file_name">head_portrait</string>
 
 
 </resources>

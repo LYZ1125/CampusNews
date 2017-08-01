@@ -26,6 +26,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- 震动权限 -->
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <meta-data
         android:name="android.support.VERSION"
@@ -64,11 +65,18 @@
         <activity android:name="com.baibian.activity.DetailsActivity" />
         <activity android:name="com.baibian.activity.DiscussionActivity" />
         <activity android:name="com.baibian.activity.LargeActivity" />
+        <activity android:name="com.baibian.activity.EditPortraitActivity" />
         <activity
             android:name="com.mob.tools.MobUIShell"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <receiver
+            android:name="com.baibian.receiver.ImageLoadReceiver"
+            android:enabled="true"
+            android:exported="false" >
+        </receiver>
 
         <provider
             android:name="com.android.tools.fd.runtime.InstantRunContentProvider"
