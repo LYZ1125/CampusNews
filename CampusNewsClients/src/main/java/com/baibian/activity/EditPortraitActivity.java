@@ -1,6 +1,7 @@
 package com.baibian.activity;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -81,7 +82,7 @@ public class EditPortraitActivity extends AppCompatActivity implements View.OnCl
             public void run() {
                 Message msg = new Message();
                 msg.what = CHANGE_IMAGE;
-                bitmap = getSaveImageShared();
+                bitmap = getSaveImageShared(fileName);
                 imageLoadHandler.sendMessage(msg);
                 Log.d("thread_test", "Thread Testing");
             }
@@ -113,6 +114,7 @@ public class EditPortraitActivity extends AppCompatActivity implements View.OnCl
                                 break;
                             case "Scoop":
                                 Intent forLarge = new Intent(EditPortraitActivity.this, LargeActivity.class);
+                                forLarge.putExtra("file_name", fileName);
                                 startActivity(forLarge);
                                 dialog.dismiss();
                                 break;
@@ -139,7 +141,9 @@ public class EditPortraitActivity extends AppCompatActivity implements View.OnCl
                         @Override
                         public void run() {
                             bitmap = bundle.getParcelable("data");
-                            setSaveImageShared(bitmap);
+                            setSaveImageShared(bitmap, fileName);
+                            sendBroadcastToChangeImage();
+
                             camMeg.what = FROM_CAMERA;
                             imageLoadHandler.sendMessage(camMeg);
                         }
@@ -154,8 +158,9 @@ public class EditPortraitActivity extends AppCompatActivity implements View.OnCl
                     new Thread(){
                         @Override
                         public void run() {
-                            bitmap = getImg(uri);
-                            setSaveImageShared(bitmap);
+                            bitmap = getBitmapFromUri(uri, EditPortraitActivity.this);
+                            setSaveImageShared(bitmap, fileName);
+                            sendBroadcastToChangeImage();
                             Message alMsg = new Message();
                             alMsg.what = FROM_ALBUM;
                             imageLoadHandler.sendMessage(alMsg);
@@ -168,8 +173,16 @@ public class EditPortraitActivity extends AppCompatActivity implements View.OnCl
 
         }
     }
+    /**
+     * Notify that the image has been changed.
+     */
+    private void sendBroadcastToChangeImage() {
+        Intent intent = new Intent();
+        intent.setAction("com.baibian.image_change");
+        sendBroadcast(intent);
+    }
 
-    private void setSaveImageShared(Bitmap mBitmap){
+    public static void setSaveImageShared(Bitmap mBitmap, String fileName){
         File appDir = new File(Environment.getExternalStorageDirectory(), "LunDao");
         if (!appDir.exists()){
             appDir.mkdir();
@@ -186,19 +199,13 @@ public class EditPortraitActivity extends AppCompatActivity implements View.OnCl
         } catch (IOException e) {
             e.printStackTrace();
         }
-        /**
-         * Notify that the image has been changed.
-         */
-        Intent intent = new Intent();
-        intent.setAction("com.baibian.image_change");
-        sendBroadcast(intent);
     }
-    public static Bitmap getSaveImageShared(){
+    public static Bitmap getSaveImageShared(String fileName){
         File appDir = new File(Environment.getExternalStorageDirectory(), "LunDao");
         if (!appDir.exists()){
             appDir.mkdir();
         }
-        File f = new File(appDir, "head_portrait" + ".jpg");
+        File f = new File(appDir, fileName + ".jpg");
         Bitmap mBitmap = null;
         try {
             FileInputStream stream = new FileInputStream(f);
@@ -209,13 +216,11 @@ public class EditPortraitActivity extends AppCompatActivity implements View.OnCl
         }
         return mBitmap;
     }
-    private Bitmap getImg(Uri uri) {
+    public static Bitmap getBitmapFromUri(Uri uri, Context context) {
+        Bitmap bitmap = null;
         try {
-            InputStream inputStream = getContentResolver().openInputStream(uri);
-            //从输入流中解码位图00
+            InputStream inputStream = context.getContentResolver().openInputStream(uri);
             bitmap = BitmapFactory.decodeStream(inputStream);
-            //保存位图
-            //关闭流
             inputStream.close();
         } catch (IOException e) {
             e.printStackTrace();

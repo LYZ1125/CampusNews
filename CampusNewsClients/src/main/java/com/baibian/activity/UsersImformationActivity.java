@@ -70,6 +70,8 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
     private static final int CHANGE_IMAGE = 1;
     private static final int FROM_CAMERA = 2;
     private static final int FROM_ALBUM = 3;
+    private static final String FILE_NAME_PORTRAIT = "head_portrait";
+    private static final String FILE_NAME = "portrait_background";
     private ImageView user_information_edit;
     private Button BB_state_btn;
     private Button BB_imformation_btn;
@@ -119,6 +121,8 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
     private Handler imageLoadHandler;
     private ImageLoadReceiver receiver;
 
+    private ImageView collapsingBarLayoutBackground;
+    private Bitmap mBackGroundBitmap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -228,6 +232,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
          */
         initToolBar();
         initUserPortrait();
+
         init_information();
         initPersonalInfoCheckedVisible();
 
@@ -262,6 +267,11 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
                 switch (msg.what){
                     case CHANGE_IMAGE:
                         userPortrait.setImageBitmap(mBitmap);
+                        collapsingBarLayoutBackground.setImageBitmap(mBackGroundBitmap);
+                        break;
+                    case FROM_ALBUM:
+                    case FROM_CAMERA:
+                        collapsingBarLayoutBackground.setImageBitmap(mBackGroundBitmap);
                         break;
                 }
             }
@@ -274,7 +284,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
             @Override
             public void doTasks() {
                 Log.d("load_image", "LoadImage");
-                mBitmap = EditPortraitActivity.getSaveImageShared();
+                mBitmap = EditPortraitActivity.getSaveImageShared(FILE_NAME_PORTRAIT);
                 userPortrait.setImageBitmap(mBitmap);
             }
         });
@@ -283,10 +293,14 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         filter.addAction("com.baibian.image_change");
         registerReceiver(receiver, filter);
 
+        /**
+         * To get image that has been changed
+         */
         new Thread(){
             @Override
             public void run() {
-                mBitmap = EditPortraitActivity.getSaveImageShared();
+                mBitmap = EditPortraitActivity.getSaveImageShared(FILE_NAME_PORTRAIT);
+                mBackGroundBitmap = EditPortraitActivity.getSaveImageShared(FILE_NAME);
                 imageLoadHandler.sendEmptyMessage(CHANGE_IMAGE);
             }
         }.start();
@@ -296,6 +310,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         debateTopicSwitch.setOnCheckedChangeListener(this);
         debatePointSwitch.setOnCheckedChangeListener(this);
         debatePresentationSwitch.setOnCheckedChangeListener(this);
+        collapsingBarLayoutBackground.setOnClickListener(this);
         switchToSwitches.setOnClickListener(this);
         switchBack.setOnClickListener(this);
         backNav.setOnClickListener(this);
@@ -304,6 +319,7 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
     }
 
     private void initVariousViews() {
+        collapsingBarLayoutBackground = (ImageView) findViewById(R.id.collapsing_bar_background_image);
         userPortrait = (CircleImageView) findViewById(R.id.user_portrait);
         editPersonalSignal = (TextView) findViewById(R.id.edit_personal_signal);
         backNav = (TextView) findViewById(R.id.back_nav_toolbar);
@@ -433,7 +449,37 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
             case R.id.like_button:
 
                 break;*/
-
+            case R.id.collapsing_bar_background_image:
+                final ActionSheetDialog dialog = new ActionSheetDialog(UsersImformationActivity.this, items, view);
+                dialog.isTitleShow(false).show();
+                dialog.setOnOperItemClickL(new OnOperItemClickL() {
+                    @Override
+                    public void onOperItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        switch (items[position]){
+                            case "Capture":
+                                Intent intent=new Intent();
+                                intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+                                startActivityForResult(intent,FROM_CAMERA);
+                                dialog.dismiss();
+                                break;
+                            case "Chosen from album":
+                                Intent intent1=new Intent();
+                                intent1.setType("image/*");
+                                intent1.setAction(Intent.ACTION_GET_CONTENT);
+                                startActivityForResult(intent1,FROM_ALBUM);
+                                dialog.dismiss();
+                                break;
+                            case "Scoop":
+                                Intent forLarge = new Intent(UsersImformationActivity.this, LargeActivity.class);
+                                forLarge.putExtra("file_name", FILE_NAME);
+                                startActivity(forLarge);
+                                dialog.dismiss();
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                });
             case R.id.switch_to_toggle_buttons:
                 personalInformationDebateLayout.setVisibility(View.GONE);
                 userInformationSwitchBtns.setVisibility(View.VISIBLE);
@@ -469,9 +515,37 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
 ////                Log.d("传过去后",result_usersString);
 //                ToastTools.ToastShow(result_usersString);
 //                parseResultJSONObject(result_usersString);
-
                 init_information();
                 break;
+            case FROM_CAMERA:
+                if (data != null) {
+                    final Bundle bundle = data.getExtras();
+                    final Message camMsg = new Message();
+                    new Thread(){
+                        @Override
+                        public void run() {
+                            mBackGroundBitmap = bundle.getParcelable("data");
+                            EditPortraitActivity.setSaveImageShared(mBackGroundBitmap, FILE_NAME);
+                            camMsg.what = FROM_CAMERA;
+                            imageLoadHandler.sendMessage(camMsg);
+                        }
+                    }.start();
+                } else {
+                    return;
+                }
+                break;
+            case FROM_ALBUM:
+                final Uri uri = data.getData();
+                new Thread(){
+                    @Override
+                    public void run() {
+                        mBackGroundBitmap = EditPortraitActivity.getBitmapFromUri(uri, UsersImformationActivity.this);
+                        EditPortraitActivity.setSaveImageShared(mBackGroundBitmap, FILE_NAME);
+                        Message alMsg = new Message();
+                        alMsg.what = FROM_ALBUM;
+                        imageLoadHandler.sendMessage(alMsg);
+                    }
+                }.start();
             default:
                 break;
         }
@@ -656,11 +730,11 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         });
 
     }
-
-    /**
+/*
+    *//**
      * the following three methods are all used for saving capture
-     * @param mBitmap
-     */
+     * @param
+     *//*
     private void setSaveImageShared(Bitmap mBitmap){
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         mBitmap.compress(Bitmap.CompressFormat.PNG, 80, byteArrayOutputStream);
@@ -679,24 +753,20 @@ public class UsersImformationActivity extends AppCompatActivity implements View.
         ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytes);
         Bitmap bitmap = BitmapFactory.decodeStream(byteArrayInputStream);
         return bitmap;
-    }
-
+    }*/
+/*
     private void getImg(Uri uri) {
         try {
             InputStream inputStream = getContentResolver().openInputStream(uri);
             //从输入流中解码位图
             Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
             //保存位图
-            setSaveImageShared(bitmap);
-            userPortrait.setImageBitmap(bitmap);
 
             //关闭流
             inputStream.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
 }
